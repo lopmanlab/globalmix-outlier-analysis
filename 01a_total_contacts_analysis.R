@@ -4,8 +4,8 @@ library(dplyr)
 library(ggplot2)
 library(plotly)
 
-participants <- readRDS(paste0(here(),"/data/clean/participant_data_aim1.RDS"))
-contacts <- readRDS(paste0(here(),"/data/clean/contact_data_aim1.RDS"))
+participants <- readRDS(paste0(here(),"/../","globalmix-mozambique/data/clean/participant_data_aim1.RDS"))
+contacts <- readRDS(paste0(here(),"/../","globalmix-mozambique/data/clean/contact_data_aim1.RDS"))
 
 ## Subset contacts to the IDs in participant list only
 contacts <- contacts %>%
@@ -757,14 +757,14 @@ library(lme4)
 require(MASS)
 library(lmerTest)
 
-# negbin_model <- glmer.nb(num_contacts ~ age + participant_sex +
+# negbin_model <- glmer.nb(num_contacts ~ participant_age + participant_sex +
 #                          study_site + (1 | rec_id),
 #                          offset = log(N),
 #                          verbose = TRUE,
 #                          data = df_contact %>% distinct())
 # summary(negbin_model)
 
-# nb_int_model <- glmer.nb(num_contacts ~ age + participant_sex +
+# nb_int_model <- glmer.nb(num_contacts ~ participant_age + participant_sex +
 #                          study_site + participant_sex*study_site +
 #                          age*study_site + age*participant_sex+
 #                          (1 | rec_id),
@@ -773,7 +773,7 @@ library(lmerTest)
 #                          data = df_contact %>% distinct())
 # summary(nb_int_model)
 
-# poisson_model <- glmer(num_contacts ~ age + participant_sex + 
+# poisson_model <- glmer(num_contacts ~ participant_age + participant_sex + 
 #                          study_site + (1 | rec_id),
 #                       offset = log(N),
 #                       data = df_contact %>% distinct(),
@@ -781,7 +781,7 @@ library(lmerTest)
 # 
 # summary(poisson_model)
 
-# poi_int_model <- glmer(num_contacts ~ age + participant_sex +
+# poi_int_model <- glmer(num_contacts ~ participant_age + participant_sex +
 #                          study_site + participant_sex*study_site +
 #                          age*study_site + age*participant_sex +
 #                          (1 | rec_id),
@@ -790,14 +790,14 @@ library(lmerTest)
 #                       family = poisson(link = "log"))
 # summary(poi_int_model)
 
-# linear_model <- lmer(num_contacts ~ age + participant_sex +
+# linear_model <- lmer(num_contacts ~ participant_age + participant_sex +
 #                          study_site + (1 | rec_id),
 #                       offset = log(N),
 #                       data = df_contact %>% distinct())
 # 
 # summary(linear_model)
 
-# lin_int_model <- lmer(num_contacts ~ age + participant_sex +
+# lin_int_model <- lmer(num_contacts ~ participant_age + participant_sex +
 #                         study_site + participant_sex*study_site +
 #                         age*study_site + age*participant_sex +
 #                         (1 | rec_id),
@@ -1081,30 +1081,30 @@ contact_unique <- contact_unique %>%
   mutate(N = sum(avg_unique_contacts))
 contact_unique$s_age <- as.character(as.numeric(contact_unique$age)-median(as.numeric(contact_unique$age)))
 
-negbin_model <- glm.nb(avg_unique_contacts ~ age + sex + site,
+negbin_model <- glm.nb(avg_unique_contacts ~ participant_age + sex + site,
                        data = contact_unique %>% distinct())
 unique_negbin <- as.data.frame(summary(negbin_model)$coefficients)
 
-negbin_int_model <- glm.nb(avg_unique_contacts ~ age * sex * site,
+negbin_int_model <- glm.nb(avg_unique_contacts ~ participant_age * sex * site,
                        data = contact_unique %>% distinct())
 unique_negbin_int <- as.data.frame(summary(negbin_int_model)$coefficients)
 
-poisson_model <- glm(avg_unique_contacts ~ age + sex + site,
+poisson_model <- glm(avg_unique_contacts ~ participant_age + sex + site,
                     data = contact_unique %>% distinct(),
                     family = poisson(link = "log"))
 unique_poisson <- as.data.frame(summary(poisson_model)$coefficients)
 
-poisson_int_model <- glm(avg_unique_contacts ~ age * sex * site,
+poisson_int_model <- glm(avg_unique_contacts ~ participant_age * sex * site,
                      data = contact_unique %>% distinct(),
                      family = poisson(link = "log"))
 unique_poisson_int <- as.data.frame(summary(poisson_int_model)$coefficients)
 
-linear_model <- glm(avg_unique_contacts ~ age + sex + site,
+linear_model <- glm(avg_unique_contacts ~ participant_age + sex + site,
                      data = contact_unique %>% distinct(),
                      family = gaussian(link = "identity"))
 unique_linear <- as.data.frame(summary(linear_model)$coefficients)
 
-linear_int_model <- glm(avg_unique_contacts ~ age * sex * site,
+linear_int_model <- glm(avg_unique_contacts ~ participant_age * sex * site,
                     data = contact_unique %>% distinct(),
                     family = gaussian(link = "identity"))
 unique_linear_int <- as.data.frame(summary(linear_int_model)$coefficients)
@@ -1115,48 +1115,48 @@ contacts_daily$age <- sprintf("%02s", contacts_daily$age)
 contacts_daily$sex <- contacts_daily$participant_sex
 contacts_daily$site <- contacts_daily$study_site
 
-negbin_model <- glm.nb(avg_daily_contacts ~ age + sex + site,
+negbin_model <- glm.nb(avg_daily_contacts ~ participant_age + sex + site,
                        data = contacts_daily %>% distinct())
 daily_negbin <- as.data.frame(summary(negbin_model)$coefficients)
 
-negbin_int_model <- glm.nb(avg_daily_contacts ~ age * sex * site,
+negbin_int_model <- glm.nb(avg_daily_contacts ~ participant_age * sex * site,
                            data = contacts_daily %>% distinct())
 daily_negbin_int <- as.data.frame(summary(negbin_int_model)$coefficients)
 
-poisson_model <- glm(avg_daily_contacts ~ age + sex + site,
+poisson_model <- glm(avg_daily_contacts ~ participant_age + sex + site,
                      data = contacts_daily %>% distinct(),
                      family = poisson(link = "log"))
 daily_poisson <- as.data.frame(summary(poisson_model)$coefficients)
 
-poisson_int_model <- glm(avg_daily_contacts ~ age * sex * site,
+poisson_int_model <- glm(avg_daily_contacts ~ participant_age * sex * site,
                          data = contacts_daily %>% distinct(),
                          family = poisson(link = "log"))
 daily_poisson_int <- as.data.frame(summary(poisson_int_model)$coefficients)
 
-linear_model <- glm(avg_daily_contacts ~ age + sex + site,
+linear_model <- glm(avg_daily_contacts ~ participant_age + sex + site,
                     data = contacts_daily %>% distinct(),
                     family = gaussian(link = "identity"))
 daily_linear <- as.data.frame(summary(linear_model)$coefficients)
 
-linear_int_model <- glm(avg_daily_contacts ~ age * sex * site,
+linear_int_model <- glm(avg_daily_contacts ~ participant_age * sex * site,
                         data = contacts_daily %>% distinct(),
                         family = gaussian(link = "identity"))
 daily_linear_int <- as.data.frame(summary(linear_int_model)$coefficients)
 
 # save data --------------------------------------------------------------
-saveRDS(contact_unique, "outlier-analysis/data/contact_unique.RDS")
-saveRDS(contacts_daily, "outlier-analysis/data/contacts_daily.RDS")
+saveRDS(contact_unique, "data/contact_unique.RDS")
+saveRDS(contacts_daily, "data/contacts_daily.RDS")
 
-write.csv(unique_linear, "outlier-analysis/data/unique_linear.csv")
-write.csv(unique_linear_int, "outlier-analysis/data/unique_linear_int.csv")
-write.csv(unique_poisson, "outlier-analysis/data/unique_poisson.csv")
-write.csv(unique_poisson_int, "outlier-analysis/data/unique_poisson_int.csv")
-write.csv(unique_negbin, "outlier-analysis/data/unique_negbin.csv")
-write.csv(unique_negbin_int, "outlier-analysis/data/unique_negbin_int.csv")
+write.csv(unique_linear, "data/unique_linear.csv")
+write.csv(unique_linear_int, "data/unique_linear_int.csv")
+write.csv(unique_poisson, "data/unique_poisson.csv")
+write.csv(unique_poisson_int, "data/unique_poisson_int.csv")
+write.csv(unique_negbin, "data/unique_negbin.csv")
+write.csv(unique_negbin_int, "data/unique_negbin_int.csv")
 
-write.csv(daily_linear, "outlier-analysis/data/daily_linear.csv")
-write.csv(daily_linear_int, "outlier-analysis/data/daily_linear_int.csv")
-write.csv(daily_poisson, "outlier-analysis/data/daily_poisson.csv")
-write.csv(daily_poisson_int, "outlier-analysis/data/daily_poisson_int.csv")
-write.csv(daily_negbin, "outlier-analysis/data/daily_negbin.csv")
-write.csv(daily_negbin_int, "outlier-analysis/data/daily_negbin_int.csv")
+write.csv(daily_linear, "data/daily_linear.csv")
+write.csv(daily_linear_int, "data/daily_linear_int.csv")
+write.csv(daily_poisson, "data/daily_poisson.csv")
+write.csv(daily_poisson_int, "data/daily_poisson_int.csv")
+write.csv(daily_negbin, "data/daily_negbin.csv")
+write.csv(daily_negbin_int, "data/daily_negbin_int.csv")

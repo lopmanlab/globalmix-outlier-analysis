@@ -5,8 +5,8 @@ library(ggplot2)
 library(plotly)
 library(tidyverse)
 
-participants <- readRDS(paste0(here(),"/../","data/clean/participant_data_aim1.RDS"))
-contacts <- readRDS(paste0(here(),"/../", "data/clean/contact_data_aim1.RDS"))
+participants <- readRDS(paste0(here(),"/../","globalmix-mozambique/data/clean/participant_data_aim1.RDS"))
+contacts <- readRDS(paste0(here(),"/../", "globalmix-mozambique/data/clean/contact_data_aim1.RDS"))
 
 ## Subset contacts to the IDs in participant list only
 contacts <- contacts %>%
@@ -191,72 +191,7 @@ contacts_resp_ent <- contacts_resp_ent %>%
          unique_ent_q75_outlier = 
            ifelse(avg_unique_ent_contacts > contact_summaries$unique_ent_q75, 1, 0))
 
-# saveRDS(contacts_resp_ent, here("outlier-analysis/data/contacts_resp_ent.RDS"))
-
-#Contact Definition Exploration ------------------------------------------------
-#Average/Q75 respiratory and enteric contacts
-contact_summaries
-
-# Proportion of contacts that were considered both
-table(df_contact$respiratory == 1 & df_contact$enteric == 1)
-16219 / (16219 + 3708)
-
-# Proportion of contacts that were considered both by site
-table(df_contact$respiratory == 1 & df_contact$enteric == 1, df_contact$study_site)
-#Rural: 78%
-9155/(9155+2627)
-#Urban: 87%
-7064/(7064+1081)
-
-# Respiratory contacts by age group
-table(df_contact$respiratory == 1, df_contact$participant_age)
-df_contact %>%
-  group_by(participant_age, respiratory) %>%
-  summarise(n = n()) %>%
-  mutate(freq = n / sum(n)) %>%
-  write.csv(., "data/participant_age_respiratory.csv")
-
-# Enteric Contacts by Age
-table(df_contact$enteric == 1, df_contact$participant_age)
-df_contact %>%
-  group_by(participant_age, enteric) %>%
-  summarise(n = n()) %>%
-  mutate(freq = n / sum(n)) %>%
-  write.csv(., "data/participant_age_enteric.csv")
-
-#Average respiratory and enteric contacts by rural/urban 
-
-
-#Include number of outliers as well per each definition 
-table(contacts_resp_ent$daily_ent_q75_outlier)
-301/(301+1058)
-table(contacts_resp_ent$daily_resp_q75_outlier)
-304/(301+1058)
-
-#Number of outliers by site respiratory
-table(contacts_resp_ent$daily_resp_q75_outlier, contacts_resp_ent$study_site)
-#Rural: 31%
-213/(213+483)
-#Urban: 14%
-91/(91+575)
-
-#Number of outliers by site enteric
-table(contacts_resp_ent$daily_ent_q75_outlier, contacts_resp_ent$study_site)
-#Rural: 30%
-208/(208+485)
-#Urban: 14%
-93/(93+573)
-
-# Unique contact outliers by site
-table(contacts_resp_ent$unique_resp_q75_outlier, contacts_resp_ent$study_site)
-#Rural: 31%
-218 / (218+478)
-#Urban: 14%
-90 / (90+576)
-
-table(contacts_resp_ent$unique_ent_q75_outlier, contacts_resp_ent$study_site)
-#Rural: 30%
-210 / (210+483)
-#Urban: 14%
-93 / (93+573)
+# saveRDS(contacts_resp_ent, here("data/contacts_resp_ent.RDS"))
+# saveRDS(contact_summaries, here("data/contact_summaries.RDS"))
+saveRDS(df_contact, here("data/df_contact.RDS"))
 

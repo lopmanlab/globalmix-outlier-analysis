@@ -44,45 +44,51 @@ unique$age <- as.numeric(unique$age)
 
 # Daily Mean threshold outlier model -------------------------------------------------
 
-logistic_model <- glm(outlier_mean ~ age + sex + site, 
+logistic_model <- glm(outlier_mean ~ participant_age + sex + site, 
                       data = daily, family = binomial())
 mean_daily_logistic <- as.data.frame(summary(logistic_model)$coefficients)
 
-logistic_int_model <- glm(outlier_mean ~ age * sex * site, data = daily, 
+logistic_int_model <- glm(outlier_mean ~ participant_age * sex * site, data = daily, 
                           family = binomial())
 mean_daily_logistic_int <- as.data.frame(summary(logistic_int_model)$coefficients)
 
 # Daily Q75 threshold outlier model -------------------------------------------------
 
-logistic_model <- glm(outlier_q75 ~ age + sex + site, 
+logistic_model <- glm(outlier_q75 ~ participant_age + sex + site, 
                       data = daily, family = binomial())
 q75_daily_logistic <- as.data.frame(summary(logistic_model)$coefficients)
 
-logistic_int_model <- glm(outlier_q75 ~ age * sex * site, 
+logistic_int_model <- glm(outlier_q75 ~ participant_age * sex * site, 
                           data = daily, family = binomial())
 q75_daily_logistic_int <- as.data.frame(summary(logistic_int_model)$coefficients)
 
 # Unique Mean threshold outlier model -------------------------------------------------
 
-logistic_model <- glm(outlier_mean ~ age + sex + site, 
+logistic_model <- glm(outlier_mean ~ participant_age + sex + site, 
                       data = unique, family = binomial(link=logit))
 mean_unique_logistic <- as.data.frame(summary(logistic_model)$coefficients)
 
-logistic_int_model <- glm(outlier_mean ~ age * sex * site, 
+logistic_int_model <- glm(outlier_mean ~ participant_age * sex * site, 
                           data = unique, family = binomial())
 mean_unique_logistic_int <- as.data.frame(summary(logistic_int_model)$coefficients)
 
 # Unique Q75 threshold outlier model -------------------------------------------------
 
-logistic_model <- glm(outlier_q75 ~ age + sex + site, 
+logistic_model <- glm(outlier_q75 ~ participant_age + sex + site, 
                       data = unique, family = binomial())
 q75_unique_logistic <- as.data.frame(summary(logistic_model)$coefficients)
 
-logistic_int_model <- glm(outlier_q75 ~ age * sex * site, 
+logistic_int_model <- glm(outlier_q75 ~ participant_age * sex * site, 
                           data = unique, family = binomial())
 q75_unique_logistic_int <- as.data.frame(summary(logistic_int_model)$coefficients)
 
 # No interaction logistic plots---------------------------------------------------
+factor_order = c("(Intercept)","participant_age6-11mo", "participant_age1-4y", 
+                 "participant_age5-9y", "participant_age10-14y", 
+                 "participant_age15-19y", "participant_age20-29y", 
+                 "participant_age30-39y", "participant_age40-59y", 
+                 "participant_age60+y", "sexMale", "siteUrban")
+
 mean_daily_logistic <- mean_daily_logistic %>% tibble::rownames_to_column()
 names(mean_daily_logistic) <- c("term", "estimate", "SE", "test_statistic", "p_value")
 mean_daily_logistic_int <- mean_daily_logistic_int %>% tibble::rownames_to_column()
@@ -94,6 +100,7 @@ names(mean_unique_logistic_int) <- names(mean_daily_logistic)
 
 mean_daily_logistic$log_pvalue <- log(round(mean_daily_logistic$p_value, 2))
 mean_daily_logistic$log_pvalue[which(is.infinite(mean_daily_logistic$log_pvalue))] <- -5.99
+mean_daily_logistic$term <- factor(mean_daily_logistic$term, levels = factor_order)
 
 png("figs/mean_daily_logistic.png", width=2500, height=1000, res=300)
 ggplot(mean_daily_logistic, aes(x = term, y = estimate, color = log_pvalue)) + 
@@ -110,6 +117,7 @@ dev.off()
 
 mean_unique_logistic$log_pvalue <- log(round(mean_unique_logistic$p_value, 2))
 mean_unique_logistic$log_pvalue[which(is.infinite(mean_unique_logistic$log_pvalue))] <- -5.99
+mean_unique_logistic$term <- factor(mean_unique_logistic$term, levels = factor_order)
 
 png("figs/mean_unique_logistic.png", width=3000, height=1000, res=300)
 ggplot(mean_unique_logistic, aes(x = term, y = estimate, color = log_pvalue)) + 
@@ -134,6 +142,7 @@ names(q75_unique_logistic_int) <- names(q75_daily_logistic)
 
 q75_daily_logistic$log_pvalue <- log(round(q75_daily_logistic$p_value, 2))
 q75_daily_logistic$log_pvalue[which(is.infinite(q75_daily_logistic$log_pvalue))] <- -5.99
+q75_daily_logistic$term <- factor(q75_daily_logistic$term, levels = factor_order)
 
 png("figs/q75_daily_logistic.png", width=3000, height=1000, res=300)
 ggplot(q75_daily_logistic, aes(x = term, y = estimate, color = log_pvalue)) + 
@@ -150,6 +159,7 @@ dev.off()
 
 q75_unique_logistic$log_pvalue <- log(round(q75_unique_logistic$p_value, 2))
 q75_unique_logistic$log_pvalue[which(is.infinite(q75_unique_logistic$log_pvalue))] <- -5.99
+q75_unique_logistic$term <- factor(q75_unique_logistic$term, levels = factor_order)
 
 png("figs/q75_unique_logistic.png", width=3000, height=1000, res=300)
 ggplot(q75_unique_logistic, aes(x = term, y = estimate, color = log_pvalue)) + 
@@ -169,93 +179,93 @@ dev.off()
 #                                  rep("Age*Sex*Site", 56)) ->
 #   mean_unique_logistic_int$facet 
 
-mean_daily_logistic_int$log_pvalue <- log(round(mean_daily_logistic_int$p_value, 2))
-mean_daily_logistic_int$log_pvalue[which(is.infinite(mean_daily_logistic_int$log_pvalue))] <- -5.99
-
-p1 <- ggplot(mean_daily_logistic_int , aes(x = term, y = estimate, color = log_pvalue)) + 
-  geom_point() +
-  geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-  theme(axis.text.x = element_text(angle = 45))+
-  scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
-                         values = rescale(c(0.01,0.05,0.1)),
-                         guide = "colorbar")+
-  ggtitle("Logistic: Mean Outlier Threshold for Unique Avg Contacts ~ Age + Sex + Site\nMain")
-
-p2 <- ggplot(mean_daily_logistic_int, aes(x = term, y = estimate, color = log_pvalue)) + 
-  geom_point() +
-  geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-  theme(axis.text.x = element_text(angle = 45))+
-  scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
-                         values = rescale(c(0.01,0.05,0.1)),
-                         guide = "colorbar")+
-  ggtitle("Age*Sex")
-
-p3 <- ggplot(mean_daily_logistic_int, aes(x = term, y = estimate, color = log_pvalue)) + 
-  geom_point() +
-  geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-  theme(axis.text.x = element_text(angle = 45))+
-  scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
-                         values = rescale(c(0.01,0.05,0.1)),
-                         guide = "colorbar")+
-  ggtitle("Age*Site & Sex*Site")
-
-p4 <- ggplot(mean_daily_logistic_int, aes(x = term, y = estimate, color = log_pvalue)) + 
-  geom_point() +
-  geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-  theme(axis.text.x = element_text(angle = 45))+
-  scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
-                         values = rescale(c(0.01,0.05,0.1)),
-                         guide = "colorbar")+
-  ggtitle("Age*Sex*Site")
-
-
-png("figs/mean_daily_logistic_int.png", width=3000, height=1000, res=300)
-ggarrange(p1, p2, p3, p4, nrow=4, ncol=1)
-dev.off()
-
-mean_unique_logistic_int$log_pvalue <- log(round(mean_unique_logistic_int$p_value, 2))
-mean_unique_logistic_int$log_pvalue[which(is.infinite(mean_unique_logistic_int$log_pvalue))] <- -5.99
-
-p1 <- ggplot(mean_unique_logistic_int , aes(x = term, y = estimate, color = log_pvalue)) + 
-  geom_point() +
-  geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-  theme(axis.text.x = element_text(angle = 45))+
-  scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
-                         values = rescale(c(0.01,0.05,0.1)),
-                         guide = "colorbar")+
-  ggtitle("Logistic: Mean Outlier Threshold for Unique Avg Contacts ~ Age + Sex + Site\nMain")
-
-p2 <- ggplot(mean_unique_logistic_int, aes(x = term, y = estimate, color = log_pvalue)) + 
-  geom_point() +
-  geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-  theme(axis.text.x = element_text(angle = 45))+
-  scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
-                         values = rescale(c(0.01,0.05,0.1)),
-                         guide = "colorbar")+
-  ggtitle("Age*Sex")
-
-p3 <- ggplot(mean_unique_logistic_int, aes(x = term, y = estimate, color = log_pvalue)) + 
-  geom_point() +
-  geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-  theme(axis.text.x = element_text(angle = 45))+
-  scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
-                         values = rescale(c(0.01,0.05,0.1)),
-                         guide = "colorbar")+
-  ggtitle("Age*Site & Sex*Site")
-
-p4 <- ggplot(mean_unique_logistic_int, aes(x = term, y = estimate, color = log_pvalue)) + 
-  geom_point() +
-  geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-  theme(axis.text.x = element_text(angle = 45))+
-  scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
-                         values = rescale(c(0.01,0.05,0.1)),
-                         guide = "colorbar")+
-  ggtitle("Age*Sex*Site")
-
-
-png("figs/mean_unique_logistic_int.png", width=3000, height=1000, res=300)
-ggarrange(p1, p2, p3, p4, nrow=4, ncol=1)
-dev.off()
+# mean_daily_logistic_int$log_pvalue <- log(round(mean_daily_logistic_int$p_value, 2))
+# mean_daily_logistic_int$log_pvalue[which(is.infinite(mean_daily_logistic_int$log_pvalue))] <- -5.99
+# 
+# p1 <- ggplot(mean_daily_logistic_int , aes(x = term, y = estimate, color = log_pvalue)) + 
+#   geom_point() +
+#   geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
+#   theme(axis.text.x = element_text(angle = 45))+
+#   scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
+#                          values = rescale(c(0.01,0.05,0.1)),
+#                          guide = "colorbar")+
+#   ggtitle("Logistic: Mean Outlier Threshold for Unique Avg Contacts ~ Age + Sex + Site\nMain")
+# 
+# p2 <- ggplot(mean_daily_logistic_int, aes(x = term, y = estimate, color = log_pvalue)) + 
+#   geom_point() +
+#   geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
+#   theme(axis.text.x = element_text(angle = 45))+
+#   scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
+#                          values = rescale(c(0.01,0.05,0.1)),
+#                          guide = "colorbar")+
+#   ggtitle("Age*Sex")
+# 
+# p3 <- ggplot(mean_daily_logistic_int, aes(x = term, y = estimate, color = log_pvalue)) + 
+#   geom_point() +
+#   geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
+#   theme(axis.text.x = element_text(angle = 45))+
+#   scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
+#                          values = rescale(c(0.01,0.05,0.1)),
+#                          guide = "colorbar")+
+#   ggtitle("Age*Site & Sex*Site")
+# 
+# p4 <- ggplot(mean_daily_logistic_int, aes(x = term, y = estimate, color = log_pvalue)) + 
+#   geom_point() +
+#   geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
+#   theme(axis.text.x = element_text(angle = 45))+
+#   scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
+#                          values = rescale(c(0.01,0.05,0.1)),
+#                          guide = "colorbar")+
+#   ggtitle("Age*Sex*Site")
+# 
+# 
+# png("figs/mean_daily_logistic_int.png", width=3000, height=1000, res=300)
+# ggarrange(p1, p2, p3, p4, nrow=4, ncol=1)
+# dev.off()
+# 
+# mean_unique_logistic_int$log_pvalue <- log(round(mean_unique_logistic_int$p_value, 2))
+# mean_unique_logistic_int$log_pvalue[which(is.infinite(mean_unique_logistic_int$log_pvalue))] <- -5.99
+# 
+# p1 <- ggplot(mean_unique_logistic_int , aes(x = term, y = estimate, color = log_pvalue)) + 
+#   geom_point() +
+#   geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
+#   theme(axis.text.x = element_text(angle = 45))+
+#   scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
+#                          values = rescale(c(0.01,0.05,0.1)),
+#                          guide = "colorbar")+
+#   ggtitle("Logistic: Mean Outlier Threshold for Unique Avg Contacts ~ Age + Sex + Site\nMain")
+# 
+# p2 <- ggplot(mean_unique_logistic_int, aes(x = term, y = estimate, color = log_pvalue)) + 
+#   geom_point() +
+#   geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
+#   theme(axis.text.x = element_text(angle = 45))+
+#   scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
+#                          values = rescale(c(0.01,0.05,0.1)),
+#                          guide = "colorbar")+
+#   ggtitle("Age*Sex")
+# 
+# p3 <- ggplot(mean_unique_logistic_int, aes(x = term, y = estimate, color = log_pvalue)) + 
+#   geom_point() +
+#   geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
+#   theme(axis.text.x = element_text(angle = 45))+
+#   scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
+#                          values = rescale(c(0.01,0.05,0.1)),
+#                          guide = "colorbar")+
+#   ggtitle("Age*Site & Sex*Site")
+# 
+# p4 <- ggplot(mean_unique_logistic_int, aes(x = term, y = estimate, color = log_pvalue)) + 
+#   geom_point() +
+#   geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
+#   theme(axis.text.x = element_text(angle = 45))+
+#   scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
+#                          values = rescale(c(0.01,0.05,0.1)),
+#                          guide = "colorbar")+
+#   ggtitle("Age*Sex*Site")
+# 
+# 
+# png("figs/mean_unique_logistic_int.png", width=3000, height=1000, res=300)
+# ggarrange(p1, p2, p3, p4, nrow=4, ncol=1)
+# dev.off()
 
 # Interaction Q75 Logistic plots------------------------------------------------------
 # q75_daily_logistic_int$facet <- c(rep("Main", 90),
@@ -264,130 +274,130 @@ dev.off()
 #                                    rep("Age*Sex*Site", 56)) ->
 #   q75_unique_logistic_int$facet 
 
-q75_daily_logistic_int$log_pvalue <- log(round(q75_daily_logistic_int$p_value, 2))
-q75_daily_logistic_int$log_pvalue[which(is.infinite(q75_daily_logistic_int$log_pvalue))] <- -5.99
-
-p1 <- ggplot(q75_daily_logistic_int , aes(x = term, y = estimate, color = log_pvalue)) + 
-  geom_point() +
-  geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-  theme(axis.text.x = element_text(angle = 45))+
-  scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
-                         values = rescale(c(0.01,0.05,0.1)),
-                         guide = "colorbar")+
-  ggtitle("Logistic: Mean Outlier Threshold for Unique Avg Contacts ~ Age + Sex + Site\nMain")
-
-p2 <- ggplot(q75_daily_logistic_int, aes(x = term, y = estimate, color = log_pvalue)) + 
-  geom_point() +
-  geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-  theme(axis.text.x = element_text(angle = 45))+
-  scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
-                         values = rescale(c(0.01,0.05,0.1)),
-                         guide = "colorbar")+
-  ggtitle("Age*Sex")
-
-p3 <- ggplot(q75_daily_logistic_int, aes(x = term, y = estimate, color = log_pvalue)) + 
-  geom_point() +
-  geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-  theme(axis.text.x = element_text(angle = 45))+
-  scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
-                         values = rescale(c(0.01,0.05,0.1)),
-                         guide = "colorbar")+
-  ggtitle("Age*Site & Sex*Site")
-
-p4 <- ggplot(q75_daily_logistic_int, aes(x = term, y = estimate, color = log_pvalue)) + 
-  geom_point() +
-  geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-  theme(axis.text.x = element_text(angle = 45))+
-  scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
-                         values = rescale(c(0.01,0.05,0.1)),
-                         guide = "colorbar")+
-  ggtitle("Age*Sex*Site")
-
-
-png("figs/q75_daily_logistic_int.png", width=3000, height=1000, res=300)
-ggarrange(p1, p2, p3, p4, nrow=4, ncol=1)
-dev.off()
-
-q75_unique_logistic_int$log_pvalue <- log(round(q75_unique_logistic_int$p_value, 2))
-q75_unique_logistic_int$log_pvalue[which(is.infinite(q75_unique_logistic_int$log_pvalue))] <- -5.99
-
-p1 <- ggplot(q75_unique_logistic_int , aes(x = term, y = estimate, color = log_pvalue)) + 
-  geom_point() +
-  geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-  theme(axis.text.x = element_text(angle = 45))+
-  scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
-                         values = rescale(c(0.01,0.05,0.1)),
-                         guide = "colorbar")+
-  ggtitle("Logistic: Mean Outlier Threshold for Unique Avg Contacts ~ Age + Sex + Site\nMain")
-
-p2 <- ggplot(q75_unique_logistic_int, aes(x = term, y = estimate, color = log_pvalue)) + 
-  geom_point() +
-  geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-  theme(axis.text.x = element_text(angle = 45))+
-  scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
-                         values = rescale(c(0.01,0.05,0.1)),
-                         guide = "colorbar")+
-  ggtitle("Age*Sex")
-
-p3 <- ggplot(q75_unique_logistic_int, aes(x = term, y = estimate, color = log_pvalue)) + 
-  geom_point() +
-  geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-  theme(axis.text.x = element_text(angle = 45))+
-  scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
-                         values = rescale(c(0.01,0.05,0.1)),
-                         guide = "colorbar")+
-  ggtitle("Age*Site & Sex*Site")
-
-p4 <- ggplot(q75_unique_logistic_int, aes(x = term, y = estimate, color = log_pvalue)) + 
-  geom_point() +
-  geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-  theme(axis.text.x = element_text(angle = 45))+
-  scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
-                         values = rescale(c(0.01,0.05,0.1)),
-                         guide = "colorbar")+
-  ggtitle("Age*Sex*Site")
-
-
-png("figs/q75_unique_logistic_int.png", width=3000, height=1000, res=300)
-ggarrange(p1, p2, p3, p4, nrow=4, ncol=1)
-dev.off()
+# q75_daily_logistic_int$log_pvalue <- log(round(q75_daily_logistic_int$p_value, 2))
+# q75_daily_logistic_int$log_pvalue[which(is.infinite(q75_daily_logistic_int$log_pvalue))] <- -5.99
+# 
+# p1 <- ggplot(q75_daily_logistic_int , aes(x = term, y = estimate, color = log_pvalue)) + 
+#   geom_point() +
+#   geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
+#   theme(axis.text.x = element_text(angle = 45))+
+#   scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
+#                          values = rescale(c(0.01,0.05,0.1)),
+#                          guide = "colorbar")+
+#   ggtitle("Logistic: Mean Outlier Threshold for Unique Avg Contacts ~ Age + Sex + Site\nMain")
+# 
+# p2 <- ggplot(q75_daily_logistic_int, aes(x = term, y = estimate, color = log_pvalue)) + 
+#   geom_point() +
+#   geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
+#   theme(axis.text.x = element_text(angle = 45))+
+#   scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
+#                          values = rescale(c(0.01,0.05,0.1)),
+#                          guide = "colorbar")+
+#   ggtitle("Age*Sex")
+# 
+# p3 <- ggplot(q75_daily_logistic_int, aes(x = term, y = estimate, color = log_pvalue)) + 
+#   geom_point() +
+#   geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
+#   theme(axis.text.x = element_text(angle = 45))+
+#   scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
+#                          values = rescale(c(0.01,0.05,0.1)),
+#                          guide = "colorbar")+
+#   ggtitle("Age*Site & Sex*Site")
+# 
+# p4 <- ggplot(q75_daily_logistic_int, aes(x = term, y = estimate, color = log_pvalue)) + 
+#   geom_point() +
+#   geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
+#   theme(axis.text.x = element_text(angle = 45))+
+#   scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
+#                          values = rescale(c(0.01,0.05,0.1)),
+#                          guide = "colorbar")+
+#   ggtitle("Age*Sex*Site")
+# 
+# 
+# png("figs/q75_daily_logistic_int.png", width=3000, height=1000, res=300)
+# ggarrange(p1, p2, p3, p4, nrow=4, ncol=1)
+# dev.off()
+# 
+# q75_unique_logistic_int$log_pvalue <- log(round(q75_unique_logistic_int$p_value, 2))
+# q75_unique_logistic_int$log_pvalue[which(is.infinite(q75_unique_logistic_int$log_pvalue))] <- -5.99
+# 
+# p1 <- ggplot(q75_unique_logistic_int , aes(x = term, y = estimate, color = log_pvalue)) + 
+#   geom_point() +
+#   geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
+#   theme(axis.text.x = element_text(angle = 45))+
+#   scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
+#                          values = rescale(c(0.01,0.05,0.1)),
+#                          guide = "colorbar")+
+#   ggtitle("Logistic: Mean Outlier Threshold for Unique Avg Contacts ~ Age + Sex + Site\nMain")
+# 
+# p2 <- ggplot(q75_unique_logistic_int, aes(x = term, y = estimate, color = log_pvalue)) + 
+#   geom_point() +
+#   geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
+#   theme(axis.text.x = element_text(angle = 45))+
+#   scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
+#                          values = rescale(c(0.01,0.05,0.1)),
+#                          guide = "colorbar")+
+#   ggtitle("Age*Sex")
+# 
+# p3 <- ggplot(q75_unique_logistic_int, aes(x = term, y = estimate, color = log_pvalue)) + 
+#   geom_point() +
+#   geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
+#   theme(axis.text.x = element_text(angle = 45))+
+#   scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
+#                          values = rescale(c(0.01,0.05,0.1)),
+#                          guide = "colorbar")+
+#   ggtitle("Age*Site & Sex*Site")
+# 
+# p4 <- ggplot(q75_unique_logistic_int, aes(x = term, y = estimate, color = log_pvalue)) + 
+#   geom_point() +
+#   geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
+#   theme(axis.text.x = element_text(angle = 45))+
+#   scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
+#                          values = rescale(c(0.01,0.05,0.1)),
+#                          guide = "colorbar")+
+#   ggtitle("Age*Sex*Site")
+# 
+# 
+# png("figs/q75_unique_logistic_int.png", width=3000, height=1000, res=300)
+# ggarrange(p1, p2, p3, p4, nrow=4, ncol=1)
+# dev.off()
 
 # Daily Mean threshold outlier model -------------------------------------------------
 
-poisson_model <- glm(outlier_mean ~ age + sex + site, 
+poisson_model <- glm(outlier_mean ~ participant_age + sex + site, 
                       data = daily, family = poisson(link="log"))
 mean_daily_poisson <- as.data.frame(summary(poisson_model)$coefficients)
 
-poisson_int_model <- glm(outlier_mean ~ age * sex * site, data = daily)
+poisson_int_model <- glm(outlier_mean ~ participant_age * sex * site, data = daily)
 mean_daily_poisson_int <- as.data.frame(summary(poisson_int_model)$coefficients)
 
 # Daily Q75 threshold outlier model -------------------------------------------------
 
-poisson_model <- glm(outlier_q75 ~ age + sex + site, 
+poisson_model <- glm(outlier_q75 ~ participant_age + sex + site, 
                       data = daily, family = poisson(link="log"))
 q75_daily_poisson <- as.data.frame(summary(poisson_model)$coefficients)
 
-poisson_int_model <- glm(outlier_q75 ~ age * sex * site, 
+poisson_int_model <- glm(outlier_q75 ~ participant_age * sex * site, 
                           data = daily, family = poisson(link="log"))
 q75_daily_poisson_int <- as.data.frame(summary(poisson_int_model)$coefficients)
 
 # Unique Mean threshold outlier model -------------------------------------------------
 
-poisson_model <- glm(outlier_mean ~ age + sex + site, 
+poisson_model <- glm(outlier_mean ~ participant_age + sex + site, 
                       data = unique, family = binomial(link=logit))
 mean_unique_poisson <- as.data.frame(summary(poisson_model)$coefficients)
 
-poisson_int_model <- glm(outlier_mean ~ age * sex * site, 
+poisson_int_model <- glm(outlier_mean ~ participant_age * sex * site, 
                           data = unique, family = poisson(link="log"))
 mean_unique_poisson_int <- as.data.frame(summary(poisson_int_model)$coefficients)
 
 # Unique Q75 threshold outlier model -------------------------------------------------
 
-poisson_model <- glm(outlier_q75 ~ age + sex + site, 
+poisson_model <- glm(outlier_q75 ~ participant_age + sex + site, 
                       data = unique, family = poisson(link="log"))
 q75_unique_poisson <- as.data.frame(summary(poisson_model)$coefficients)
 
-poisson_int_model <- glm(outlier_q75 ~ age * sex * site, 
+poisson_int_model <- glm(outlier_q75 ~ participant_age * sex * site, 
                           data = unique, family = poisson(link="log"))
 q75_unique_poisson_int <- as.data.frame(summary(poisson_int_model)$coefficients)
 
