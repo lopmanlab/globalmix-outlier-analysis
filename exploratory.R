@@ -167,6 +167,8 @@ contacts_resp_ent %>%
             q95 = quantile(avg_daily_resp_contacts, probs = 0.95, na.rm = T),
             q99 = quantile(avg_daily_resp_contacts, probs = 0.99, na.rm = T))
 
+
+# Unique Respiratory -----------------------------------------------------------
 summary(contacts_resp_ent$avg_unique_resp_contacts)
 quantile(contacts_resp_ent$avg_unique_resp_contacts, 
          probs = c(0.90, 0.95, 0.99), 
@@ -220,6 +222,8 @@ contacts_resp_ent %>%
   summarise(q90 = quantile(avg_daily_ent_contacts, probs = 0.9, na.rm = T),
             q95 = quantile(avg_daily_ent_contacts, probs = 0.95, na.rm = T),
             q99 = quantile(avg_daily_ent_contacts, probs = 0.99, na.rm = T))
+
+# Unique Enteric ---------------------------------------------------------------
 
 summary(contacts_resp_ent$avg_unique_ent_contacts)
 quantile(contacts_resp_ent$avg_unique_ent_contacts, 

@@ -172,6 +172,11 @@ poisson_unique_ent_int <- summary(poisson_unique_ent_mod_int)$coefficients %>%
   tibble::rownames_to_column()
 
 # Daily No interaction figures ----------------------------------------------
+factor_order = c("(Intercept)","participant_age6-11mo", "participant_age1-4y", 
+                 "participant_age5-9y", "participant_age10-14y", 
+                 "participant_age15-19y", "participant_age20-29y", 
+                 "participant_age30-39y", "participant_age40-59y", 
+                 "participant_age60+y", "sexMale", "siteUrban")
 
 names(negbin_daily_resp) <- c("term", "estimate", "SE", "test_statistic", "p_value")
 names(linear_daily_resp) <- c("term", "estimate", "SE", "test_statistic", "p_value")
@@ -182,101 +187,103 @@ names(poisson_daily_ent) <- c("term", "estimate", "SE", "test_statistic", "p_val
 
 negbin_daily_resp$log_pvalue <- log(round(negbin_daily_resp$p_value, 2))
 negbin_daily_resp$log_pvalue[which(is.infinite(negbin_daily_resp$log_pvalue))] <- -5.99
+negbin_daily_resp$term <- factor(negbin_daily_resp$term, levels = factor_order)
 
-png("figs/negbin_daily_resp.png", width=4000, height=1500, res=300)
-ggplot(negbin_daily_resp, aes(x = term, y = estimate, color = log_pvalue)) + 
-  geom_point() +
-  geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-  theme(axis.text.x = element_text(angle = 45))+
-  scale_colour_gradient2(low = "forestgreen",
-                         mid = "goldenrod1",
-                         high = "firebrick", 
-                         midpoint=log(0.05),
-                         guide = "colorbar")+
-  ggtitle("Negative Binomial: Daily Average Respiratory Contacts ~ Age + Sex + Site")
-dev.off()
+# png("figs/negbin_daily_resp.png", width=4000, height=1500, res=300)
+# ggplot(negbin_daily_resp, aes(x = term, y = estimate, color = log_pvalue)) + 
+#   geom_point() +
+#   geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
+#   theme(axis.text.x = element_text(angle = 45))+
+#   scale_colour_gradient2(low = "forestgreen",
+#                          mid = "goldenrod1",
+#                          high = "firebrick", 
+#                          midpoint=log(0.05),
+#                          guide = "colorbar")+
+#   ggtitle("Negative Binomial: Daily Average Respiratory Contacts ~ Age + Sex + Site")
+# dev.off()
 
 negbin_daily_ent$log_pvalue <- log(round(negbin_daily_ent$p_value, 2))
 negbin_daily_ent$log_pvalue[which(is.infinite(negbin_daily_ent$log_pvalue))] <- -5.99
+negbin_daily_ent$term <- factor(negbin_daily_ent$term, levels = factor_order)
 
-png("figs/negbin_daily_ent.png", width=4000, height=1500, res=300)
-ggplot(negbin_daily_ent, aes(x = term, y = estimate, color = log_pvalue)) + 
-  geom_point() +
-  geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-  theme(axis.text.x = element_text(angle = 45))+
-  scale_colour_gradient2(low = "forestgreen",
-                         mid = "goldenrod1",
-                         high = "firebrick", 
-                         midpoint=log(0.05),
-                         guide = "colorbar")+
-  ggtitle("Negative Binomial: Daily Average Enteric Contacts ~ Age + Sex + Site")
-dev.off()
-
-
-linear_daily_resp$log_pvalue <- log(round(linear_daily_resp$p_value, 2))
-linear_daily_resp$log_pvalue[which(is.infinite(linear_daily_resp$log_pvalue))] <- -5.99
-
-png("figs/linear_daily_resp.png", width=4000, height=1500, res=300)
-ggplot(linear_daily_resp, aes(x = term, y = estimate, color = log_pvalue)) + 
-  geom_point() +
-  geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-  theme(axis.text.x = element_text(angle = 45))+
-  scale_colour_gradient2(low = "forestgreen",
-                         mid = "goldenrod1",
-                         high = "firebrick", 
-                         midpoint=log(0.05),
-                         guide = "colorbar")+
-  ggtitle("Linear: Daily Average Respiratory Contacts ~ Age + Sex + Site")
-dev.off()
-
-linear_daily_ent$log_pvalue <- log(round(linear_daily_ent$p_value, 2))
-linear_daily_ent$log_pvalue[which(is.infinite(linear_daily_ent$log_pvalue))] <- -5.99
-
-png("figs/linear_daily_ent.png", width=4000, height=1500, res=300)
-ggplot(linear_daily_ent, aes(x = term, y = estimate, color = log_pvalue)) + 
-  geom_point() +
-  geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-  theme(axis.text.x = element_text(angle = 45))+
-  scale_colour_gradient2(low = "forestgreen",
-                         mid = "goldenrod1",
-                         high = "firebrick", 
-                         midpoint=log(0.05),
-                         guide = "colorbar")+
-  ggtitle("Linear: Daily Average Enteric Contacts ~ Age + Sex + Site")
-dev.off()
+# png("figs/negbin_daily_ent.png", width=4000, height=1500, res=300)
+# ggplot(negbin_daily_ent, aes(x = term, y = estimate, color = log_pvalue)) + 
+#   geom_point() +
+#   geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
+#   theme(axis.text.x = element_text(angle = 45))+
+#   scale_colour_gradient2(low = "forestgreen",
+#                          mid = "goldenrod1",
+#                          high = "firebrick", 
+#                          midpoint=log(0.05),
+#                          guide = "colorbar")+
+#   ggtitle("Negative Binomial: Daily Average Enteric Contacts ~ Age + Sex + Site")
+# dev.off()
 
 
-poisson_daily_resp$log_pvalue <- log(round(poisson_daily_resp$p_value, 2))
-poisson_daily_resp$log_pvalue[which(is.infinite(poisson_daily_resp$log_pvalue))] <- -5.99
-
-png("figs/poisson_daily_resp.png", width=4000, height=1500, res=300)
-ggplot(poisson_daily_resp, aes(x = term, y = estimate, color = log_pvalue)) + 
-  geom_point() +
-  geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-  theme(axis.text.x = element_text(angle = 45))+
-  scale_colour_gradient2(low = "forestgreen",
-                         mid = "goldenrod1",
-                         high = "firebrick", 
-                         midpoint=log(0.05),
-                         guide = "colorbar")+
-  ggtitle("Poisson: Daily Average Respiratory Contacts ~ Age + Sex + Site")
-dev.off()
-
-poisson_daily_ent$log_pvalue <- log(round(poisson_daily_ent$p_value, 2))
-poisson_daily_ent$log_pvalue[which(is.infinite(poisson_daily_ent$log_pvalue))] <- -5.99
-
-png("figs/poisson_daily_ent.png", width=4000, height=1500, res=300)
-ggplot(poisson_daily_ent, aes(x = term, y = estimate, color = log_pvalue)) + 
-  geom_point() +
-  geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-  theme(axis.text.x = element_text(angle = 45))+
-  scale_colour_gradient2(low = "forestgreen",
-                         mid = "goldenrod1",
-                         high = "firebrick", 
-                         midpoint=log(0.05),
-                         guide = "colorbar")+
-  ggtitle("Poisson: Daily Average Enteric Contacts ~ Age + Sex + Site")
-dev.off()
+# linear_daily_resp$log_pvalue <- log(round(linear_daily_resp$p_value, 2))
+# linear_daily_resp$log_pvalue[which(is.infinite(linear_daily_resp$log_pvalue))] <- -5.99
+# 
+# png("figs/linear_daily_resp.png", width=4000, height=1500, res=300)
+# ggplot(linear_daily_resp, aes(x = term, y = estimate, color = log_pvalue)) + 
+#   geom_point() +
+#   geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
+#   theme(axis.text.x = element_text(angle = 45))+
+#   scale_colour_gradient2(low = "forestgreen",
+#                          mid = "goldenrod1",
+#                          high = "firebrick", 
+#                          midpoint=log(0.05),
+#                          guide = "colorbar")+
+#   ggtitle("Linear: Daily Average Respiratory Contacts ~ Age + Sex + Site")
+# dev.off()
+# 
+# linear_daily_ent$log_pvalue <- log(round(linear_daily_ent$p_value, 2))
+# linear_daily_ent$log_pvalue[which(is.infinite(linear_daily_ent$log_pvalue))] <- -5.99
+# 
+# png("figs/linear_daily_ent.png", width=4000, height=1500, res=300)
+# ggplot(linear_daily_ent, aes(x = term, y = estimate, color = log_pvalue)) + 
+#   geom_point() +
+#   geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
+#   theme(axis.text.x = element_text(angle = 45))+
+#   scale_colour_gradient2(low = "forestgreen",
+#                          mid = "goldenrod1",
+#                          high = "firebrick", 
+#                          midpoint=log(0.05),
+#                          guide = "colorbar")+
+#   ggtitle("Linear: Daily Average Enteric Contacts ~ Age + Sex + Site")
+# dev.off()
+# 
+# 
+# poisson_daily_resp$log_pvalue <- log(round(poisson_daily_resp$p_value, 2))
+# poisson_daily_resp$log_pvalue[which(is.infinite(poisson_daily_resp$log_pvalue))] <- -5.99
+# 
+# png("figs/poisson_daily_resp.png", width=4000, height=1500, res=300)
+# ggplot(poisson_daily_resp, aes(x = term, y = estimate, color = log_pvalue)) + 
+#   geom_point() +
+#   geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
+#   theme(axis.text.x = element_text(angle = 45))+
+#   scale_colour_gradient2(low = "forestgreen",
+#                          mid = "goldenrod1",
+#                          high = "firebrick", 
+#                          midpoint=log(0.05),
+#                          guide = "colorbar")+
+#   ggtitle("Poisson: Daily Average Respiratory Contacts ~ Age + Sex + Site")
+# dev.off()
+# 
+# poisson_daily_ent$log_pvalue <- log(round(poisson_daily_ent$p_value, 2))
+# poisson_daily_ent$log_pvalue[which(is.infinite(poisson_daily_ent$log_pvalue))] <- -5.99
+# 
+# png("figs/poisson_daily_ent.png", width=4000, height=1500, res=300)
+# ggplot(poisson_daily_ent, aes(x = term, y = estimate, color = log_pvalue)) + 
+#   geom_point() +
+#   geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
+#   theme(axis.text.x = element_text(angle = 45))+
+#   scale_colour_gradient2(low = "forestgreen",
+#                          mid = "goldenrod1",
+#                          high = "firebrick", 
+#                          midpoint=log(0.05),
+#                          guide = "colorbar")+
+#   ggtitle("Poisson: Daily Average Enteric Contacts ~ Age + Sex + Site")
+# dev.off()
 
 # Unique No interaction figures ----------------------------------------------
 
@@ -289,199 +296,201 @@ names(poisson_unique_ent) <- c("term", "estimate", "SE", "test_statistic", "p_va
 
 negbin_unique_resp$log_pvalue <- log(round(negbin_unique_resp$p_value, 2))
 negbin_unique_resp$log_pvalue[which(is.infinite(negbin_unique_resp$log_pvalue))] <- -5.99
+negbin_unique_resp$term <- factor(negbin_unique_resp$term, levels = factor_order)
 
-png("figs/negbin_unique_resp.png", width=4000, height=1500, res=300)
-ggplot(negbin_unique_resp, aes(x = term, y = estimate, color = log_pvalue)) + 
-  geom_point() +
-  geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-  theme(axis.text.x = element_text(angle = 45))+
-  scale_colour_gradient2(low = "forestgreen",
-                         mid = "goldenrod1",
-                         high = "firebrick", 
-                         midpoint=log(0.05),
-                         guide = "colorbar")+
-  ggtitle("Negative Binomial: Unique Average Respiratory Contacts ~ Age + Sex + Site")
-dev.off()
+# png("figs/negbin_unique_resp.png", width=4000, height=1500, res=300)
+# ggplot(negbin_unique_resp, aes(x = term, y = estimate, color = log_pvalue)) + 
+#   geom_point() +
+#   geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
+#   theme(axis.text.x = element_text(angle = 45))+
+#   scale_colour_gradient2(low = "forestgreen",
+#                          mid = "goldenrod1",
+#                          high = "firebrick", 
+#                          midpoint=log(0.05),
+#                          guide = "colorbar")+
+#   ggtitle("Negative Binomial: Unique Average Respiratory Contacts ~ Age + Sex + Site")
+# dev.off()
 
 negbin_unique_ent$log_pvalue <- log(round(negbin_unique_ent$p_value, 2))
 negbin_unique_ent$log_pvalue[which(is.infinite(negbin_unique_ent$log_pvalue))] <- -5.99
+negbin_unique_ent$term <- factor(negbin_unique_ent$term, levels = factor_order)
 
-png("figs/negbin_unique_ent.png", width=4000, height=1500, res=300)
-ggplot(negbin_unique_ent, aes(x = term, y = estimate, color = log_pvalue)) + 
-  geom_point() +
-  geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-  theme(axis.text.x = element_text(angle = 45))+
-  scale_colour_gradient2(low = "forestgreen",
-                         mid = "goldenrod1",
-                         high = "firebrick", 
-                         midpoint=log(0.05),
-                         guide = "colorbar")+
-  ggtitle("Negative Binomial: Unique Average Enteric Contacts ~ Age + Sex + Site")
-dev.off()
-
-
-linear_unique_resp$log_pvalue <- log(round(linear_unique_resp$p_value, 2))
-linear_unique_resp$log_pvalue[which(is.infinite(linear_unique_resp$log_pvalue))] <- -5.99
-
-png("figs/linear_unique_resp.png", width=4000, height=1500, res=300)
-ggplot(linear_unique_resp, aes(x = term, y = estimate, color = log_pvalue)) + 
-  geom_point() +
-  geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-  theme(axis.text.x = element_text(angle = 45))+
-  scale_colour_gradient2(low = "forestgreen",
-                         mid = "goldenrod1",
-                         high = "firebrick", 
-                         midpoint=log(0.05),
-                         guide = "colorbar")+
-  ggtitle("Linear: Unique Average Respiratory Contacts ~ Age + Sex + Site")
-dev.off()
-
-linear_unique_ent$log_pvalue <- log(round(linear_unique_ent$p_value, 2))
-linear_unique_ent$log_pvalue[which(is.infinite(linear_unique_ent$log_pvalue))] <- -5.99
-
-png("figs/linear_unique_ent.png", width=4000, height=1500, res=300)
-ggplot(linear_unique_ent, aes(x = term, y = estimate, color = log_pvalue)) + 
-  geom_point() +
-  geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-  theme(axis.text.x = element_text(angle = 45))+
-  scale_colour_gradient2(low = "forestgreen",
-                         mid = "goldenrod1",
-                         high = "firebrick", 
-                         midpoint=log(0.05),
-                         guide = "colorbar")+
-  ggtitle("Linear: Unique Average Enteric Contacts ~ Age + Sex + Site")
-dev.off()
+# png("figs/negbin_unique_ent.png", width=4000, height=1500, res=300)
+# ggplot(negbin_unique_ent, aes(x = term, y = estimate, color = log_pvalue)) + 
+#   geom_point() +
+#   geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
+#   theme(axis.text.x = element_text(angle = 45))+
+#   scale_colour_gradient2(low = "forestgreen",
+#                          mid = "goldenrod1",
+#                          high = "firebrick", 
+#                          midpoint=log(0.05),
+#                          guide = "colorbar")+
+#   ggtitle("Negative Binomial: Unique Average Enteric Contacts ~ Age + Sex + Site")
+# dev.off()
 
 
-poisson_unique_resp$log_pvalue <- log(round(poisson_unique_resp$p_value, 2))
-poisson_unique_resp$log_pvalue[which(is.infinite(poisson_unique_resp$log_pvalue))] <- -5.99
-
-png("figs/poisson_unique_resp.png", width=4000, height=1500, res=300)
-ggplot(poisson_unique_resp, aes(x = term, y = estimate, color = log_pvalue)) + 
-  geom_point() +
-  geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-  theme(axis.text.x = element_text(angle = 45))+
-  scale_colour_gradient2(low = "forestgreen",
-                         mid = "goldenrod1",
-                         high = "firebrick", 
-                         midpoint=log(0.05),
-                         guide = "colorbar")+
-  ggtitle("Poisson: Unique Average Respiratory Contacts ~ Age + Sex + Site")
-dev.off()
-
-poisson_unique_ent$log_pvalue <- log(round(poisson_unique_ent$p_value, 2))
-poisson_unique_ent$log_pvalue[which(is.infinite(poisson_unique_ent$log_pvalue))] <- -5.99
-
-png("figs/poisson_unique_ent.png", width=4000, height=1500, res=300)
-ggplot(poisson_unique_ent, aes(x = term, y = estimate, color = log_pvalue)) + 
-  geom_point() +
-  geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-  theme(axis.text.x = element_text(angle = 45))+
-  scale_colour_gradient2(low = "forestgreen",
-                         mid = "goldenrod1",
-                         high = "firebrick", 
-                         midpoint=log(0.05),
-                         guide = "colorbar")+
-  ggtitle("Poisson: Unique Average Enteric Contacts ~ Age + Sex + Site")
-dev.off()
+# linear_unique_resp$log_pvalue <- log(round(linear_unique_resp$p_value, 2))
+# linear_unique_resp$log_pvalue[which(is.infinite(linear_unique_resp$log_pvalue))] <- -5.99
+# 
+# png("figs/linear_unique_resp.png", width=4000, height=1500, res=300)
+# ggplot(linear_unique_resp, aes(x = term, y = estimate, color = log_pvalue)) + 
+#   geom_point() +
+#   geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
+#   theme(axis.text.x = element_text(angle = 45))+
+#   scale_colour_gradient2(low = "forestgreen",
+#                          mid = "goldenrod1",
+#                          high = "firebrick", 
+#                          midpoint=log(0.05),
+#                          guide = "colorbar")+
+#   ggtitle("Linear: Unique Average Respiratory Contacts ~ Age + Sex + Site")
+# dev.off()
+# 
+# linear_unique_ent$log_pvalue <- log(round(linear_unique_ent$p_value, 2))
+# linear_unique_ent$log_pvalue[which(is.infinite(linear_unique_ent$log_pvalue))] <- -5.99
+# 
+# png("figs/linear_unique_ent.png", width=4000, height=1500, res=300)
+# ggplot(linear_unique_ent, aes(x = term, y = estimate, color = log_pvalue)) + 
+#   geom_point() +
+#   geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
+#   theme(axis.text.x = element_text(angle = 45))+
+#   scale_colour_gradient2(low = "forestgreen",
+#                          mid = "goldenrod1",
+#                          high = "firebrick", 
+#                          midpoint=log(0.05),
+#                          guide = "colorbar")+
+#   ggtitle("Linear: Unique Average Enteric Contacts ~ Age + Sex + Site")
+# dev.off()
+# 
+# 
+# poisson_unique_resp$log_pvalue <- log(round(poisson_unique_resp$p_value, 2))
+# poisson_unique_resp$log_pvalue[which(is.infinite(poisson_unique_resp$log_pvalue))] <- -5.99
+# 
+# png("figs/poisson_unique_resp.png", width=4000, height=1500, res=300)
+# ggplot(poisson_unique_resp, aes(x = term, y = estimate, color = log_pvalue)) + 
+#   geom_point() +
+#   geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
+#   theme(axis.text.x = element_text(angle = 45))+
+#   scale_colour_gradient2(low = "forestgreen",
+#                          mid = "goldenrod1",
+#                          high = "firebrick", 
+#                          midpoint=log(0.05),
+#                          guide = "colorbar")+
+#   ggtitle("Poisson: Unique Average Respiratory Contacts ~ Age + Sex + Site")
+# dev.off()
+# 
+# poisson_unique_ent$log_pvalue <- log(round(poisson_unique_ent$p_value, 2))
+# poisson_unique_ent$log_pvalue[which(is.infinite(poisson_unique_ent$log_pvalue))] <- -5.99
+# 
+# png("figs/poisson_unique_ent.png", width=4000, height=1500, res=300)
+# ggplot(poisson_unique_ent, aes(x = term, y = estimate, color = log_pvalue)) + 
+#   geom_point() +
+#   geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
+#   theme(axis.text.x = element_text(angle = 45))+
+#   scale_colour_gradient2(low = "forestgreen",
+#                          mid = "goldenrod1",
+#                          high = "firebrick", 
+#                          midpoint=log(0.05),
+#                          guide = "colorbar")+
+#   ggtitle("Poisson: Unique Average Enteric Contacts ~ Age + Sex + Site")
+# dev.off()
 
 # Continuous Age Daily ---------------------------------------------------------
 
-contacts_resp_ent$age <- as.character(contacts_resp_ent$age)
-
-negbin_daily_resp_mod <- glm.nb(avg_daily_resp_contacts ~ age + sex + site,
-                                data = contacts_resp_ent)
-negbin_daily_resp <- as.data.frame(summary(negbin_daily_resp_mod)$coefficients)%>% 
-  tibble::rownames_to_column()
-
-negbin_daily_ent_mod <- glm.nb(avg_daily_ent_contacts ~ age + sex + site,
-                                data = contacts_resp_ent)
-negbin_daily_ent <- as.data.frame(summary(negbin_daily_ent_mod)$coefficients)%>% 
-  tibble::rownames_to_column()
-
-names(negbin_daily_resp) <- c("term", "estimate", "SE", "test_statistic", "p_value")
-names(negbin_daily_ent) <- c("term", "estimate", "SE", "test_statistic", "p_value")
-
-negbin_daily_resp$log_pvalue <- log(round(negbin_daily_resp$p_value, 2))
-negbin_daily_resp$log_pvalue[which(is.infinite(negbin_daily_resp$log_pvalue))] <- -5.99
-
-png("figs/negbin_daily_resp_cont.png", width=4000, height=1500, res=300)
-ggplot(negbin_daily_resp, aes(x = term, y = estimate, color = log_pvalue)) + 
-  geom_point() +
-  geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-  theme(axis.text.x = element_text(angle = 45))+
-  scale_colour_gradient2(low = "forestgreen",
-                         mid = "goldenrod1",
-                         high = "firebrick", 
-                         midpoint=log(0.05),
-                         guide = "colorbar")+
-  ggtitle("Negative Binomial: Daily Average Respiratory Contacts ~ Age + Sex + Site")
-dev.off()
-
-negbin_daily_ent$log_pvalue <- log(round(negbin_daily_ent$p_value, 2))
-negbin_daily_ent$log_pvalue[which(is.infinite(negbin_daily_ent$log_pvalue))] <- -5.99
-
-png("figs/negbin_daily_ent_cont.png", width=4000, height=1500, res=300)
-ggplot(negbin_daily_ent, aes(x = term, y = estimate, color = log_pvalue)) + 
-  geom_point() +
-  geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-  theme(axis.text.x = element_text(angle = 45))+
-  scale_colour_gradient2(low = "forestgreen",
-                         mid = "goldenrod1",
-                         high = "firebrick", 
-                         midpoint=log(0.05),
-                         guide = "colorbar")+
-  ggtitle("Negative Binomial: Daily Average Enteric Contacts ~ Age + Sex + Site")
-dev.off()
+# contacts_resp_ent$age <- as.character(contacts_resp_ent$age)
+# 
+# negbin_daily_resp_mod <- glm.nb(avg_daily_resp_contacts ~ age + sex + site,
+#                                 data = contacts_resp_ent)
+# negbin_daily_resp <- as.data.frame(summary(negbin_daily_resp_mod)$coefficients)%>% 
+#   tibble::rownames_to_column()
+# 
+# negbin_daily_ent_mod <- glm.nb(avg_daily_ent_contacts ~ age + sex + site,
+#                                 data = contacts_resp_ent)
+# negbin_daily_ent <- as.data.frame(summary(negbin_daily_ent_mod)$coefficients)%>% 
+#   tibble::rownames_to_column()
+# 
+# names(negbin_daily_resp) <- c("term", "estimate", "SE", "test_statistic", "p_value")
+# names(negbin_daily_ent) <- c("term", "estimate", "SE", "test_statistic", "p_value")
+# 
+# negbin_daily_resp$log_pvalue <- log(round(negbin_daily_resp$p_value, 2))
+# negbin_daily_resp$log_pvalue[which(is.infinite(negbin_daily_resp$log_pvalue))] <- -5.99
+# 
+# png("figs/negbin_daily_resp_cont.png", width=4000, height=1500, res=300)
+# ggplot(negbin_daily_resp, aes(x = term, y = estimate, color = log_pvalue)) + 
+#   geom_point() +
+#   geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
+#   theme(axis.text.x = element_text(angle = 45))+
+#   scale_colour_gradient2(low = "forestgreen",
+#                          mid = "goldenrod1",
+#                          high = "firebrick", 
+#                          midpoint=log(0.05),
+#                          guide = "colorbar")+
+#   ggtitle("Negative Binomial: Daily Average Respiratory Contacts ~ Age + Sex + Site")
+# dev.off()
+# 
+# negbin_daily_ent$log_pvalue <- log(round(negbin_daily_ent$p_value, 2))
+# negbin_daily_ent$log_pvalue[which(is.infinite(negbin_daily_ent$log_pvalue))] <- -5.99
+# 
+# png("figs/negbin_daily_ent_cont.png", width=4000, height=1500, res=300)
+# ggplot(negbin_daily_ent, aes(x = term, y = estimate, color = log_pvalue)) + 
+#   geom_point() +
+#   geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
+#   theme(axis.text.x = element_text(angle = 45))+
+#   scale_colour_gradient2(low = "forestgreen",
+#                          mid = "goldenrod1",
+#                          high = "firebrick", 
+#                          midpoint=log(0.05),
+#                          guide = "colorbar")+
+#   ggtitle("Negative Binomial: Daily Average Enteric Contacts ~ Age + Sex + Site")
+# dev.off()
 
 # Continuous Age Unique ---------------------------------------------------------
 
-contacts_resp_ent$age <- as.character(contacts_resp_ent$age)
-
-negbin_unique_resp_mod <- glm.nb(avg_unique_resp_contacts ~ age + sex + site,
-                                data = contacts_resp_ent)
-negbin_unique_resp <- as.data.frame(summary(negbin_unique_resp_mod)$coefficients)%>% 
-  tibble::rownames_to_column()
-
-negbin_unique_ent_mod <- glm.nb(avg_unique_ent_contacts ~ age + sex + site,
-                               data = contacts_resp_ent)
-negbin_unique_ent <- as.data.frame(summary(negbin_unique_ent_mod)$coefficients)%>% 
-  tibble::rownames_to_column()
-
-names(negbin_unique_resp) <- c("term", "estimate", "SE", "test_statistic", "p_value")
-names(negbin_unique_ent) <- c("term", "estimate", "SE", "test_statistic", "p_value")
-
-negbin_unique_resp$log_pvalue <- log(round(negbin_unique_resp$p_value, 2))
-negbin_unique_resp$log_pvalue[which(is.infinite(negbin_unique_resp$log_pvalue))] <- -5.99
-
-png("figs/negbin_unique_resp_cont.png", width=4000, height=1500, res=300)
-ggplot(negbin_unique_resp, aes(x = term, y = estimate, color = log_pvalue)) + 
-  geom_point() +
-  geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-  theme(axis.text.x = element_text(angle = 45))+
-  scale_colour_gradient2(low = "forestgreen",
-                         mid = "goldenrod1",
-                         high = "firebrick", 
-                         midpoint=log(0.05),
-                         guide = "colorbar")+
-  ggtitle("Negative Binomial: Unique Average Respiratory Contacts ~ Age + Sex + Site")
-dev.off()
-
-negbin_unique_ent$log_pvalue <- log(round(negbin_unique_ent$p_value, 2))
-negbin_unique_ent$log_pvalue[which(is.infinite(negbin_unique_ent$log_pvalue))] <- -5.99
-
-png("figs/negbin_unique_ent_cont.png", width=4000, height=1500, res=300)
-ggplot(negbin_unique_ent, aes(x = term, y = estimate, color = log_pvalue)) + 
-  geom_point() +
-  geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-  theme(axis.text.x = element_text(angle = 45))+
-  scale_colour_gradient2(low = "forestgreen",
-                         mid = "goldenrod1",
-                         high = "firebrick", 
-                         midpoint=log(0.05),
-                         guide = "colorbar")+
-  ggtitle("Negative Binomial: Unique Average Enteric Contacts ~ Age + Sex + Site")
-dev.off()
+# contacts_resp_ent$age <- as.character(contacts_resp_ent$age)
+# 
+# negbin_unique_resp_mod <- glm.nb(avg_unique_resp_contacts ~ age + sex + site,
+#                                 data = contacts_resp_ent)
+# negbin_unique_resp <- as.data.frame(summary(negbin_unique_resp_mod)$coefficients)%>% 
+#   tibble::rownames_to_column()
+# 
+# negbin_unique_ent_mod <- glm.nb(avg_unique_ent_contacts ~ age + sex + site,
+#                                data = contacts_resp_ent)
+# negbin_unique_ent <- as.data.frame(summary(negbin_unique_ent_mod)$coefficients)%>% 
+#   tibble::rownames_to_column()
+# 
+# names(negbin_unique_resp) <- c("term", "estimate", "SE", "test_statistic", "p_value")
+# names(negbin_unique_ent) <- c("term", "estimate", "SE", "test_statistic", "p_value")
+# 
+# negbin_unique_resp$log_pvalue <- log(round(negbin_unique_resp$p_value, 2))
+# negbin_unique_resp$log_pvalue[which(is.infinite(negbin_unique_resp$log_pvalue))] <- -5.99
+# 
+# png("figs/negbin_unique_resp_cont.png", width=4000, height=1500, res=300)
+# ggplot(negbin_unique_resp, aes(x = term, y = estimate, color = log_pvalue)) + 
+#   geom_point() +
+#   geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
+#   theme(axis.text.x = element_text(angle = 45))+
+#   scale_colour_gradient2(low = "forestgreen",
+#                          mid = "goldenrod1",
+#                          high = "firebrick", 
+#                          midpoint=log(0.05),
+#                          guide = "colorbar")+
+#   ggtitle("Negative Binomial: Unique Average Respiratory Contacts ~ Age + Sex + Site")
+# dev.off()
+# 
+# negbin_unique_ent$log_pvalue <- log(round(negbin_unique_ent$p_value, 2))
+# negbin_unique_ent$log_pvalue[which(is.infinite(negbin_unique_ent$log_pvalue))] <- -5.99
+# 
+# png("figs/negbin_unique_ent_cont.png", width=4000, height=1500, res=300)
+# ggplot(negbin_unique_ent, aes(x = term, y = estimate, color = log_pvalue)) + 
+#   geom_point() +
+#   geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
+#   theme(axis.text.x = element_text(angle = 45))+
+#   scale_colour_gradient2(low = "forestgreen",
+#                          mid = "goldenrod1",
+#                          high = "firebrick", 
+#                          midpoint=log(0.05),
+#                          guide = "colorbar")+
+#   ggtitle("Negative Binomial: Unique Average Enteric Contacts ~ Age + Sex + Site")
+# dev.off()
 
 
 # Grouped Age Daily ------------------------------------------------------------
@@ -501,6 +510,7 @@ names(negbin_daily_ent) <- c("term", "estimate", "SE", "test_statistic", "p_valu
 
 negbin_daily_resp$log_pvalue <- log(round(negbin_daily_resp$p_value, 2))
 negbin_daily_resp$log_pvalue[which(is.infinite(negbin_daily_resp$log_pvalue))] <- -5.99
+negbin_daily_resp$term <- factor(negbin_daily_resp$term, levels = factor_order)
 
 png("figs/negbin_daily_resp_grp.png", width=4000, height=1500, res=300)
 ggplot(negbin_daily_resp, aes(x = term, y = estimate, color = log_pvalue)) + 
@@ -517,6 +527,7 @@ dev.off()
 
 negbin_daily_ent$log_pvalue <- log(round(negbin_daily_ent$p_value, 2))
 negbin_daily_ent$log_pvalue[which(is.infinite(negbin_daily_ent$log_pvalue))] <- -5.99
+negbin_daily_ent$term <- factor(negbin_daily_ent$term, levels = factor_order)
 
 png("figs/negbin_daily_ent_grp.png", width=4000, height=1500, res=300)
 ggplot(negbin_daily_ent, aes(x = term, y = estimate, color = log_pvalue)) + 
@@ -548,6 +559,7 @@ names(negbin_unique_ent) <- c("term", "estimate", "SE", "test_statistic", "p_val
 
 negbin_unique_resp$log_pvalue <- log(round(negbin_unique_resp$p_value, 2))
 negbin_unique_resp$log_pvalue[which(is.infinite(negbin_unique_resp$log_pvalue))] <- -5.99
+negbin_unique_resp$term <- factor(negbin_unique_resp$term, levels = factor_order)
 
 png("figs/negbin_unique_resp_grp.png", width=4000, height=1500, res=300)
 ggplot(negbin_unique_resp, aes(x = term, y = estimate, color = log_pvalue)) + 
@@ -564,6 +576,7 @@ dev.off()
 
 negbin_unique_ent$log_pvalue <- log(round(negbin_unique_ent$p_value, 2))
 negbin_unique_ent$log_pvalue[which(is.infinite(negbin_unique_ent$log_pvalue))] <- -5.99
+negbin_unique_ent$term <- factor(negbin_unique_ent$term, levels = factor_order)
 
 png("figs/negbin_unique_ent_grp.png", width=4000, height=1500, res=300)
 ggplot(negbin_unique_ent, aes(x = term, y = estimate, color = log_pvalue)) + 
