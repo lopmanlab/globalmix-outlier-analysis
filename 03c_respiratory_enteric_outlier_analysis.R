@@ -41,6 +41,11 @@ daily_ent_q75 <- as.data.frame(summary(daily_ent_q75_model)$coefficients) %>%
   tibble::rownames_to_column()
 
 # No interaction figures --------------------------------------------------------
+factor_order = c("(Intercept)","participant_age6-11mo", "participant_age1-4y", 
+                 "participant_age5-9y", "participant_age10-14y", 
+                 "participant_age15-19y", "participant_age20-29y", 
+                 "participant_age30-39y", "participant_age40-59y", 
+                 "participant_age60+y", "sexMale", "siteUrban")
 
 names(daily_resp_mean) <- c("term", "estimate", "SE", "test_statistic", "p_value")
 names(daily_ent_mean) <- c("term", "estimate", "SE", "test_statistic", "p_value")
@@ -50,6 +55,7 @@ names(daily_ent_q75) <- c("term", "estimate", "SE", "test_statistic", "p_value")
 
 daily_resp_mean$log_pvalue <- log(round( daily_resp_mean$p_value, 2))
 daily_resp_mean$log_pvalue[which(is.infinite(daily_resp_mean$log_pvalue))] <- -5.99
+daily_resp_mean$term <- factor(daily_resp_mean$term, levels = factor_order)
 
 png("figs/daily_resp_mean.png", width=3000, height=1000, res=300)
 ggplot(daily_resp_mean, aes(x = term, y = estimate, color = log_pvalue)) + 
@@ -66,6 +72,7 @@ dev.off()
 
 daily_ent_mean$log_pvalue <- log(round( daily_ent_mean$p_value, 2))
 daily_ent_mean$log_pvalue[which(is.infinite(daily_ent_mean$log_pvalue))] <- -5.99
+daily_ent_mean$term <- factor(daily_ent_mean$term, levels = factor_order)
 
 png("figs/daily_ent_mean.png", width=3000, height=1000, res=300)
 ggplot(daily_ent_mean, aes(x = term, y = estimate, color = log_pvalue)) + 
@@ -82,6 +89,7 @@ dev.off()
 
 daily_resp_q75$log_pvalue <- log(round( daily_resp_q75$p_value, 2))
 daily_resp_q75$log_pvalue[which(is.infinite(daily_resp_q75$log_pvalue))] <- -5.99
+daily_resp_q75$term <- factor(daily_resp_q75$term, levels = factor_order)
 
 png("figs/daily_resp_q75.png", width=3000, height=1000, res=300)
 ggplot(daily_resp_q75, aes(x = term, y = estimate, color = log_pvalue)) + 
@@ -98,6 +106,7 @@ dev.off()
 
 daily_ent_q75$log_pvalue <- log(round( daily_ent_q75$p_value, 2))
 daily_ent_q75$log_pvalue[which(is.infinite(daily_ent_q75$log_pvalue))] <- -5.99
+daily_ent_q75$term <- factor(daily_ent_q75$term, levels = factor_order)
 
 png("figs/daily_ent_q75.png", width=3000, height=1000, res=300)
 ggplot(daily_ent_q75, aes(x = term, y = estimate, color = log_pvalue)) + 
