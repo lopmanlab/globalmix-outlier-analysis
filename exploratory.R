@@ -2,17 +2,21 @@
 ############## Exploratory ###############
 ##########################################
 
-#Contact Definition Exploration ------------------------------------------------
 
-# Read in data
 rm(list = ls())
 library(here)
 library(dplyr)
 library(ggplot2)
 library(plotly)
+
+# Read in data -----------------------------------------------------------------
+
 contact_summaries <- readRDS(here("data/contact_summaries.rds"))
 df_contact <- readRDS(here("data/df_contact.rds"))
 contacts_resp_ent <- readRDS(here("data/contacts_resp_ent.rds"))
+
+
+#Contact Definition Exploration ------------------------------------------------
 
 #Average/Q75 respiratory and enteric contacts
 contact_summaries
@@ -49,23 +53,23 @@ df_contact %>%
 
 #Include number of outliers as well per each definition 
 table(contacts_resp_ent$daily_ent_q75_outlier)
-301/(301+1058)
+296/(296+1063)
 table(contacts_resp_ent$daily_resp_q75_outlier)
-304/(301+1058)
+297/(297+1065)
 
 #Number of outliers by site respiratory
 table(contacts_resp_ent$daily_resp_q75_outlier, contacts_resp_ent$study_site)
 #Rural: 31%
-213/(213+483)
+207/(207+489)
 #Urban: 14%
-91/(91+575)
+90/(90+576)
 
 #Number of outliers by site enteric
 table(contacts_resp_ent$daily_ent_q75_outlier, contacts_resp_ent$study_site)
-#Rural: 30%
-208/(208+485)
+#Rural: 29%
+204/(204+489)
 #Urban: 14%
-93/(93+573)
+92/(92+574)
 
 # Unique contact outliers by site
 table(contacts_resp_ent$unique_resp_q75_outlier, contacts_resp_ent$study_site)
@@ -93,10 +97,12 @@ ggplot(data = contacts_resp_ent)+
 # Contacts exploration ---------------------------------------------------------
 
 contacts_daily <- readRDS(here("data/contacts_daily.rds"))
-contacts_unique <- readRDS(here("data/contact_unique.rds"))
+contacts_unique <- readRDS(here("data/contacts_unique.rds"))
 
 ggplot(data = contacts_daily)+
   geom_histogram(aes(x = avg_daily_contacts))
+
+temp <- as.data.frame(table(contacts_daily$avg_daily_contacts))
 
 ggplot(data = contacts_unique)+
   geom_histogram(aes(x = avg_unique_contacts))
@@ -124,7 +130,10 @@ contacts_daily %>%
             q95 = quantile(avg_daily_contacts, probs = 0.95),
             q99 = quantile(avg_daily_contacts, probs = 0.99))
 
+tapply(contacts_daily$avg_daily_contacts, contacts_daily$site, summary)
+
 summary(contacts_unique$avg_unique_contacts)
+quantile(contacts_unique$avg_unique_contacts, probs = c(0.90, 0.95, 0.99))
 
 prop.table(table(contacts_unique$participant_sex, useNA = "always"))*100
 prop.table(table(contacts_unique$participant_age, useNA = "always"))*100
@@ -136,6 +145,7 @@ contacts_unique %>%
             q95 = quantile(avg_unique_contacts, probs = 0.95),
             q99 = quantile(avg_unique_contacts, probs = 0.99))
 
+
 tapply(contacts_unique$avg_unique_contacts, contacts_unique$participant_age, summary)
 contacts_unique %>% 
   group_by(participant_age) %>%
@@ -143,6 +153,7 @@ contacts_unique %>%
             q95 = quantile(avg_unique_contacts, probs = 0.95),
             q99 = quantile(avg_unique_contacts, probs = 0.99))
 
+tapply(contacts_unique$avg_unique_contacts, contacts_daily$site, summary)
 
 # Table 1 - respiratory contacts -----------------------------------------------
 summary(contacts_resp_ent$avg_daily_resp_contacts)
@@ -167,6 +178,7 @@ contacts_resp_ent %>%
             q95 = quantile(avg_daily_resp_contacts, probs = 0.95, na.rm = T),
             q99 = quantile(avg_daily_resp_contacts, probs = 0.99, na.rm = T))
 
+tapply(contacts_resp_ent$avg_daily_resp_contacts, contacts_resp_ent$study_site, summary)
 
 # Unique Respiratory -----------------------------------------------------------
 summary(contacts_resp_ent$avg_unique_resp_contacts)
@@ -192,6 +204,8 @@ contacts_resp_ent %>%
   summarise(q90 = quantile(avg_unique_resp_contacts, probs = 0.9),
             q95 = quantile(avg_unique_resp_contacts, probs = 0.95),
             q99 = quantile(avg_unique_resp_contacts, probs = 0.99))
+
+tapply(contacts_resp_ent$avg_unique_resp_contacts, contacts_resp_ent$study_site, summary)
 
 
 # Table 1 - enteric contacts -----------------------------------------------
@@ -223,6 +237,10 @@ contacts_resp_ent %>%
             q95 = quantile(avg_daily_ent_contacts, probs = 0.95, na.rm = T),
             q99 = quantile(avg_daily_ent_contacts, probs = 0.99, na.rm = T))
 
+tapply(contacts_resp_ent$avg_daily_ent_contacts, 
+       contacts_resp_ent$study_site, summary)
+
+
 # Unique Enteric ---------------------------------------------------------------
 
 summary(contacts_resp_ent$avg_unique_ent_contacts)
@@ -249,6 +267,10 @@ contacts_resp_ent %>%
   summarise(q90 = quantile(avg_unique_ent_contacts, probs = 0.9, na.rm = T),
             q95 = quantile(avg_unique_ent_contacts, probs = 0.95, na.rm = T),
             q99 = quantile(avg_unique_ent_contacts, probs = 0.99, na.rm = T))
+
+tapply(contacts_resp_ent$avg_unique_ent_contacts, 
+       contacts_resp_ent$study_site, summary)
+
 
 # Contact matrix by type of contact -----------------------------------------
 # m1data %>%

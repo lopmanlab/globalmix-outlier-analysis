@@ -3,6 +3,9 @@ library(here)
 library(dplyr)
 library(ggplot2)
 library(plotly)
+library(lme4)
+require(MASS)
+library(lmerTest)
 
 participants <- readRDS(paste0(here(),"/../","globalmix-mozambique/data/clean/participant_data_aim1.RDS"))
 contacts <- readRDS(paste0(here(),"/../","globalmix-mozambique/data/clean/contact_data_aim1.RDS"))
@@ -179,8 +182,6 @@ table3 <- knitr::kable(table3, digits = 0, align = "r") %>%
 
 table3
 
-
-## Urban Contact summary----------------------------------------------------
 df_contact_urban <- df_contact %>%
   dplyr::filter(study_site == "Urban")
 
@@ -656,298 +657,11 @@ fig1_hist <- subplot(hist_rural, hist_urban, hist_both,
 
 fig1_hist
 
-
-## Fitting total contacts ---------------------------------------------------
-fitn <- fitdistrplus::fitdist(contacts_site$num_contacts, "norm")
-summary(fitn)
-plot(fitn)
-
-fitp <- fitdistrplus::fitdist(contacts_site$num_contacts, "pois")
-summary(fitp)
-plot(fitp)
-
-fitnb <- fitdistrplus::fitdist(contacts_site$num_contacts, "nbinom")
-summary(fitnb)
-plot(fitnb)
-
-ggplot()+
-  geom_histogram(data=contacts_site, aes(x = num_contacts,y = ..density..), 
-                 color = cols[2], 
-                 fill = cols[2])+
-  geom_vline(aes(xintercept = mean_contacts$mean))+
-  geom_vline(aes(xintercept = median_contacts$q50), col = "grey")+
-  stat_function(fun = dnorm, args = list(mean = fitn$estimate[1], sd = fitn$estimate[2]), aes(lty="Normal"))+
-  stat_function(fun = dpois, args = list(lambda = fitp$estimate[1]), aes(lty="Poisson"))+
-  stat_function(fun = dnbinom, args = list(size = fitnb$estimate[1], mu = fitnb$estimate[2], aes(lty = "Neg Binomial")))+
-  theme_minimal()+
-  scale_colour_manual(name = "Fitted Distributions", values = c(1, 2, 3))+
-  labs(x = "Total Contacts", y = "Density", 
-       lty = "Fitted Distributions", 
-       title = "Total Contacts at Both Sites with Distributions")
-  
-#URBAN
-urban <- contacts_site %>% filter(study_site == "Urban")
-
-fitn <- fitdistrplus::fitdist(urban$num_contacts, "norm")
-summary(fitn)
-plot(fitn)
-
-fitp <- fitdistrplus::fitdist(urban$num_contacts, "pois")
-summary(fitp)
-plot(fitp)
-
-fitnb <- fitdistrplus::fitdist(urban$num_contacts, "nbinom")
-summary(fitnb)
-plot(fitnb)
-
-ggplot()+
-  geom_histogram(data=urban, aes(x = num_contacts,y = ..density..), 
-                 color = cols[5], 
-                 fill = cols[5])+
-  geom_vline(aes(xintercept = mean_contacts_site$mean[2]))+
-  geom_vline(aes(xintercept = median_contacts_site$q50[2]), col = "grey")+
-  stat_function(fun = dnorm, args = list(mean = fitn$estimate[1], sd = fitn$estimate[2]), aes(lty="Normal"))+
-  stat_function(fun = dpois, args = list(lambda = fitp$estimate[1]), aes(lty="Poisson"))+
-  stat_function(fun = dnbinom, args = list(size = fitnb$estimate[1], mu = fitnb$estimate[2], aes(lty = "Neg Binomial")))+
-  theme_minimal()+
-  scale_colour_manual(name = "Fitted Distributions", values = c(1, 2, 3))+
-  labs(x = "Total Contacts", y = "Density", 
-       lty = "Fitted Distributions", 
-       title = "Total Contacts at Urban Site with Distributions")
-  
-#RURAL
-rural <- contacts_site %>% filter(study_site == "Rural")
-
-fitn <- fitdistrplus::fitdist(rural$num_contacts, "norm")
-summary(fitn)
-plot(fitn)
-
-fitp <- fitdistrplus::fitdist(rural$num_contacts, "pois")
-summary(fitp)
-plot(fitp)
-
-fitnb <- fitdistrplus::fitdist(rural$num_contacts, "nbinom")
-summary(fitnb)
-plot(fitnb)
-
-ggplot()+
-  geom_histogram(data=rural, aes(x = num_contacts,y = ..density..), 
-                 color = cols[3], 
-                 fill = cols[3])+
-  geom_vline(aes(xintercept = mean_contacts$mean[1]))+
-  geom_vline(aes(xintercept = median_contacts$q50[1]), col = "grey")+
-  stat_function(fun = dnorm, args = list(mean = fitn$estimate[1], sd = fitn$estimate[2]), aes(lty="Normal"))+
-  stat_function(fun = dpois, args = list(lambda = fitp$estimate[1]), aes(lty="Poisson"))+
-  stat_function(fun = dnbinom, args = list(size = fitnb$estimate[1], mu = fitnb$estimate[2], aes(lty = "Neg Binomial")))+
-  theme_minimal()+
-  scale_colour_manual(name = "Fitted Distributions", values = c(1, 2, 3))+
-  labs(x = "Total Contacts", y = "Density", 
-       lty = "Fitted Distributions", 
-       title = "Total Contacts at Rural Site with Distributions")
-  
-
-
-## Total Contacts Mixed models --------------------------------------------
-df_contact <- df_contact %>% 
-  group_by(study_site) %>%
-  mutate(N = sum(num_contacts))
-df_contact$s_age <- scale(as.numeric(df_contact$age))
-
-library(lme4)
-require(MASS)
-library(lmerTest)
-
-# negbin_model <- glmer.nb(num_contacts ~ participant_age + participant_sex +
-#                          study_site + (1 | rec_id),
-#                          offset = log(N),
-#                          verbose = TRUE,
-#                          data = df_contact %>% distinct())
-# summary(negbin_model)
-
-# nb_int_model <- glmer.nb(num_contacts ~ participant_age + participant_sex +
-#                          study_site + participant_sex*study_site +
-#                          age*study_site + age*participant_sex+
-#                          (1 | rec_id),
-#                          offset = log(N),
-#                          verbose = TRUE,
-#                          data = df_contact %>% distinct())
-# summary(nb_int_model)
-
-# poisson_model <- glmer(num_contacts ~ participant_age + participant_sex + 
-#                          study_site + (1 | rec_id),
-#                       offset = log(N),
-#                       data = df_contact %>% distinct(),
-#                       family = poisson(link = "log"))
-# 
-# summary(poisson_model)
-
-# poi_int_model <- glmer(num_contacts ~ participant_age + participant_sex +
-#                          study_site + participant_sex*study_site +
-#                          age*study_site + age*participant_sex +
-#                          (1 | rec_id),
-#                       offset = log(N),
-#                       data = df_contact %>% distinct(),
-#                       family = poisson(link = "log"))
-# summary(poi_int_model)
-
-# linear_model <- lmer(num_contacts ~ participant_age + participant_sex +
-#                          study_site + (1 | rec_id),
-#                       offset = log(N),
-#                       data = df_contact %>% distinct())
-# 
-# summary(linear_model)
-
-# lin_int_model <- lmer(num_contacts ~ participant_age + participant_sex +
-#                         study_site + participant_sex*study_site +
-#                         age*study_site + age*participant_sex +
-#                         (1 | rec_id),
-#                       offset = log(N),
-#                       data = df_contact %>% distinct())
-# 
-# summary(lin_int_model)
-
-## Average Daily Unique Contacts Histograms ---------------------------------------
-
-contact_unique <- contacts_site %>%
-  dplyr::group_by(rec_id, study_site, participant_age, participant_sex, age) %>%
-  summarise(avg_unique_contacts = round(mean(num_contacts)))
-
-median_unique_site <- contact_unique %>%
-  dplyr::group_by(study_site) %>%
-  dplyr::summarize(q25 = quantile(avg_unique_contacts, probs = 0.25),
-                   q50 = quantile(avg_unique_contacts, probs = 0.5),
-                   q75 = quantile(avg_unique_contacts, probs = 0.75))
-
-median_unique <- contact_unique %>%
-  ungroup() %>%
-  dplyr::summarize(q25 = quantile(avg_unique_contacts, probs = 0.25),
-                   q50 = quantile(avg_unique_contacts, probs = 0.5),
-                   q75 = quantile(avg_unique_contacts, probs = 0.75))
-
-mean_unique_site <- contact_unique %>%
-  dplyr::group_by(study_site) %>%
-  dplyr::summarize(mean = round(mean(avg_unique_contacts),1))
-
-mean_unique <- contact_unique %>%
-  ungroup() %>%
-  dplyr::summarize(mean = round(mean(avg_unique_contacts),1))
-
-ci_contacts_rural <- contact_unique %>%
-  dplyr::filter(study_site == "Rural")
-ci_contacts_rural <- lm(avg_unique_contacts ~ 1, ci_contacts_rural)
-ci_contacts_rural <- as.data.frame(round(confint(ci_contacts_rural),1))
-
-ci_contacts_urban <- contact_unique %>%
-  dplyr::filter(study_site == "Urban")
-ci_contacts_urban <- lm(avg_unique_contacts ~ 1, ci_contacts_urban)
-ci_contacts_urban <- as.data.frame(round(confint(ci_contacts_urban),1))
-
-ci_contacts <- contact_unique
-ci_contacts <- lm(avg_unique_contacts ~ 1, contact_unique)
-ci_contacts <- as.data.frame(round(confint(ci_contacts),1))
-
-fitn <- fitdistrplus::fitdist(contact_unique$avg_unique_contacts, "norm")
-summary(fitn)
-plot(fitn)
-
-fitp <- fitdistrplus::fitdist(contact_unique$avg_unique_contacts, "pois")
-summary(fitp)
-plot(fitp)
-
-fitnb <- fitdistrplus::fitdist(contact_unique$avg_unique_contacts, "nbinom")
-summary(fitnb)
-plot(fitnb)
-
-ggplot()+
-  geom_histogram(data=contact_unique, aes(x = avg_unique_contacts,y = ..density..), 
-                 color = cols[2], 
-                 fill = cols[2])+
-  geom_vline(aes(xintercept = mean_unique$mean))+
-  geom_vline(aes(xintercept = median_unique$q50), col = "grey")+
-  stat_function(fun = dnorm, args = list(mean = fitn$estimate[1], sd = fitn$estimate[2]), aes(lty="Normal"))+
-  stat_function(fun = dpois, args = list(lambda = fitp$estimate[1]), aes(lty="Poisson"))+
-  stat_function(fun = dnbinom, args = list(size = fitnb$estimate[1], mu = fitnb$estimate[2], aes(lty = "Neg Binomial")))+
-  theme_minimal()+
-  scale_colour_manual(name = "Fitted Distributions", values = c(1, 2, 3))+
-  labs(x = "Average Daily Unique Contacts", y = "Density", 
-       lty = "Fitted Distributions", 
-       title = "Average Daily Unique Contacts at Both Sites with Distributions")
-
-#URBAN
-urban <- contact_unique %>% filter(study_site == "Urban")
-
-fitn <- fitdistrplus::fitdist(urban$avg_unique_contacts, "norm")
-summary(fitn)
-plot(fitn)
-
-fitp <- fitdistrplus::fitdist(urban$avg_unique_contacts, "pois")
-summary(fitp)
-plot(fitp)
-
-fitnb <- fitdistrplus::fitdist(urban$avg_unique_contacts, "nbinom")
-summary(fitnb)
-plot(fitnb)
-
-ggplot()+
-  geom_histogram(data=urban, aes(x = avg_unique_contacts,y = ..density..), 
-                 color = cols[5], 
-                 fill = cols[5])+
-  geom_vline(aes(xintercept = mean_unique_site$mean[2]))+
-  geom_vline(aes(xintercept = median_unique_site$q50[2]), col = "grey")+
-  stat_function(fun = dnorm, args = list(mean = fitn$estimate[1], sd = fitn$estimate[2]), aes(lty="Normal"))+
-  stat_function(fun = dpois, args = list(lambda = fitp$estimate[1]), aes(lty="Poisson"))+
-  stat_function(fun = dnbinom, args = list(size = fitnb$estimate[1], mu = fitnb$estimate[2], aes(lty = "Neg Binomial")))+
-  theme_minimal()+
-  scale_colour_manual(name = "Fitted Distributions", values = c(1, 2, 3))+
-  labs(x = "Average Daily Unique Contacts", y = "Density", 
-       lty = "Fitted Distributions", 
-       title = "Average Daily Unique Contacts at Urban Site with Distributions")
-
-#RURAL
-rural <- contact_unique %>% filter(study_site == "Rural")
-
-fitn <- fitdistrplus::fitdist(rural$avg_unique_contacts, "norm")
-summary(fitn)
-plot(fitn)
-
-fitp <- fitdistrplus::fitdist(rural$avg_unique_contacts, "pois")
-summary(fitp)
-plot(fitp)
-
-fitnb <- fitdistrplus::fitdist(rural$avg_unique_contacts, "nbinom")
-summary(fitnb)
-plot(fitnb)
-
-ggplot()+
-  geom_histogram(data=rural, aes(x = avg_unique_contacts,y = ..density..), 
-                 color = cols[3], 
-                 fill = cols[3])+
-  geom_vline(aes(xintercept = mean_unique$mean[1]))+
-  geom_vline(aes(xintercept = median_unique$q50[1]), col = "grey")+
-  stat_function(fun = dnorm, args = list(mean = fitn$estimate[1], sd = fitn$estimate[2]), aes(lty="Normal"))+
-  stat_function(fun = dpois, args = list(lambda = fitp$estimate[1]), aes(lty="Poisson"))+
-  stat_function(fun = dnbinom, args = list(size = fitnb$estimate[1], mu = fitnb$estimate[2], aes(lty = "Neg Binomial")))+
-  theme_minimal()+
-  scale_colour_manual(name = "Fitted Distributions", values = c(1, 2, 3))+
-  labs(x = "Average Daily Unique Contacts", y = "Density", 
-       lty = "Fitted Distributions", 
-       title = "Average Daily Unique Contacts at Rural Site with Distributions")
-
 ## Average Daily Contacts Histograms ---------------------------------------
-c <- df_contact %>%
-  dplyr::group_by(rec_id, fromdayone, study_site, participant_age, 
-                  participant_sex, age) %>%
-  dplyr::summarize(contacts = n())
 
-contacts_daily <- tidyr::pivot_wider(c, names_from = fromdayone, values_from=contacts)
-contacts_daily$`Both Days`[which(is.na(contacts_daily$`Both Days`))] <- 0
-contacts_daily$`Day1 Only`[which(is.na(contacts_daily$`Day1 Only`))] <- 0
-contacts_daily$`Day2 Only`[which(is.na(contacts_daily$`Day2 Only`))] <- 0
-contacts_daily$`NA`[which(is.na(contacts_daily$`NA`))] <- 0
-contacts_daily$avg_daily_contacts <- ((contacts_daily$`Both Days` / 2)+
-                                          contacts_daily$`Day1 Only` + 
-                                          contacts_daily$`Day2 Only`+
-                                          contacts_daily$`NA`)/2
+contacts_daily <- contacts_site %>%
+  dplyr::group_by(rec_id, study_site, participant_age, participant_sex, age) %>%
+  summarise(avg_daily_contacts = mean(num_contacts))
 
 median_daily_site <- contacts_daily %>%
   dplyr::group_by(study_site) %>%
@@ -983,169 +697,131 @@ ci_contacts <- contacts_daily
 ci_contacts <- lm(avg_daily_contacts ~ 1, contacts_daily)
 ci_contacts <- as.data.frame(round(confint(ci_contacts),1))
 
-fitn1 <- fitdistrplus::fitdist(contacts_daily$avg_daily_contacts, "norm")
-summary(fitn1)
-plot(fitn1)
+## Average Unique Contacts Histograms ---------------------------------------
+c <- df_contact %>%
+  dplyr::group_by(rec_id, fromdayone, study_site, participant_age, 
+                  participant_sex, age) %>%
+  dplyr::summarize(contacts = n())
 
-# fitp1 <- fitdistrplus::fitdist(contacts_daily$avg_daily_contacts, "pois")
-# summary(fitp1)
-# plot(fitp1)
+contacts_unique <- tidyr::pivot_wider(c, names_from = fromdayone, values_from=contacts)
+contacts_unique$`Both Days`[which(is.na(contacts_unique$`Both Days`))] <- 0
+contacts_unique$`Day1 Only`[which(is.na(contacts_unique$`Day1 Only`))] <- 0
+contacts_unique$`Day2 Only`[which(is.na(contacts_unique$`Day2 Only`))] <- 0
+contacts_unique$`NA`[which(is.na(contacts_unique$`NA`))] <- 0
+contacts_unique$avg_unique_contacts <- (round(contacts_unique$`Both Days` / 2)+
+                                          contacts_unique$`Day1 Only` + 
+                                          contacts_unique$`Day2 Only`+
+                                          contacts_unique$`NA`)/2
 
-# fitnb1 <- fitdistrplus::fitdist(contacts_daily$avg_daily_contacts, "nbinom")
-# summary(fitnb1)
-# plot(fitnb1)
+median_unique_site <- contacts_unique %>%
+  dplyr::group_by(study_site) %>%
+  dplyr::summarize(q25 = quantile(avg_unique_contacts, probs = 0.25),
+                   q50 = quantile(avg_unique_contacts, probs = 0.5),
+                   q75 = quantile(avg_unique_contacts, probs = 0.75))
 
-ggplot()+
-  geom_histogram(data=contacts_daily, aes(x = avg_daily_contacts,y = ..density..), 
-                 color = cols[2], 
-                 fill = cols[2])+
-  geom_vline(aes(xintercept = mean_daily$mean))+
-  geom_vline(aes(xintercept = median_daily$q50), col = "grey")+
-  stat_function(fun = dnorm, args = list(mean = fitn1$estimate[1], sd = fitn1$estimate[2]), aes(lty="Normal"))+
-  # stat_function(fun = dpois, args = list(lambda = fitp1$estimate[1]), aes(lty="Poisson"))+
-  # stat_function(fun = dnbinom, args = list(size = fitnb1$estimate[1], mu = fitnb1$estimate[2], aes(lty = "Neg Binomial")))+
-  theme_minimal()+
-  scale_colour_manual(name = "Fitted Distributions", values = c(1, 2, 3))+
-  labs(x = "Average Daily Unique Contacts", y = "Density", 
-       lty = "Fitted Distributions", 
-       title = "Average Daily Unique Contacts at Both Sites with Distributions")
+median_unique <- contacts_unique %>%
+  ungroup() %>%
+  dplyr::summarize(q25 = quantile(avg_unique_contacts, probs = 0.25),
+                   q50 = quantile(avg_unique_contacts, probs = 0.5),
+                   q75 = quantile(avg_unique_contacts, probs = 0.75))
 
-#URBAN
-urban <- contacts_daily %>% filter(study_site == "Urban")
+mean_unique_site <- contacts_unique %>%
+  dplyr::group_by(study_site) %>%
+  dplyr::summarize(mean = round(mean(avg_unique_contacts),1))
 
-fitn1 <- fitdistrplus::fitdist(urban$avg_daily_contacts, "norm")
-summary(fitn1)
-plot(fitn1)
+mean_unique <- contacts_unique %>%
+  ungroup() %>%
+  dplyr::summarize(mean = round(mean(avg_unique_contacts),1))
 
-# fitp1 <- fitdistrplus::fitdist(urban$avg_daily_contacts, "pois")
-# summary(fitp1)
-# plot(fitp1)
+ci_contacts_rural <- contacts_unique %>%
+  dplyr::filter(study_site == "Rural")
+ci_contacts_rural <- lm(avg_unique_contacts ~ 1, ci_contacts_rural)
+ci_contacts_rural <- as.data.frame(round(confint(ci_contacts_rural),1))
 
-# fitnb1 <- fitdistrplus::fitdist(urban$avg_daily_contacts, "nbinom")
-# summary(fitnb1)
-# plot(fitnb1)
+ci_contacts_urban <- contacts_unique %>%
+  dplyr::filter(study_site == "Urban")
+ci_contacts_urban <- lm(avg_unique_contacts ~ 1, ci_contacts_urban)
+ci_contacts_urban <- as.data.frame(round(confint(ci_contacts_urban),1))
 
-ggplot()+
-  geom_histogram(data=urban, aes(x = avg_daily_contacts,y = ..density..), 
-                 color = cols[5], 
-                 fill = cols[5])+
-  geom_vline(aes(xintercept = mean_daily_site$mean[2]))+
-  geom_vline(aes(xintercept = median_daily_site$q50[2]), col = "grey")+
-  stat_function(fun = dnorm, args = list(mean = fitn1$estimate[1], sd = fitn1$estimate[2]), aes(lty="Normal"))+
-  # stat_function(fun = dpois, args = list(lambda = fitp1$estimate[1]), aes(lty="Poisson"))+
-  # stat_function(fun = dnbinom, args = list(size = fitnb1$estimate[1], mu = fitnb1$estimate[2], aes(lty = "Neg Binomial")))+
-  theme_minimal()+
-  scale_colour_manual(name = "Fitted Distributions", values = c(1, 2, 3))+
-  labs(x = "Average Daily Unique Contacts", y = "Density", 
-       lty = "Fitted Distributions", 
-       title = "Average Daily Unique Contacts at Urban Site with Distributions")
+ci_contacts <- contacts_unique
+ci_contacts <- lm(avg_unique_contacts ~ 1, contacts_unique)
+ci_contacts <- as.data.frame(round(confint(ci_contacts),1))
 
-#RURAL
-rural <- contacts_daily %>% filter(study_site == "Rural")
-
-fitn1 <- fitdistrplus::fitdist(rural$avg_daily_contacts, "norm")
-summary(fitn1)
-plot(fitn1)
-
-# fitp1 <- fitdistrplus::fitdist(rural$avg_daily_contacts, "pois")
-# summary(fitp1)
-# plot(fitp1)
-
-# fitnb1 <- fitdistrplus::fitdist(rural$avg_daily_contacts, "nbinom")
-# summary(fitnb1)
-# plot(fitnb1)
-
-ggplot()+
-  geom_histogram(data=rural, aes(x = avg_daily_contacts,y = ..density..), 
-                 color = cols[3], 
-                 fill = cols[3])+
-  geom_vline(aes(xintercept = mean_daily$mean[1]))+
-  geom_vline(aes(xintercept = median_daily$q50[1]), col = "grey")+
-  stat_function(fun = dnorm, args = list(mean = fitn1$estimate[1], sd = fitn1$estimate[2]), aes(lty="Normal"))+
-  # stat_function(fun = dpois, args = list(lambda = fitp1$estimate[1]), aes(lty="Poisson"))+
-  # stat_function(fun = dnbinom, args = list(size = fitnb1$estimate[1], mu = fitnb1$estimate[2], aes(lty = "Neg Binomial")))+
-  theme_minimal()+
-  scale_colour_manual(name = "Fitted Distributions", values = c(1, 2, 3))+
-  labs(x = "Average Daily UniqueContacts", y = "Density", 
-       lty = "Fitted Distributions", 
-       title = "Average Daily Unique Contacts at Rural Site with Distributions")
-
-
-# Average Daily Unique Contacts Models ----------------------------------------------
-contact_unique$age <- sprintf("%02s", contact_unique$age)
-contact_unique$sex <- contact_unique$participant_sex
-contact_unique$site <- contact_unique$study_site
-
-contact_unique <- contact_unique %>%
-  group_by(study_site) %>%
-  mutate(N = sum(avg_unique_contacts))
-contact_unique$s_age <- as.character(as.numeric(contact_unique$age)-median(as.numeric(contact_unique$age)))
-
-negbin_model <- glm.nb(avg_unique_contacts ~ participant_age + sex + site,
-                       data = contact_unique %>% distinct())
-unique_negbin <- as.data.frame(summary(negbin_model)$coefficients)
-
-negbin_int_model <- glm.nb(avg_unique_contacts ~ participant_age * sex * site,
-                       data = contact_unique %>% distinct())
-unique_negbin_int <- as.data.frame(summary(negbin_int_model)$coefficients)
-
-poisson_model <- glm(avg_unique_contacts ~ participant_age + sex + site,
-                    data = contact_unique %>% distinct(),
-                    family = poisson(link = "log"))
-unique_poisson <- as.data.frame(summary(poisson_model)$coefficients)
-
-poisson_int_model <- glm(avg_unique_contacts ~ participant_age * sex * site,
-                     data = contact_unique %>% distinct(),
-                     family = poisson(link = "log"))
-unique_poisson_int <- as.data.frame(summary(poisson_int_model)$coefficients)
-
-linear_model <- glm(avg_unique_contacts ~ participant_age + sex + site,
-                     data = contact_unique %>% distinct(),
-                     family = gaussian(link = "identity"))
-unique_linear <- as.data.frame(summary(linear_model)$coefficients)
-
-linear_int_model <- glm(avg_unique_contacts ~ participant_age * sex * site,
-                    data = contact_unique %>% distinct(),
-                    family = gaussian(link = "identity"))
-unique_linear_int <- as.data.frame(summary(linear_int_model)$coefficients)
-
-
-## Average Daily Contacts Models ------------------------------------------------------
+# Average Daily Contacts Models ----------------------------------------------
 contacts_daily$age <- sprintf("%02s", contacts_daily$age)
 contacts_daily$sex <- contacts_daily$participant_sex
 contacts_daily$site <- contacts_daily$study_site
+
+contacts_daily <- contacts_daily %>%
+  group_by(study_site) %>%
+  mutate(N = sum(avg_daily_contacts))
+contacts_daily$s_age <- as.character(as.numeric(contacts_daily$age)-median(as.numeric(contacts_daily$age)))
 
 negbin_model <- glm.nb(avg_daily_contacts ~ participant_age + sex + site,
                        data = contacts_daily %>% distinct())
 daily_negbin <- as.data.frame(summary(negbin_model)$coefficients)
 
 negbin_int_model <- glm.nb(avg_daily_contacts ~ participant_age * sex * site,
-                           data = contacts_daily %>% distinct())
+                       data = contacts_daily %>% distinct())
 daily_negbin_int <- as.data.frame(summary(negbin_int_model)$coefficients)
 
 poisson_model <- glm(avg_daily_contacts ~ participant_age + sex + site,
-                     data = contacts_daily %>% distinct(),
-                     family = poisson(link = "log"))
+                    data = contacts_daily %>% distinct(),
+                    family = poisson(link = "log"))
 daily_poisson <- as.data.frame(summary(poisson_model)$coefficients)
 
 poisson_int_model <- glm(avg_daily_contacts ~ participant_age * sex * site,
-                         data = contacts_daily %>% distinct(),
-                         family = poisson(link = "log"))
+                     data = contacts_daily %>% distinct(),
+                     family = poisson(link = "log"))
 daily_poisson_int <- as.data.frame(summary(poisson_int_model)$coefficients)
 
 linear_model <- glm(avg_daily_contacts ~ participant_age + sex + site,
-                    data = contacts_daily %>% distinct(),
-                    family = gaussian(link = "identity"))
+                     data = contacts_daily %>% distinct(),
+                     family = gaussian(link = "identity"))
 daily_linear <- as.data.frame(summary(linear_model)$coefficients)
 
 linear_int_model <- glm(avg_daily_contacts ~ participant_age * sex * site,
-                        data = contacts_daily %>% distinct(),
-                        family = gaussian(link = "identity"))
+                    data = contacts_daily %>% distinct(),
+                    family = gaussian(link = "identity"))
 daily_linear_int <- as.data.frame(summary(linear_int_model)$coefficients)
 
+
+## Average Unique Contacts Models ------------------------------------------------------
+contacts_unique$age <- sprintf("%02s", contacts_unique$age)
+contacts_unique$sex <- contacts_unique$participant_sex
+contacts_unique$site <- contacts_unique$study_site
+
+negbin_model <- glm.nb(avg_unique_contacts ~ participant_age + sex + site,
+                       data = contacts_unique %>% distinct())
+unique_negbin <- as.data.frame(summary(negbin_model)$coefficients)
+
+negbin_int_model <- glm.nb(avg_unique_contacts ~ participant_age * sex * site,
+                           data = contacts_unique %>% distinct())
+unique_negbin_int <- as.data.frame(summary(negbin_int_model)$coefficients)
+
+poisson_model <- glm(avg_unique_contacts ~ participant_age + sex + site,
+                     data = contacts_unique %>% distinct(),
+                     family = poisson(link = "log"))
+unique_poisson <- as.data.frame(summary(poisson_model)$coefficients)
+
+poisson_int_model <- glm(avg_unique_contacts ~ participant_age * sex * site,
+                         data = contacts_unique %>% distinct(),
+                         family = poisson(link = "log"))
+unique_poisson_int <- as.data.frame(summary(poisson_int_model)$coefficients)
+
+linear_model <- glm(avg_unique_contacts ~ participant_age + sex + site,
+                    data = contacts_unique %>% distinct(),
+                    family = gaussian(link = "identity"))
+unique_linear <- as.data.frame(summary(linear_model)$coefficients)
+
+linear_int_model <- glm(avg_unique_contacts ~ participant_age * sex * site,
+                        data = contacts_unique %>% distinct(),
+                        family = gaussian(link = "identity"))
+unique_linear_int <- as.data.frame(summary(linear_int_model)$coefficients)
+
 # save data --------------------------------------------------------------
-saveRDS(contact_unique, "data/contact_unique.RDS")
 saveRDS(contacts_daily, "data/contacts_daily.RDS")
+saveRDS(contacts_unique, "data/contacts_unique.RDS")
 
 write.csv(unique_linear, "data/unique_linear.csv")
 write.csv(unique_linear_int, "data/unique_linear_int.csv")
