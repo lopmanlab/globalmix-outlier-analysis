@@ -73,8 +73,8 @@ df_contact <- df_contact %>%
          ) %>%
   mutate(enteric = ifelse(cnt_home == "Yes", 1,
                           ifelse(where_contact != "Outdoors" & touch_contact == "Yes", 1,
-                                 ifelse(where_contact != "Outdoors" & touch_contact == "No" & duration >= 2, 1,
-                                        ifelse(where_contact == "Outdoors" & touch_contact == "Yes" & duration >= 2, 1, 
+                                 ifelse(where_contact != "Outdoors" & touch_contact == "No" & duration >= 3, 1,
+                                        ifelse(where_contact == "Outdoors" & touch_contact == "Yes", 1, 
                                                0 )
                                         )
                                  )

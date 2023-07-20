@@ -23,14 +23,14 @@ contact_summaries
 
 # Proportion of contacts that were considered both
 table(df_contact$respiratory == 1 & df_contact$enteric == 1)
-16219 / (16219 + 3708)
+16096 / (16096 + 3831)
 
 # Proportion of contacts that were considered both by site
 table(df_contact$respiratory == 1 & df_contact$enteric == 1, df_contact$study_site)
-#Rural: 78%
-9155/(9155+2627)
-#Urban: 87%
-7064/(7064+1081)
+#Rural: 77%
+9090/(9090+2692)
+#Urban: 86%
+7006/(7006+1139)
 
 # Respiratory contacts by age group
 table(df_contact$respiratory == 1, df_contact$participant_age)
@@ -53,7 +53,7 @@ df_contact %>%
 
 #Include number of outliers as well per each definition 
 table(contacts_resp_ent$daily_ent_q75_outlier)
-296/(296+1063)
+304/(304+1055)
 table(contacts_resp_ent$daily_resp_q75_outlier)
 297/(297+1065)
 
@@ -66,10 +66,10 @@ table(contacts_resp_ent$daily_resp_q75_outlier, contacts_resp_ent$study_site)
 
 #Number of outliers by site enteric
 table(contacts_resp_ent$daily_ent_q75_outlier, contacts_resp_ent$study_site)
-#Rural: 29%
-204/(204+489)
-#Urban: 14%
-92/(92+574)
+#Rural: 30%
+207/(207+486)
+#Urban: 15%
+97/(97+569)
 
 # Unique contact outliers by site
 table(contacts_resp_ent$unique_resp_q75_outlier, contacts_resp_ent$study_site)
