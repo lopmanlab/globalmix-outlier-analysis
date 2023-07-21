@@ -115,6 +115,7 @@ quantile(contacts_daily$avg_daily_contacts, probs = c(0.90, 0.95, 0.99))
 
 prop.table(table(contacts_daily$participant_sex, useNA = "always"))*100
 prop.table(table(contacts_daily$participant_age, useNA = "always"))*100
+prop.table(table(contacts_daily$study_site, useNA = "always"))*100
 
 tapply(contacts_daily$avg_daily_contacts, contacts_daily$participant_sex, summary)
 contacts_daily %>% 
@@ -270,28 +271,5 @@ contacts_resp_ent %>%
 
 tapply(contacts_resp_ent$avg_unique_ent_contacts, 
        contacts_resp_ent$study_site, summary)
-
-
-# Contact matrix by type of contact -----------------------------------------
-# m1data %>%
-#     ggplot(aes(x = participant_age, y = contact_age, fill=average_contact)) +
-#     geom_raster() +
-#     geom_text(aes(participant_age, contact_age, label = average_contact), 
-#               color = "black", size = 3) +
-#     theme_classic() +
-#     scale_fill_gradient2(low="#0571b0", mid="#92c5de", high="#ca0020", 
-#                          limits=c(0,8), breaks=(c(0,2,4,6,8))) +
-#     labs(x ="Participant age", 
-#          y = "Contact age",
-#          title = title,
-#          fill = "Average\ncontacts") +
-#     theme(legend.title = element_text(size = 10),
-#           legend.text = element_text(size = 8),
-#           legend.justification = "right") +
-#     theme(plot.title = element_text(size = 20), 
-#           axis.title.x = element_text(size=16, face="bold"),
-#           axis.title.y = element_text(size=16, face="bold"),
-#           axis.text.x = element_text(size = 10, angle=60),
-#           axis.text.y = element_text(size= 10))
 
 
