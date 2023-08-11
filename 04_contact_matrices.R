@@ -27,17 +27,58 @@ contact_unique_resp$avg_unique_resp_contacts <- (round(contact_unique_resp$`Both
                                                    contact_unique_resp$`Day2 Only`+
                                                    contact_unique_resp$`NA`)/2
 
+contact_unique_resp %>% filter(!is.na(contact_age))%>%
+  filter(respiratory == 1) %>%
+  dplyr::group_by(participant_age, contact_age) %>%
+  summarise(avg_unique_resp_contacts = round(mean(avg_unique_resp_contacts),1)) %>%
+  ggplot(aes(x = participant_age, y = contact_age, fill=avg_unique_resp_contacts)) +
+  geom_raster() +
+  geom_text(aes(participant_age, contact_age, label = avg_unique_resp_contacts),
+            color = "black", size = 4) +
+  theme_classic() +
+  scale_fill_gradient2(low="#0571b0", mid="#92c5de", high="#ca0020", 
+                       limits=c(0,3), breaks=(c(0,1,2,3))) +
+  labs(x ="Participant age", 
+       y = "Contact age",
+       title = "Average Unique Respiratory Contacts",
+       fill = "Average\ncontacts") +
+  theme(legend.title = element_text(size = 10),
+        legend.text = element_text(size = 8),
+        legend.justification = "right") +
+  theme(plot.title = element_text(size = 20),
+        axis.title.x = element_text(size=16, face="bold"),
+        axis.title.y = element_text(size=16, face="bold"),
+        axis.text.x = element_text(size = 10),
+        axis.text.y = element_text(size= 10))
+
 contact_daily_resp <- df_contact %>%
   dplyr::group_by(rec_id, study_day, participant_age, contact_age,
                   study_site, participant_sex, age, respiratory, 
                   occupation, hh_occupants) %>%
   dplyr::summarize(num_contacts = n()) %>%
   filter(respiratory == 1) %>%
-  dplyr::group_by(rec_id, participant_age, contact_age,
-                  participant_sex, age, study_site,
-                  occupation, hh_occupants) %>%
-  summarise(avg_daily_resp_contacts = (mean(num_contacts)))
+  dplyr::group_by(participant_age, contact_age) %>%
+  summarise(avg_daily_resp_contacts = round(mean(num_contacts),1))
 
-
+contact_daily_resp %>% filter(!is.na(contact_age))%>%
+  ggplot(aes(x = participant_age, y = contact_age, fill=avg_daily_resp_contacts)) +
+  geom_raster() +
+  geom_text(aes(participant_age, contact_age, label = avg_daily_resp_contacts),
+            color = "black", size = 4) +
+  theme_classic() +
+  scale_fill_gradient2(low="#0571b0", mid="#92c5de", high="#ca0020", 
+                       limits=c(0,5), breaks=(c(0,1,2,3,4,5))) +
+  labs(x ="Participant age", 
+       y = "Contact age",
+       title = "Average Daily Respiratory Contacts",
+       fill = "Average\ncontacts") +
+  theme(legend.title = element_text(size = 10),
+        legend.text = element_text(size = 8),
+        legend.justification = "right") +
+  theme(plot.title = element_text(size = 20),
+        axis.title.x = element_text(size=16, face="bold"),
+        axis.title.y = element_text(size=16, face="bold"),
+        axis.text.x = element_text(size = 10),
+        axis.text.y = element_text(size= 10))
 
 
