@@ -351,73 +351,80 @@ dev.off()
 write.csv(unique_resp_q90, "data/unique_resp_q90.csv")
 write.csv(unique_ent_q90, "data/unique_ent_q90.csv")
 
-## With HH Size and Occupation -------------------------------------------------
+# With HH Size and Occupation -------------------------------------------------
 
 contacts_resp_ent$occupation <- factor(contacts_resp_ent$occupation,
-                                       levels = c("Child", "Student", 
-                                                  "Farmer", "Business person",
-                                                  "Office worker", 
+                                       levels = c("Unemployed", "Child", 
+                                                  "Student", "Farmer", 
+                                                  "Business person", "Office worker", 
                                                   "Casual laboror", "Fisherman", 
                                                   "Homemaker", "Retired",
-                                                  "Unemployed", "Other"))
+                                                  "Other"))
 
 hist(contacts_resp_ent$hh_occupants)
 write.csv(table(contacts_resp_ent$occupation) %>% as.data.frame(), "data/occupation_freq.csv")
 
+contacts_resp_ent$hhsize <- if_else(contacts_resp_ent$hh_occupants > 6, "7+",
+                                    if_else(contacts_resp_ent$hh_occupants > 3, "4-6",
+                                            "0-3"))
+contacts_resp_ent$hhsize <- factor(contacts_resp_ent$hhsize, 
+                                   levels = c("0-3", "4-6", "7+"))
 
-# Daily Mean threshold outlier model -------------------------------------------
+barplot(prop.table(table(contacts_resp_ent$hhsize)))
 
-daily_resp_mean_model <- glm(daily_resp_mean_outlier ~ participant_age + sex + site + occupation + hh_occupants, 
+## Daily Mean threshold outlier model ------------------------------------------
+
+daily_resp_mean_model <- glm(daily_resp_mean_outlier ~ participant_age + sex + site + occupation + hhsize, 
                              data = contacts_resp_ent, family = binomial())
 daily_resp_mean <- as.data.frame(summary(daily_resp_mean_model)$coefficients) %>%
   as.data.frame() %>%
   tibble::rownames_to_column()
 
-daily_ent_mean_model <- glm(daily_ent_mean_outlier ~ participant_age + sex + site + occupation + hh_occupants, 
+daily_ent_mean_model <- glm(daily_ent_mean_outlier ~ participant_age + sex + site + occupation + hhsize, 
                             data = contacts_resp_ent, family = binomial())
 daily_ent_mean <- as.data.frame(summary(daily_ent_mean_model)$coefficients) %>%
   as.data.frame() %>%
   tibble::rownames_to_column()
 
-# Daily Q75 threshold outlier model -------------------------------------------------
+## Daily Q75 threshold outlier model -------------------------------------------------
 
-daily_resp_q75_model <- glm(daily_resp_q75_outlier ~ participant_age + sex + site + occupation + hh_occupants, 
+daily_resp_q75_model <- glm(daily_resp_q75_outlier ~ participant_age + sex + site + occupation + hhsize, 
                             data = contacts_resp_ent, family = binomial())
 daily_resp_q75 <- as.data.frame(summary(daily_resp_q75_model)$coefficients) %>%
   as.data.frame() %>%
   tibble::rownames_to_column()
 
-daily_ent_q75_model <- glm(daily_ent_q75_outlier ~ participant_age + sex + site + occupation + hh_occupants, 
+daily_ent_q75_model <- glm(daily_ent_q75_outlier ~ participant_age + sex + site + occupation + hhsize, 
                            data = contacts_resp_ent, family = binomial())
 daily_ent_q75 <- as.data.frame(summary(daily_ent_q75_model)$coefficients) %>%
   as.data.frame() %>%
   tibble::rownames_to_column()
 
-# Daily Q90 threshold outlier model -------------------------------------------------
+## Daily Q90 threshold outlier model -------------------------------------------------
 
-daily_resp_q90_model <- glm(daily_resp_q90_outlier ~ participant_age + sex + site + occupation + hh_occupants, 
+daily_resp_q90_model <- glm(daily_resp_q90_outlier ~ participant_age + sex + site + occupation + hhsize, 
                             data = contacts_resp_ent, family = binomial())
 daily_resp_q90 <- as.data.frame(summary(daily_resp_q90_model)$coefficients) %>%
   as.data.frame() %>%
   tibble::rownames_to_column()
 
-daily_ent_q90_model <- glm(daily_ent_q90_outlier ~ participant_age + sex + site + occupation + hh_occupants, 
+daily_ent_q90_model <- glm(daily_ent_q90_outlier ~ participant_age + sex + site + occupation + hhsize, 
                            data = contacts_resp_ent, family = binomial())
 daily_ent_q90 <- as.data.frame(summary(daily_ent_q90_model)$coefficients) %>%
   as.data.frame() %>%
   tibble::rownames_to_column()
 
-# Daily figures --------------------------------------------------------
+## Daily figures --------------------------------------------------------
 factor_order = c("(Intercept)","participant_age6-11mo", "participant_age1-4y", 
                  "participant_age5-9y", "participant_age10-14y", 
                  "participant_age15-19y", "participant_age20-29y", 
                  "participant_age30-39y", "participant_age40-59y", 
                  "participant_age60+y", "sexMale", "siteUrban",
-                 "occupationStudent", "occupationFarmer",
+                 "occupationChild", "occupationStudent", "occupationFarmer",
                  "occupationBusiness person", "occupationOffice worker",
                  "occupationCasual laboror", "occupationFisherman",
                  "occupationHomemaker", "occupationRetired",
-                 "occupationUnemployed", "occupationOther", "hh_occupants")
+                 "occupationOther", "hhsize4-6", "hhsize7+")
 
 names(daily_resp_mean) <- c("term", "estimate", "SE", "test_statistic", "p_value")
 names(daily_ent_mean) <- c("term", "estimate", "SE", "test_statistic", "p_value")
@@ -541,50 +548,50 @@ dev.off()
 write.csv(daily_resp_q90, "data/daily_ext_resp_q90.csv")
 write.csv(daily_ent_q90, "data/daily_ext_ent_q90.csv")
 
-# Unique Mean threshold outlier model -------------------------------------------------
+## Unique Mean threshold outlier model -------------------------------------------------
 
-unique_resp_mean_model <- glm(unique_resp_mean_outlier ~ participant_age + sex + site + occupation + hh_occupants, 
+unique_resp_mean_model <- glm(unique_resp_mean_outlier ~ participant_age + sex + site + occupation + hhsize, 
                               data = contacts_resp_ent, family = binomial())
 unique_resp_mean <- as.data.frame(summary(unique_resp_mean_model)$coefficients) %>%
   as.data.frame() %>%
   tibble::rownames_to_column()
 
-unique_ent_mean_model <- glm(unique_ent_mean_outlier ~ participant_age + sex + site + occupation + hh_occupants, 
+unique_ent_mean_model <- glm(unique_ent_mean_outlier ~ participant_age + sex + site + occupation + hhsize, 
                              data = contacts_resp_ent, family = binomial())
 unique_ent_mean <- as.data.frame(summary(unique_ent_mean_model)$coefficients) %>%
   as.data.frame() %>%
   tibble::rownames_to_column()
 
-# Unique Q75 threshold outlier model -------------------------------------------------
+## Unique Q75 threshold outlier model -------------------------------------------------
 
-unique_resp_q75_model <- glm(unique_resp_q75_outlier ~ participant_age + sex + site + occupation + hh_occupants, 
+unique_resp_q75_model <- glm(unique_resp_q75_outlier ~ participant_age + sex + site + occupation + hhsize, 
                              data = contacts_resp_ent, family = binomial())
 unique_resp_q75 <- as.data.frame(summary(unique_resp_q75_model)$coefficients) %>%
   as.data.frame() %>%
   tibble::rownames_to_column()
 
-unique_ent_q75_model <- glm(unique_ent_q75_outlier ~ participant_age + sex + site + occupation + hh_occupants, 
+unique_ent_q75_model <- glm(unique_ent_q75_outlier ~ participant_age + sex + site + occupation + hhsize, 
                             data = contacts_resp_ent, family = binomial())
 unique_ent_q75 <- as.data.frame(summary(unique_ent_q75_model)$coefficients) %>%
   as.data.frame() %>%
   tibble::rownames_to_column()
 
-# Unique Q90 threshold outlier model -------------------------------------------------
+## Unique Q90 threshold outlier model -------------------------------------------------
 
-unique_resp_q90_model <- glm(unique_resp_q90_outlier ~ participant_age + sex + site + occupation + hh_occupants, 
+unique_resp_q90_model <- glm(unique_resp_q90_outlier ~ participant_age + sex + site + occupation + hhsize, 
                              data = contacts_resp_ent, family = binomial())
 unique_resp_q90 <- as.data.frame(summary(unique_resp_q90_model)$coefficients) %>%
   as.data.frame() %>%
   tibble::rownames_to_column()
 
-unique_ent_q90_model <- glm(unique_ent_q90_outlier ~ participant_age + sex + site + occupation + hh_occupants, 
+unique_ent_q90_model <- glm(unique_ent_q90_outlier ~ participant_age + sex + site + occupation + hhsize, 
                             data = contacts_resp_ent, family = binomial())
 unique_ent_q90 <- as.data.frame(summary(unique_ent_q90_model)$coefficients) %>%
   as.data.frame() %>%
   tibble::rownames_to_column()
 
 
-# Unique figures --------------------------------------------------------
+## Unique figures --------------------------------------------------------
 
 names(unique_resp_mean) <- c("term", "estimate", "SE", "test_statistic", "p_value")
 names(unique_ent_mean) <- c("term", "estimate", "SE", "test_statistic", "p_value")
