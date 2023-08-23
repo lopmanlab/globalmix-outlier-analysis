@@ -180,6 +180,7 @@ enteric_matrix$contact_age <- NULL
 rownames(enteric_matrix) <- colnames(enteric_matrix)
 
 index_q <- function(m){
+  m = m/sum(m)
   colsum <- colSums(m)
   diagsum = 0
   colsumsq = 0
