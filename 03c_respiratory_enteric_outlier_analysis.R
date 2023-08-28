@@ -672,39 +672,70 @@ unique_ent_q75$term <- factor(unique_ent_q75$term, levels = factor_order)
 write.csv(unique_resp_q75, "data/unique_hhs_resp_q75.csv")
 write.csv(unique_ent_q75, "data/unique_hhs_ent_q75.csv")
 
-
+unique_resp_q90$Coefficient = c("(Intercept)","6-11mo", "1-4y", 
+                               "5-9y", "10-14y", "15-19y", "20-29y", 
+                               "30-39y", "40-59y", "60+y", 
+                               "Male", "Urban", "4-6", "7+")
 unique_resp_q90$log_pvalue <- log(round( unique_resp_q90$p_value, 2))
 unique_resp_q90$log_pvalue[which(is.infinite(unique_resp_q90$log_pvalue))] <- -5.99
-unique_resp_q90$term <- factor(unique_resp_q90$term, levels = factor_order)
+unique_resp_q90$term <- factor(unique_resp_q90$term, factor_order)
+unique_resp_q90$Coefficient <- factor(unique_resp_q90$Coefficient,
+                                      levels = unique_resp_q90$Coefficient)
+unique_resp_q90 <- unique_resp_q90[-1,]
+unique_resp_q90$group = c(rep("Age \n(Ref: <6 months)", 9), 
+                        "Sex \n(Ref: Female)", 
+                        "Site \n(Ref: Rural)",
+                        rep("Household Size \n(Ref: 0-3)", 2))
 
-png("figs/unique_hhs_resp_q90.png", width=3000, height=1000, res=300)
-ggplot(unique_resp_q90, aes(x = term, y = estimate, color = log_pvalue)) + 
+png("figs/unique_hhs_resp_q90.png", width=4000, height=2000, res=300)
+ggplot(unique_resp_q90, aes(x = factor(paste0(Coefficient, "&", group), 
+                                       level=paste0(Coefficient, "&", group)), 
+                            y = estimate, color = log_pvalue)) + 
   geom_point() +
+  geom_hline(yintercept = 0)+
   geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-  theme(axis.text.x = element_text(angle = 45, hjust = 0.95))+
-  scale_colour_gradient2(low = "forestgreen",
-                         mid = "goldenrod1",
-                         high = "firebrick", 
-                         midpoint=log(0.05),
+  # theme(axis.text.x = element_text(angle = 45))+
+  theme(axis.text = element_text(size = 12))+
+  scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
+                         values = rescale(c(0.01,0.05,0.1)),
                          guide = "colorbar")+
+  ylab("Estimate")+
+  xlab("Coefficient")+
+  guides(x = ggh4x::guide_axis_nested(delim = "&"))+
   ggtitle("Logistic: Q90 Outlier Threshold for Unique Avg Respiratory Contacts ~ Age + Sex + Site + HH Size")+
   ylim(-7, 7)
 dev.off()
 
+unique_ent_q90$Coefficient = c("(Intercept)","6-11mo", "1-4y", 
+                                  "5-9y", "10-14y", "15-19y", "20-29y", 
+                                  "30-39y", "40-59y", "60+y", 
+                               "Male", "Urban", "4-6", "7+")
 unique_ent_q90$log_pvalue <- log(round( unique_ent_q90$p_value, 2))
 unique_ent_q90$log_pvalue[which(is.infinite(unique_ent_q90$log_pvalue))] <- -5.99
 unique_ent_q90$term <- factor(unique_ent_q90$term, levels = factor_order)
+unique_ent_q90$Coefficient <- factor(unique_ent_q90$Coefficient, 
+                                      levels = unique_ent_q90$Coefficient)
+unique_ent_q90 <- unique_ent_q90[-1,]
+unique_ent_q90$group = c(rep("Age \n(Ref: <6 months)", 9), 
+                            "Sex \n(Ref: Female)", 
+                            "Site \n(Ref: Rural)",
+                        rep("Household Size \n(Ref: 0-3)", 2))
 
-png("figs/unique_hhs_ent_q90.png", width=3000, height=1000, res=300)
-ggplot(unique_ent_q90, aes(x = term, y = estimate, color = log_pvalue)) + 
+png("figs/unique_hhs_ent_q90.png", width=4000, height=2000, res=300)
+ggplot(unique_ent_q90, aes(x = factor(paste0(Coefficient, "&", group), 
+                                      level=paste0(Coefficient, "&", group)), 
+                           y = estimate, color = log_pvalue)) + 
   geom_point() +
+  geom_hline(yintercept = 0)+
   geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-  theme(axis.text.x = element_text(angle = 45, hjust = 0.95))+
-  scale_colour_gradient2(low = "forestgreen",
-                         mid = "goldenrod1",
-                         high = "firebrick", 
-                         midpoint=log(0.05),
+  # theme(axis.text.x = element_text(angle = 45))+
+  theme(axis.text = element_text(size = 12))+
+  scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
+                         values = rescale(c(0.01,0.05,0.1)),
                          guide = "colorbar")+
+  ylab("Estimate")+
+  xlab("Coefficient")+
+  guides(x = ggh4x::guide_axis_nested(delim = "&"))+
   ggtitle("Logistic: Q90 Outlier Threshold for Unique Avg Enteric Contacts ~ Age + Sex + Site + HH Size")+
   ylim(-7, 7)
 dev.off()
@@ -717,8 +748,9 @@ write.csv(unique_ent_q90, "data/unique_hhs_ent_q90.csv")
 
 adults_contacts_resp_ent <- contacts_resp_ent %>% filter(age >= 20, participant_age != "<6mo")
 adults_contacts_resp_ent$occupation[which(adults_contacts_resp_ent$occupation %in% 
-                                            c("Child", "Fisherman", "Retired"))] <- "Other"
-
+                                            c("Child", "Fisherman"))] <- "Other"
+adults_contacts_resp_ent$occupation[which(adults_contacts_resp_ent$occupation %in% 
+                                            c("Retired"))] <- "Unemployed"
 table(adults_contacts_resp_ent$occupation)
 table(adults_contacts_resp_ent$participant_age)
 

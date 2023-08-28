@@ -2,7 +2,6 @@
 ############## Exploratory ###############
 ##########################################
 
-
 rm(list = ls())
 library(here)
 library(dplyr)
@@ -14,7 +13,6 @@ library(plotly)
 contact_summaries <- readRDS(here("data/contact_summaries.rds"))
 df_contact <- readRDS(here("data/df_contact.rds"))
 contacts_resp_ent <- readRDS(here("data/contacts_resp_ent.rds"))
-
 
 #Contact Definition Exploration ------------------------------------------------
 
@@ -153,7 +151,28 @@ contacts_unique %>%
             q95 = quantile(avg_unique_contacts, probs = 0.95),
             q99 = quantile(avg_unique_contacts, probs = 0.99))
 
-tapply(contacts_unique$avg_unique_contacts, contacts_daily$site, summary)
+tapply(contacts_unique$avg_unique_contacts, contacts_unique$site, summary)
+
+
+tapply(contacts_unique$avg_unique_contacts, contacts_unique$hhsize, summary)
+table(contacts_unique$hhsize, useNA = "always")
+prop.table(table(contacts_unique$hhsize, useNA = "always"))*100
+
+tapply(contacts_daily$avg_daily_contacts, contacts_daily$hhsize, summary)
+table(contacts_daily$hhsize, useNA = "always")
+prop.table(table(contacts_daily$hhsize, useNA = "always"))*100
+
+adults <- contacts_unique %>% filter(age >= 20, participant_age != "<6mo")
+tapply(adults$avg_unique_contacts, adults$occupation, summary)
+table(adults$occupation, useNA = "always")
+prop.table(table(adults$occupation, useNA = "always"))*100
+
+adults <- contacts_daily %>% filter(age >= 20, participant_age != "<6mo")
+tapply(adults$avg_daily_contacts, adults$occupation, summary)
+table(adults$occupation, useNA = "always")
+prop.table(table(adults$occupation, useNA = "always"))*100
+
+
 
 # Table 1 - respiratory contacts -----------------------------------------------
 summary(contacts_resp_ent$avg_daily_resp_contacts)
@@ -206,6 +225,15 @@ contacts_resp_ent %>%
             q99 = quantile(avg_unique_resp_contacts, probs = 0.99))
 
 tapply(contacts_resp_ent$avg_unique_resp_contacts, contacts_resp_ent$study_site, summary)
+
+tapply(contacts_resp_ent$avg_unique_resp_contacts, contacts_resp_ent$hhsize, summary)
+table(contacts_resp_ent$hhsize, useNA = "always")
+prop.table(table(contacts_resp_ent$hhsize, useNA = "always"))*100
+
+adults <- contacts_resp_ent %>% filter(age >= 20, participant_age != "<6mo")
+tapply(adults$avg_unique_resp_contacts, adults$occupation, summary)
+table(adults$occupation, useNA = "always")
+prop.table(table(adults$occupation, useNA = "always"))*100
 
 
 # Table 1 - enteric contacts -----------------------------------------------

@@ -38,7 +38,8 @@ unique$outlier_mean <- ifelse(unique$avg_unique_contacts > contact_summaries$uni
                              1, 0)
 unique$outlier_q75 <- ifelse(unique$avg_unique_contacts > contact_summaries$unique_q75, 
                             1, 0)
-
+unique$outlier_q90 <- ifelse(unique$avg_unique_contacts > contact_summaries$unique_q90, 
+                             1, 0)
 daily$age <- as.numeric(daily$age)
 unique$age <- as.numeric(unique$age)
 
@@ -81,6 +82,16 @@ q75_unique_logistic <- as.data.frame(summary(logistic_model)$coefficients)
 logistic_int_model <- glm(outlier_q75 ~ participant_age * sex * site, 
                           data = unique, family = binomial())
 q75_unique_logistic_int <- as.data.frame(summary(logistic_int_model)$coefficients)
+
+# Unique Q90 threshold outlier model -------------------------------------------------
+
+logistic_model <- glm(outlier_q90 ~ participant_age + sex + site, 
+                      data = unique, family = binomial())
+q90_unique_logistic <- as.data.frame(summary(logistic_model)$coefficients)
+
+logistic_int_model <- glm(outlier_q90 ~ participant_age * sex * site, 
+                          data = unique, family = binomial())
+q90_unique_logistic_int <- as.data.frame(summary(logistic_int_model)$coefficients)
 
 # No interaction logistic plots---------------------------------------------------
 factor_order = c("(Intercept)","participant_age6-11mo", "participant_age1-4y", 
@@ -139,6 +150,8 @@ q75_unique_logistic <- q75_unique_logistic %>% tibble::rownames_to_column()
 names(q75_unique_logistic) <- names(q75_daily_logistic)
 q75_unique_logistic_int <- q75_unique_logistic_int %>% tibble::rownames_to_column()
 names(q75_unique_logistic_int) <- names(q75_daily_logistic)
+q90_unique_logistic <- q90_unique_logistic %>% tibble::rownames_to_column()
+names(q90_unique_logistic) <- names(q75_daily_logistic)
 
 q75_daily_logistic$log_pvalue <- log(round(q75_daily_logistic$p_value, 2))
 q75_daily_logistic$log_pvalue[which(is.infinite(q75_daily_logistic$log_pvalue))] <- -5.99
@@ -171,6 +184,38 @@ ggplot(q75_unique_logistic, aes(x = term, y = estimate, color = log_pvalue)) +
                          guide = "colorbar")+
   ggtitle("Logistic: Q75 Outlier Threshold for Unique Avg Contacts ~ Age + Sex + Site")
 dev.off()
+
+q90_unique_logistic$Coefficient = c("(Intercept)","6-11mo", "1-4y", 
+                              "5-9y", "10-14y", "15-19y", "20-29y", 
+                              "30-39y", "40-59y", "60+y", "Male", "Urban")
+q90_unique_logistic$log_pvalue <- log(round(q90_unique_logistic$p_value, 2))
+q90_unique_logistic$log_pvalue[which(is.infinite(q90_unique_logistic$log_pvalue))] <- -5.99
+q90_unique_logistic$term <- factor(q90_unique_logistic$term, levels = factor_order)
+q90_unique_logistic$Coefficient <- factor(q90_unique_logistic$Coefficient, 
+                                          levels = q90_unique_logistic$Coefficient)
+q90_unique_logistic <- q90_unique_logistic[-1,]
+q90_unique_logistic$group = c(rep("Age \n(Ref: <6 months)", 9), 
+                              "Sex \n(Ref: Female)", 
+                              "Site \n(Ref: Rural)")
+
+png("figs/q90_unique_logistic.png", width=4000, height=1500, res=300)
+ggplot(q90_unique_logistic, aes(x = factor(paste0(Coefficient, "&", group), 
+                                           level=paste0(Coefficient, "&", group)), 
+                                y = estimate, color = log_pvalue)) + 
+  geom_point() +
+  geom_hline(yintercept = 0)+
+  geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
+  # theme(axis.text.x = element_text(angle = 45))+
+  theme(axis.text = element_text(size = 12))+
+  scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
+                         values = rescale(c(0.01,0.05,0.1)),
+                         guide = "colorbar")+
+  ylab("Estimate")+
+  xlab("Coefficient")+
+  guides(x = ggh4x::guide_axis_nested(delim = "&"))+
+  ggtitle("Logistic: Q90 Outlier Threshold for Unique Avg Contacts ~ Age + Sex + Site")
+dev.off()
+
 
 # Interaction Logistic plots------------------------------------------------------
 # mean_daily_logistic_int$facet <- c(rep("Main", 90),

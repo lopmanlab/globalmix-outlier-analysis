@@ -193,6 +193,24 @@ index_q <- function(m){
   return(as.numeric(r))
 }
 
+sam_index_q <- function(m){
+  m = m/sum(m)
+  colsum <- colSums(m)
+  diagsum = 0
+  colsumsq = 0
+  for(i in 1:nrow(m)){
+    diagsum <- diagsum + m[i,i]
+    colsumsq <- colsumsq + (colsum[i]^2)
+  }
+  
+  r <- (diagsum - 1) / (nrow(m) - 1)
+  return(as.numeric(r))
+}
+
 index_q(respiratory_matrix)
 
 index_q(enteric_matrix)
+
+sam_index_q(respiratory_matrix)
+
+sam_index_q(enteric_matrix)

@@ -220,6 +220,37 @@ df_contact$occupation <- if_else(is.na(df_contact$occupation),
 
 df_contact$hh_occupants <- as.numeric(df_contact$hh_occupants)
 
+
+contacts_resp_ent$occupation <- factor(contacts_resp_ent$occupation,
+                                       levels = c("Unemployed", "Child", 
+                                                  "Student", "Farmer", 
+                                                  "Business person", "Office worker", 
+                                                  "Casual laboror", "Fisherman", 
+                                                  "Homemaker", "Retired",
+                                                  "Other"))
+
+hist(contacts_resp_ent$hh_occupants)
+write.csv(table(contacts_resp_ent$occupation) %>% as.data.frame(), "data/occupation_freq.csv")
+
+contacts_resp_ent$hhsize <- if_else(contacts_resp_ent$hh_occupants > 6, "7+",
+                                    if_else(contacts_resp_ent$hh_occupants > 3, "4-6",
+                                            "0-3"))
+contacts_resp_ent$hhsize <- factor(contacts_resp_ent$hhsize, 
+                                   levels = c("0-3", "4-6", "7+"))
+
+barplot(prop.table(table(contacts_resp_ent$hhsize)))
+
+contacts_resp_ent$age = as.numeric(contacts_resp_ent$age)
+adults_contacts_resp_ent <- contacts_resp_ent %>% filter(age >= 20, participant_age != "<6mo")
+adults_contacts_resp_ent$occupation[which(adults_contacts_resp_ent$occupation %in% 
+                                            c("Child", "Fisherman"))] <- "Other"
+adults_contacts_resp_ent$occupation[which(adults_contacts_resp_ent$occupation %in% 
+                                            c("Retired"))] <- "Unemployed"
+
+table(adults_contacts_resp_ent$occupation)
+table(adults_contacts_resp_ent$participant_age)
+
+
 saveRDS(contacts_resp_ent, here("data/contacts_resp_ent.RDS"))
 saveRDS(contact_summaries, here("data/contact_summaries.RDS"))
 saveRDS(df_contact, here("data/df_contact.RDS"))

@@ -9,6 +9,7 @@ library(lmerTest)
 
 participants <- readRDS(paste0(here(),"/../","globalmix-mozambique/data/clean/participant_data_aim1.RDS"))
 contacts <- readRDS(paste0(here(),"/../","globalmix-mozambique/data/clean/contact_data_aim1.RDS"))
+households <- readRDS(paste0(here(), "/../", "globalmix-mozambique/data/clean/household_survey_aim1.RDS"))
 
 ## Subset contacts to the IDs in participant list only
 contacts <- contacts %>%
@@ -60,7 +61,9 @@ contacts$cnt_otherplace <- factor(contacts$cnt_otherplace, levels = c(1, 0),
 
 df_contact <- contacts %>%
   dplyr::select(-study_site) %>%
-  left_join(participants, by=("rec_id"))
+  left_join(participants, by=("rec_id")) %>%
+  left_join( dplyr::select(households, "rec_id", "hh_occupants"), by=("rec_id"))
+
 
 df_contact_d1 <- df_contact %>%
   dplyr::filter(study_day==1)
@@ -496,7 +499,8 @@ fig1_hist_d2
 
 # contacts by site
 contacts_site <- df_contact %>%
-  dplyr::group_by(rec_id, study_site, study_day, participant_age, participant_sex, age) %>%
+  dplyr::group_by(rec_id, study_site, study_day, participant_age, 
+                  participant_sex, age, hh_occupants, occupation) %>%
   dplyr::summarize(num_contacts = n())
   
 median_contacts_site <- contacts_site %>%
@@ -660,7 +664,8 @@ fig1_hist
 ## Average Daily Contacts Histograms ---------------------------------------
 
 contacts_daily <- contacts_site %>%
-  dplyr::group_by(rec_id, study_site, participant_age, participant_sex, age) %>%
+  dplyr::group_by(rec_id, study_site, participant_age, participant_sex, age, 
+                  hh_occupants, occupation) %>%
   summarise(avg_daily_contacts = mean(num_contacts))
 
 median_daily_site <- contacts_daily %>%
@@ -700,7 +705,7 @@ ci_contacts <- as.data.frame(round(confint(ci_contacts),1))
 ## Average Unique Contacts Histograms ---------------------------------------
 c <- df_contact %>%
   dplyr::group_by(rec_id, fromdayone, study_site, participant_age, 
-                  participant_sex, age) %>%
+                  participant_sex, age, hh_occupants, occupation) %>%
   dplyr::summarize(contacts = n())
 
 contacts_unique <- tidyr::pivot_wider(c, names_from = fromdayone, values_from=contacts)
@@ -820,6 +825,41 @@ linear_int_model <- glm(avg_unique_contacts ~ participant_age * sex * site,
 unique_linear_int <- as.data.frame(summary(linear_int_model)$coefficients)
 
 # save data --------------------------------------------------------------
+contacts_daily$hhsize <- if_else(contacts_daily$hh_occupants > 6, "7+",
+                                 if_else(contacts_daily$hh_occupants > 3, 
+                                         "4-6",
+                                         "0-3"))
+contacts_daily$hhsize <- factor(contacts_daily$hhsize, 
+                                levels = c("0-3", "4-6", "7+"))
+
+contacts_unique$hhsize <- if_else(contacts_unique$hh_occupants > 6, "7+",
+                                  if_else(contacts_unique$hh_occupants > 3, 
+                                          "4-6",
+                                          "0-3"))
+contacts_unique$hhsize <- factor(contacts_unique$hhsize,
+                                 levels = c("0-3", "4-6", "7+"))
+
+contacts_daily$age = as.numeric(contacts_daily$age)
+contacts_unique$age = as.numeric(contacts_unique$age)
+
+contacts_daily$occupation[which(contacts_daily$occupation %in% c("Child", "Fisherman") &
+                                  contacts_daily$age >= 20 & 
+                                  contacts_daily$participant_age != "<6mo")] <- "Other"
+contacts_daily$occupation[which(contacts_daily$occupation %in% c("Retired") &
+                                  contacts_daily$age >= 20 & 
+                                  contacts_daily$participant_age != "<6mo")] <- "Unemployed"
+
+contacts_unique$occupation[which(contacts_unique$occupation %in% c("Child", "Fisherman") &
+                                   contacts_daily$age >= 20 & 
+                                   contacts_daily$participant_age != "<6mo")] <- "Other"
+contacts_unique$occupation[which(contacts_unique$occupation %in% c("Retired") &
+                                   contacts_daily$age >= 20 & 
+                                   contacts_daily$participant_age != "<6mo")] <- "Unemployed"
+
+table(contacts_unique$hhsize)
+
+
+
 saveRDS(contacts_daily, "data/contacts_daily.RDS")
 saveRDS(contacts_unique, "data/contacts_unique.RDS")
 
