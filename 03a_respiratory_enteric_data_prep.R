@@ -250,6 +250,20 @@ adults_contacts_resp_ent$occupation[which(adults_contacts_resp_ent$occupation %i
 table(adults_contacts_resp_ent$occupation)
 table(adults_contacts_resp_ent$participant_age)
 
+contacts_resp_ent %>% 
+  group_by(hhsize) %>% 
+  summarise(medianr = median(avg_unique_resp_contacts, na.rm = T),
+            meanr = mean(avg_unique_resp_contacts, na.rm = T),
+            mediane = median(avg_unique_ent_contacts, na.rm = T),
+            meane = mean(avg_unique_ent_contacts, na.rm = T))
+
+adults_contacts_resp_ent %>% 
+  group_by(occupation) %>% 
+  summarise(medianr = median(avg_unique_resp_contacts, na.rm = T),
+            meanr = mean(avg_unique_resp_contacts, na.rm = T),
+            mediane = median(avg_unique_ent_contacts, na.rm = T),
+            meane = mean(avg_unique_ent_contacts, na.rm = T))
+
 
 saveRDS(contacts_resp_ent, here("data/contacts_resp_ent.RDS"))
 saveRDS(contact_summaries, here("data/contact_summaries.RDS"))
