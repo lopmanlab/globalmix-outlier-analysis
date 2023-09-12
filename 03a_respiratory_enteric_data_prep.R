@@ -264,6 +264,18 @@ adults_contacts_resp_ent %>%
             mediane = median(avg_unique_ent_contacts, na.rm = T),
             meane = mean(avg_unique_ent_contacts, na.rm = T))
 
+ggplot(data = contacts_resp_ent)+
+  geom_histogram(aes(avg_unique_resp_contacts))+
+  geom_vline(aes(xintercept = contact_summaries$unique_resp_q75), color = "blue")+
+  geom_vline(aes(xintercept = contact_summaries$unique_resp_q90), color = "red")+
+  ggtitle("Unique Respiratory, Blue=Q75 and Red=Q90")
+
+ggplot(data = contacts_resp_ent)+
+  geom_histogram(aes(avg_unique_ent_contacts))+
+  geom_vline(aes(xintercept = contact_summaries$unique_ent_q75), color = "blue")+
+  geom_vline(aes(xintercept = contact_summaries$unique_ent_q90), color = "red")+
+  ggtitle("Unique Enteric, Blue=Q75 and Red=Q90")
+
 
 saveRDS(contacts_resp_ent, here("data/contacts_resp_ent.RDS"))
 saveRDS(contact_summaries, here("data/contact_summaries.RDS"))
