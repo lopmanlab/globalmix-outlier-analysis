@@ -613,7 +613,7 @@ ggplot(negbin_unique_ent, aes(x = factor(paste0(Coefficient, "&", group),
   scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
                          values = rescale(c(0.01,0.05,0.1)),
                          guide = "colorbar")+
-  ylab("Estimate")+
+  ylab("Beta Estimate")+
   xlab("Coefficient")+
   guides(x = ggh4x::guide_axis_nested(delim = "&"))+
   ggtitle("Negative Binomial: Unique Average Enteric Contacts ~ Age + Sex + Site")

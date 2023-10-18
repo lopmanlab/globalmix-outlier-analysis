@@ -19,8 +19,16 @@ contacts_resp_ent <- readRDS(here("data/contacts_resp_ent.rds"))
 #Average/Q75 respiratory and enteric contacts
 contact_summaries
 
+table(df_contact$respiratory == 1)
+table(df_contact$enteric == 1)
+
+table(df_contact$respiratory == 0 & df_contact$enteric == 0, useNA = "always")
+table(df_contact$respiratory == 1 & df_contact$enteric == 0, useNA = "always")
+table(df_contact$respiratory == 0 & df_contact$enteric == 1, useNA = "always")
+
+
 # Proportion of contacts that were considered both
-table(df_contact$respiratory == 1 & df_contact$enteric == 1)
+table(df_contact$respiratory == 1 & df_contact$enteric == 1, useNA = "always")
 16096 / (16096 + 3831)
 
 # Proportion of contacts that were considered both by site
