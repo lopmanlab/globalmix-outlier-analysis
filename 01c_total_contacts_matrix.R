@@ -36,4 +36,8 @@ unique_matrix <- contacts_unique %>% filter(!is.na(contact_age))%>%
   summarise(avg_unique_contacts = round(mean(avg_unique_contacts),1)) %>%
   pivot_wider(names_from = c("participant_age"), values_from = avg_unique_contacts) 
 
+unique_matrix$contact_age <- NULL
+
+rownames(unique_matrix) <- colnames(unique_matrix)
+
 write.csv(unique_matrix, "data/unique_matrix.csv")
