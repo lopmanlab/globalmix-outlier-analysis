@@ -41,7 +41,7 @@ contact_unique_resp %>% filter(!is.na(contact_age))%>%
                        limits=c(0,3), breaks=(c(0,1,2,3))) +
   labs(x ="Participant age", 
        y = "Contact age",
-       title = "Average Unique Respiratory Contacts",
+       title = "Figure 2. Average Unique Respiratory Contacts",
        fill = "Average\ncontacts") +
   theme(legend.title = element_text(size = 10),
         legend.text = element_text(size = 8),
@@ -118,7 +118,7 @@ contact_unique_ent %>% filter(!is.na(contact_age))%>%
                        limits=c(0,3.1), breaks=(c(0,1,2,3))) +
   labs(x ="Participant age", 
        y = "Contact age",
-       title = "Average Unique Enteric Contacts",
+       title = "Figure 3. Average Unique Enteric Contacts",
        fill = "Average\ncontacts") +
   theme(legend.title = element_text(size = 10),
         legend.text = element_text(size = 8),

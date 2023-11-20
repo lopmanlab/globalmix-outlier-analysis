@@ -688,23 +688,31 @@ unique_resp_q90$group = c(rep("Age \n(Ref: <6 months)", 9),
                         "Site \n(Ref: Rural)",
                         rep("Household Size \n(Ref: 0-3)", 2))
 
-png("figs/unique_hhs_resp_q90.png", width=4000, height=2000, res=300)
+png("figs/unique_hhs_resp_q90.png", width=4500, height=2000, res=300)
 ggplot(unique_resp_q90, aes(x = factor(paste0(Coefficient, "&", group), 
                                        level=paste0(Coefficient, "&", group)), 
                             y = estimate, color = log_pvalue)) + 
-  geom_point(size = 3) +
-  geom_hline(yintercept = 0)+
-  geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE), lwd = 1.5)+
-  # theme(axis.text.x = element_text(angle = 45))+
-  theme(axis.text = element_text(size = 12))+
+  geom_point(size = 4) +
+  geom_hline(yintercept = 0, lwd = 1.5)+
+  geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE), 
+                lwd = 1.5, width = 0.6)+
+  theme(legend.title = element_text(size = 10),
+        legend.text = element_text(size = 8),
+        legend.justification = "right") +
+  theme(plot.title = element_text(size = 20),
+        axis.title.x = element_text(size=16, face="bold"),
+        axis.title.y = element_text(size=16, face="bold"),
+        axis.text.x = element_text(size = 10),
+        axis.text.y = element_text(size= 10))+
   scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
                          values = rescale(c(0.01,0.05,0.1)),
                          guide = "colorbar")+
-  ylab("Estimate")+
-  xlab("Coefficient")+
+  ylab("Beta and Wald Confidence Interval")+
+  xlab("Predictor")+
   guides(x = ggh4x::guide_axis_nested(delim = "&"))+
-  ggtitle("Logistic: Q90 Outlier Threshold for Unique Avg Respiratory Contacts ~ Age + Sex + Site + HH Size")+
-  ylim(-7, 7)
+  ggtitle("Figure 2. Multivariate association between sociodemographic predictors and high respiratory contact")+
+  ylim(-2, 6)+ 
+  theme_bw()
 dev.off()
 
 unique_ent_q90$Coefficient = c("(Intercept)","6-11mo", "1-4y", 
@@ -722,23 +730,31 @@ unique_ent_q90$group = c(rep("Age \n(Ref: <6 months)", 9),
                             "Site \n(Ref: Rural)",
                         rep("Household Size \n(Ref: 0-3)", 2))
 
-png("figs/unique_hhs_ent_q90.png", width=4000, height=2000, res=300)
+png("figs/unique_hhs_ent_q90.png", width=4500, height=2000, res=300)
 ggplot(unique_ent_q90, aes(x = factor(paste0(Coefficient, "&", group), 
                                       level=paste0(Coefficient, "&", group)), 
                            y = estimate, color = log_pvalue)) + 
-  geom_point(size = 3) +
-  geom_hline(yintercept = 0)+
-  geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE), lwd = 1.5)+
-  # theme(axis.text.x = element_text(angle = 45))+
-  theme(axis.text = element_text(size = 12))+
+  geom_point(size = 4) +
+  geom_hline(yintercept = 0, lwd = 1.5)+
+  geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE), 
+                lwd = 1.5, width = 0.6)+
+  theme(legend.title = element_text(size = 10),
+        legend.text = element_text(size = 8),
+        legend.justification = "right") +
+  theme(plot.title = element_text(size = 20),
+        axis.title.x = element_text(size=16, face="bold"),
+        axis.title.y = element_text(size=16, face="bold"),
+        axis.text.x = element_text(size = 10),
+        axis.text.y = element_text(size= 10))+
   scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
                          values = rescale(c(0.01,0.05,0.1)),
                          guide = "colorbar")+
-  ylab("Estimate")+
-  xlab("Coefficient")+
+  ylab("Beta and Wald Confidence Interval")+
+  xlab("Predictor")+
   guides(x = ggh4x::guide_axis_nested(delim = "&"))+
-  ggtitle("Logistic: Q90 Outlier Threshold for Unique Avg Enteric Contacts ~ Age + Sex + Site + HH Size")+
-  ylim(-7, 7)
+  ggtitle("Figure 3. Multivariate association between sociodemographic predictors and high enteric contact")+
+  ylim(-2, 6)+ 
+  theme_bw()
 dev.off()
 
 
