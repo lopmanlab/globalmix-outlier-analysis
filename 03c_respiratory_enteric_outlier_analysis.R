@@ -240,7 +240,7 @@ names(unique_ent_q90) <- c("term", "estimate", "SE", "test_statistic", "p_value"
 unique_resp_q90$Coefficient = c("(Intercept)","30-39y", "40-59y", 
                                "60+y", "Male", "Urban",
                                "Student", "Farmer",
-                               "Business person", "Office worker",
+                               "Office worker",
                                "Casual laboror", "Homemaker", 
                                "Other")
 # unique_resp_q90$log_pvalue <- log(round( unique_resp_q90$p_value, 2))
@@ -252,12 +252,12 @@ unique_resp_q90 <- unique_resp_q90[-1,]
 unique_resp_q90$group = c(rep("Age \n(Ref: <6 months)", 3), 
                           "Sex \n(Ref: Female)", 
                           "Site \n(Ref: Rural)",
-                          rep("Occupation \n(Ref: Unemployed or Retired)", 7))
+                          rep("Occupation \n(Ref: Unemployed or Retired)", 6))
 
 png("figs/unique_occ_resp_q90.png", width=5000, height=2000, res=300)
 ggplot(unique_resp_q90, aes(x = factor(paste0(Coefficient, "&", group), 
                                        level=paste0(Coefficient, "&", group)), 
-                            y = estimate, color = log_pvalue)) + 
+                            y = estimate))+#, color = log_pvalue)) + 
   geom_point(size = 3) +
   geom_hline(yintercept = 0)+
   geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE), lwd = 1.5)+
@@ -276,7 +276,7 @@ dev.off()
 unique_ent_q90$Coefficient = c("(Intercept)","30-39y", "40-59y", 
                                 "60+y", "Male", "Urban",
                                 "Student", "Farmer",
-                                "Business person", "Office worker",
+                                "Office worker",
                                 "Casual laboror", "Homemaker", 
                                 "Other")
 # unique_ent_q90$log_pvalue <- log(round( unique_ent_q90$p_value, 2))
@@ -288,12 +288,12 @@ unique_ent_q90 <- unique_ent_q90[-1,]
 unique_ent_q90$group = c(rep("Age \n(Ref: <6 months)", 3), 
                           "Sex \n(Ref: Female)", 
                           "Site \n(Ref: Rural)",
-                          rep("Occupation \n(Ref: Unemployed or Retired)", 7))
+                          rep("Occupation \n(Ref: Unemployed or Retired)", 6))
 
 png("figs/unique_occ_ent_q90.png", width=5000, height=2000, res=300)
 ggplot(unique_ent_q90,aes(x = factor(paste0(Coefficient, "&", group), 
                                      level=paste0(Coefficient, "&", group)), 
-                          y = estimate, color = log_pvalue)) + 
+                          y = estimate))+#, color = log_pvalue)) + 
   geom_point(size = 3) +
   geom_hline(yintercept = 0)+
   geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE), lwd = 1.5)+
@@ -316,18 +316,31 @@ write.csv(unique_ent_q90, "data/unique_occ_ent_q90.csv")
 # Non HH contacts Unique Q90 threshold outlier model ----------------------------------
 
 contacts_resp_ent_nonHHcontacts <- readRDS(here("data/contacts_resp_ent_nonHHcontacts.RDS"))
-
+table(contacts_resp_ent_nonHHcontacts$unique_resp_q90_outlier)
 contacts_resp_ent_nonHHcontacts$age <- as.numeric(contacts_resp_ent_nonHHcontacts$age)
 contacts_resp_ent_nonHHcontacts$sex <- contacts_resp_ent_nonHHcontacts$participant_sex
 contacts_resp_ent_nonHHcontacts$site <- contacts_resp_ent_nonHHcontacts$study_site
 
-unique_resp_q90_model <- glm(unique_resp_q90_outlier ~ participant_age + sex + site + hhsize, 
+contacts_resp_ent_nonHHcontacts$part_age <- if_else(contacts_resp_ent_nonHHcontacts$participant_age == "<6mo" |
+                                                      contacts_resp_ent_nonHHcontacts$participant_age == "6-11mo",
+                                                    "<1y",
+                                                    contacts_resp_ent_nonHHcontacts$participant_age)
+
+table(contacts_resp_ent_nonHHcontacts$part_age, 
+      contacts_resp_ent_nonHHcontacts$participant_age)
+
+unique_resp_q90_model <- glm(unique_resp_q90_outlier ~ part_age + sex + site + hhsize, 
                              data = contacts_resp_ent_nonHHcontacts, family = binomial())
 unique_resp_q90 <- as.data.frame(summary(unique_resp_q90_model)$coefficients) %>%
   as.data.frame() %>%
   tibble::rownames_to_column()
 
-unique_ent_q90_model <- glm(unique_ent_q90_outlier ~ participant_age + sex + site + hhsize, 
+table(contacts_resp_ent_nonHHcontacts$participant_age, contacts_resp_ent_nonHHcontacts$unique_ent_q90_outlier)
+table(contacts_resp_ent_nonHHcontacts$participant_age, contacts_resp_ent_nonHHcontacts$unique_resp_q90_outlier)
+table(contacts_resp_ent_nonHHcontacts$part_age, contacts_resp_ent_nonHHcontacts$unique_ent_q90_outlier)
+table(contacts_resp_ent_nonHHcontacts$part_age, contacts_resp_ent_nonHHcontacts$unique_resp_q90_outlier)
+
+unique_ent_q90_model <- glm(unique_ent_q90_outlier ~ part_age + sex + site + hhsize, 
                             data = contacts_resp_ent_nonHHcontacts, family = binomial())
 unique_ent_q90 <- as.data.frame(summary(unique_ent_q90_model)$coefficients) %>%
   as.data.frame() %>%

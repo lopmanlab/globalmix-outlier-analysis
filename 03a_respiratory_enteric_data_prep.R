@@ -161,48 +161,48 @@ contacts_resp_ent <- left_join(contact_daily_resp,
 contact_summaries <- contacts_resp_ent %>%
   distinct() %>%
   ungroup() %>%
-  dplyr::summarize(unique_resp_q50 = quantile(avg_daily_resp_contacts, probs = 0.50, na.rm=T),
-                   unique_resp_q75 = quantile(avg_daily_resp_contacts, probs = 0.75, na.rm=T),
-                   unique_resp_q90 = quantile(avg_daily_resp_contacts, probs = 0.90, na.rm=T),
-                   unique_resp_mean = mean(avg_daily_resp_contacts, na.rm=T),
-                   unique_ent_q50 = quantile(avg_daily_ent_contacts, probs = 0.50, na.rm=T),
-                   unique_ent_q75 = quantile(avg_daily_ent_contacts, probs = 0.75, na.rm=T),
-                   unique_ent_q90 = quantile(avg_daily_ent_contacts, probs = 0.90, na.rm=T),
-                   unique_ent_mean = mean(avg_daily_ent_contacts, na.rm=T),
-                   daily_resp_q50 = quantile(avg_unique_resp_contacts, probs = 0.50, na.rm=T),
-                   daily_resp_q75 = quantile(avg_unique_resp_contacts, probs = 0.75, na.rm=T),
-                   daily_resp_q90 = quantile(avg_unique_resp_contacts, probs = 0.90, na.rm=T),
-                   daily_resp_mean = mean(avg_unique_resp_contacts, na.rm=T),
-                   daily_ent_q50 = quantile(avg_unique_ent_contacts, probs = 0.50, na.rm=T),
-                   daily_ent_q75 = quantile(avg_unique_ent_contacts, probs = 0.75, na.rm=T),
-                   daily_ent_q90 = quantile(avg_unique_ent_contacts, probs = 0.90, na.rm=T),
-                   daily_ent_mean = mean(avg_unique_ent_contacts, na.rm=T))
+  dplyr::summarize(daily_resp_q50 = quantile(avg_daily_resp_contacts, probs = 0.50, na.rm=T),
+                   daily_resp_q75 = quantile(avg_daily_resp_contacts, probs = 0.75, na.rm=T),
+                   daily_resp_q90 = quantile(avg_daily_resp_contacts, probs = 0.90, na.rm=T),
+                   daily_resp_mean = mean(avg_daily_resp_contacts, na.rm=T),
+                   daily_ent_q50 = quantile(avg_daily_ent_contacts, probs = 0.50, na.rm=T),
+                   daily_ent_q75 = quantile(avg_daily_ent_contacts, probs = 0.75, na.rm=T),
+                   daily_ent_q90 = quantile(avg_daily_ent_contacts, probs = 0.90, na.rm=T),
+                   daily_ent_mean = mean(avg_daily_ent_contacts, na.rm=T),
+                   unique_resp_q50 = quantile(avg_unique_resp_contacts, probs = 0.50, na.rm=T),
+                   unique_resp_q75 = quantile(avg_unique_resp_contacts, probs = 0.75, na.rm=T),
+                   unique_resp_q90 = quantile(avg_unique_resp_contacts, probs = 0.90, na.rm=T),
+                   unique_resp_mean = mean(avg_unique_resp_contacts, na.rm=T),
+                   unique_ent_q50 = quantile(avg_unique_ent_contacts, probs = 0.50, na.rm=T),
+                   unique_ent_q75 = quantile(avg_unique_ent_contacts, probs = 0.75, na.rm=T),
+                   unique_ent_q90 = quantile(avg_unique_ent_contacts, probs = 0.90, na.rm=T),
+                   unique_ent_mean = mean(avg_unique_ent_contacts, na.rm=T))
 
 contacts_resp_ent <- contacts_resp_ent %>%
   mutate(daily_resp_mean_outlier = 
-           ifelse(avg_unique_resp_contacts > contact_summaries$daily_resp_mean, 1, 0),
+           ifelse(avg_daily_resp_contacts > contact_summaries$daily_resp_mean, 1, 0),
          daily_resp_q75_outlier = 
-           ifelse(avg_unique_resp_contacts > contact_summaries$daily_resp_q75, 1, 0),
+           ifelse(avg_daily_resp_contacts > contact_summaries$daily_resp_q75, 1, 0),
          daily_resp_q90_outlier = 
-           ifelse(avg_unique_resp_contacts > contact_summaries$daily_resp_q90, 1, 0),
+           ifelse(avg_daily_resp_contacts > contact_summaries$daily_resp_q90, 1, 0),
          daily_ent_mean_outlier = 
-           ifelse(avg_unique_ent_contacts > contact_summaries$daily_ent_mean, 1, 0),
+           ifelse(avg_daily_ent_contacts > contact_summaries$daily_ent_mean, 1, 0),
          daily_ent_q75_outlier = 
-           ifelse(avg_unique_ent_contacts > contact_summaries$daily_ent_q75, 1, 0),
+           ifelse(avg_daily_ent_contacts > contact_summaries$daily_ent_q75, 1, 0),
          daily_ent_q90_outlier = 
-           ifelse(avg_unique_ent_contacts > contact_summaries$daily_ent_q90, 1, 0),
+           ifelse(avg_daily_ent_contacts > contact_summaries$daily_ent_q90, 1, 0),
          unique_resp_mean_outlier = 
-           ifelse(avg_daily_resp_contacts > contact_summaries$unique_resp_mean, 1, 0),
+           ifelse(avg_unique_resp_contacts > contact_summaries$unique_resp_mean, 1, 0),
          unique_resp_q75_outlier = 
-           ifelse(avg_daily_resp_contacts > contact_summaries$unique_resp_q75, 1, 0),
+           ifelse(avg_unique_resp_contacts > contact_summaries$unique_resp_q75, 1, 0),
          unique_resp_q90_outlier = 
-           ifelse(avg_daily_resp_contacts > contact_summaries$unique_resp_q90, 1, 0),
+           ifelse(avg_unique_resp_contacts > contact_summaries$unique_resp_q90, 1, 0),
          unique_ent_mean_outlier = 
-           ifelse(avg_daily_ent_contacts > contact_summaries$unique_ent_mean, 1, 0),
+           ifelse(avg_unique_ent_contacts > contact_summaries$unique_ent_mean, 1, 0),
          unique_ent_q75_outlier = 
-           ifelse(avg_daily_ent_contacts > contact_summaries$unique_ent_q75, 1, 0),
+           ifelse(avg_unique_ent_contacts > contact_summaries$unique_ent_q75, 1, 0),
          unique_ent_q90_outlier = 
-           ifelse(avg_daily_ent_contacts > contact_summaries$unique_ent_q90, 1, 0))
+           ifelse(avg_unique_ent_contacts > contact_summaries$unique_ent_q90, 1, 0))
 
 # Clean up hh_occupants and occupation -----------------------------------------
 # table(contacts_resp_ent$age, contacts_resp_ent$occupation, useNA = "always")
@@ -284,12 +284,13 @@ saveRDS(df_contact, here("data/df_contact.RDS"))
 # Non-household contacts -------------------------------------------------------
 
 contacts_resp <- df_contact %>%
+  filter(hh_membership == "Non-member") %>%
   dplyr::group_by(rec_id, fromdayone, respiratory, study_site, 
                   participant_age, participant_sex, age,
-                  occupation, hh_occupants, hh_membership) %>%
+                  occupation, hh_occupants) %>%
   dplyr::summarize(num_contacts = n())
 
-contacts_unique_resp <- tidyr::pivot_wider(contacts_resp %>% filter(respiratory == 1, hh_membership == "Non-member"), 
+contacts_unique_resp <- tidyr::pivot_wider(contacts_resp %>% filter(respiratory == 1), 
                                            names_from = fromdayone, values_from=num_contacts)
 contacts_unique_resp$`Both Days`[which(is.na(contacts_unique_resp$`Both Days`))] <- 0
 contacts_unique_resp$`Day1 Only`[which(is.na(contacts_unique_resp$`Day1 Only`))] <- 0
@@ -301,12 +302,13 @@ contacts_unique_resp$avg_unique_resp_contacts <- (round(contacts_unique_resp$`Bo
                                                     contacts_unique_resp$`NA`)/2
 
 contacts_ent <- df_contact %>%
+  filter(hh_membership == "Non-member") %>%
   dplyr::group_by(rec_id, fromdayone, enteric, study_site, 
                   participant_age, participant_sex, age,
-                  occupation, hh_occupants, hh_membership) %>%
+                  occupation, hh_occupants) %>%
   dplyr::summarize(num_contacts = n())
 
-contacts_unique_ent <- tidyr::pivot_wider(contacts_ent %>% filter(enteric == 1, hh_membership == "Non-member"), 
+contacts_unique_ent <- tidyr::pivot_wider(contacts_ent %>% filter(enteric == 1), 
                                           names_from = fromdayone, values_from=num_contacts)
 contacts_unique_ent$`Both Days`[which(is.na(contacts_unique_ent$`Both Days`))] <- 0
 contacts_unique_ent$`Day1 Only`[which(is.na(contacts_unique_ent$`Day1 Only`))] <- 0
@@ -334,48 +336,48 @@ contacts_resp_ent <- left_join(contact_daily_resp,
 contact_summaries <- contacts_resp_ent %>%
   distinct() %>%
   ungroup() %>%
-  dplyr::summarize(unique_resp_q50 = quantile(avg_daily_resp_contacts, probs = 0.50, na.rm=T),
-                   unique_resp_q75 = quantile(avg_daily_resp_contacts, probs = 0.75, na.rm=T),
-                   unique_resp_q90 = quantile(avg_daily_resp_contacts, probs = 0.90, na.rm=T),
-                   unique_resp_mean = mean(avg_daily_resp_contacts, na.rm=T),
-                   unique_ent_q50 = quantile(avg_daily_ent_contacts, probs = 0.50, na.rm=T),
-                   unique_ent_q75 = quantile(avg_daily_ent_contacts, probs = 0.75, na.rm=T),
-                   unique_ent_q90 = quantile(avg_daily_ent_contacts, probs = 0.90, na.rm=T),
-                   unique_ent_mean = mean(avg_daily_ent_contacts, na.rm=T),
-                   daily_resp_q50 = quantile(avg_unique_resp_contacts, probs = 0.50, na.rm=T),
-                   daily_resp_q75 = quantile(avg_unique_resp_contacts, probs = 0.75, na.rm=T),
-                   daily_resp_q90 = quantile(avg_unique_resp_contacts, probs = 0.90, na.rm=T),
-                   daily_resp_mean = mean(avg_unique_resp_contacts, na.rm=T),
-                   daily_ent_q50 = quantile(avg_unique_ent_contacts, probs = 0.50, na.rm=T),
-                   daily_ent_q75 = quantile(avg_unique_ent_contacts, probs = 0.75, na.rm=T),
-                   daily_ent_q90 = quantile(avg_unique_ent_contacts, probs = 0.90, na.rm=T),
-                   daily_ent_mean = mean(avg_unique_ent_contacts, na.rm=T))
+  dplyr::summarize(daily_resp_q50 = quantile(avg_daily_resp_contacts, probs = 0.50, na.rm=T),
+                   daily_resp_q75 = quantile(avg_daily_resp_contacts, probs = 0.75, na.rm=T),
+                   daily_resp_q90 = quantile(avg_daily_resp_contacts, probs = 0.90, na.rm=T),
+                   daily_resp_mean = mean(avg_daily_resp_contacts, na.rm=T),
+                   daily_ent_q50 = quantile(avg_daily_ent_contacts, probs = 0.50, na.rm=T),
+                   daily_ent_q75 = quantile(avg_daily_ent_contacts, probs = 0.75, na.rm=T),
+                   daily_ent_q90 = quantile(avg_daily_ent_contacts, probs = 0.90, na.rm=T),
+                   daily_ent_mean = mean(avg_daily_ent_contacts, na.rm=T),
+                   unique_resp_q50 = quantile(avg_unique_resp_contacts, probs = 0.50, na.rm=T),
+                   unique_resp_q75 = quantile(avg_unique_resp_contacts, probs = 0.75, na.rm=T),
+                   unique_resp_q90 = quantile(avg_unique_resp_contacts, probs = 0.90, na.rm=T),
+                   unique_resp_mean = mean(avg_unique_resp_contacts, na.rm=T),
+                   unique_ent_q50 = quantile(avg_unique_ent_contacts, probs = 0.50, na.rm=T),
+                   unique_ent_q75 = quantile(avg_unique_ent_contacts, probs = 0.75, na.rm=T),
+                   unique_ent_q90 = quantile(avg_unique_ent_contacts, probs = 0.90, na.rm=T),
+                   unique_ent_mean = mean(avg_unique_ent_contacts, na.rm=T))
 
 contacts_resp_ent <- contacts_resp_ent %>%
   mutate(daily_resp_mean_outlier = 
-           ifelse(avg_unique_resp_contacts > contact_summaries$daily_resp_mean, 1, 0),
+           ifelse(avg_daily_resp_contacts > contact_summaries$daily_resp_mean, 1, 0),
          daily_resp_q75_outlier = 
-           ifelse(avg_unique_resp_contacts > contact_summaries$daily_resp_q75, 1, 0),
+           ifelse(avg_daily_resp_contacts > contact_summaries$daily_resp_q75, 1, 0),
          daily_resp_q90_outlier = 
-           ifelse(avg_unique_resp_contacts > contact_summaries$daily_resp_q90, 1, 0),
+           ifelse(avg_daily_resp_contacts > contact_summaries$daily_resp_q90, 1, 0),
          daily_ent_mean_outlier = 
-           ifelse(avg_unique_ent_contacts > contact_summaries$daily_ent_mean, 1, 0),
+           ifelse(avg_daily_ent_contacts > contact_summaries$daily_ent_mean, 1, 0),
          daily_ent_q75_outlier = 
-           ifelse(avg_unique_ent_contacts > contact_summaries$daily_ent_q75, 1, 0),
+           ifelse(avg_daily_ent_contacts > contact_summaries$daily_ent_q75, 1, 0),
          daily_ent_q90_outlier = 
-           ifelse(avg_unique_ent_contacts > contact_summaries$daily_ent_q90, 1, 0),
+           ifelse(avg_daily_ent_contacts > contact_summaries$daily_ent_q90, 1, 0),
          unique_resp_mean_outlier = 
-           ifelse(avg_daily_resp_contacts > contact_summaries$unique_resp_mean, 1, 0),
+           ifelse(avg_unique_resp_contacts > contact_summaries$unique_resp_mean, 1, 0),
          unique_resp_q75_outlier = 
-           ifelse(avg_daily_resp_contacts > contact_summaries$unique_resp_q75, 1, 0),
+           ifelse(avg_unique_resp_contacts > contact_summaries$unique_resp_q75, 1, 0),
          unique_resp_q90_outlier = 
-           ifelse(avg_daily_resp_contacts > contact_summaries$unique_resp_q90, 1, 0),
+           ifelse(avg_unique_resp_contacts > contact_summaries$unique_resp_q90, 1, 0),
          unique_ent_mean_outlier = 
-           ifelse(avg_daily_ent_contacts > contact_summaries$unique_ent_mean, 1, 0),
+           ifelse(avg_unique_ent_contacts > contact_summaries$unique_ent_mean, 1, 0),
          unique_ent_q75_outlier = 
-           ifelse(avg_daily_ent_contacts > contact_summaries$unique_ent_q75, 1, 0),
+           ifelse(avg_unique_ent_contacts > contact_summaries$unique_ent_q75, 1, 0),
          unique_ent_q90_outlier = 
-           ifelse(avg_daily_ent_contacts > contact_summaries$unique_ent_q90, 1, 0))
+           ifelse(avg_unique_ent_contacts > contact_summaries$unique_ent_q90, 1, 0))
 
 # Clean up hh_occupants and occupation 
 contacts_resp_ent$occupation <- if_else(is.na(contacts_resp_ent$occupation),
