@@ -1,7 +1,5 @@
 rm(list=ls())
 library(here)
-library(dplyr)
-library(ggplot2)
 library(plotly)
 library(tidyverse)
 library(MASS)
