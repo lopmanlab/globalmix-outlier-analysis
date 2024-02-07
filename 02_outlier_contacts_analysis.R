@@ -11,8 +11,8 @@ require(MASS)
 library(lmerTest)
 
 # Read in Data -----------------------------------------------------------------
-unique <- readRDS(here("data/contacts_unique.RDS"))
-daily <- readRDS(here("data/contacts_daily.RDS"))
+unique <- read.csv(here("data/contacts_unique.csv"))
+daily <- read.csv(here("data/contacts_daily.csv"))
 
 contact_summaries <- unique %>%
   distinct() %>%

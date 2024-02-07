@@ -5,9 +5,9 @@ library(ggplot2)
 library(plotly)
 library(tidyverse)
 
-participants <- readRDS(paste0(here(),"/../","globalmix-mozambique/data/clean/participant_data_aim1.RDS"))
-contacts <- readRDS(paste0(here(),"/../", "globalmix-mozambique/data/clean/contact_data_aim1.RDS"))
-households <- readRDS(paste0(here(), "/../", "globalmix-mozambique/data/clean/household_survey_aim1.RDS"))
+participants <- readRDS(paste0(here(),"/data/prasad_india_individual_21jan2024.RDS"))
+contacts <- readRDS(paste0(here(),"/data/prasad_india_contact_21jan2024.RDS"))
+households <- readRDS(paste0(here(), "/data/prasad_india_household_21jan2024.RDS"))
 
 ## Subset contacts to the IDs in participant list only
 contacts <- contacts %>%
@@ -276,9 +276,9 @@ ggplot(data = contacts_resp_ent)+
   ggtitle("Unique Enteric, Blue=Q75 and Red=Q90")
 
 
-saveRDS(contacts_resp_ent, here("data/contacts_resp_ent.RDS"))
-saveRDS(contact_summaries, here("data/contact_summaries.RDS"))
-saveRDS(df_contact, here("data/df_contact.RDS"))
+write.csv(contacts_resp_ent, here("data/contacts_resp_ent.csv"))
+write.csv(contact_summaries, here("data/contact_summaries.csv"))
+write.csv(df_contact, here("data/df_contact.csv"))
 
 
 # Non-household contacts -------------------------------------------------------
@@ -434,4 +434,4 @@ adults_contacts_resp_ent %>%
             mediane = median(avg_unique_ent_contacts, na.rm = T),
             meane = mean(avg_unique_ent_contacts, na.rm = T))
 
-saveRDS(contacts_resp_ent, here("data/contacts_resp_ent_nonHHcontacts.RDS"))
+write.csv(contacts_resp_ent, here("data/contacts_resp_ent_nonHHcontacts.csv"))

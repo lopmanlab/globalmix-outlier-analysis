@@ -6,7 +6,7 @@ library(plotly)
 library(tidyverse)
 library(MASS)
 
-df_contact <- readRDS(here("data/df_contact.RDS"))
+df_contact <- read.csv(here("data/df_contact.csv"))
 
 contact_unique_resp <- df_contact %>%
   dplyr::group_by(rec_id, fromdayone, respiratory, contact_age,

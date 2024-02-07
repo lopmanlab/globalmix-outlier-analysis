@@ -1,15 +1,15 @@
 rm(list=ls())
-library(here)
-library(dplyr)
-library(ggplot2)
-library(plotly)
-library(lme4)
-require(MASS)
-library(lmerTest)
+pacman::p_load(here,
+               dplyr,
+               ggplot2, 
+               plotly, 
+               lme4, 
+               MASS,
+               lmerTest)
 
-participants <- readRDS(paste0(here(),"/../","globalmix-mozambique/data/clean/participant_data_aim1.RDS"))
-contacts <- readRDS(paste0(here(),"/../","globalmix-mozambique/data/clean/contact_data_aim1.RDS"))
-households <- readRDS(paste0(here(), "/../", "globalmix-mozambique/data/clean/household_survey_aim1.RDS"))
+participants <- load(paste0(here(),"/data/raw/prasad_india_individual_21jan2024.RData"))
+contacts <- load(paste0(here(),"/data/raw/prasad_india_contact_21jan2024.RDS"))
+households <- load(paste0(here(), "/data/raw/prasad_india_household_21jan2024.RDS"))
 
 ## Subset contacts to the IDs in participant list only
 contacts <- contacts %>%
@@ -860,8 +860,8 @@ table(contacts_unique$hhsize)
 
 
 
-saveRDS(contacts_daily, "data/contacts_daily.RDS")
-saveRDS(contacts_unique, "data/contacts_unique.RDS")
+write.csv(contacts_daily, "data/contacts_daily.csv")
+write.csv(contacts_unique, "data/contacts_unique.csv")
 
 write.csv(unique_linear, "data/unique_linear.csv")
 write.csv(unique_linear_int, "data/unique_linear_int.csv")

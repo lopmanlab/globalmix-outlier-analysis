@@ -9,7 +9,7 @@ library(ggpubr)
 
 # Read in Data -----------------------------------------------------------------
 
-df_contact <- readRDS(here("data/df_contact.RDS"))
+df_contact <- read.csv(here("data/df_contact.csv"))
 
 # Create unique matrix ---------------------------------------------------------
 

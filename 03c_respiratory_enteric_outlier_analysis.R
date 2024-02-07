@@ -5,7 +5,7 @@ library(tidyverse)
 library(MASS)
 library(scales)
 
-contacts_resp_ent <- readRDS(here("data/contacts_resp_ent.RDS"))
+contacts_resp_ent <- read.csv(here("data/contacts_resp_ent.csv"))
 
 contacts_resp_ent$age <- as.numeric(contacts_resp_ent$age)
 contacts_resp_ent$sex <- contacts_resp_ent$participant_sex
@@ -313,7 +313,7 @@ write.csv(unique_ent_q90, "data/unique_occ_ent_q90.csv")
 
 # Non HH contacts Unique Q90 threshold outlier model ----------------------------------
 
-contacts_resp_ent_nonHHcontacts <- readRDS(here("data/contacts_resp_ent_nonHHcontacts.RDS"))
+contacts_resp_ent_nonHHcontacts <- read.csv(here("data/contacts_resp_ent_nonHHcontacts.csv"))
 table(contacts_resp_ent_nonHHcontacts$unique_resp_q90_outlier)
 contacts_resp_ent_nonHHcontacts$age <- as.numeric(contacts_resp_ent_nonHHcontacts$age)
 contacts_resp_ent_nonHHcontacts$sex <- contacts_resp_ent_nonHHcontacts$participant_sex
