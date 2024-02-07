@@ -59,6 +59,15 @@ df_contact <- contacts %>%
   left_join(participants, by=("rec_id")) %>%
   left_join( dplyr::select(households, "rec_id", "hh_occupants"), by=("rec_id"))
 
+
+png("figs/contacts_duration.png", height = 750, width = 1250, res = 200)
+ggplot(df_contact %>% 
+         drop_na(participant_age, duration_contact) %>%
+         mutate(duration_contact = factor(duration_contact, levels=c("<5 mins", "5-15 mins", "16-30 mins", "31 mins-1 hr", "1-4 hrs", ">4 hrs"))), 
+       aes(fill=duration_contact, y=participant_age)) + 
+  geom_bar(position="fill", stat="count")
+dev.off()
+
 df_contact <- df_contact %>%
   mutate(duration = case_when(duration_contact == "<5 mins" ~ 0,
                               duration_contact == "5-15 mins" ~ 1,
@@ -83,6 +92,22 @@ df_contact <- df_contact %>%
                           )
          )
 
+
+png("figs/duration_by_where.png", height = 500, width = 1250, res = 200)
+ggplot(df_contact %>% 
+         drop_na(where_contact, duration_contact) %>%
+         mutate(duration_contact = factor(duration_contact, levels=c("<5 mins", "5-15 mins", "16-30 mins", "31 mins-1 hr", "1-4 hrs", ">4 hrs"))), 
+       aes(fill=duration_contact, y=where_contact)) + 
+  geom_bar(position="fill", stat="count")
+dev.off()
+
+png("figs/duration_by_household.png", height = 500, width = 1250, res = 200)
+ggplot(df_contact %>% 
+         drop_na(cnt_home, duration_contact) %>%
+         mutate(duration_contact = factor(duration_contact, levels=c("<5 mins", "5-15 mins", "16-30 mins", "31 mins-1 hr", "1-4 hrs", ">4 hrs"))), 
+       aes(fill=duration_contact, y=cnt_home)) + 
+  geom_bar(position="fill", stat="count")
+dev.off()
 
 contacts_resp <- df_contact %>%
   dplyr::group_by(rec_id, study_site, study_day, participant_age, 

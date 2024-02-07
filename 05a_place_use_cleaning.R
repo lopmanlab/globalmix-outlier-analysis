@@ -12,4 +12,16 @@ pacman::p_load(here,
 
 placeuse_raw <- readRDS(paste0(here(),"/../","globalmix-mozambique/data/clean/locations_visited_aim1.RDS"))
 
-table(placeuse_raw$place_visited, placeuse_raw$num_pax_place)
+placeuse_clean <- placeuse_raw %>%
+  mutate(num_pax_place = as.numeric(num_pax_place)) 
+
+summary(placeuse_clean %>% group_by(place_visited) %>% select(num_pax_place))
+tapply(placeuse_clean$num_pax_place, (placeuse_clean$place_visited), summary)
+
+png("figs/place_by_time.png", height = 750, width = 1250, res = 200)
+ggplot(placeuse_clean %>% 
+         drop_na(place_visited, time_visited) %>%
+         mutate(time_visited = factor(time_visited, levels=c("<5 mins", "5-15 mins", "16-30 mins", "31 mins-1 hr", "1-4 hrs", ">4 hrs"))), 
+       aes(fill=time_visited, y=place_visited)) + 
+  geom_bar(position="fill", stat="count")
+dev.off()
