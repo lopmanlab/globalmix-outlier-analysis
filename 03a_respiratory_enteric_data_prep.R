@@ -1,21 +1,20 @@
 rm(list=ls())
-library(here)
-library(dplyr)
-library(ggplot2)
-library(plotly)
-library(tidyverse)
+pacman::p_load(here,
+               dplyr,
+               ggplot2, 
+               plotly, 
+               lme4, 
+               MASS,
+               lmerTest)
 
-participants <- readRDS(paste0(here(),"/data/prasad_india_individual_21jan2024.RDS"))
-contacts <- readRDS(paste0(here(),"/data/prasad_india_contact_21jan2024.RDS"))
-households <- readRDS(paste0(here(), "/data/prasad_india_household_21jan2024.RDS"))
+participants <- read.csv(paste0(here(),"/data/raw/prasad_india_individual_21jan2024.csv"))
+contacts <- read.csv(paste0(here(),"/data/raw/prasad_india_contact_21jan2024.csv"))
+households <- read.csv(paste0(here(), "/data/raw/prasad_india_household_21jan2024.csv"))
 
 ## Subset contacts to the IDs in participant list only
 contacts <- contacts %>%
-  dplyr::filter(rec_id %in% unlist(participants$rec_id))
-
-# Filter contact relationship == self (you cannot have a contact with yourself)
-contacts <- contacts %>%
-  dplyr::filter(hh_member_relationship != "Self")
+  dplyr::filter(rec_id %in% unlist(participants$rec_id)) #%>%
+  # mutate(fromdayone = ifelse(is.na(fromdayone), study_day, fromdayone))
 
 # relationship
 contacts$hh_membership <- factor(contacts$hh_membership,
@@ -55,8 +54,8 @@ contacts$cnt_otherplace <- factor(contacts$cnt_otherplace, levels = c(1, 0),
                                   labels = c("Yes", "No"))
 
 df_contact <- contacts %>%
-  dplyr::select(-study_site) %>%
-  left_join(participants, by=("rec_id")) %>%
+  # dplyr::select(-study_site) %>%
+  left_join(participants %>% mutate(age = round(age_months/12)), by=("rec_id")) %>%
   left_join( dplyr::select(households, "rec_id", "hh_occupants"), by=("rec_id"))
 
 df_contact <- df_contact %>%
@@ -104,13 +103,13 @@ contacts_resp <- df_contact %>%
 
 contacts_unique_resp <- tidyr::pivot_wider(contacts_resp %>% filter(respiratory == 1), 
                                      names_from = fromdayone, values_from=num_contacts)
-contacts_unique_resp$`Both Days`[which(is.na(contacts_unique_resp$`Both Days`))] <- 0
-contacts_unique_resp$`Day1 Only`[which(is.na(contacts_unique_resp$`Day1 Only`))] <- 0
-contacts_unique_resp$`Day2 Only`[which(is.na(contacts_unique_resp$`Day2 Only`))] <- 0
+contacts_unique_resp$`Both days`[which(is.na(contacts_unique_resp$`Both days`))] <- 0
+contacts_unique_resp$`Day 1`[which(is.na(contacts_unique_resp$`Day 1`))] <- 0
+contacts_unique_resp$`Day 2`[which(is.na(contacts_unique_resp$`Day 2`))] <- 0
 contacts_unique_resp$`NA`[which(is.na(contacts_unique_resp$`NA`))] <- 0
-contacts_unique_resp$avg_unique_resp_contacts <- (round(contacts_unique_resp$`Both Days` / 2)+
-                                                  contacts_unique_resp$`Day1 Only` + 
-                                                  contacts_unique_resp$`Day2 Only`+
+contacts_unique_resp$avg_unique_resp_contacts <- (round(contacts_unique_resp$`Both days` / 2)+
+                                                  contacts_unique_resp$`Day 1` +
+                                                  contacts_unique_resp$`Day 2`+
                                                   contacts_unique_resp$`NA`)/2
 
 
@@ -134,13 +133,13 @@ contacts_ent <- df_contact %>%
 
 contacts_unique_ent <- tidyr::pivot_wider(contacts_ent %>% filter(enteric == 1), 
                                      names_from = fromdayone, values_from=num_contacts)
-contacts_unique_ent$`Both Days`[which(is.na(contacts_unique_ent$`Both Days`))] <- 0
-contacts_unique_ent$`Day1 Only`[which(is.na(contacts_unique_ent$`Day1 Only`))] <- 0
-contacts_unique_ent$`Day2 Only`[which(is.na(contacts_unique_ent$`Day2 Only`))] <- 0
+contacts_unique_ent$`Both days`[which(is.na(contacts_unique_ent$`Both days`))] <- 0
+contacts_unique_ent$`Day 1`[which(is.na(contacts_unique_ent$`Day 1`))] <- 0
+contacts_unique_ent$`Day 2`[which(is.na(contacts_unique_ent$`Day 2`))] <- 0
 contacts_unique_ent$`NA`[which(is.na(contacts_unique_ent$`NA`))] <- 0
-contacts_unique_ent$avg_unique_ent_contacts <- (round(contacts_unique_ent$`Both Days` / 2)+
-                                                contacts_unique_ent$`Day1 Only` + 
-                                                contacts_unique_ent$`Day2 Only`+
+contacts_unique_ent$avg_unique_ent_contacts <- (round(contacts_unique_ent$`Both days` / 2)+
+                                                contacts_unique_ent$`Day 1` +
+                                                contacts_unique_ent$`Day 2`+
                                                 contacts_unique_ent$`NA`)/2
 
 # One main dataset for all outcomes ---------------------------------------------
@@ -229,13 +228,15 @@ contacts_resp_ent$occupation <- factor(contacts_resp_ent$occupation,
                                                   "Other"))
 
 hist(contacts_resp_ent$hh_occupants)
+table(contacts_resp_ent$hh_occupants)
 write.csv(table(contacts_resp_ent$occupation) %>% as.data.frame(), "data/occupation_freq.csv")
 
-contacts_resp_ent$hhsize <- if_else(contacts_resp_ent$hh_occupants > 6, "7+",
-                                    if_else(contacts_resp_ent$hh_occupants > 3, "4-6",
-                                            "0-3"))
+contacts_resp_ent$hhsize <- ifelse(contacts_resp_ent$hh_occupants > 6, "7+",
+                                    ifelse(contacts_resp_ent$hh_occupants > 4, "5-6",
+                                            ifelse(contacts_resp_ent$hh_occupants > 2, "3-4",
+                                                    2)))
 contacts_resp_ent$hhsize <- factor(contacts_resp_ent$hhsize, 
-                                   levels = c("0-3", "4-6", "7+"))
+                                   levels = c("2", "3-4", "5-6", "7+"))
 
 barplot(prop.table(table(contacts_resp_ent$hhsize)))
 
@@ -275,6 +276,20 @@ ggplot(data = contacts_resp_ent)+
   geom_vline(aes(xintercept = contact_summaries$unique_ent_q90), color = "red")+
   ggtitle("Unique Enteric, Blue=Q75 and Red=Q90")
 
+contacts_resp_ent <- contacts_resp_ent %>%
+  mutate(p_age = case_when(
+    participant_age == "60+y" ~ "60+y",
+    age == 60 & participant_age == "40-59y" ~ "50-59y",
+    age >= 50 & age <= 59 ~ "50-59y",
+    participant_age == "30-39y" ~ "30-39y",
+    age >= 40 & age <= 49 ~ "40-49y",
+    participant_age == "20-29y" ~ "20-29y",
+    participant_age %in% c("10-14y", "15-19y") ~ "10-19y",
+    participant_age == "5-9y" ~ "5-9y",
+    .default = "<4y")) %>%
+  mutate(p_age = factor(p_age, c("<4y", "5-9y", "10-19y", "20-29y", "30-39y",
+                                 "40-49y", "50-59y", "60+y")))
+
 
 write.csv(contacts_resp_ent, here("data/contacts_resp_ent.csv"))
 write.csv(contact_summaries, here("data/contact_summaries.csv"))
@@ -292,13 +307,13 @@ contacts_resp <- df_contact %>%
 
 contacts_unique_resp <- tidyr::pivot_wider(contacts_resp %>% filter(respiratory == 1), 
                                            names_from = fromdayone, values_from=num_contacts)
-contacts_unique_resp$`Both Days`[which(is.na(contacts_unique_resp$`Both Days`))] <- 0
-contacts_unique_resp$`Day1 Only`[which(is.na(contacts_unique_resp$`Day1 Only`))] <- 0
-contacts_unique_resp$`Day2 Only`[which(is.na(contacts_unique_resp$`Day2 Only`))] <- 0
+contacts_unique_resp$`Both days`[which(is.na(contacts_unique_resp$`Both days`))] <- 0
+contacts_unique_resp$`Day 1`[which(is.na(contacts_unique_resp$`Day 1`))] <- 0
+contacts_unique_resp$`Day 2`[which(is.na(contacts_unique_resp$`Day 2`))] <- 0
 contacts_unique_resp$`NA`[which(is.na(contacts_unique_resp$`NA`))] <- 0
-contacts_unique_resp$avg_unique_resp_contacts <- (round(contacts_unique_resp$`Both Days` / 2)+
-                                                    contacts_unique_resp$`Day1 Only` + 
-                                                    contacts_unique_resp$`Day2 Only`+
+contacts_unique_resp$avg_unique_resp_contacts <- (round(contacts_unique_resp$`Both days` / 2)+
+                                                    contacts_unique_resp$`Day 1` + 
+                                                    contacts_unique_resp$`Day 2`+
                                                     contacts_unique_resp$`NA`)/2
 
 contacts_ent <- df_contact %>%
@@ -310,13 +325,13 @@ contacts_ent <- df_contact %>%
 
 contacts_unique_ent <- tidyr::pivot_wider(contacts_ent %>% filter(enteric == 1), 
                                           names_from = fromdayone, values_from=num_contacts)
-contacts_unique_ent$`Both Days`[which(is.na(contacts_unique_ent$`Both Days`))] <- 0
-contacts_unique_ent$`Day1 Only`[which(is.na(contacts_unique_ent$`Day1 Only`))] <- 0
-contacts_unique_ent$`Day2 Only`[which(is.na(contacts_unique_ent$`Day2 Only`))] <- 0
+contacts_unique_ent$`Both days`[which(is.na(contacts_unique_ent$`Both days`))] <- 0
+contacts_unique_ent$`Day 1`[which(is.na(contacts_unique_ent$`Day 1`))] <- 0
+contacts_unique_ent$`Day 2`[which(is.na(contacts_unique_ent$`Day 2`))] <- 0
 contacts_unique_ent$`NA`[which(is.na(contacts_unique_ent$`NA`))] <- 0
-contacts_unique_ent$avg_unique_ent_contacts <- (round(contacts_unique_ent$`Both Days` / 2)+
-                                                  contacts_unique_ent$`Day1 Only` + 
-                                                  contacts_unique_ent$`Day2 Only`+
+contacts_unique_ent$avg_unique_ent_contacts <- (round(contacts_unique_ent$`Both days` / 2)+
+                                                  contacts_unique_ent$`Day 1` + 
+                                                  contacts_unique_ent$`Day 2`+
                                                   contacts_unique_ent$`NA`)/2
 # One main dataset for all outcomes
 
@@ -403,10 +418,11 @@ hist(contacts_resp_ent$hh_occupants)
 # write.csv(table(contacts_resp_ent$occupation) %>% as.data.frame(), "data/occupation_freq.csv")
 
 contacts_resp_ent$hhsize <- if_else(contacts_resp_ent$hh_occupants > 6, "7+",
-                                    if_else(contacts_resp_ent$hh_occupants > 3, "4-6",
-                                            "0-3"))
+                                    if_else(contacts_resp_ent$hh_occupants > 4, "5-6",
+                                            if_else(contacts_resp_ent$hh_occupants > 2, "3-4", 
+                                                   "1-2")))
 contacts_resp_ent$hhsize <- factor(contacts_resp_ent$hhsize, 
-                                   levels = c("0-3", "4-6", "7+"))
+                                   levels = c("1-2", "3-4", "5-6", "7+"))
 
 barplot(prop.table(table(contacts_resp_ent$hhsize)))
 

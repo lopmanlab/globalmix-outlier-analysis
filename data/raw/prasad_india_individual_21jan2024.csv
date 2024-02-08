@@ -1,0 +1,1245 @@
+"","rec_id","study_site","participant_age","age_months","participant_sex","occupation","occupation_text","mask_use"
+"1","807-1","Rural","<6mo",4,"Male","Child",NA,NA
+"2","811-1","Urban","6-11mo",10,"Male","Child",NA,NA
+"3","820-1","Rural","<6mo",2,"Male","Child",NA,NA
+"4","821-1","Rural","<6mo",4,"Male","Child",NA,NA
+"5","827-1","Rural","<6mo",1,"Male","Child",NA,NA
+"6","828-1","Rural","<6mo",2,"Female","Child",NA,NA
+"7","832-1","Rural","<6mo",2,"Female","Child",NA,NA
+"8","860-1","Urban","6-11mo",6,"Male","Child",NA,NA
+"9","862-1","Urban","6-11mo",10,"Female","Child",NA,NA
+"10","863-1","Urban","6-11mo",7,"Female","Child",NA,NA
+"11","877-1","Urban","<6mo",5,"Male","Child",NA,NA
+"12","881-1","Urban","6-11mo",6,"Female","Child",NA,NA
+"13","888-1","Urban","6-11mo",8,"Male","Child",NA,NA
+"14","889-1","Urban","6-11mo",6,"Female","Child",NA,NA
+"15","912-1","Urban","<6mo",2,"Female","Child",NA,NA
+"16","923-1","Urban","<6mo",3,"Male","Child",NA,NA
+"17","929-1","Urban","6-11mo",10,"Female","Child",NA,NA
+"18","942-1","Rural","6-11mo",8,"Female","Child",NA,NA
+"19","948-1","Rural","<6mo",5,"Female","Child",NA,NA
+"20","950-1","Rural","<6mo",1,"Female","Child",NA,NA
+"21","952-1","Rural","<6mo",4,"Male","Child",NA,NA
+"22","958-1","Rural","6-11mo",9,"Male","Child",NA,NA
+"23","967-1","Rural","<6mo",1,"Female","Child",NA,NA
+"24","969-1","Rural","<6mo",5,"Female","Child",NA,NA
+"25","972-1","Urban","6-11mo",8,"Female","Child",NA,NA
+"26","974-1","Urban","6-11mo",9,"Female","Child",NA,NA
+"27","975-1","Urban","6-11mo",6,"Male","Child",NA,NA
+"28","976-1","Urban","<6mo",1,"Female","Child",NA,NA
+"29","977-1","Urban","6-11mo",9,"Female","Child",NA,NA
+"30","978-1","Urban","<6mo",3,"Female","Child",NA,NA
+"31","987-1","Urban","6-11mo",8,"Male","Child",NA,NA
+"32","989-1","Urban","<6mo",5,"Female","Child",NA,NA
+"33","991-1","Urban","6-11mo",6,"Male","Child",NA,NA
+"34","995-1","Urban","6-11mo",9,"Male","Child",NA,NA
+"35","997-1","Urban","<6mo",2,"Female","Child",NA,NA
+"36","1002-1","Urban","<6mo",3,"Male","Child",NA,NA
+"37","1003-1","Urban","<6mo",4,"Female","Child",NA,NA
+"38","1004-1","Rural","<6mo",4,"Male","Child",NA,NA
+"39","1006-1","Rural","6-11mo",9,"Male","Child",NA,NA
+"40","1011-1","Rural","<6mo",1,"Male","Child",NA,NA
+"41","1015-1","Urban","6-11mo",6,"Female","Child",NA,NA
+"42","1017-1","Urban","6-11mo",6,"Male","Child",NA,NA
+"43","1019-1","Urban","6-11mo",11,"Male","Child",NA,NA
+"44","1039-1","Urban","6-11mo",9,"Female","Child",NA,NA
+"45","1049-1","Urban","<6mo",3,"Male","Child",NA,NA
+"46","1052-1","Urban","<6mo",2,"Male","Child",NA,NA
+"47","1054-1","Rural","6-11mo",10,"Female","Child",NA,NA
+"48","1055-1","Rural","6-11mo",6,"Female","Child",NA,NA
+"49","1056-1","Rural","<6mo",4,"Male","Child",NA,NA
+"50","1058-1","Rural","6-11mo",6,"Female","Child",NA,NA
+"51","1059-1","Rural","<6mo",2,"Male","Child",NA,NA
+"52","1073-1","Rural","<6mo",0,"Female","Child",NA,NA
+"53","1074-1","Rural","<6mo",5,"Male","Child",NA,NA
+"54","1075-1","Rural","<6mo",3,"Female","Child",NA,NA
+"55","1076-1","Urban","6-11mo",11,"Female","Child",NA,NA
+"56","1077-1","Urban","6-11mo",11,"Male","Child",NA,NA
+"57","1078-1","Urban","6-11mo",10,"Female","Child",NA,NA
+"58","1079-1","Urban","6-11mo",7,"Female","Child",NA,NA
+"59","1080-1","Urban","6-11mo",8,"Female","Child",NA,NA
+"60","1081-1","Rural","6-11mo",9,"Male","Child",NA,NA
+"61","1082-1","Rural","6-11mo",6,"Male","Child",NA,NA
+"62","1083-1","Rural","6-11mo",11,"Female","Child",NA,NA
+"63","1084-1","Rural","6-11mo",7,"Male","Child",NA,NA
+"64","1085-1","Rural","6-11mo",6,"Male","Child",NA,NA
+"65","1086-1","Urban","6-11mo",10,"Male","Child",NA,NA
+"66","1087-1","Urban","6-11mo",9,"Male","Child",NA,NA
+"67","1089-1","Urban","6-11mo",6,"Female","Child",NA,NA
+"68","1090-1","Rural","6-11mo",6,"Female","Child",NA,NA
+"69","1091-1","Rural","6-11mo",11,"Male","Child",NA,NA
+"70","1092-1","Rural","6-11mo",8,"Female","Child",NA,NA
+"71","1093-1","Rural","6-11mo",6,"Male","Child",NA,NA
+"72","1094-1","Rural","6-11mo",8,"Male","Child",NA,NA
+"73","1095-1","Rural","6-11mo",11,"Male","Child",NA,NA
+"74","1096-1","Rural","6-11mo",8,"Female","Child",NA,NA
+"75","1097-1","Rural","6-11mo",11,"Female","Child",NA,NA
+"76","1098-1","Rural","6-11mo",6,"Female","Child",NA,NA
+"77","1099-1","Rural","6-11mo",9,"Male","Child",NA,NA
+"78","1100-1","Rural","6-11mo",6,"Male","Child",NA,NA
+"79","1101-1","Rural","6-11mo",9,"Male","Child",NA,NA
+"80","1102-1","Rural","6-11mo",6,"Female","Child",NA,NA
+"81","1103-1","Rural","6-11mo",9,"Female","Child",NA,NA
+"82","1104-1","Rural","6-11mo",11,"Female","Child",NA,NA
+"83","1105-1","Rural","6-11mo",10,"Female","Child",NA,NA
+"84","1106-1","Rural","6-11mo",9,"Female","Child",NA,NA
+"85","1107-1","Rural","6-11mo",10,"Male","Child",NA,NA
+"86","1108-1","Rural","6-11mo",9,"Female","Child",NA,NA
+"87","1109-1","Rural","6-11mo",6,"Female","Child",NA,NA
+"88","1110-1","Rural","6-11mo",6,"Female","Child",NA,NA
+"89","17-2","Rural","<6mo",3,"Female","Child",NA,NA
+"90","19-2","Rural","6-11mo",9,"Male","Child",NA,NA
+"91","24-2","Rural","<6mo",2,"Female","Child",NA,NA
+"92","31-2","Rural","<6mo",0,"Male","Child",NA,NA
+"93","37-2","Rural","<6mo",0,"Female","Child",NA,NA
+"94","45-2","Rural","6-11mo",11,"Female","Child",NA,NA
+"95","63-2","Rural","<6mo",2,"Male","Child",NA,NA
+"96","67-2","Rural","<6mo",3,"Male","Child",NA,NA
+"97","70-2","Rural","<6mo",1,"Female","Child",NA,NA
+"98","75-2","Rural","<6mo",0,"Male","Child",NA,NA
+"99","84-2","Rural","<6mo",1,"Male","Child",NA,NA
+"100","103-2","Urban","<6mo",5,"Female","Child",NA,NA
+"101","108-2","Urban","<6mo",3,"Male","Child",NA,NA
+"102","117-2","Urban","<6mo",2,"Male","Child",NA,NA
+"103","124-2","Urban","6-11mo",8,"Male","Child",NA,NA
+"104","125-2","Urban","6-11mo",7,"Male","Child",NA,NA
+"105","133-2","Urban","<6mo",2,"Female","Child",NA,NA
+"106","138-2","Rural","<6mo",2,"Female","Child",NA,NA
+"107","147-2","Rural","<6mo",4,"Female","Child",NA,NA
+"108","154-2","Urban","<6mo",5,"Male","Child",NA,NA
+"109","157-2","Rural","<6mo",2,"Female","Child",NA,NA
+"110","161-2","Rural","<6mo",2,"Male","Child",NA,NA
+"111","168-2","Urban","6-11mo",9,"Female","Child",NA,NA
+"112","172-2","Rural","<6mo",3,"Male","Child",NA,NA
+"113","181-2","Urban","6-11mo",10,"Male","Child",NA,NA
+"114","186-2","Urban","<6mo",3,"Male","Child",NA,NA
+"115","189-2","Rural","<6mo",3,"Female","Child",NA,NA
+"116","199-2","Urban","6-11mo",11,"Male","Child",NA,NA
+"117","207-2","Urban","<6mo",2,"Female","Child",NA,NA
+"118","210-2","Rural","6-11mo",10,"Male","Child",NA,NA
+"119","217-2","Urban","<6mo",3,"Female","Child",NA,NA
+"120","234-2","Urban","6-11mo",6,"Female","Child",NA,NA
+"121","237-2","Urban","<6mo",5,"Male","Child",NA,NA
+"122","242-2","Rural","<6mo",5,"Male","Child",NA,NA
+"123","246-2","Urban","<6mo",2,"Female","Child",NA,NA
+"124","249-2","Urban","6-11mo",10,"Female","Child",NA,NA
+"125","254-2","Rural","<6mo",0,"Male","Child",NA,NA
+"126","259-2","Urban","<6mo",2,"Male","Child",NA,NA
+"127","263-2","Urban","<6mo",1,"Male","Child",NA,NA
+"128","294-2","Urban","6-11mo",7,"Male","Child",NA,NA
+"129","319-2","Urban","<6mo",3,"Female","Child",NA,NA
+"130","321-2","Urban","<6mo",3,"Female","Child",NA,NA
+"131","322-2","Rural","<6mo",2,"Male","Child",NA,NA
+"132","334-2","Urban","<6mo",3,"Male","Child",NA,NA
+"133","352-2","Urban","<6mo",1,"Male","Child",NA,NA
+"134","356-2","Urban","<6mo",0,"Male","Child",NA,NA
+"135","360-2","Rural","<6mo",1,"Male","Child",NA,NA
+"136","363-2","Urban","<6mo",4,"Female","Child",NA,NA
+"137","372-2","Urban","<6mo",1,"Male","Child",NA,NA
+"138","384-2","Rural","6-11mo",9,"Female","Child",NA,NA
+"139","388-2","Rural","<6mo",0,"Female","Child",NA,NA
+"140","400-2","Urban","6-11mo",9,"Male","Child",NA,NA
+"141","408-2","Rural","6-11mo",6,"Female","Child",NA,NA
+"142","414-2","Urban","<6mo",5,"Female","Child",NA,NA
+"143","420-2","Rural","6-11mo",9,"Male","Child",NA,NA
+"144","421-2","Rural","<6mo",1,"Male","Child",NA,NA
+"145","423-2","Rural","6-11mo",7,"Female","Child",NA,NA
+"146","436-2","Urban","6-11mo",9,"Female","Child",NA,NA
+"147","438-2","Urban","6-11mo",9,"Male","Child",NA,NA
+"148","441-2","Urban","6-11mo",9,"Male","Child",NA,NA
+"149","452-2","Urban","<6mo",1,"Female","Child",NA,NA
+"150","457-2","Urban","<6mo",5,"Female","Child",NA,NA
+"151","464-2","Rural","<6mo",1,"Female","Child",NA,NA
+"152","475-2","Rural","<6mo",0,"Female","Child",NA,NA
+"153","481-2","Rural","<6mo",0,"Male","Child",NA,NA
+"154","485-2","Rural","<6mo",2,"Female","Child",NA,NA
+"155","489-2","Urban","6-11mo",7,"Female","Child",NA,NA
+"156","494-2","Urban","<6mo",1,"Female","Child",NA,NA
+"157","498-2","Urban","6-11mo",11,"Female","Child",NA,NA
+"158","502-2","Urban","6-11mo",9,"Female","Child",NA,NA
+"159","519-2","Urban","6-11mo",10,"Female","Child",NA,NA
+"160","522-2","Rural","6-11mo",8,"Male","Child",NA,NA
+"161","526-2","Urban","6-11mo",10,"Male","Child",NA,NA
+"162","533-2","Rural","<6mo",0,"Male","Child",NA,NA
+"163","538-2","Urban","<6mo",3,"Female","Child",NA,NA
+"164","546-2","Rural","<6mo",0,"Female","Child",NA,NA
+"165","564-2","Urban","<6mo",2,"Female","Child",NA,NA
+"166","568-2","Rural","<6mo",0,"Female","Child",NA,NA
+"167","574-2","Rural","6-11mo",8,"Male","Child",NA,NA
+"168","577-2","Rural","6-11mo",8,"Female","Child",NA,NA
+"169","588-2","Rural","<6mo",4,"Male","Child",NA,NA
+"170","593-2","Rural","6-11mo",10,"Male","Child",NA,NA
+"171","599-2","Rural","6-11mo",11,"Female","Child",NA,NA
+"172","603-2","Rural","<6mo",1,"Male","Child",NA,NA
+"173","608-2","Rural","6-11mo",10,"Male","Child",NA,NA
+"174","613-2","Rural","<6mo",0,"Male","Child",NA,NA
+"175","617-2","Urban","6-11mo",7,"Male","Child",NA,NA
+"176","618-2","Urban","6-11mo",11,"Female","Child",NA,NA
+"177","619-2","Urban","6-11mo",6,"Female","Child",NA,NA
+"178","621-2","Rural","6-11mo",6,"Female","Child",NA,NA
+"179","624-2","Rural","6-11mo",8,"Female","Child",NA,NA
+"180","628-2","Rural","<6mo",0,"Male","Child",NA,NA
+"181","633-2","Rural","<6mo",3,"Male","Child",NA,NA
+"182","637-2","Rural","<6mo",0,"Female","Child",NA,NA
+"183","640-2","Rural","<6mo",3,"Female","Child",NA,NA
+"184","645-2","Rural","<6mo",0,"Male","Child",NA,NA
+"185","649-2","Rural","<6mo",4,"Female","Child",NA,NA
+"186","653-2","Rural","<6mo",2,"Male","Child",NA,NA
+"187","659-2","Rural","6-11mo",10,"Male","Child",NA,NA
+"188","663-2","Rural","<6mo",5,"Female","Child",NA,NA
+"189","666-2","Rural","<6mo",0,"Male","Child",NA,NA
+"190","675-2","Urban","<6mo",4,"Male","Child",NA,NA
+"191","679-2","Urban","6-11mo",6,"Female","Child",NA,NA
+"192","683-2","Urban","<6mo",3,"Male","Child",NA,NA
+"193","685-2","Urban","<6mo",5,"Male","Child",NA,NA
+"194","688-2","Urban","6-11mo",9,"Female","Child",NA,NA
+"195","691-2","Urban","<6mo",4,"Male","Child",NA,NA
+"196","697-2","Urban","6-11mo",11,"Female","Child",NA,NA
+"197","700-2","Urban","6-11mo",9,"Male","Child",NA,NA
+"198","703-2","Urban","<6mo",0,"Male","Child",NA,NA
+"199","708-2","Urban","<6mo",3,"Male","Child",NA,NA
+"200","725-2","Urban","<6mo",2,"Female","Child",NA,NA
+"201","729-2","Urban","<6mo",3,"Female","Child",NA,NA
+"202","734-2","Urban","<6mo",0,"Male","Child",NA,NA
+"203","737-2","Urban","<6mo",5,"Female","Child",NA,NA
+"204","738-2","Urban","<6mo",1,"Male","Child",NA,NA
+"205","741-2","Urban","<6mo",2,"Male","Child",NA,NA
+"206","744-2","Urban","6-11mo",7,"Male","Child",NA,NA
+"207","747-2","Urban","<6mo",5,"Female","Child",NA,NA
+"208","751-2","Urban","<6mo",3,"Female","Child",NA,NA
+"209","755-2","Urban","6-11mo",8,"Male","Child",NA,NA
+"210","761-2","Urban","<6mo",1,"Female","Child",NA,NA
+"211","764-2","Urban","6-11mo",7,"Male","Child",NA,NA
+"212","767-2","Rural","6-11mo",8,"Female","Child",NA,NA
+"213","770-2","Rural","6-11mo",8,"Male","Child",NA,NA
+"214","773-2","Rural","6-11mo",7,"Male","Child",NA,NA
+"215","776-2","Rural","6-11mo",10,"Female","Child",NA,NA
+"216","781-2","Rural","6-11mo",8,"Female","Child",NA,NA
+"217","784-2","Rural","6-11mo",10,"Male","Child",NA,NA
+"218","787-2","Urban","6-11mo",10,"Male","Child",NA,NA
+"219","790-2","Urban","<6mo",0,"Female","Child",NA,NA
+"220","792-2","Urban","<6mo",2,"Female","Child",NA,NA
+"221","794-2","Urban","<6mo",5,"Female","Child",NA,NA
+"222","797-2","Urban","<6mo",0,"Female","Child",NA,NA
+"223","1-1","Urban","60+y",905,"Female","Unemployed adult",NA,NA
+"224","2-1","Urban","60+y",902,"Female","Unemployed adult",NA,NA
+"225","3-1","Urban","60+y",722,"Male","Skilled laborer","Beedi worker",NA
+"226","4-1","Urban","60+y",902,"Female","Unemployed adult",NA,NA
+"227","5-1","Urban","60+y",782,"Male","Unemployed adult",NA,NA
+"228","6-1","Urban","60+y",722,"Male","Unskilled laborer","Kooli",NA
+"229","7-1","Urban","60+y",746,"Female","Unskilled laborer","Hotel helper",NA
+"230","8-1","Urban","60+y",806,"Female",NA,NA,NA
+"231","9-1","Urban","60+y",914,"Male","Unemployed adult",NA,NA
+"232","10-1","Urban","60+y",866,"Male","Unskilled laborer","Mason",NA
+"233","11-1","Urban","60+y",866,"Male","Skilled laborer","Flowerist",NA
+"234","12-1","Urban","60+y",722,"Female","Unskilled laborer","Labour",NA
+"235","13-1","Urban","60+y",758,"Female",NA,NA,NA
+"236","14-1","Urban","60+y",794,"Male","Farmer/ Clerk/ Shopkeeper",NA,NA
+"237","15-1","Urban","60+y",842,"Female","Unemployed adult",NA,NA
+"238","16-1","Urban","60+y",722,"Male","Unskilled laborer","Watch man",NA
+"239","17-1","Rural","60+y",855,"Female","Unskilled laborer","100 days woeker",NA
+"240","18-1","Rural","60+y",831,"Female","Unskilled laborer","100 days worker",NA
+"241","19-1","Rural","60+y",1023,"Female","Unemployed adult",NA,NA
+"242","20-1","Rural","40-59y",687,"Female","Unemployed adult",NA,NA
+"243","21-1","Rural","60+y",879,"Female","Unemployed adult",NA,NA
+"244","22-1","Rural","60+y",797,"Male","Farmer/ Clerk/ Shopkeeper",NA,NA
+"245","23-1","Rural","60+y",923,"Female","Unemployed adult",NA,NA
+"246","24-1","Urban","60+y",902,"Female","Unemployed adult",NA,NA
+"247","25-1","Urban","60+y",722,"Female",NA,NA,NA
+"248","26-1","Urban","60+y",722,"Male","Retired",NA,NA
+"249","27-1","Urban","60+y",830,"Female",NA,NA,NA
+"250","28-1","Urban","60+y",902,"Female","Unskilled laborer","Labour",NA
+"251","29-1","Urban","60+y",818,"Female","Unemployed adult",NA,NA
+"252","30-1","Urban","60+y",950,"Male","Unemployed adult",NA,NA
+"253","31-1","Rural","40-59y",713,"Male","Farmer/ Clerk/ Shopkeeper",NA,NA
+"254","32-1","Rural","60+y",986,"Male","Unemployed adult",NA,NA
+"255","33-1","Rural","60+y",880,"Male","Unemployed adult",NA,NA
+"256","34-1","Urban","60+y",972,"Female","Unemployed adult",NA,NA
+"257","35-1","Rural","40-59y",686,"Female","Unskilled laborer","100 days worker",NA
+"258","36-1","Rural","60+y",721,"Female",NA,NA,NA
+"259","37-1","Rural","60+y",747,"Male","Unemployed adult",NA,NA
+"260","38-1","Rural","60+y",759,"Female",NA,NA,NA
+"261","39-1","Rural","60+y",891,"Male","Farmer/ Clerk/ Shopkeeper",NA,NA
+"262","40-1","Rural","60+y",855,"Female",NA,NA,NA
+"263","41-1","Rural","60+y",951,"Female",NA,NA,NA
+"264","42-1","Rural","60+y",975,"Female","Unemployed adult",NA,NA
+"265","43-1","Rural","60+y",843,"Male","Unemployed adult",NA,NA
+"266","44-1","Rural","60+y",793,"Female","Unskilled laborer","Library Keeper",NA
+"267","45-1","Rural","60+y",843,"Female","Unskilled laborer","100 days worker",NA
+"268","46-1","Rural","60+y",999,"Female","Unemployed adult",NA,NA
+"269","47-1","Rural","60+y",1059,"Female","Unemployed adult",NA,NA
+"270","48-1","Rural","60+y",903,"Female","Unskilled laborer","100 days worker",NA
+"271","49-1","Rural","60+y",927,"Female","Unemployed adult",NA,NA
+"272","50-1","Rural","60+y",951,"Female","Unemployed adult",NA,NA
+"273","51-1","Rural","60+y",759,"Male","Farmer/ Clerk/ Shopkeeper",NA,NA
+"274","52-1","Rural","60+y",795,"Male","Retired",NA,NA
+"275","53-1","Rural","60+y",785,"Male","Unskilled laborer","Iron shop worker",NA
+"276","54-1","Rural","60+y",802,"Female","Unemployed adult",NA,NA
+"277","55-1","Rural","40-59y",687,"Female",NA,NA,NA
+"278","56-1","Urban","60+y",798,"Male","Unemployed adult",NA,NA
+"279","57-1","Urban","60+y",842,"Male","Unemployed adult",NA,NA
+"280","58-1","Urban","60+y",771,"Female",NA,NA,NA
+"281","59-1","Urban","60+y",849,"Female","Unemployed adult",NA,NA
+"282","60-1","Urban","60+y",963,"Female","Unemployed adult",NA,NA
+"283","61-1","Urban","60+y",891,"Female","Unemployed adult",NA,NA
+"284","62-1","Urban","60+y",723,"Female",NA,NA,NA
+"285","63-1","Urban","60+y",735,"Male","Unemployed adult",NA,NA
+"286","64-1","Urban","60+y",735,"Male","Skilled laborer","Beedi worker",NA
+"287","65-1","Urban","60+y",903,"Female","Unemployed adult",NA,NA
+"288","66-1","Rural","60+y",875,"Male","Retired",NA,NA
+"289","67-1","Rural","60+y",951,"Male","Unemployed adult",NA,NA
+"290","68-1","Rural","60+y",915,"Female",NA,NA,NA
+"291","69-1","Rural","60+y",808,"Female",NA,NA,NA
+"292","70-1","Rural","40-59y",715,"Male","Farmer/ Clerk/ Shopkeeper",NA,NA
+"293","71-1","Rural","30-39y",406,"Male","Unemployed adult",NA,NA
+"294","72-1","Rural","30-39y",434,"Female","Unemployed adult",NA,NA
+"295","73-1","Urban","40-59y",620,"Female","Unskilled laborer","Labour",NA
+"296","74-1","Urban","40-59y",687,"Female","Unemployed adult",NA,NA
+"297","75-1","Urban","30-39y",474,"Male","Farmer/ Clerk/ Shopkeeper",NA,NA
+"298","76-1","Urban","40-59y",659,"Female","Unemployed adult",NA,NA
+"299","77-1","Urban","40-59y",627,"Female",NA,NA,NA
+"300","78-1","Urban","40-59y",567,"Female","Skilled laborer","Beedi worker",NA
+"301","79-1","Rural","20-29y",240,"Male","Student",NA,NA
+"302","80-1","Rural","20-29y",339,"Female","Farmer/ Clerk/ Shopkeeper",NA,NA
+"303","81-1","Rural","40-59y",555,"Male","Farmer/ Clerk/ Shopkeeper",NA,NA
+"304","82-1","Rural","40-59y",579,"Male","Farmer/ Clerk/ Shopkeeper",NA,NA
+"305","83-1","Rural","30-39y",423,"Male","Unskilled laborer","Daily wage",NA
+"306","84-1","Urban","30-39y",399,"Female","Semiskilled laborer","House keeping",NA
+"307","85-1","Urban","30-39y",387,"Female",NA,NA,NA
+"308","86-1","Urban","30-39y",412,"Female",NA,NA,NA
+"309","87-1","Rural","20-29y",333,"Female",NA,NA,NA
+"310","88-1","Rural","20-29y",289,"Male","Unemployed adult",NA,NA
+"311","89-1","Rural","40-59y",540,"Female",NA,NA,NA
+"312","90-1","Rural","40-59y",711,"Male","Farmer/ Clerk/ Shopkeeper",NA,NA
+"313","91-1","Rural","30-39y",399,"Female","Unskilled laborer","100 days worker",NA
+"314","92-1","Rural","30-39y",432,"Female","Skilled laborer","Wellness Coach",NA
+"315","95-1","Rural","40-59y",585,"Female","Semiskilled laborer","Mason(Helper)",NA
+"316","96-1","Rural","40-59y",591,"Female",NA,NA,NA
+"317","97-1","Rural","15-19y",238,"Male","Student",NA,NA
+"318","98-1","Urban","30-39y",459,"Female",NA,NA,NA
+"319","99-1","Rural","40-59y",562,"Male","Semiskilled laborer","Drums player",NA
+"320","100-1","Rural","40-59y",496,"Male","Skilled laborer","Driving",NA
+"321","101-1","Rural","20-29y",348,"Female",NA,NA,NA
+"322","102-1","Rural","20-29y",303,"Female","Farmer/ Clerk/ Shopkeeper",NA,NA
+"323","106-1","Rural","40-59y",543,"Female","Farmer/ Clerk/ Shopkeeper",NA,NA
+"324","107-1","Rural","40-59y",641,"Female",NA,NA,NA
+"325","108-1","Rural","40-59y",650,"Male","Farmer/ Clerk/ Shopkeeper",NA,NA
+"326","109-1","Rural","20-29y",278,"Female","Skilled laborer","Bank require,ICIC Bank",NA
+"327","110-1","Rural","20-29y",277,"Male","Unemployed adult",NA,NA
+"328","111-1","Rural","40-59y",615,"Female",NA,NA,NA
+"329","112-1","Rural","40-59y",603,"Female","Farmer/ Clerk/ Shopkeeper",NA,NA
+"330","113-1","Rural","40-59y",639,"Male","Farmer/ Clerk/ Shopkeeper",NA,NA
+"331","114-1","Rural","40-59y",699,"Male","Skilled laborer","Pump operator",NA
+"332","115-1","Urban","30-39y",429,"Male","Unskilled laborer","Painter",NA
+"333","116-1","Urban","30-39y",423,"Female",NA,NA,NA
+"334","117-1","Urban","30-39y",447,"Female",NA,NA,NA
+"335","118-1","Urban","30-39y",435,"Male","Unemployed adult",NA,NA
+"336","119-1","Urban","30-39y",435,"Male","Unemployed adult",NA,NA
+"337","121-1","Urban","40-59y",513,"Female",NA,NA,NA
+"338","122-1","Urban","30-39y",386,"Female",NA,NA,NA
+"339","123-1","Urban","30-39y",423,"Female","Unemployed adult",NA,NA
+"340","124-1","Rural","40-59y",497,"Male","Semiskilled laborer","Mason(Helper)",NA
+"341","125-1","Rural","30-39y",392,"Male","Unskilled laborer","Daily wage",NA
+"342","126-1","Rural","30-39y",446,"Female","Unskilled laborer","100 days worker",NA
+"343","127-1","Rural","30-39y",403,"Male","Semiskilled laborer","Petrol bunk Worker",NA
+"344","128-1","Rural","30-39y",435,"Female",NA,NA,NA
+"345","129-1","Rural","30-39y",376,"Female",NA,NA,NA
+"346","130-1","Rural","60+y",867,"Female","Unskilled laborer","100 day's worker",NA
+"347","131-1","Rural","40-59y",591,"Male","Farmer/ Clerk/ Shopkeeper",NA,NA
+"348","132-1","Rural","40-59y",676,"Male","Farmer/ Clerk/ Shopkeeper",NA,NA
+"349","133-1","Rural","40-59y",699,"Female","Farmer/ Clerk/ Shopkeeper",NA,NA
+"350","134-1","Rural","20-29y",263,"Male","Skilled laborer","Insurance crime person",NA
+"351","135-1","Rural","20-29y",327,"Male","Farmer/ Clerk/ Shopkeeper",NA,NA
+"352","136-1","Rural","20-29y",297,"Male","Skilled laborer","Auto manitucture",NA
+"353","137-1","Rural","20-29y",250,"Male","Unemployed adult",NA,NA
+"354","138-1","Rural","20-29y",330,"Female",NA,NA,NA
+"355","139-1","Urban","40-59y",574,"Female","Unskilled laborer","Sweaper",NA
+"356","140-1","Urban","40-59y",683,"Male","Skilled laborer","Pump operator",NA
+"357","141-1","Urban","40-59y",592,"Female","Retired",NA,NA
+"358","142-1","Urban","40-59y",593,"Female",NA,NA,NA
+"359","143-1","Urban","40-59y",531,"Female","Semiskilled laborer","Mason labour",NA
+"360","144-1","Urban","40-59y",602,"Male","Semiprofessional","Supervisor",NA
+"361","145-1","Urban","40-59y",494,"Female",NA,NA,NA
+"362","146-1","Urban","40-59y",543,"Male","Unskilled laborer","Kooli",NA
+"363","147-1","Urban","40-59y",699,"Female",NA,NA,NA
+"364","148-1","Urban","40-59y",555,"Female",NA,NA,NA
+"365","149-1","Urban","40-59y",711,"Female","Unemployed adult",NA,NA
+"366","150-1","Urban","40-59y",579,"Female",NA,NA,NA
+"367","151-1","Urban","40-59y",639,"Female",NA,NA,NA
+"368","152-1","Urban","40-59y",507,"Female","Unskilled laborer","House maid",NA
+"369","153-1","Urban","40-59y",663,"Female",NA,NA,NA
+"370","154-1","Urban","40-59y",603,"Female","Unskilled laborer","Labour",NA
+"371","155-1","Urban","40-59y",483,"Female",NA,NA,NA
+"372","156-1","Urban","40-59y",663,"Female","Unemployed adult",NA,NA
+"373","157-1","Urban","40-59y",598,"Female",NA,NA,NA
+"374","158-1","Urban","40-59y",560,"Female",NA,NA,NA
+"375","159-1","Urban","40-59y",687,"Female","Unemployed adult",NA,NA
+"376","160-1","Urban","40-59y",556,"Male","Semiprofessional","Real estate",NA
+"377","161-1","Urban","40-59y",675,"Female",NA,NA,NA
+"378","162-1","Rural","20-29y",338,"Female","Farmer/ Clerk/ Shopkeeper",NA,NA
+"379","163-1","Rural","20-29y",315,"Female",NA,NA,NA
+"380","164-1","Rural","20-29y",286,"Female","Unemployed adult",NA,NA
+"381","165-1","Rural","20-29y",341,"Female",NA,NA,NA
+"382","171-1","Rural","40-59y",627,"Female","Farmer/ Clerk/ Shopkeeper",NA,NA
+"383","172-1","Rural","40-59y",621,"Male","Semiprofessional","Panchayat office",NA
+"384","173-1","Rural","40-59y",488,"Female",NA,NA,NA
+"385","174-1","Rural","40-59y",507,"Male","Farmer/ Clerk/ Shopkeeper",NA,NA
+"386","175-1","Rural","40-59y",604,"Male","Unemployed adult",NA,NA
+"387","176-1","Rural","40-59y",619,"Male","Semiskilled laborer","Supervisor",NA
+"388","177-1","Rural","40-59y",688,"Female",NA,NA,NA
+"389","178-1","Rural","20-29y",255,"Female",NA,NA,NA
+"390","179-1","Urban","40-59y",485,"Male","Skilled laborer","CNC machine operator",NA
+"391","180-1","Urban","40-59y",592,"Male","Unskilled laborer","Hotel helper",NA
+"392","181-1","Urban","40-59y",640,"Female","Unemployed adult",NA,NA
+"393","182-1","Rural","30-39y",411,"Female",NA,NA,NA
+"394","183-1","Rural","30-39y",430,"Male","Farmer/ Clerk/ Shopkeeper",NA,NA
+"395","184-1","Rural","30-39y",460,"Male","Semiskilled laborer","Nadhaswaram",NA
+"396","185-1","Rural","30-39y",387,"Male","Professional","Teacher",NA
+"397","186-1","Rural","30-39y",439,"Female","Unskilled laborer","Shop keeper",NA
+"398","187-1","Rural","40-59y",486,"Male","Farmer/ Clerk/ Shopkeeper",NA,NA
+"399","188-1","Rural","30-39y",423,"Male","Skilled laborer","Auto Driver",NA
+"400","190-1","Urban","40-59y",496,"Male","Semiprofessional","Auto driver",NA
+"401","191-1","Urban","30-39y",420,"Female",NA,NA,NA
+"402","192-1","Urban","30-39y",424,"Female",NA,NA,NA
+"403","194-1","Urban","30-39y",422,"Male","Semiskilled laborer","Daily wages",NA
+"404","196-1","Urban","30-39y",376,"Female","Unemployed adult",NA,NA
+"405","197-1","Rural","20-29y",314,"Male","Semiprofessional","Civil engineering",NA
+"406","198-1","Rural","20-29y",241,"Male","Unemployed adult",NA,NA
+"407","199-1","Rural","60+y",904,"Female",NA,NA,NA
+"408","200-1","Rural","40-59y",629,"Female","Farmer/ Clerk/ Shopkeeper",NA,NA
+"409","201-1","Rural","40-59y",604,"Male","Farmer/ Clerk/ Shopkeeper",NA,NA
+"410","202-1","Rural","40-59y",640,"Male","Unemployed adult",NA,NA
+"411","203-1","Rural","40-59y",640,"Female","Farmer/ Clerk/ Shopkeeper",NA,NA
+"412","204-1","Rural","40-59y",616,"Female",NA,NA,NA
+"413","205-1","Rural","20-29y",344,"Female",NA,NA,NA
+"414","206-1","Rural","30-39y",436,"Female","Farmer/ Clerk/ Shopkeeper",NA,NA
+"415","207-1","Rural","30-39y",436,"Female","Semiskilled laborer","Mason helper",NA
+"416","208-1","Rural","20-29y",242,"Male","Student",NA,NA
+"417","209-1","Rural","20-29y",358,"Male","Farmer/ Clerk/ Shopkeeper",NA,NA
+"418","210-1","Rural","20-29y",246,"Male","Skilled laborer","Driver",NA
+"419","211-1","Urban","30-39y",409,"Female",NA,NA,NA
+"420","212-1","Urban","30-39y",404,"Male","Skilled laborer","Pachiyappas sales man",NA
+"421","213-1","Urban","30-39y",467,"Male","Skilled laborer","Shop owner",NA
+"422","214-1","Urban","40-59y",628,"Male","Skilled laborer","Shoe company labour",NA
+"423","215-1","Urban","40-59y",628,"Female","Unskilled laborer","House keeping",NA
+"424","216-1","Urban","40-59y",580,"Female","Skilled laborer","Shoe company labour",NA
+"425","217-1","Rural","60+y",724,"Female","Unskilled laborer","100 days work",NA
+"426","218-1","Rural","60+y",868,"Female","Farmer/ Clerk/ Shopkeeper",NA,NA
+"427","219-1","Rural","60+y",928,"Female",NA,NA,NA
+"428","220-1","Rural","60+y",808,"Female","Unemployed adult",NA,NA
+"429","221-1","Rural","60+y",772,"Female",NA,NA,NA
+"430","222-1","Rural","40-59y",584,"Female","Farmer/ Clerk/ Shopkeeper",NA,NA
+"431","223-1","Rural","40-59y",496,"Male","Farmer/ Clerk/ Shopkeeper",NA,NA
+"432","224-1","Rural","40-59y",711,"Female",NA,NA,NA
+"433","225-1","Rural","40-59y",510,"Female","Semiskilled laborer","Pention provide",NA
+"434","226-1","Rural","60+y",964,"Male","Retired",NA,NA
+"435","227-1","Rural","60+y",844,"Male","Unemployed adult",NA,NA
+"436","228-1","Rural","60+y",820,"Male","Unskilled laborer","Hotel Helper",NA
+"437","229-1","Rural","60+y",736,"Male","Unskilled laborer","Pattararai Shop Worker",NA
+"438","230-1","Rural","60+y",784,"Male","Unemployed adult",NA,NA
+"439","231-1","Rural","40-59y",708,"Male","Unemployed adult",NA,NA
+"440","232-1","Urban","30-39y",389,"Male","Unemployed adult",NA,NA
+"441","233-1","Urban","30-39y",364,"Female","Unemployed adult",NA,NA
+"442","234-1","Urban","30-39y",472,"Female",NA,NA,NA
+"443","235-1","Urban","30-39y",397,"Female",NA,NA,NA
+"444","237-1","Rural","40-59y",495,"Female",NA,NA,NA
+"445","238-1","Rural","40-59y",604,"Female",NA,NA,NA
+"446","239-1","Rural","60+y",1048,"Female",NA,NA,NA
+"447","240-1","Rural","60+y",811,"Female",NA,NA,NA
+"448","241-1","Rural","60+y",784,"Female",NA,NA,NA
+"449","242-1","Rural","60+y",976,"Male","Unemployed adult",NA,NA
+"450","243-1","Rural","60+y",772,"Male","Farmer/ Clerk/ Shopkeeper",NA,NA
+"451","244-1","Rural","60+y",822,"Male","Unskilled laborer","Shop keeper",NA
+"452","245-1","Rural","40-59y",556,"Female","Farmer/ Clerk/ Shopkeeper",NA,NA
+"453","246-1","Rural","40-59y",607,"Female",NA,NA,NA
+"454","247-1","Rural","20-29y",345,"Female",NA,NA,NA
+"455","248-1","Rural","60+y",976,"Male","Unemployed adult",NA,NA
+"456","249-1","Rural","60+y",748,"Male","Unemployed adult",NA,NA
+"457","250-1","Rural","40-59y",518,"Male","Semiskilled laborer","Pattarai Shop Worker",NA
+"458","251-1","Rural","40-59y",568,"Female",NA,NA,NA
+"459","252-1","Rural","40-59y",580,"Female","Unskilled laborer","Daily wage",NA
+"460","253-1","Rural","60+y",784,"Female",NA,NA,NA
+"461","254-1","Rural","40-59y",651,"Male","Farmer/ Clerk/ Shopkeeper",NA,NA
+"462","255-1","Rural","20-29y",262,"Male","Student",NA,NA
+"463","256-1","Rural","60+y",904,"Male","Unemployed adult",NA,NA
+"464","257-1","Rural","30-39y",386,"Male","Unskilled laborer","Daily worker",NA
+"465","258-1","Rural","5-9y",90,"Male","Student",NA,NA
+"466","259-1","Rural","40-59y",556,"Male","Farmer/ Clerk/ Shopkeeper",NA,NA
+"467","260-1","Rural","20-29y",271,"Female",NA,NA,NA
+"468","261-1","Rural","5-9y",68,"Male","Student",NA,NA
+"469","262-1","Rural","60+y",940,"Male","Unemployed adult",NA,NA
+"470","263-1","Rural","60+y",737,"Male","Unskilled laborer","Security",NA
+"471","264-1","Rural","40-59y",580,"Female",NA,NA,NA
+"472","265-1","Rural","30-39y",420,"Male","Unskilled laborer","Shop keeper",NA
+"473","266-1","Rural","10-14y",176,"Female","Student",NA,NA
+"474","267-1","Rural","15-19y",227,"Female","Student",NA,NA
+"475","268-1","Rural","15-19y",196,"Male","Student",NA,NA
+"476","269-1","Rural","30-39y",362,"Male","Semiskilled laborer","ITC company worker",NA
+"477","270-1","Rural","20-29y",306,"Female",NA,NA,NA
+"478","271-1","Rural","30-39y",398,"Female",NA,NA,NA
+"479","272-1","Rural","5-9y",93,"Female","Student",NA,NA
+"480","273-1","Rural","40-59y",676,"Female","Unskilled laborer","100 days work",NA
+"481","274-1","Rural","15-19y",231,"Female","Student",NA,NA
+"482","275-1","Rural","20-29y",268,"Female","Unemployed adult",NA,NA
+"483","276-1","Rural","40-59y",592,"Male","Farmer/ Clerk/ Shopkeeper",NA,NA
+"484","277-1","Rural","30-39y",460,"Male","Unskilled laborer","Welder",NA
+"485","278-1","Rural","10-14y",131,"Male","Student",NA,NA
+"486","279-1","Rural","5-9y",90,"Male","Student",NA,NA
+"487","280-1","Urban","30-39y",457,"Female",NA,NA,NA
+"488","281-1","Urban","30-39y",471,"Female","Unemployed adult",NA,NA
+"489","282-1","Urban","15-19y",186,"Male","Unemployed adult",NA,NA
+"490","283-1","Urban","5-9y",66,"Female","Student",NA,NA
+"491","284-1","Urban","10-14y",167,"Female","Student",NA,NA
+"492","285-1","Urban","40-59y",700,"Male","Skilled laborer","Market vegetables sales man",NA
+"493","286-1","Urban","60+y",738,"Female","Unemployed adult",NA,NA
+"494","287-1","Urban","40-59y",604,"Female","Unemployed adult",NA,NA
+"495","288-1","Urban","60+y",760,"Female","Unemployed adult",NA,NA
+"496","290-1","Urban","30-39y",424,"Male","Unemployed adult",NA,NA
+"497","291-1","Urban","5-9y",116,"Male","Student",NA,NA
+"498","292-1","Urban","40-59y",484,"Female",NA,NA,NA
+"499","293-1","Urban","5-9y",117,"Female","Student",NA,NA
+"500","294-1","Rural","15-19y",210,"Female","Student",NA,NA
+"501","295-1","Rural","10-14y",138,"Male","Student",NA,NA
+"502","296-1","Rural","40-59y",580,"Female","Unskilled laborer","100 days work",NA
+"503","297-1","Rural","60+y",799,"Male","Farmer/ Clerk/ Shopkeeper",NA,NA
+"504","298-1","Rural","30-39y",446,"Male","Farmer/ Clerk/ Shopkeeper",NA,NA
+"505","299-1","Rural","40-59y",628,"Female","Unskilled laborer","100 days work",NA
+"506","300-1","Rural","5-9y",89,"Male","Student",NA,NA
+"507","301-1","Rural","30-39y",422,"Female","Unskilled laborer","100 days work",NA
+"508","302-1","Rural","40-59y",544,"Male","Skilled laborer","Corbenter",NA
+"509","303-1","Rural","5-9y",112,"Male","Student",NA,NA
+"510","304-1","Rural","40-59y",603,"Male","Farmer/ Clerk/ Shopkeeper",NA,NA
+"511","305-1","Rural","30-39y",372,"Female",NA,NA,NA
+"512","306-1","Rural","40-59y",480,"Female","Unskilled laborer","100 Days worker",NA
+"513","307-1","Rural","15-19y",190,"Female","Student",NA,NA
+"514","308-1","Rural","30-39y",449,"Male","Farmer/ Clerk/ Shopkeeper",NA,NA
+"515","309-1","Urban","40-59y",580,"Female",NA,NA,NA
+"516","310-1","Urban","60+y",784,"Female","Unemployed adult",NA,NA
+"517","311-1","Rural","20-29y",276,"Male","Unemployed adult",NA,NA
+"518","312-1","Rural","60+y",928,"Male","Retired",NA,NA
+"519","313-1","Rural","40-59y",604,"Female","Unskilled laborer","100 days work",NA
+"520","314-1","Rural","40-59y",532,"Female","Unskilled laborer","100 days work",NA
+"521","315-1","Rural","20-29y",272,"Male","Skilled laborer","Phone service",NA
+"522","316-1","Rural","20-29y",255,"Female","Student",NA,NA
+"523","317-1","Rural","20-29y",341,"Male","Farmer/ Clerk/ Shopkeeper",NA,NA
+"524","318-1","Rural","20-29y",276,"Male","Skilled laborer","Electrician",NA
+"525","319-1","Rural","5-9y",113,"Male","Student",NA,NA
+"526","320-1","Rural","10-14y",136,"Male","Student",NA,NA
+"527","321-1","Rural","5-9y",104,"Female","Student",NA,NA
+"528","322-1","Rural","20-29y",258,"Female","Student",NA,NA
+"529","323-1","Urban","10-14y",134,"Male","Student",NA,NA
+"530","324-1","Urban","10-14y",130,"Male","Student",NA,NA
+"531","325-1","Urban","30-39y",436,"Male","Semiskilled laborer","Shoe company helper",NA
+"532","326-1","Urban","20-29y",294,"Female",NA,NA,NA
+"533","327-1","Rural","10-14y",149,"Female","Student",NA,NA
+"534","328-1","Rural","40-59y",616,"Female",NA,NA,NA
+"535","329-1","Rural","30-39y",424,"Male","Semiskilled laborer","Centring sheet work",NA
+"536","330-1","Rural","20-29y",245,"Female",NA,NA,NA
+"537","331-1","Rural","20-29y",253,"Male","Student",NA,NA
+"538","332-1","Rural","40-59y",652,"Male","Skilled laborer","Milk man",NA
+"539","333-1","Rural","10-14y",121,"Male","Unskilled laborer","100 days work",NA
+"540","334-1","Rural","5-9y",60,"Female","Student",NA,NA
+"541","335-1","Rural","40-59y",664,"Female","Unskilled laborer","100 days worker",NA
+"542","336-1","Rural","15-19y",207,"Male","Unemployed adult",NA,NA
+"543","337-1","Rural","20-29y",308,"Female",NA,NA,NA
+"544","338-1","Rural","30-39y",397,"Female","Unskilled laborer","100 days work",NA
+"545","339-1","Rural","30-39y",412,"Male","Unemployed adult",NA,NA
+"546","340-1","Rural","15-19y",231,"Male","Unemployed adult",NA,NA
+"547","341-1","Urban","30-39y",388,"Male","Skilled laborer","Auto driver",NA
+"548","342-1","Urban","10-14y",150,"Female","Student",NA,NA
+"549","343-1","Urban","5-9y",100,"Male","Student",NA,NA
+"550","345-1","Urban","60+y",821,"Male","Unskilled laborer","Unemployed",NA
+"551","346-1","Urban","20-29y",295,"Female",NA,NA,NA
+"552","347-1","Urban","5-9y",85,"Female","Student",NA,NA
+"553","348-1","Urban","15-19y",206,"Female","Student",NA,NA
+"554","349-1","Urban","40-59y",532,"Female",NA,NA,NA
+"555","350-1","Urban","20-29y",309,"Female",NA,NA,NA
+"556","351-1","Urban","5-9y",114,"Male","Student",NA,NA
+"557","352-1","Urban","5-9y",74,"Female","Student",NA,NA
+"558","353-1","Urban","40-59y",604,"Female",NA,NA,NA
+"559","354-1","Urban","30-39y",447,"Female","Farmer/ Clerk/ Shopkeeper",NA,NA
+"560","355-1","Urban","10-14y",124,"Female","Student",NA,NA
+"561","356-1","Urban","5-9y",96,"Female","Student",NA,NA
+"562","357-1","Urban","5-9y",85,"Male","Student",NA,NA
+"563","358-1","Urban","10-14y",147,"Male","Student",NA,NA
+"564","359-1","Rural","40-59y",676,"Female",NA,NA,NA
+"565","360-1","Rural","40-59y",546,"Female",NA,NA,NA
+"566","361-1","Urban","60+y",844,"Male","Retired",NA,NA
+"567","362-1","Urban","5-9y",72,"Female","Student",NA,NA
+"568","363-1","Urban","10-14y",145,"Female","Student",NA,NA
+"569","364-1","Urban","5-9y",108,"Female","Student",NA,NA
+"570","365-1","Urban","10-14y",123,"Male","Student",NA,NA
+"571","366-1","Rural","15-19y",210,"Female","Student",NA,NA
+"572","367-1","Rural","30-39y",462,"Male","Farmer/ Clerk/ Shopkeeper",NA,NA
+"573","368-1","Rural","30-39y",389,"Male","Unskilled laborer","Ice sales, Street vendor",NA
+"574","369-1","Rural","10-14y",137,"Female","Student",NA,NA
+"575","370-1","Rural","10-14y",155,"Male","Student",NA,NA
+"576","371-1","Rural","10-14y",170,"Female","Student",NA,NA
+"577","372-1","Rural","10-14y",146,"Female","Student",NA,NA
+"578","373-1","Rural","15-19y",205,"Male","Student",NA,NA
+"579","374-1","Rural","15-19y",228,"Male","Student",NA,NA
+"580","375-1","Urban","10-14y",173,"Female","Student",NA,NA
+"581","376-1","Urban","10-14y",124,"Female","Student",NA,NA
+"582","377-1","Urban","60+y",751,"Male","Unskilled laborer","Dobhi",NA
+"583","378-1","Urban","30-39y",396,"Female",NA,NA,NA
+"584","379-1","Urban","60+y",784,"Female",NA,NA,NA
+"585","380-1","Urban","5-9y",78,"Female","Student",NA,NA
+"586","381-1","Urban","15-19y",189,"Male","Unskilled laborer","Rikshaw work",NA
+"587","382-1","Urban","5-9y",109,"Female","Student",NA,NA
+"588","383-1","Urban","60+y",795,"Male","Unskilled laborer","Labour",NA
+"589","384-1","Urban","10-14y",154,"Female","Student",NA,NA
+"590","385-1","Urban","5-9y",119,"Male","Student",NA,NA
+"591","386-1","Rural","40-59y",508,"Female",NA,NA,NA
+"592","387-1","Rural","10-14y",121,"Male","Student",NA,NA
+"593","388-1","Rural","5-9y",96,"Male","Student",NA,NA
+"594","389-1","Rural","5-9y",79,"Male","Student",NA,NA
+"595","390-1","Rural","5-9y",88,"Female","Student",NA,NA
+"596","391-1","Urban","60+y",784,"Female","Unemployed adult",NA,NA
+"597","392-1","Urban","40-59y",544,"Male","Semiskilled laborer","Kooli worker",NA
+"598","393-1","Urban","30-39y",393,"Male","Semiskilled laborer","Painter labour",NA
+"599","394-1","Urban","20-29y",263,"Male","Student",NA,NA
+"600","395-1","Urban","30-39y",391,"Female","Skilled laborer","Shoe company labour",NA
+"601","396-1","Urban","10-14y",158,"Male","Student",NA,NA
+"602","397-1","Urban","60+y",724,"Male","Semiskilled laborer","Painter",NA
+"603","398-1","Urban","5-9y",90,"Male","Student",NA,NA
+"604","399-1","Urban","5-9y",70,"Male","Student",NA,NA
+"605","400-1","Urban","20-29y",272,"Female","Skilled laborer","Shoe company labour",NA
+"606","401-1","Urban","20-29y",334,"Male","Skilled laborer","Company labour",NA
+"607","402-1","Urban","15-19y",229,"Male","Skilled laborer","Mason",NA
+"608","403-1","Urban","60+y",904,"Female","Unemployed adult",NA,NA
+"609","404-1","Urban","60+y",988,"Male","Unemployed adult",NA,NA
+"610","405-1","Urban","60+y",727,"Male","Retired",NA,NA
+"611","406-1","Urban","60+y",738,"Female","Unemployed adult",NA,NA
+"612","407-1","Urban","20-29y",297,"Male","Unemployed adult",NA,NA
+"613","408-1","Urban","60+y",753,"Male","Unemployed adult",NA,NA
+"614","409-1","Urban","40-59y",532,"Male","Skilled laborer","Painter",NA
+"615","410-1","Urban","15-19y",180,"Male","Student",NA,NA
+"616","411-1","Urban","30-39y",389,"Female",NA,NA,NA
+"617","412-1","Urban","15-19y",230,"Male","Student",NA,NA
+"618","413-1","Urban","15-19y",218,"Male","Student",NA,NA
+"619","414-1","Urban","10-14y",147,"Male","Student",NA,NA
+"620","415-1","Urban","10-14y",166,"Male","Student",NA,NA
+"621","416-1","Urban","40-59y",664,"Female",NA,NA,NA
+"622","417-1","Urban","15-19y",224,"Female","Student",NA,NA
+"623","418-1","Urban","40-59y",676,"Male","Farmer/ Clerk/ Shopkeeper",NA,NA
+"624","419-1","Urban","20-29y",335,"Female","Semiskilled laborer","Canteen worker",NA
+"625","420-1","Urban","15-19y",205,"Female","Student",NA,NA
+"626","421-1","Urban","30-39y",371,"Male","Skilled laborer","Sticker worker",NA
+"627","422-1","Urban","5-9y",116,"Male","Student",NA,NA
+"628","423-1","Urban","40-59y",714,"Male","Professional","Government officer",NA
+"629","424-1","Urban","10-14y",167,"Male","Student",NA,NA
+"630","425-1","Urban","30-39y",417,"Male","Farmer/ Clerk/ Shopkeeper",NA,NA
+"631","426-1","Urban","60+y",988,"Female","Unemployed adult",NA,NA
+"632","427-1","Urban","15-19y",226,"Female","Unemployed adult",NA,NA
+"633","428-1","Urban","20-29y",268,"Male","Unemployed adult",NA,NA
+"634","429-1","Urban","20-29y",310,"Female",NA,NA,NA
+"635","430-1","Urban","20-29y",297,"Female",NA,NA,NA
+"636","431-1","Urban","15-19y",189,"Female","Student",NA,NA
+"637","432-1","Urban","40-59y",569,"Male","Skilled laborer","Shop owner",NA
+"638","433-1","Urban","40-59y",628,"Female",NA,NA,NA
+"639","434-1","Urban","60+y",760,"Male","Unemployed adult",NA,NA
+"640","435-1","Urban","60+y",940,"Female","Unemployed adult",NA,NA
+"641","443-1","Rural","15-19y",220,"Male","Student",NA,NA
+"642","444-1","Rural","10-14y",145,"Male","Student",NA,NA
+"643","445-1","Rural","5-9y",109,"Female","Student",NA,NA
+"644","446-1","Rural","10-14y",178,"Female","Student",NA,NA
+"645","448-1","Rural","10-14y",140,"Female","Student",NA,NA
+"646","449-1","Rural","15-19y",208,"Female","Student",NA,NA
+"647","450-1","Rural","10-14y",155,"Male","Student",NA,NA
+"648","451-1","Rural","40-59y",522,"Male","Skilled laborer","Bus Driver",NA
+"649","452-1","Rural","5-9y",113,"Female","Student",NA,NA
+"650","453-1","Rural","10-14y",168,"Male","Student",NA,NA
+"651","454-1","Rural","30-39y",472,"Female","Unskilled laborer","Govt hospital house keeping",NA
+"652","455-1","Rural","15-19y",198,"Male","Student",NA,NA
+"653","456-1","Rural","5-9y",91,"Female","Student",NA,NA
+"654","457-1","Rural","5-9y",82,"Female","Student",NA,NA
+"655","458-1","Rural","5-9y",78,"Female","Student",NA,NA
+"656","459-1","Rural","5-9y",84,"Female","Student",NA,NA
+"657","460-1","Rural","10-14y",152,"Female","Student",NA,NA
+"658","461-1","Rural","20-29y",333,"Male","Professional","Business",NA
+"659","462-1","Rural","5-9y",69,"Male","Student",NA,NA
+"660","463-1","Rural","5-9y",67,"Male","Student",NA,NA
+"661","464-1","Rural","30-39y",461,"Male","Semiprofessional","Self Employed",NA
+"662","465-1","Rural","15-19y",224,"Male","Student",NA,NA
+"663","466-1","Rural","40-59y",568,"Female","Unskilled laborer","100 days work",NA
+"664","467-1","Rural","10-14y",159,"Female","Student",NA,NA
+"665","468-1","Rural","10-14y",163,"Female","Student",NA,NA
+"666","469-1","Rural","5-9y",116,"Female","Student",NA,NA
+"667","470-1","Rural","15-19y",187,"Female","Student",NA,NA
+"668","471-1","Rural","5-9y",69,"Male","Student",NA,NA
+"669","472-1","Rural","5-9y",94,"Male","Student",NA,NA
+"670","473-1","Rural","10-14y",129,"Male","Student",NA,NA
+"671","474-1","Rural","5-9y",100,"Male","Student",NA,NA
+"672","475-1","Rural","30-39y",463,"Male","Unskilled laborer","Centring work",NA
+"673","476-1","Rural","15-19y",186,"Male","Student",NA,NA
+"674","477-1","Rural","10-14y",131,"Female","Student",NA,NA
+"675","478-1","Rural","5-9y",102,"Male","Student",NA,NA
+"676","479-1","Rural","10-14y",173,"Male","Student",NA,NA
+"677","480-1","Rural","10-14y",154,"Male","Student",NA,NA
+"678","481-1","Rural","10-14y",151,"Male","Student",NA,NA
+"679","482-1","Rural","5-9y",104,"Male","Student",NA,NA
+"680","483-1","Rural","15-19y",218,"Male","Student",NA,NA
+"681","484-1","Rural","15-19y",200,"Female","Student",NA,NA
+"682","485-1","Rural","15-19y",224,"Male","Unemployed adult",NA,NA
+"683","486-1","Rural","40-59y",504,"Female","Unemployed adult",NA,NA
+"684","487-1","Rural","30-39y",472,"Male","Unskilled laborer","Daily wages",NA
+"685","488-1","Rural","40-59y",628,"Female","Unemployed adult",NA,NA
+"686","489-1","Rural","20-29y",319,"Female",NA,NA,NA
+"687","490-1","Rural","30-39y",423,"Male","Unemployed adult",NA,NA
+"688","491-1","Rural","5-9y",86,"Male","Student",NA,NA
+"689","492-1","Rural","10-14y",135,"Female","Student",NA,NA
+"690","493-1","Rural","20-29y",285,"Male","Unemployed adult",NA,NA
+"691","494-1","Rural","30-39y",386,"Female",NA,NA,NA
+"692","495-1","Rural","30-39y",383,"Male","Farmer/ Clerk/ Shopkeeper",NA,NA
+"693","496-1","Rural","30-39y",365,"Male","Skilled laborer","Driver",NA
+"694","497-1","Urban","5-9y",102,"Female","Student",NA,NA
+"695","498-1","Urban","10-14y",134,"Female","Student",NA,NA
+"696","499-1","Urban","20-29y",340,"Male","Farmer/ Clerk/ Shopkeeper",NA,NA
+"697","500-1","Urban","10-14y",136,"Male","Student",NA,NA
+"698","501-1","Urban","10-14y",148,"Male","Student",NA,NA
+"699","502-1","Urban","20-29y",244,"Male","Skilled laborer","Working at market",NA
+"700","503-1","Urban","15-19y",220,"Male","Skilled laborer","Working at market ( labour)",NA
+"701","504-1","Urban","40-59y",592,"Female","Professional","Government nurse",NA
+"702","505-1","Urban","30-39y",424,"Female",NA,NA,NA
+"703","506-1","Urban","15-19y",185,"Female","Student",NA,NA
+"704","507-1","Urban","40-59y",544,"Female",NA,NA,NA
+"705","508-1","Urban","15-19y",221,"Female","Student",NA,NA
+"706","509-1","Urban","10-14y",148,"Female","Student",NA,NA
+"707","510-1","Urban","15-19y",220,"Male","Student",NA,NA
+"708","511-1","Urban","10-14y",136,"Female","Student",NA,NA
+"709","512-1","Urban","10-14y",148,"Male","Student",NA,NA
+"710","514-1","Urban","20-29y",254,"Female","Semiskilled laborer","HDG fin",NA
+"711","515-1","Rural","5-9y",115,"Male","Student",NA,NA
+"712","516-1","Rural","10-14y",164,"Male","Student",NA,NA
+"713","517-1","Rural","30-39y",464,"Male","Semiskilled laborer","Centring work",NA
+"714","518-1","Rural","15-19y",237,"Male","Student",NA,NA
+"715","519-1","Rural","20-29y",327,"Male","Professional","Defence",NA
+"716","520-1","Rural","10-14y",153,"Male","Unemployed adult",NA,NA
+"717","521-1","Rural","20-29y",344,"Male","Professional","IT",NA
+"718","522-1","Rural","30-39y",424,"Female","Semiprofessional","Balwadi teacher",NA
+"719","523-1","Rural","10-14y",174,"Female","Student",NA,NA
+"720","524-1","Rural","15-19y",185,"Female","Student",NA,NA
+"721","525-1","Rural","30-39y",411,"Male","Farmer/ Clerk/ Shopkeeper",NA,NA
+"722","526-1","Rural","15-19y",203,"Male","Unemployed adult",NA,NA
+"723","527-1","Rural","10-14y",129,"Male","Student",NA,NA
+"724","528-1","Rural","5-9y",101,"Female","Student",NA,NA
+"725","529-1","Rural","20-29y",352,"Male","Professional","Recidency manager",NA
+"726","530-1","Rural","5-9y",118,"Male","Student",NA,NA
+"727","531-1","Urban","60+y",1000,"Male","Retired",NA,NA
+"728","532-1","Urban","40-59y",524,"Female","Skilled laborer","Balwadi teacher",NA
+"729","533-1","Urban","10-14y",143,"Male","Student",NA,NA
+"730","534-1","Urban","15-19y",204,"Female","Unemployed adult",NA,NA
+"731","535-1","Rural","30-39y",436,"Male","Farmer/ Clerk/ Shopkeeper",NA,NA
+"732","536-1","Rural","30-39y",366,"Female",NA,NA,NA
+"733","537-1","Rural","5-9y",60,"Male","Student",NA,NA
+"734","538-1","Rural","30-39y",376,"Male","Skilled laborer","Electrician",NA
+"735","539-1","Urban","10-14y",164,"Female","Student",NA,NA
+"736","540-1","Urban","10-14y",170,"Male","Student",NA,NA
+"737","541-1","Rural","30-39y",366,"Female",NA,NA,NA
+"738","542-1","Rural","20-29y",303,"Male","Skilled laborer","Audio technician",NA
+"739","543-1","Rural","15-19y",234,"Male","Student",NA,NA
+"740","544-1","Rural","10-14y",149,"Male","Student",NA,NA
+"741","545-1","Rural","15-19y",238,"Female","Unemployed adult",NA,NA
+"742","546-1","Rural","15-19y",180,"Male","Student",NA,NA
+"743","547-1","Rural","15-19y",181,"Male","Student",NA,NA
+"744","548-1","Rural","20-29y",340,"Male","Professional","IT STAFF",NA
+"745","549-1","Urban","10-14y",137,"Male","Student",NA,NA
+"746","550-1","Urban","10-14y",175,"Female","Student",NA,NA
+"747","551-1","Urban","15-19y",236,"Male","Unemployed adult",NA,NA
+"748","552-1","Urban","30-39y",374,"Male","Farmer/ Clerk/ Shopkeeper",NA,NA
+"749","554-1","Urban","40-59y",485,"Female","Farmer/ Clerk/ Shopkeeper",NA,NA
+"750","555-1","Urban","30-39y",430,"Male","Skilled laborer","Auto driver",NA
+"751","556-1","Urban","15-19y",191,"Male","Student",NA,NA
+"752","558-1","Urban","15-19y",204,"Female","Student",NA,NA
+"753","559-1","Urban","40-59y",567,"Male","Farmer/ Clerk/ Shopkeeper",NA,NA
+"754","560-1","Urban","5-9y",83,"Female","Student",NA,NA
+"755","562-1","Urban","5-9y",119,"Female","Student",NA,NA
+"756","565-1","Urban","15-19y",209,"Female","Unskilled laborer","Not work",NA
+"757","566-1","Urban","40-59y",491,"Female",NA,NA,NA
+"758","568-1","Urban","30-39y",366,"Female",NA,NA,NA
+"759","570-1","Urban","20-29y",269,"Male","Unemployed adult",NA,NA
+"760","571-1","Urban","5-9y",71,"Female","Student",NA,NA
+"761","572-1","Urban","5-9y",103,"Male","Student",NA,NA
+"762","573-1","Urban","60+y",760,"Male","Professional","Own business",NA
+"763","574-1","Urban","20-29y",324,"Male","Skilled laborer","Driver",NA
+"764","575-1","Urban","5-9y",82,"Female","Student",NA,NA
+"765","576-1","Urban","5-9y",82,"Male","Student",NA,NA
+"766","577-1","Urban","5-9y",108,"Female","Student",NA,NA
+"767","578-1","Urban","30-39y",448,"Male","Semiskilled laborer","Auto driver",NA
+"768","579-1","Urban","15-19y",209,"Male","Skilled laborer","Plumbing",NA
+"769","580-1","Urban","30-39y",384,"Male","Skilled laborer","Plumbing",NA
+"770","581-1","Rural","10-14y",129,"Female","Student",NA,NA
+"771","582-1","Rural","10-14y",132,"Female","Student",NA,NA
+"772","583-1","Rural","10-14y",162,"Male","Student",NA,NA
+"773","584-1","Rural","10-14y",134,"Female","Student",NA,NA
+"774","585-1","Rural","10-14y",132,"Female","Student",NA,NA
+"775","586-1","Rural","10-14y",167,"Female","Student",NA,NA
+"776","587-1","Urban","5-9y",94,"Male","Student",NA,NA
+"777","588-1","Urban","15-19y",183,"Female","Student",NA,NA
+"778","589-1","Urban","5-9y",84,"Male","Student",NA,NA
+"779","590-1","Rural","30-39y",474,"Male","Farmer/ Clerk/ Shopkeeper",NA,NA
+"780","591-1","Rural","10-14y",138,"Male","Student",NA,NA
+"781","592-1","Rural","10-14y",121,"Male","Student",NA,NA
+"782","593-1","Rural","5-9y",82,"Female","Student",NA,NA
+"783","594-1","Rural","5-9y",77,"Female","Student",NA,NA
+"784","595-1","Urban","5-9y",100,"Female","Student",NA,NA
+"785","596-1","Urban","30-39y",446,"Female",NA,NA,NA
+"786","597-1","Urban","10-14y",156,"Male","Student",NA,NA
+"787","598-1","Urban","60+y",893,"Male","Unemployed adult",NA,NA
+"788","599-1","Urban","60+y",727,"Male","Retired",NA,NA
+"789","600-1","Urban","10-14y",156,"Female","Student",NA,NA
+"790","601-1","Urban","40-59y",509,"Male","Semiprofessional","Painter",NA
+"791","602-1","Urban","5-9y",75,"Male","Student",NA,NA
+"792","603-1","Rural","20-29y",305,"Female","Unskilled laborer","100 days work",NA
+"793","604-1","Rural","30-39y",369,"Female",NA,NA,NA
+"794","605-1","Rural","30-39y",412,"Male","Farmer/ Clerk/ Shopkeeper",NA,NA
+"795","606-1","Rural","5-9y",75,"Male","Student",NA,NA
+"796","607-1","Rural","5-9y",88,"Male","Student",NA,NA
+"797","608-1","Rural","10-14y",143,"Female","Student",NA,NA
+"798","609-1","Rural","10-14y",149,"Female","Student",NA,NA
+"799","610-1","Rural","20-29y",314,"Male","Unemployed adult",NA,NA
+"800","611-1","Rural","15-19y",220,"Male","Student",NA,NA
+"801","612-1","Rural","10-14y",148,"Male","Student",NA,NA
+"802","613-1","Rural","5-9y",100,"Female","Student",NA,NA
+"803","614-1","Rural","15-19y",224,"Male","Student",NA,NA
+"804","615-1","Urban","20-29y",328,"Male","Skilled laborer","Auto driver",NA
+"805","616-1","Urban","10-14y",147,"Male","Student",NA,NA
+"806","617-1","Urban","10-14y",173,"Male","Student",NA,NA
+"807","618-1","Urban","15-19y",197,"Male","Student",NA,NA
+"808","619-1","Urban","15-19y",192,"Male","Student",NA,NA
+"809","620-1","Urban","10-14y",164,"Male","Student",NA,NA
+"810","621-1","Urban","20-29y",312,"Male","Semiskilled laborer","Showroom worker",NA
+"811","622-1","Urban","15-19y",218,"Female",NA,NA,NA
+"812","623-1","Urban","10-14y",132,"Male","Student",NA,NA
+"813","624-1","Rural","15-19y",203,"Male","Student",NA,NA
+"814","625-1","Rural","10-14y",175,"Female","Student",NA,NA
+"815","626-1","Urban","10-14y",138,"Male","Student",NA,NA
+"816","627-1","Rural","15-19y",223,"Male","Unskilled laborer","Shop worker",NA
+"817","628-1","Rural","15-19y",206,"Female","Student",NA,NA
+"818","629-1","Rural","15-19y",228,"Male","Student",NA,NA
+"819","630-1","Rural","10-14y",124,"Female","Student",NA,NA
+"820","631-1","Rural","10-14y",134,"Female","Student",NA,NA
+"821","632-1","Rural","5-9y",95,"Female","Student",NA,NA
+"822","633-1","Rural","10-14y",123,"Female","Student",NA,NA
+"823","634-1","Rural","30-39y",375,"Female","Unskilled laborer","100 days work",NA
+"824","635-1","Rural","20-29y",300,"Female","Unskilled laborer","100 days work",NA
+"825","636-1","Rural","10-14y",128,"Female","Student",NA,NA
+"826","637-1","Rural","10-14y",159,"Female","Student",NA,NA
+"827","638-1","Rural","20-29y",306,"Female",NA,NA,NA
+"828","639-1","Rural","30-39y",377,"Female",NA,NA,NA
+"829","640-1","Urban","5-9y",77,"Male","Student",NA,NA
+"830","641-1","Urban","5-9y",118,"Male","Student",NA,NA
+"831","642-1","Urban","40-59y",611,"Male","Professional","DC superdent officer (govt)",NA
+"832","643-1","Urban","40-59y",513,"Male","Semiskilled laborer","Market labour",NA
+"833","644-1","Rural","10-14y",131,"Male","Student",NA,NA
+"834","645-1","Rural","5-9y",102,"Female","Student",NA,NA
+"835","646-1","Rural","5-9y",101,"Male","Student",NA,NA
+"836","647-1","Rural","5-9y",74,"Female","Student",NA,NA
+"837","648-1","Rural","30-39y",372,"Female",NA,NA,NA
+"838","649-1","Rural","15-19y",216,"Female","Student",NA,NA
+"839","650-1","Rural","10-14y",174,"Female","Student",NA,NA
+"840","651-1","Urban","20-29y",315,"Female",NA,NA,NA
+"841","652-1","Urban","10-14y",151,"Male","Student",NA,NA
+"842","653-1","Rural","20-29y",279,"Male","Semiskilled laborer","Bus Conductor",NA
+"843","654-1","Rural","20-29y",332,"Male","Skilled laborer","Molding work",NA
+"844","655-1","Urban","5-9y",80,"Male","Student",NA,NA
+"845","656-1","Rural","5-9y",68,"Female","Student",NA,NA
+"846","657-1","Rural","20-29y",267,"Female","Semiprofessional","ITK voluntary",NA
+"847","658-1","Rural","5-9y",84,"Male","Student",NA,NA
+"848","660-1","Urban","5-9y",88,"Male","Student",NA,NA
+"849","662-1","Urban","30-39y",401,"Male","Skilled laborer","Welding labour",NA
+"850","663-1","Rural","10-14y",120,"Female","Student",NA,NA
+"851","664-1","Rural","5-9y",84,"Male","Student",NA,NA
+"852","665-1","Rural","5-9y",83,"Female","Student",NA,NA
+"853","666-1","Rural","10-14y",135,"Male","Student",NA,NA
+"854","667-1","Urban","5-9y",84,"Female","Student",NA,NA
+"855","668-1","Urban","30-39y",443,"Female","Professional","Teacher",NA
+"856","669-1","Urban","60+y",845,"Female","Unemployed adult",NA,NA
+"857","670-1","Urban","5-9y",70,"Female","Student",NA,NA
+"858","671-1","Urban","10-14y",140,"Male","Student",NA,NA
+"859","674-1","Urban","5-9y",65,"Male","Student",NA,NA
+"860","675-1","Rural","15-19y",189,"Male","Student",NA,NA
+"861","676-1","Rural","60+y",785,"Male","Unemployed adult",NA,NA
+"862","677-1","Rural","60+y",953,"Male","Unemployed adult",NA,NA
+"863","678-1","Rural","60+y",941,"Male","Unemployed adult",NA,NA
+"864","679-1","Rural","10-14y",162,"Female","Student",NA,NA
+"865","680-1","Rural","15-19y",233,"Male","Unemployed adult",NA,NA
+"866","681-1","Rural","15-19y",233,"Male","Unemployed adult",NA,NA
+"867","682-1","Rural","15-19y",199,"Male","Student",NA,NA
+"868","683-1","Rural","60+y",809,"Male","Unemployed adult",NA,NA
+"869","684-1","Rural","60+y",737,"Male","Farmer/ Clerk/ Shopkeeper",NA,NA
+"870","685-1","Rural","15-19y",199,"Male","Unemployed adult",NA,NA
+"871","686-1","Rural","15-19y",194,"Male","Student",NA,NA
+"872","687-1","Rural","5-9y",74,"Male","Student",NA,NA
+"873","688-1","Rural","20-29y",303,"Female",NA,NA,NA
+"874","689-1","Rural","20-29y",329,"Male","Skilled laborer","Bus Driver",NA
+"875","690-1","Urban","60+y",739,"Female","Unemployed adult",NA,NA
+"876","691-1","Urban","60+y",728,"Male","Semiprofessional","Security",NA
+"877","692-1","Urban","30-39y",439,"Male","Semiprofessional","Mason",NA
+"878","693-1","Urban","10-14y",126,"Female","Student",NA,NA
+"879","694-1","Urban","20-29y",286,"Male","Unemployed adult",NA,NA
+"880","695-1","Urban","20-29y",317,"Male","Skilled laborer","Fire officer",NA
+"881","696-1","Urban","20-29y",275,"Male","Unemployed adult",NA,NA
+"882","697-1","Rural","10-14y",178,"Female","Student",NA,NA
+"883","698-1","Rural","10-14y",125,"Female","Student",NA,NA
+"884","699-1","Rural","10-14y",175,"Male","Student",NA,NA
+"885","700-1","Urban","5-9y",95,"Female","Student",NA,NA
+"886","701-1","Urban","5-9y",68,"Female","Student",NA,NA
+"887","702-1","Rural","15-19y",211,"Female","Student",NA,NA
+"888","703-1","Rural","10-14y",153,"Male","Student",NA,NA
+"889","704-1","Rural","60+y",749,"Male","Semiskilled laborer","Flower making work",NA
+"890","705-1","Urban","20-29y",348,"Female",NA,NA,NA
+"891","706-1","Urban","15-19y",204,"Female","Student",NA,NA
+"892","707-1","Urban","20-29y",250,"Female",NA,NA,NA
+"893","708-1","Rural","15-19y",212,"Male","Student",NA,NA
+"894","709-1","Urban","10-14y",131,"Female","Student",NA,NA
+"895","710-1","Urban","30-39y",375,"Female",NA,NA,NA
+"896","711-1","Rural","30-39y",401,"Male","Semiskilled laborer","Finance collection",NA
+"897","712-1","Rural","15-19y",202,"Male","Student",NA,NA
+"898","713-1","Rural","10-14y",124,"Male","Student",NA,NA
+"899","714-1","Rural","10-14y",130,"Male","Student",NA,NA
+"900","715-1","Rural","5-9y",79,"Male","Student",NA,NA
+"901","716-1","Rural","15-19y",222,"Male","Unemployed adult",NA,NA
+"902","717-1","Rural","15-19y",188,"Female","Student",NA,NA
+"903","718-1","Urban","5-9y",119,"Female","Student",NA,NA
+"904","719-1","Urban","10-14y",170,"Female","Student",NA,NA
+"905","720-1","Urban","10-14y",152,"Female","Student",NA,NA
+"906","721-1","Urban","20-29y",303,"Female",NA,NA,NA
+"907","722-1","Rural","30-39y",415,"Female",NA,NA,NA
+"908","723-1","Rural","30-39y",390,"Female","Farmer/ Clerk/ Shopkeeper",NA,NA
+"909","724-1","Urban","15-19y",219,"Female","Student",NA,NA
+"910","725-1","Urban","30-39y",443,"Female",NA,NA,NA
+"911","726-1","Rural","5-9y",79,"Male","Student",NA,NA
+"912","727-1","Rural","20-29y",336,"Male","Semiskilled laborer","Labour assistant",NA
+"913","728-1","Rural","20-29y",306,"Female",NA,NA,NA
+"914","729-1","Urban","10-14y",157,"Female","Student",NA,NA
+"915","730-1","Urban","10-14y",151,"Female","Student",NA,NA
+"916","731-1","Urban","5-9y",93,"Female","Student",NA,NA
+"917","732-1","Urban","5-9y",118,"Female","Student",NA,NA
+"918","733-1","Rural","10-14y",163,"Male","Student",NA,NA
+"919","734-1","Urban","30-39y",360,"Female","Semiskilled laborer","Show company worker",NA
+"920","735-1","Urban","10-14y",159,"Female","Student",NA,NA
+"921","736-1","Urban","15-19y",189,"Female","Student",NA,NA
+"922","737-1","Urban","15-19y",188,"Male","Student",NA,NA
+"923","738-1","Urban","10-14y",125,"Female","Student",NA,NA
+"924","739-1","Urban","15-19y",196,"Female","Student",NA,NA
+"925","740-1","Rural","30-39y",450,"Female","Farmer/ Clerk/ Shopkeeper",NA,NA
+"926","741-1","Urban","20-29y",356,"Male","Semiskilled laborer","Company supervisor",NA
+"927","742-1","Urban","15-19y",233,"Male","Unemployed adult",NA,NA
+"928","743-1","Urban","15-19y",187,"Male","Student",NA,NA
+"929","744-1","Urban","20-29y",246,"Male","Student",NA,NA
+"930","745-1","Urban","15-19y",229,"Female",NA,NA,NA
+"931","746-1","Urban","10-14y",147,"Female","Student",NA,NA
+"932","747-1","Urban","30-39y",477,"Female",NA,NA,NA
+"933","748-1","Urban","15-19y",202,"Female","Student",NA,NA
+"934","749-1","Urban","15-19y",235,"Male","Skilled laborer","Shop company helper",NA
+"935","750-1","Urban","15-19y",231,"Female","Unskilled laborer","Press work",NA
+"936","751-1","Rural","20-29y",257,"Male","Unskilled laborer","Cooli work",NA
+"937","753-1","Rural","20-29y",250,"Male","Unemployed adult",NA,NA
+"938","754-1","Rural","15-19y",206,"Male","Student",NA,NA
+"939","755-1","Rural","10-14y",158,"Male","Student",NA,NA
+"940","756-1","Urban","30-39y",417,"Female",NA,NA,NA
+"941","757-1","Urban","10-14y",150,"Female","Student",NA,NA
+"942","758-1","Urban","15-19y",187,"Female","Student",NA,NA
+"943","759-1","Urban","30-39y",408,"Female",NA,NA,NA
+"944","760-1","Rural","10-14y",176,"Female","Student",NA,NA
+"945","761-1","Rural","10-14y",141,"Female","Student",NA,NA
+"946","762-1","Rural","10-14y",151,"Female","Student",NA,NA
+"947","763-1","Rural","30-39y",372,"Female",NA,NA,NA
+"948","764-1","Rural","1-4y",16,"Female",NA,NA,NA
+"949","765-1","Rural","15-19y",197,"Female","Student",NA,NA
+"950","766-1","Rural","15-19y",193,"Female","Student",NA,NA
+"951","767-1","Rural","1-4y",18,"Male",NA,NA,NA
+"952","768-1","Urban","15-19y",227,"Female","Unemployed adult",NA,NA
+"953","769-1","Urban","20-29y",323,"Female",NA,NA,NA
+"954","770-1","Urban","5-9y",117,"Female","Student",NA,NA
+"955","771-1","Rural","20-29y",252,"Female","Farmer/ Clerk/ Shopkeeper",NA,NA
+"956","772-1","Rural","30-39y",389,"Female",NA,NA,NA
+"957","773-1","Urban","20-29y",341,"Female",NA,NA,NA
+"958","774-1","Urban","10-14y",155,"Female","Student",NA,NA
+"959","775-1","Urban","15-19y",193,"Female","Student",NA,NA
+"960","776-1","Urban","10-14y",125,"Female","Student",NA,NA
+"961","777-1","Rural","10-14y",147,"Male","Student",NA,NA
+"962","778-1","Rural","5-9y",82,"Female","Student",NA,NA
+"963","779-1","Rural","1-4y",23,"Female",NA,NA,NA
+"964","780-1","Rural","20-29y",271,"Female","Student",NA,NA
+"965","781-1","Urban","15-19y",195,"Female","Student",NA,NA
+"966","782-1","Urban","15-19y",185,"Female","Student",NA,NA
+"967","783-1","Rural","20-29y",280,"Female","Professional","Veedu thedi maruththuvam (medicine provider)",NA
+"968","784-1","Urban","30-39y",472,"Male","Semiskilled laborer","Show company worker",NA
+"969","785-1","Urban","5-9y",97,"Female","Student",NA,NA
+"970","786-1","Urban","15-19y",217,"Female","Student",NA,NA
+"971","787-1","Urban","15-19y",181,"Male","Student",NA,NA
+"972","788-1","Urban","5-9y",69,"Female","Student",NA,NA
+"973","789-1","Urban","30-39y",388,"Male","Semiprofessional","Auto driver",NA
+"974","790-1","Urban","5-9y",82,"Female","Student",NA,NA
+"975","791-1","Urban","15-19y",213,"Female","Student",NA,NA
+"976","792-1","Urban","15-19y",230,"Female",NA,NA,NA
+"977","793-1","Urban","20-29y",258,"Female","Student",NA,NA
+"978","794-1","Urban","10-14y",168,"Female","Student",NA,NA
+"979","795-1","Urban","20-29y",318,"Female",NA,NA,NA
+"980","796-1","Urban","15-19y",187,"Male","Student",NA,NA
+"981","797-1","Urban","5-9y",96,"Male","Student",NA,NA
+"982","798-1","Urban","5-9y",108,"Female","Student",NA,NA
+"983","799-1","Urban","30-39y",433,"Male","Unskilled laborer","Daily wages",NA
+"984","800-1","Urban","20-29y",307,"Male","Unskilled laborer","Daily wages",NA
+"985","801-1","Urban","10-14y",168,"Male","Student",NA,NA
+"986","802-1","Urban","30-39y",450,"Male","Unskilled laborer","Daily wages",NA
+"987","803-1","Rural","30-39y",365,"Female",NA,NA,NA
+"988","804-1","Urban","10-14y",172,"Female","Student",NA,NA
+"989","805-1","Urban","5-9y",95,"Female","Student",NA,NA
+"990","806-1","Urban","5-9y",67,"Female","Student",NA,NA
+"991","808-1","Rural","1-4y",15,"Female",NA,NA,NA
+"992","809-1","Rural","5-9y",95,"Male","Student",NA,NA
+"993","810-1","Rural","5-9y",83,"Female","Student",NA,NA
+"994","812-1","Urban","1-4y",53,"Female",NA,NA,NA
+"995","813-1","Urban","15-19y",206,"Female","Student",NA,NA
+"996","814-1","Urban","10-14y",150,"Female","Student",NA,NA
+"997","815-1","Urban","10-14y",157,"Male","Student",NA,NA
+"998","816-1","Urban","10-14y",156,"Male","Student",NA,NA
+"999","817-1","Urban","5-9y",91,"Male","Student",NA,NA
+"1000","818-1","Rural","30-39y",386,"Female",NA,NA,NA
+"1001","819-1","Rural","30-39y",362,"Female",NA,NA,NA
+"1002","822-1","Rural","30-39y",462,"Female",NA,NA,NA
+"1003","824-1","Rural","1-4y",17,"Female",NA,NA,NA
+"1004","825-1","Rural","15-19y",183,"Female","Student",NA,NA
+"1005","826-1","Rural","5-9y",91,"Male","Student",NA,NA
+"1006","829-1","Rural","1-4y",33,"Male",NA,NA,NA
+"1007","830-1","Rural","5-9y",108,"Male","Student",NA,NA
+"1008","831-1","Rural","5-9y",102,"Male","Student",NA,NA
+"1009","833-1","Urban","20-29y",319,"Female","Semiprofessional","Nurse",NA
+"1010","834-1","Urban","10-14y",178,"Female","Student",NA,NA
+"1011","835-1","Urban","10-14y",132,"Male","Student",NA,NA
+"1012","836-1","Urban","20-29y",294,"Female","Semiprofessional","Nurse",NA
+"1013","837-1","Rural","5-9y",113,"Female","Student",NA,NA
+"1014","838-1","Rural","15-19y",209,"Female","Student",NA,NA
+"1015","839-1","Rural","5-9y",95,"Female","Student",NA,NA
+"1016","840-1","Rural","15-19y",181,"Female","Student",NA,NA
+"1017","841-1","Rural","15-19y",180,"Female","Student",NA,NA
+"1018","842-1","Rural","15-19y",183,"Female","Student",NA,NA
+"1019","843-1","Rural","1-4y",38,"Male",NA,NA,NA
+"1020","844-1","Rural","5-9y",86,"Female","Student",NA,NA
+"1021","845-1","Rural","5-9y",67,"Female","Student",NA,NA
+"1022","846-1","Rural","1-4y",27,"Female",NA,NA,NA
+"1023","847-1","Rural","5-9y",115,"Female","Student",NA,NA
+"1024","848-1","Urban","10-14y",139,"Male","Student",NA,NA
+"1025","849-1","Urban","20-29y",240,"Male","Student",NA,NA
+"1026","850-1","Urban","10-14y",176,"Male","Student",NA,NA
+"1027","851-1","Urban","5-9y",66,"Male","Student",NA,NA
+"1028","852-1","Urban","5-9y",96,"Female","Student",NA,NA
+"1029","853-1","Urban","20-29y",351,"Female","Unskilled laborer","Daily wages",NA
+"1030","854-1","Urban","15-19y",180,"Male","Student",NA,NA
+"1031","855-1","Rural","15-19y",180,"Female","Student",NA,NA
+"1032","856-1","Rural","15-19y",182,"Female","Student",NA,NA
+"1033","857-1","Rural","15-19y",189,"Female","Student",NA,NA
+"1034","858-1","Rural","5-9y",118,"Male","Student",NA,NA
+"1035","859-1","Rural","5-9y",76,"Female","Student",NA,NA
+"1036","861-1","Urban","1-4y",54,"Female",NA,NA,NA
+"1037","864-1","Urban","1-4y",30,"Female",NA,NA,NA
+"1038","865-1","Urban","15-19y",216,"Female","Unemployed adult",NA,NA
+"1039","866-1","Urban","20-29y",297,"Male","Semiprofessional","Marketing",NA
+"1040","867-1","Urban","10-14y",140,"Male","Student",NA,NA
+"1041","868-1","Urban","15-19y",213,"Female","Student",NA,NA
+"1042","869-1","Urban","15-19y",185,"Male","Student",NA,NA
+"1043","870-1","Urban","10-14y",153,"Female","Student",NA,NA
+"1044","871-1","Urban","10-14y",173,"Male","Student",NA,NA
+"1045","872-1","Urban","10-14y",138,"Male","Student",NA,NA
+"1046","873-1","Urban","5-9y",106,"Male","Student",NA,NA
+"1047","874-1","Urban","5-9y",87,"Female","Student",NA,NA
+"1048","875-1","Urban","10-14y",145,"Female","Student",NA,NA
+"1049","876-1","Urban","5-9y",119,"Male","Student",NA,NA
+"1050","878-1","Urban","20-29y",308,"Female",NA,NA,NA
+"1051","879-1","Urban","1-4y",25,"Male",NA,NA,NA
+"1052","880-1","Urban","20-29y",257,"Female",NA,NA,NA
+"1053","882-1","Urban","1-4y",31,"Male",NA,NA,NA
+"1054","883-1","Urban","20-29y",254,"Female","Skilled laborer","Private company",NA
+"1055","884-1","Urban","20-29y",303,"Male","Semiskilled laborer","Meson",NA
+"1056","885-1","Urban","15-19y",236,"Male","Unskilled laborer","Menson",NA
+"1057","886-1","Urban","20-29y",263,"Male","Unemployed adult",NA,NA
+"1058","887-1","Urban","15-19y",234,"Male","Student",NA,NA
+"1059","890-1","Urban","1-4y",30,"Female",NA,NA,NA
+"1060","891-1","Rural","15-19y",191,"Female","Student",NA,NA
+"1061","892-1","Rural","1-4y",13,"Female",NA,NA,NA
+"1062","893-1","Rural","15-19y",207,"Female","Student",NA,NA
+"1063","894-1","Rural","15-19y",233,"Female","Unemployed adult",NA,NA
+"1064","895-1","Urban","5-9y",88,"Male","Student",NA,NA
+"1065","896-1","Urban","5-9y",77,"Male","Student",NA,NA
+"1066","897-1","Urban","15-19y",228,"Male","Skilled laborer","Painter",NA
+"1067","898-1","Urban","10-14y",144,"Male","Student",NA,NA
+"1068","899-1","Urban","30-39y",373,"Male","Unskilled laborer","Kooli",NA
+"1069","900-1","Urban","20-29y",271,"Female",NA,NA,NA
+"1070","901-1","Urban","20-29y",264,"Male","Semiskilled laborer","Kooli",NA
+"1071","902-1","Urban","20-29y",270,"Female","Student",NA,NA
+"1072","903-1","Urban","20-29y",348,"Male","Skilled laborer","Mechanic",NA
+"1073","904-1","Urban","15-19y",204,"Female","Student",NA,NA
+"1074","905-1","Urban","10-14y",134,"Male","Student",NA,NA
+"1075","906-1","Urban","20-29y",256,"Female",NA,NA,NA
+"1076","907-1","Urban","5-9y",80,"Male","Student",NA,NA
+"1077","908-1","Urban","15-19y",191,"Male","Student",NA,NA
+"1078","909-1","Urban","15-19y",235,"Female","Unemployed adult",NA,NA
+"1079","910-1","Urban","15-19y",229,"Male","Student",NA,NA
+"1080","911-1","Urban","15-19y",234,"Female","Unemployed adult",NA,NA
+"1081","913-1","Urban","20-29y",350,"Female",NA,NA,NA
+"1082","914-1","Urban","5-9y",89,"Male","Student",NA,NA
+"1083","915-1","Urban","20-29y",257,"Female","Semiskilled laborer","Textile worker",NA
+"1084","916-1","Urban","20-29y",240,"Male","Unemployed adult",NA,NA
+"1085","917-1","Urban","20-29y",291,"Female",NA,NA,NA
+"1086","918-1","Urban","20-29y",349,"Male","Skilled laborer","Auto driver",NA
+"1087","919-1","Urban","15-19y",228,"Male","Unemployed adult",NA,NA
+"1088","920-1","Urban","10-14y",167,"Male","Student",NA,NA
+"1089","921-1","Urban","1-4y",36,"Male",NA,NA,NA
+"1090","922-1","Urban","1-4y",37,"Female",NA,NA,NA
+"1091","924-1","Urban","15-19y",226,"Male","Unskilled laborer","Daily wages",NA
+"1092","925-1","Urban","5-9y",91,"Male","Student",NA,NA
+"1093","926-1","Urban","15-19y",218,"Male","Student",NA,NA
+"1094","927-1","Urban","15-19y",207,"Male","Student",NA,NA
+"1095","928-1","Urban","20-29y",297,"Male","Unskilled laborer","Daily",NA
+"1096","930-1","Urban","20-29y",277,"Male","Semiskilled laborer","Bakery worker",NA
+"1097","931-1","Urban","1-4y",38,"Female",NA,NA,NA
+"1098","932-1","Urban","1-4y",26,"Female",NA,NA,NA
+"1099","933-1","Urban","5-9y",86,"Male","Student",NA,NA
+"1100","934-1","Rural","15-19y",203,"Female","Student",NA,NA
+"1101","935-1","Rural","1-4y",16,"Male",NA,NA,NA
+"1102","936-1","Rural","15-19y",210,"Female","Student",NA,NA
+"1103","937-1","Rural","15-19y",230,"Female","Student",NA,NA
+"1104","938-1","Rural","5-9y",85,"Female","Student",NA,NA
+"1105","939-1","Rural","5-9y",88,"Female","Student",NA,NA
+"1106","940-1","Rural","5-9y",108,"Female","Student",NA,NA
+"1107","941-1","Rural","15-19y",229,"Female","Student",NA,NA
+"1108","943-1","Rural","1-4y",57,"Male",NA,NA,NA
+"1109","944-1","Rural","1-4y",22,"Female",NA,NA,NA
+"1110","945-1","Rural","1-4y",55,"Male",NA,NA,NA
+"1111","946-1","Rural","1-4y",51,"Female",NA,NA,NA
+"1112","947-1","Rural","1-4y",17,"Female",NA,NA,NA
+"1113","949-1","Rural","1-4y",31,"Female",NA,NA,NA
+"1114","951-1","Rural","1-4y",24,"Male",NA,NA,NA
+"1115","953-1","Rural","1-4y",16,"Female",NA,NA,NA
+"1116","954-1","Rural","1-4y",23,"Female",NA,NA,NA
+"1117","955-1","Rural","1-4y",27,"Female",NA,NA,NA
+"1118","956-1","Rural","1-4y",41,"Male",NA,NA,NA
+"1119","957-1","Rural","1-4y",55,"Male",NA,NA,NA
+"1120","959-1","Rural","1-4y",30,"Male",NA,NA,NA
+"1121","960-1","Rural","1-4y",42,"Female",NA,NA,NA
+"1122","961-1","Rural","1-4y",45,"Male",NA,NA,NA
+"1123","962-1","Rural","1-4y",18,"Female",NA,NA,NA
+"1124","963-1","Rural","1-4y",41,"Female",NA,NA,NA
+"1125","964-1","Rural","1-4y",29,"Male",NA,NA,NA
+"1126","965-1","Rural","1-4y",30,"Male",NA,NA,NA
+"1127","966-1","Rural","1-4y",41,"Male",NA,NA,NA
+"1128","968-1","Rural","1-4y",59,"Male",NA,NA,NA
+"1129","970-1","Rural","1-4y",36,"Male",NA,NA,NA
+"1130","971-1","Urban","15-19y",183,"Male","Student",NA,NA
+"1131","973-1","Urban","20-29y",297,"Male","Unskilled laborer","Kooli",NA
+"1132","979-1","Urban","1-4y",24,"Female",NA,NA,NA
+"1133","980-1","Urban","1-4y",44,"Female",NA,NA,NA
+"1134","981-1","Urban","1-4y",50,"Male",NA,NA,NA
+"1135","982-1","Urban","1-4y",27,"Male",NA,NA,NA
+"1136","983-1","Urban","1-4y",14,"Male",NA,NA,NA
+"1137","984-1","Urban","30-39y",448,"Male","Semiskilled laborer","Painter",NA
+"1138","985-1","Urban","20-29y",295,"Male","Farmer/ Clerk/ Shopkeeper",NA,NA
+"1139","986-1","Urban","5-9y",116,"Male","Student",NA,NA
+"1140","988-1","Urban","1-4y",17,"Female",NA,NA,NA
+"1141","990-1","Urban","1-4y",40,"Female",NA,NA,NA
+"1142","992-1","Urban","1-4y",30,"Male",NA,NA,NA
+"1143","993-1","Urban","1-4y",31,"Female",NA,NA,NA
+"1144","994-1","Urban","1-4y",35,"Female",NA,NA,NA
+"1145","996-1","Urban","1-4y",49,"Male",NA,NA,NA
+"1146","998-1","Urban","1-4y",54,"Female",NA,NA,NA
+"1147","999-1","Urban","1-4y",34,"Female",NA,NA,NA
+"1148","1000-1","Urban","1-4y",19,"Male",NA,NA,NA
+"1149","1001-1","Urban","1-4y",30,"Male",NA,NA,NA
+"1150","1005-1","Rural","1-4y",48,"Male",NA,NA,NA
+"1151","1007-1","Rural","1-4y",24,"Male",NA,NA,NA
+"1152","1008-1","Rural","1-4y",36,"Female",NA,NA,NA
+"1153","1009-1","Rural","1-4y",24,"Male",NA,NA,NA
+"1154","1010-1","Rural","1-4y",25,"Male",NA,NA,NA
+"1155","1012-1","Rural","1-4y",44,"Male",NA,NA,NA
+"1156","1013-1","Rural","1-4y",40,"Female",NA,NA,NA
+"1157","1014-1","Rural","1-4y",43,"Female",NA,NA,NA
+"1158","1016-1","Urban","1-4y",12,"Female",NA,NA,NA
+"1159","1018-1","Urban","1-4y",42,"Female",NA,NA,NA
+"1160","1020-1","Urban","60+y",748,"Female","Unemployed adult",NA,NA
+"1161","1022-1","Urban","1-4y",39,"Male",NA,NA,NA
+"1162","1023-1","Urban","30-39y",400,"Male","Professional","Layer",NA
+"1163","1024-1","Urban","1-4y",44,"Male",NA,NA,NA
+"1164","1025-1","Urban","1-4y",29,"Male",NA,NA,NA
+"1165","1026-1","Urban","1-4y",32,"Male",NA,NA,NA
+"1166","1027-1","Urban","30-39y",379,"Male","Skilled laborer","Auto driver",NA
+"1167","1028-1","Urban","1-4y",41,"Female",NA,NA,NA
+"1168","1029-1","Urban","30-39y",400,"Female","Semiskilled laborer","Show company worker",NA
+"1169","1030-1","Urban","1-4y",20,"Female",NA,NA,NA
+"1170","1031-1","Urban","1-4y",34,"Female",NA,NA,NA
+"1171","1032-1","Urban","1-4y",53,"Male",NA,NA,NA
+"1172","1033-1","Urban","5-9y",98,"Male","Student",NA,NA
+"1173","1034-1","Urban","20-29y",298,"Male","Unskilled laborer","Meson labour",NA
+"1174","1035-1","Urban","1-4y",25,"Female",NA,NA,NA
+"1175","1036-1","Urban","1-4y",39,"Female",NA,NA,NA
+"1176","1037-1","Urban","1-4y",16,"Male",NA,NA,NA
+"1177","1038-1","Urban","1-4y",48,"Female",NA,NA,NA
+"1178","1040-1","Urban","1-4y",25,"Female",NA,NA,NA
+"1179","1041-1","Urban","1-4y",39,"Female",NA,NA,NA
+"1180","1042-1","Urban","1-4y",43,"Female",NA,NA,NA
+"1181","1043-1","Urban","1-4y",36,"Female",NA,NA,NA
+"1182","1044-1","Urban","1-4y",51,"Male",NA,NA,NA
+"1183","1045-1","Urban","1-4y",52,"Male",NA,NA,NA
+"1184","1046-1","Urban","1-4y",39,"Male",NA,NA,NA
+"1185","1047-1","Urban","1-4y",51,"Female",NA,NA,NA
+"1186","1048-1","Urban","1-4y",31,"Male",NA,NA,NA
+"1187","1050-1","Urban","20-29y",273,"Male","Unskilled laborer","Daily wages",NA
+"1188","1051-1","Urban","20-29y",306,"Male","Unskilled laborer","Daily wages",NA
+"1189","1053-1","Urban","20-29y",346,"Male","Unskilled laborer","Kooli",NA
+"1190","1057-1","Urban","20-29y",253,"Male","Unskilled laborer","Masonry work",NA
+"1191","1060-1","Urban","60+y",787,"Male","Unemployed adult",NA,NA
+"1192","1061-1","Urban","40-59y",495,"Male","Semiprofessional","Business",NA
+"1193","1062-1","Urban","30-39y",374,"Male","Semiskilled laborer","Daily wages",NA
+"1194","1063-1","Urban","60+y",881,"Male","Unemployed adult",NA,NA
+"1195","1064-1","Urban","15-19y",195,"Female","Student",NA,NA
+"1196","1065-1","Urban","15-19y",218,"Female","Unemployed adult",NA,NA
+"1197","1066-1","Urban","40-59y",496,"Male","Semiskilled laborer","Daily wages",NA
+"1198","1067-1","Urban","40-59y",579,"Male","Semiprofessional","Watchman",NA
+"1199","1068-1","Urban","40-59y",592,"Male","Unemployed adult",NA,NA
+"1200","1069-1","Urban","40-59y",546,"Male","Semiskilled laborer","Daily wages",NA
+"1201","1070-1","Urban","40-59y",718,"Male","Unemployed adult",NA,NA
+"1202","1071-1","Urban","30-39y",426,"Male","Semiprofessional","Daily wages",NA
+"1203","1072-1","Urban","30-39y",451,"Male","Semiprofessional","Daily wages",NA
+"1204","1088-1","Urban","15-19y",238,"Male","Semiskilled laborer","Kooli",NA
+"1205","1111-1","Urban","20-29y",263,"Female",NA,NA,NA
+"1206","1112-1","Urban","20-29y",316,"Female","Unemployed adult",NA,NA
+"1207","41-2","Rural","1-4y",37,"Female","Child",NA,NA
+"1208","51-2","Rural","1-4y",24,"Female","Child",NA,NA
+"1209","58-2","Rural","1-4y",25,"Male","Child",NA,NA
+"1210","111-2","Urban","1-4y",29,"Female","Child",NA,NA
+"1211","119-2","Urban","1-4y",15,"Female","Child",NA,NA
+"1212","129-2","Urban","1-4y",43,"Male","Child",NA,NA
+"1213","206-2","Urban","1-4y",22,"Female","Child",NA,NA
+"1214","214-2","Urban","1-4y",27,"Male","Child",NA,NA
+"1215","218-2","Rural","1-4y",45,"Female","Child",NA,NA
+"1216","222-2","Rural","1-4y",28,"Male","Child",NA,NA
+"1217","229-2","Rural","1-4y",17,"Male","Child",NA,NA
+"1218","239-2","Rural","1-4y",20,"Female","Child",NA,NA
+"1219","273-2","Rural","1-4y",47,"Female","Child",NA,NA
+"1220","299-2","Rural","1-4y",12,"Female","Child",NA,NA
+"1221","303-2","Rural","1-4y",18,"Female","Child",NA,NA
+"1222","306-2","Rural","1-4y",26,"Male","Child",NA,NA
+"1223","309-2","Rural","1-4y",46,"Female","Child",NA,NA
+"1224","312-2","Rural","1-4y",35,"Female","Child",NA,NA
+"1225","316-2","Rural","1-4y",39,"Female","Child",NA,NA
+"1226","328-2","Rural","1-4y",12,"Male","Child",NA,NA
+"1227","331-2","Urban","1-4y",22,"Male","Child",NA,NA
+"1228","338-2","Urban","1-4y",29,"Female","Child",NA,NA
+"1229","368-2","Rural","1-4y",37,"Female","Child",NA,NA
+"1230","376-2","Urban","1-4y",13,"Female","Child",NA,NA
+"1231","403-2","Rural","1-4y",23,"Male","Child",NA,NA
+"1232","422-2","Urban","1-4y",12,"Male","Child",NA,NA
+"1233","428-2","Urban","1-4y",15,"Male","Child",NA,NA
+"1234","431-2","Urban","1-4y",12,"Male","Child",NA,NA
+"1235","444-2","Urban","1-4y",12,"Female","Child",NA,NA
+"1236","448-2","Urban","1-4y",14,"Male","Child",NA,NA
+"1237","468-2","Urban","1-4y",57,"Female","Student",NA,NA
+"1238","529-2","Urban","1-4y",15,"Male","Child",NA,NA
+"1239","542-2","Rural","1-4y",22,"Male","Child",NA,NA
+"1240","550-2","Rural","1-4y",31,"Female","Child",NA,NA
+"1241","554-2","Rural","1-4y",35,"Male","Child",NA,NA
+"1242","561-2","Urban","1-4y",29,"Female","Child",NA,NA
+"1243","582-2","Rural","1-4y",29,"Female","Child",NA,NA
+"1244","670-2","Urban","1-4y",12,"Male","Child",NA,NA

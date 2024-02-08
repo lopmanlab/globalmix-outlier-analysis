@@ -18,13 +18,13 @@ contact_unique_resp <- df_contact %>%
                      names_from = fromdayone, 
                      values_from=num_contacts)
 
-contact_unique_resp$`Both Days`[which(is.na(contact_unique_resp$`Both Days`))] <- 0
-contact_unique_resp$`Day1 Only`[which(is.na(contact_unique_resp$`Day1 Only`))] <- 0
-contact_unique_resp$`Day2 Only`[which(is.na(contact_unique_resp$`Day2 Only`))] <- 0
+contact_unique_resp$`Both days`[which(is.na(contact_unique_resp$`Both days`))] <- 0
+contact_unique_resp$`Day 1`[which(is.na(contact_unique_resp$`Day 1`))] <- 0
+contact_unique_resp$`Day 2`[which(is.na(contact_unique_resp$`Day 2`))] <- 0
 contact_unique_resp$`NA`[which(is.na(contact_unique_resp$`NA`))] <- 0
-contact_unique_resp$avg_unique_resp_contacts <- (round(contact_unique_resp$`Both Days` / 2)+
-                                                   contact_unique_resp$`Day1 Only` + 
-                                                   contact_unique_resp$`Day2 Only`+
+contact_unique_resp$avg_unique_resp_contacts <- (round(contact_unique_resp$`Both days` / 2)+
+                                                   contact_unique_resp$`Day 1` + 
+                                                   contact_unique_resp$`Day 2`+
                                                    contact_unique_resp$`NA`)/2
 
 png("figs/matrix_resp_unique.png", width=2000, height=1500, res=300)
