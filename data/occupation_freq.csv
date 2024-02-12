@@ -1,11 +1,12 @@
 "","Var1","Freq"
-"1","Child",474
-"2","Farmer/ Clerk/ Shopkeeper",61
-"3","Professional",13
-"4","Retired",10
-"5","Semiprofessional",19
-"6","Semiskilled laborer",41
-"7","Skilled laborer",53
-"8","Student",360
-"9","Unemployed adult",125
-"10","Unskilled laborer",74
+"1","Unemployed",0
+"2","Child",474
+"3","Student",360
+"4","Farmer",0
+"5","Business person",0
+"6","Office worker",0
+"7","Casual laboror",0
+"8","Fisherman",0
+"9","Homemaker",0
+"10","Retired",10
+"11","Other",0

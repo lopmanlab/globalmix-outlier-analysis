@@ -363,7 +363,7 @@ table(contacts_resp_ent_nonHHcontacts$part_age, contacts_resp_ent_nonHHcontacts$
 table(contacts_resp_ent_nonHHcontacts$p_age, contacts_resp_ent_nonHHcontacts$unique_ent_q90_outlier)
 table(contacts_resp_ent_nonHHcontacts$p_age, contacts_resp_ent_nonHHcontacts$unique_resp_q90_outlier)
 
-unique_ent_q90_model <- glm(unique_ent_q90_outlier ~ part_age + sex + site + hhsize, 
+unique_ent_q90_model <- glm(unique_ent_q90_outlier ~ p_age + sex + site + hhsize, 
                             data = contacts_resp_ent_nonHHcontacts, family = binomial())
 unique_ent_q90 <- as.data.frame(summary(unique_ent_q90_model)$coefficients) %>%
   as.data.frame() %>%
