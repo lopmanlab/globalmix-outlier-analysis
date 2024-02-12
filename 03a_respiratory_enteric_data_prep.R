@@ -219,13 +219,7 @@ df_contact$occupation <- if_else(is.na(df_contact$occupation),
 df_contact$hh_occupants <- as.numeric(df_contact$hh_occupants)
 
 
-contacts_resp_ent$occupation <- factor(contacts_resp_ent$occupation,
-                                       levels = c("Unemployed", "Child", 
-                                                  "Student", "Farmer", 
-                                                  "Business person", "Office worker", 
-                                                  "Casual laboror", "Fisherman", 
-                                                  "Homemaker", "Retired",
-                                                  "Other"))
+contacts_resp_ent$occupation <- factor(contacts_resp_ent$occupation)
 
 hist(contacts_resp_ent$hh_occupants)
 table(contacts_resp_ent$hh_occupants)
@@ -406,13 +400,7 @@ df_contact$occupation <- if_else(is.na(df_contact$occupation),
 df_contact$hh_occupants <- as.numeric(df_contact$hh_occupants)
 
 
-contacts_resp_ent$occupation <- factor(contacts_resp_ent$occupation,
-                                       levels = c("Unemployed", "Child", 
-                                                  "Student", "Farmer", 
-                                                  "Business person", "Office worker", 
-                                                  "Casual laboror", "Fisherman", 
-                                                  "Homemaker", "Retired",
-                                                  "Other"))
+contacts_resp_ent$occupation <- factor(contacts_resp_ent$occupation)
 
 hist(contacts_resp_ent$hh_occupants)
 # write.csv(table(contacts_resp_ent$occupation) %>% as.data.frame(), "data/occupation_freq.csv")

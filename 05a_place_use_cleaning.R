@@ -13,3 +13,4 @@ pacman::p_load(here,
 placeuse_raw <- readRDS(paste0(here(),"/../","globalmix-mozambique/data/clean/locations_visited_aim1.RDS"))
 
 table(placeuse_raw$place_visited, placeuse_raw$num_pax_place)
+

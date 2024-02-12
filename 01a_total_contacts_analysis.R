@@ -750,21 +750,21 @@ linear_int_model <- glm(avg_unique_contacts ~ participant_age * sex * site,
 unique_linear_int <- as.data.frame(summary(linear_int_model)$coefficients)
 
 # save data --------------------------------------------------------------
-contacts_unique$hhsize <- if_else(contacts_unique$hh_occupants > 6, "7+",
-                                  if_else(contacts_unique$hh_occupants > 3, 
-                                          "4-6",
-                                          "0-3"))
-contacts_unique$hhsize <- factor(contacts_unique$hhsize,
-                                 levels = c("0-3", "4-6", "7+"))
+contacts_unique$hhsize <- ifelse(contacts_unique$hh_occupants > 6, "7+",
+                                   ifelse(contacts_unique$hh_occupants > 4, "5-6",
+                                          ifelse(contacts_unique$hh_occupants > 2, "3-4",
+                                                 2)))
+contacts_unique$hhsize <- factor(contacts_unique$hhsize, 
+                                 levels = c("2", "3-4", "5-6", "7+"))
 
 contacts_unique$age = as.numeric(contacts_unique$age)
 
-contacts_unique$occupation[which(contacts_unique$occupation %in% c("Child", "Fisherman") &
-                                   contacts_unique$age >= 20 & 
-                                   contacts_unique$participant_age != "<6mo")] <- "Other"
-contacts_unique$occupation[which(contacts_unique$occupation %in% c("Retired") &
-                                   contacts_unique$age >= 20 & 
-                                   contacts_unique$participant_age != "<6mo")] <- "Unemployed"
+# contacts_unique$occupation[which(contacts_unique$occupation %in% c("Child", "Fisherman") &
+#                                    contacts_unique$age >= 20 & 
+#                                    contacts_unique$participant_age != "<6mo")] <- "Other"
+# contacts_unique$occupation[which(contacts_unique$occupation %in% c("Retired") &
+#                                    contacts_unique$age >= 20 & 
+#                                    contacts_unique$participant_age != "<6mo")] <- "Unemployed"
 
 table(contacts_unique$hhsize)
 
