@@ -256,11 +256,12 @@ contacts_resp_ent$occupation <- factor(contacts_resp_ent$occupation,
 hist(contacts_resp_ent$hh_occupants)
 write.csv(table(contacts_resp_ent$occupation) %>% as.data.frame(), "data/occupation_freq.csv")
 
-contacts_resp_ent$hhsize <- if_else(contacts_resp_ent$hh_occupants > 6, "7+",
-                                    if_else(contacts_resp_ent$hh_occupants > 3, "4-6",
-                                            "0-3"))
+contacts_resp_ent$hhsize <- ifelse(contacts_resp_ent$hh_occupants > 6, "7+",
+                                   ifelse(contacts_resp_ent$hh_occupants > 4, "5-6",
+                                          ifelse(contacts_resp_ent$hh_occupants > 2, "3-4",
+                                                 "1-2")))
 contacts_resp_ent$hhsize <- factor(contacts_resp_ent$hhsize, 
-                                   levels = c("0-3", "4-6", "7+"))
+                                   levels = c("1-2", "3-4", "5-6", "7+"))
 
 barplot(prop.table(table(contacts_resp_ent$hhsize)))
 
@@ -299,6 +300,21 @@ ggplot(data = contacts_resp_ent)+
   geom_vline(aes(xintercept = contact_summaries$unique_ent_q75), color = "blue")+
   geom_vline(aes(xintercept = contact_summaries$unique_ent_q90), color = "red")+
   ggtitle("Unique Enteric, Blue=Q75 and Red=Q90")
+
+
+contacts_resp_ent <- contacts_resp_ent %>%
+  mutate(p_age = case_when(
+    participant_age == "60+y" ~ "60+y",
+    age == 60 & participant_age == "40-59y" ~ "50-59y",
+    age >= 50 & age <= 59 ~ "50-59y",
+    participant_age == "30-39y" ~ "30-39y",
+    age >= 40 & age <= 49 ~ "40-49y",
+    participant_age == "20-29y" ~ "20-29y",
+    participant_age %in% c("10-14y", "15-19y") ~ "10-19y",
+    participant_age == "5-9y" ~ "5-9y",
+    .default = "<4y")) %>%
+  mutate(p_age = factor(p_age, c("<4y", "5-9y", "10-19y", "20-29y", "30-39y",
+                                 "40-49y", "50-59y", "60+y")))
 
 
 saveRDS(contacts_resp_ent, here("data/contacts_resp_ent.RDS"))
@@ -427,11 +443,27 @@ contacts_resp_ent$occupation <- factor(contacts_resp_ent$occupation,
 hist(contacts_resp_ent$hh_occupants)
 # write.csv(table(contacts_resp_ent$occupation) %>% as.data.frame(), "data/occupation_freq.csv")
 
-contacts_resp_ent$hhsize <- if_else(contacts_resp_ent$hh_occupants > 6, "7+",
-                                    if_else(contacts_resp_ent$hh_occupants > 3, "4-6",
-                                            "0-3"))
+contacts_resp_ent$hhsize <- ifelse(contacts_resp_ent$hh_occupants > 6, "7+",
+                                 ifelse(contacts_resp_ent$hh_occupants > 4, "5-6",
+                                        ifelse(contacts_resp_ent$hh_occupants > 2, "3-4",
+                                               "1-2")))
 contacts_resp_ent$hhsize <- factor(contacts_resp_ent$hhsize, 
-                                   levels = c("0-3", "4-6", "7+"))
+                                 levels = c("1-2", "3-4", "5-6", "7+"))
+
+
+contacts_resp_ent <- contacts_resp_ent %>%
+  mutate(p_age = case_when(
+    participant_age == "60+y" ~ "60+y",
+    age == 60 & participant_age == "40-59y" ~ "50-59y",
+    age >= 50 & age <= 59 ~ "50-59y",
+    participant_age == "30-39y" ~ "30-39y",
+    age >= 40 & age <= 49 ~ "40-49y",
+    participant_age == "20-29y" ~ "20-29y",
+    participant_age %in% c("10-14y", "15-19y") ~ "10-19y",
+    participant_age == "5-9y" ~ "5-9y",
+    .default = "<4y")) %>%
+  mutate(p_age = factor(p_age, c("<4y", "5-9y", "10-19y", "20-29y", "30-39y",
+                                 "40-49y", "50-59y", "60+y")))
 
 barplot(prop.table(table(contacts_resp_ent$hhsize)))
 
