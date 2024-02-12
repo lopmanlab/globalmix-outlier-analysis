@@ -16,6 +16,10 @@ placeuse_clean <- placeuse_raw %>%
   mutate(time_visited = factor(time_visited, levels=c("<5 mins", "5-15 mins", "16-30 mins", "31 mins-1 hr", "1-4 hrs", ">4 hrs")))%>%
   mutate(num_pax_place = as.numeric(num_pax_place)) 
 
+contacts_resp_ent <- readRDS(here("data/contacts_resp_ent.RDS"))
+
+# Summary tables -------------------------------------------------------------
+
 summary(placeuse_clean %>% group_by(place_visited) %>% dplyr::select(num_pax_place))
 tapply(placeuse_clean$num_pax_place, (placeuse_clean$place_visited), summary)
 
@@ -56,7 +60,7 @@ placeuse_clean <- placeuse_clean %>%
                                time_visited == "1-4 hrs" ~ 60*(4+1)/2,
                                time_visited == ">4 hrs" ~ 4*60,
                                .default = NA)) %>%
-  mutate(person_hours = (num_pax_place / duration) * 60) 
+  mutate(person_hours = num_pax_place * (duration/60)) 
 
 placeuse_clean %>%
   dplyr::select(num_pax_place, duration, person_hours)
@@ -68,7 +72,56 @@ hist(placeuse_clean$person_hours)
 summary(placeuse_clean$person_hours)
 
 ggplot(placeuse_clean) +
-  geom_histogram(aes(x = person_hours))+
+  geom_histogram(aes(x = person_hours), binwidth=1)+
   theme_bw()+
-  geom_vline(xintercept = 9.68, color = "red")+
-  geom_vline(xintercept = 2.5, color = "blue")
+  geom_vline(xintercept = 12.5, color = "red")+
+  geom_vline(xintercept = 23.3, color = "blue")+
+  xlim(0, 150)+
+  ylim(0, 700)
+
+# How to combine days / visit frequency?
+table(placeuse_clean$study_day)
+table(placeuse_clean$visited_frequency)
+names(placeuse_clean)
+
+placeuse_byID <- placeuse_clean %>%
+  group_by(rec_id) %>%
+  summarise(sum_person_hours = sum(person_hours)) %>%
+  left_join(., contacts_resp_ent %>% 
+              ungroup() %>%
+              dplyr::select(rec_id, unique_resp_q90_outlier, unique_ent_q90_outlier))
+
+
+summary(placeuse_byID$sum_person_hours)
+quantile(placeuse_byID$sum_person_hours, 0.75, na.rm = T)
+
+png(filename = "figs/placeuse.png")
+ggplot(placeuse_byID) +
+  geom_histogram(aes(x = sum_person_hours))+
+  theme_bw()+
+  geom_vline(xintercept = 133, color = "red")+
+  geom_vline(xintercept = 94, color = "blue")+
+  xlim(0, 1000)
+dev.off()
+
+png(filename = "figs/respiratory_placeuse.png")
+ggplot(placeuse_byID) +
+  geom_histogram(aes(x = sum_person_hours))+
+  theme_bw()+
+  facet_grid(rows = vars(unique_resp_q90_outlier), scales = "free")+
+  ggtitle("Sum of place use person hours over 2 days by respiratory outlier status")+
+  geom_vline(xintercept = 133, color = "red")+
+  geom_vline(xintercept = 94, color = "blue")+
+  xlim(0, 1000)
+dev.off()
+
+png(filename = "figs/enteric_placeuse.png")
+ggplot(placeuse_byID) +
+  geom_histogram(aes(x = sum_person_hours))+
+  theme_bw()+
+  facet_grid(rows = vars(unique_ent_q90_outlier), scales = "free")+
+  ggtitle("Sum of place use person hours over 2 days by enteric outlier status")+
+  geom_vline(xintercept = 133, color = "red")+
+  geom_vline(xintercept = 94, color = "blue")+
+  xlim(0, 1000)
+dev.off()
