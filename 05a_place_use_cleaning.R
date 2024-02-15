@@ -93,14 +93,15 @@ placeuse_byID <- placeuse_clean %>%
 
 
 summary(placeuse_byID$sum_person_hours)
-quantile(placeuse_byID$sum_person_hours, 0.75, na.rm = T)
+quantile(placeuse_byID$sum_person_hours, 0.9, na.rm = T)
 
 png(filename = "figs/placeuse.png")
 ggplot(placeuse_byID) +
   geom_histogram(aes(x = sum_person_hours))+
   theme_bw()+
-  geom_vline(xintercept = 133, color = "red")+
-  geom_vline(xintercept = 94, color = "blue")+
+  geom_vline(xintercept = 133, lty=1)+
+  geom_vline(xintercept = 94, lty=2)+
+  geom_vline(xintercept = 94, lty=3)+
   xlim(0, 1000)
 dev.off()
 
