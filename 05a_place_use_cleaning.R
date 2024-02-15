@@ -106,22 +106,22 @@ dev.off()
 
 png(filename = "figs/respiratory_placeuse.png")
 ggplot(placeuse_byID) +
-  geom_histogram(aes(x = sum_person_hours))+
+  geom_histogram(aes(x = sum_person_hours, fill = factor(unique_resp_q90_outlier)))+
   theme_bw()+
   facet_grid(rows = vars(unique_resp_q90_outlier), scales = "free")+
   ggtitle("Sum of place use person hours over 2 days by respiratory outlier status")+
-  geom_vline(xintercept = 133, color = "red")+
-  geom_vline(xintercept = 94, color = "blue")+
+  geom_vline(xintercept = 133, lty = 1)+
+  geom_vline(xintercept = 94, lty = 2)+
   xlim(0, 1000)
 dev.off()
 
 png(filename = "figs/enteric_placeuse.png")
 ggplot(placeuse_byID) +
-  geom_histogram(aes(x = sum_person_hours))+
+  geom_histogram(aes(x = sum_person_hours, fill = factor(unique_ent_q90_outlier)))+
   theme_bw()+
   facet_grid(rows = vars(unique_ent_q90_outlier), scales = "free")+
   ggtitle("Sum of place use person hours over 2 days by enteric outlier status")+
-  geom_vline(xintercept = 133, color = "red")+
-  geom_vline(xintercept = 94, color = "blue")+
+  geom_vline(xintercept = 133, lty = 1)+
+  geom_vline(xintercept = 94, lty = 2)+
   xlim(0, 1000)
 dev.off()
