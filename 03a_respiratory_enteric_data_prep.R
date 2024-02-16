@@ -234,13 +234,13 @@ contacts_resp_ent <- contacts_resp_ent %>%
 # table(contacts_resp_ent$age, is.na(contacts_resp_ent$hh_occupants))
 # those with occupation = NA are all <= 7 years old
 
-contacts_resp_ent$occupation <- if_else(is.na(contacts_resp_ent$occupation),
-                                        "Child", contacts_resp_ent$occupation)
+# contacts_resp_ent$occupation <- if_else(is.na(contacts_resp_ent$occupation),
+#                                         "Child", contacts_resp_ent$occupation)
 
 contacts_resp_ent$hh_occupants <- as.numeric(contacts_resp_ent$hh_occupants)
 
-df_contact$occupation <- if_else(is.na(df_contact$occupation),
-                                        "Child", df_contact$occupation)
+# df_contact$occupation <- if_else(is.na(df_contact$occupation),
+#                                         "Child", df_contact$occupation)
 
 df_contact$hh_occupants <- as.numeric(df_contact$hh_occupants)
 
@@ -435,7 +435,7 @@ df_contact$hh_occupants <- as.numeric(df_contact$hh_occupants)
 contacts_resp_ent$occupation <- factor(contacts_resp_ent$occupation,
                                        levels = c("Unemployed", "Child", 
                                                   "Student", "Farmer", 
-                                                  "Business person", "Office worker", 
+                                                  "Businessperson", "Office worker", 
                                                   "Casual laboror", "Fisherman", 
                                                   "Homemaker", "Retired",
                                                   "Other"))
@@ -468,7 +468,12 @@ contacts_resp_ent <- contacts_resp_ent %>%
 barplot(prop.table(table(contacts_resp_ent$hhsize)))
 
 contacts_resp_ent$age = as.numeric(contacts_resp_ent$age)
+
+
 adults_contacts_resp_ent <- contacts_resp_ent %>% filter(age >= 20, participant_age != "<6mo")
+
+table(contacts_resp_ent$occupation, useNA = "always")
+table(adults_contacts_resp_ent$occupation, useNA = "always")
 adults_contacts_resp_ent$occupation[which(adults_contacts_resp_ent$occupation %in% 
                                             c("Child", "Fisherman"))] <- "Other"
 adults_contacts_resp_ent$occupation[which(adults_contacts_resp_ent$occupation %in% 
@@ -492,3 +497,6 @@ adults_contacts_resp_ent %>%
             meane = mean(avg_unique_ent_contacts, na.rm = T))
 
 saveRDS(contacts_resp_ent, here("data/contacts_resp_ent_nonHHcontacts.RDS"))
+
+saveRDS(adults_contacts_resp_ent, here("data/adults_contacts_resp_ent.RDS"))
+

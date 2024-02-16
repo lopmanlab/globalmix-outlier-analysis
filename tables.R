@@ -165,71 +165,66 @@ table1 <- data.frame(Var = c("Overall", "<4y", "5-9y", "10-19y", "20-29y",
 
 write.csv(table1, "data/table1_mozambique.csv")
 
+# Table 1a ---------------------------------------------------------------------
+
 table(contacts_unique$occupation, useNA = "always")
 
 contacts_unique <- contacts_unique %>%
+  mutate(age > 20) %>%
+  mutate(occupation = if_else(occupation %in% c("Fisherman", "Child"), "Other", occupation)) %>%
   mutate(occupation = factor(occupation, c("Unemployed", "Student", "Homemaker",
-                                           "Casual laboror", "Farmer", "Business person",
-                                           "Office worker", "Other", "NA")))
+                                           "Casual laboror", "Farmer", "Businessperson",
+                                           "Office worker", "Other")))
+table(contacts_unique$occupation, useNA = "always")
 
-table1a <- data.frame(Var = c("Overall" ,"2", "3-4", "5-6", "7+", "NA", "Child", 
-                              "Unemployed", "Student", "Homemaker",
-                              "Casual laboror", "Farmer", "Business person",
-                              "Office worker", "Other"),
-                      N = c(paste0(nrow(contacts_unique), " (100)"), 
-                            paste0(table(contacts_unique$hhsize, useNA = "always"), " (", 
-                                   round(100*prop.table(table(contacts_unique$hhsize))), ")"),
-                            paste0(table(contacts_unique$occupation), " (", 
-                                   round(100*prop.table(table(contacts_unique$occupation))), ")")
-                      ),
-                      Median = round(c(median(contacts_unique$avg_unique_contacts),
-                                       contacts_unique %>%
-                                         group_by(hhsize) %>%
-                                         summarise_at(vars(avg_unique_contacts), 
-                                                      list(name = median))%>%
-                                         dplyr::select(name)%>%
-                                         unlist(),
-                                       contacts_unique %>%
-                                         drop_na(occupation) %>%
-                                         group_by(occupation) %>%
-                                         summarise_at(vars(avg_unique_contacts), 
-                                                      list(name = median))%>%
-                                         dplyr::select(name)%>%
-                                         unlist()
-                      ),1),
-                      Mean = round(c(mean(contacts_unique$avg_unique_contacts),
-                                       contacts_unique %>%
-                                         group_by(hhsize) %>%
-                                         summarise_at(vars(avg_unique_contacts), 
-                                                      list(name = mean))%>%
-                                         dplyr::select(name)%>%
-                                         unlist(),
-                                       contacts_unique %>%
-                                       drop_na(occupation) %>%
-                                       group_by(occupation) %>%
-                                         summarise_at(vars(avg_unique_contacts), 
-                                                      list(name = mean))%>%
-                                         dplyr::select(name)%>%
-                                         unlist()
-                      ),1))
+paste0(table(contacts_unique$hhsize, useNA = "always"), 
+       " (", 
+       round(100*prop.table(table(contacts_unique$hhsize))), 
+       ")")
+table(contacts_unique$occupation, useNA = "always")
+round(100*prop.table(table(contacts_unique$occupation, useNA = "always")))
+
+contacts_unique %>%
+ group_by(hhsize) %>%
+ summarise_at(vars(avg_unique_contacts), list(name = median))
+contacts_unique %>%
+  filter(age > 20) %>%
+  group_by(occupation) %>%
+  summarise_at(vars(avg_unique_contacts), list(name = median))
+                 
+contacts_unique %>%
+  group_by(hhsize) %>%
+  summarise_at(vars(avg_unique_contacts), list(name = mean))
+contacts_unique %>%
+  filter(age > 20) %>%
+  group_by(occupation) %>%
+  summarise_at(vars(avg_unique_contacts), list(name = mean))
 
 
-write.csv(table1a, "data/table1a_mozambique.csv")
+# write.csv(table1a, "data/table1a_mozambique.csv")
 
-median(contacts_resp_ent$avg_unique_resp_contacts)
+contacts_resp_ent <- readRDS(here("data/adults_contacts_resp_ent.RDS")) %>%
+  mutate(p_age = factor(p_age, c("20-29y", "30-39y", "40-49y", "50-59y", "60+y")))
+
+table(contacts_resp_ent$occupation, useNA = "always")
+
 contacts_resp_ent %>%
+  drop_na(avg_unique_resp_contacts) %>%
   group_by(hhsize) %>%
   summarise_at(vars(avg_unique_resp_contacts), list(name = median))
 
 contacts_resp_ent %>%
+  drop_na(avg_unique_resp_contacts) %>%
   group_by(occupation) %>%
   summarise_at(vars(avg_unique_resp_contacts), list(name = median))
 
-mean(contacts_resp_ent$avg_unique_resp_contacts)
 contacts_resp_ent %>%
+  drop_na(avg_unique_resp_contacts) %>%
   group_by(hhsize) %>%
   summarise_at(vars(avg_unique_resp_contacts), list(name = mean))
+
 contacts_resp_ent %>%
+  drop_na(avg_unique_resp_contacts) %>%
   group_by(occupation) %>%
   summarise_at(vars(avg_unique_resp_contacts), list(name = mean))
 
