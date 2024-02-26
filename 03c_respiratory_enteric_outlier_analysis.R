@@ -6,6 +6,7 @@ library(MASS)
 library(scales)
 
 contacts_resp_ent <- read.csv(here("data/contacts_resp_ent.csv"))
+adults_contacts_resp_ent <- read.csv(here("data/adults_contacts_resp_ent.csv"))
 
 contacts_resp_ent$age <- as.numeric(contacts_resp_ent$age)
 contacts_resp_ent$sex <- contacts_resp_ent$participant_sex
@@ -219,26 +220,34 @@ write.csv(unique_ent_q90, "data/unique_hhs_ent_q90.csv")
 
 # With Occupation --------------------------------------------------------------
 
-adults_contacts_resp_ent <- contacts_resp_ent %>% 
-  filter(age >= 20, participant_age != "<6mo", participant_age != "15-19y")
-adults_contacts_resp_ent$occupation[which(adults_contacts_resp_ent$occupation %in% 
-                                            c("Child", "Fisherman"))] <- "Other"
-adults_contacts_resp_ent$occupation[which(adults_contacts_resp_ent$occupation %in% 
-                                            c("Retired"))] <- "Unemployed"
+# adults_contacts_resp_ent <- contacts_resp_ent %>% 
+#   filter(age >= 20, participant_age != "<6mo", participant_age != "15-19y")
+# adults_contacts_resp_ent$occupation[which(adults_contacts_resp_ent$occupation %in% 
+#                                             c("Child", "Fisherman"))] <- "Other"
+# adults_contacts_resp_ent$occupation[which(adults_contacts_resp_ent$occupation %in% 
+#                                             c("Retired"))] <- "Unemployed"
 table(adults_contacts_resp_ent$occupation)
 table(adults_contacts_resp_ent$participant_age)
+table(adults_contacts_resp_ent$p_age)
+
+factor_order <- unique(adults_contacts_resp_ent$occupation[which(!is.na(adults_contacts_resp_ent$occupation))])
+factor_order
+
+adults_contacts_resp_ent <- adults_contacts_resp_ent %>%
+  mutate(occupation = if_else(occupation == "Retired", "Unemployed adult", occupation)) %>%
+  mutate(occupation = factor(occupation, factor_order))
 
 ## Unique Q90 threshold outlier model -------------------------------------------------
 
 unique_resp_q90_model <- glm(unique_resp_q90_outlier ~ 
-                               participant_age + sex + site + occupation , 
+                               participant_age + participant_sex + study_site + occupation , 
                              data = adults_contacts_resp_ent, family = binomial())
 unique_resp_q90 <- as.data.frame(summary(unique_resp_q90_model)$coefficients) %>%
   as.data.frame() %>%
   tibble::rownames_to_column()
 
 unique_ent_q90_model <- glm(unique_ent_q90_outlier ~ 
-                              participant_age + sex + site + occupation , 
+                              participant_age + participant_sex + study_site + occupation , 
                             data = adults_contacts_resp_ent, family = binomial())
 unique_ent_q90 <- as.data.frame(summary(unique_ent_q90_model)$coefficients) %>%
   as.data.frame() %>%
@@ -246,10 +255,12 @@ unique_ent_q90 <- as.data.frame(summary(unique_ent_q90_model)$coefficients) %>%
 
 
 ## Unique figures --------------------------------------------------------
-factor_order <- c("(Intercept)","30-39y", "40-59y", 
-                  "60+y", "Male", "Urban",
-                  "Student", 
-                  "Other")
+factor_order <- c("(Intercept)", "30-39y", "40-59y", 
+                  "60+y", "Male", "Urban", 
+                  "Unskilled laborer","Skilled laborer", 
+                  "Farmer/ Clerk/ Shopkeeper", "Professional", 
+                  "Semiskilled laborer","Semiprofessional", 
+                  "Student")
 
 names(unique_resp_q90) <- c("term", "estimate", "SE", "test_statistic", "p_value")
 names(unique_ent_q90) <- c("term", "estimate", "SE", "test_statistic", "p_value")
@@ -264,7 +275,7 @@ unique_resp_q90 <- unique_resp_q90[-1,]
 unique_resp_q90$group = c(rep("Age \n(Ref: 20-29y)", 3), 
                           "Sex \n(Ref: Female)", 
                           "Site \n(Ref: Rural)",
-                          rep("Occupation \n(Ref: Unemployed or Retired)", 2))
+                          rep("Occupation \n(Ref: Unemployed or Retired)", 7))
 
 png("figs/unique_occ_resp_q90.png", width=5000, height=2000, res=300)
 ggplot(unique_resp_q90, aes(x = factor(paste0(Coefficient, "&", group), 
@@ -295,7 +306,7 @@ unique_ent_q90 <- unique_ent_q90[-1,]
 unique_ent_q90$group = c(rep("Age \n(Ref: 20-29y)", 3), 
                           "Sex \n(Ref: Female)", 
                           "Site \n(Ref: Rural)",
-                          rep("Occupation \n(Ref: Unemployed or Retired)", 2))
+                          rep("Occupation \n(Ref: Unemployed or Retired)", 7))
 
 png("figs/unique_occ_ent_q90.png", width=5000, height=2000, res=300)
 ggplot(unique_ent_q90,aes(x = factor(paste0(Coefficient, "&", group), 

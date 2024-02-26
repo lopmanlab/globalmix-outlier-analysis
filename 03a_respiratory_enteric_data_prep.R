@@ -142,6 +142,9 @@ contacts_unique_ent$avg_unique_ent_contacts <- (round(contacts_unique_ent$`Both 
                                                 contacts_unique_ent$`Day 2`+
                                                 contacts_unique_ent$`NA`)/2
 
+hist(contacts_unique_resp$avg_unique_resp_contacts)
+hist(contacts_unique_ent$avg_unique_ent_contacts)
+
 # One main dataset for all outcomes ---------------------------------------------
 
 contacts_resp_ent <- left_join(contact_daily_resp, 
@@ -204,22 +207,14 @@ contacts_resp_ent <- contacts_resp_ent %>%
            ifelse(avg_unique_ent_contacts > contact_summaries$unique_ent_q90, 1, 0))
 
 # Clean up hh_occupants and occupation -----------------------------------------
-# table(contacts_resp_ent$age, contacts_resp_ent$occupation, useNA = "always")
-# table(contacts_resp_ent$age, is.na(contacts_resp_ent$hh_occupants))
-# those with occupation = NA are all <= 7 years old
-
-contacts_resp_ent$occupation <- if_else(is.na(contacts_resp_ent$occupation),
-                                        "Child", contacts_resp_ent$occupation)
 
 contacts_resp_ent$hh_occupants <- as.numeric(contacts_resp_ent$hh_occupants)
 
-df_contact$occupation <- if_else(is.na(df_contact$occupation),
-                                        "Child", df_contact$occupation)
+# making sure unemployed is first
+factor_order <- unique(contacts_resp_ent$occupation[which(!is.na(contacts_resp_ent$occupation))])
+table(factor_order)
 
-df_contact$hh_occupants <- as.numeric(df_contact$hh_occupants)
-
-
-contacts_resp_ent$occupation <- factor(contacts_resp_ent$occupation)
+contacts_resp_ent$occupation <- factor(contacts_resp_ent$occupation, factor_order)
 
 hist(contacts_resp_ent$hh_occupants)
 table(contacts_resp_ent$hh_occupants)
@@ -235,13 +230,29 @@ contacts_resp_ent$hhsize <- factor(contacts_resp_ent$hhsize,
 barplot(prop.table(table(contacts_resp_ent$hhsize)))
 
 contacts_resp_ent$age = as.numeric(contacts_resp_ent$age)
-adults_contacts_resp_ent <- contacts_resp_ent %>% filter(age >= 20, participant_age != "<6mo")
-adults_contacts_resp_ent$occupation[which(adults_contacts_resp_ent$occupation %in% 
-                                            c("Child", "Fisherman"))] <- "Other"
-adults_contacts_resp_ent$occupation[which(adults_contacts_resp_ent$occupation %in% 
-                                            c("Retired"))] <- "Unemployed"
 
-table(adults_contacts_resp_ent$occupation)
+contacts_resp_ent <- contacts_resp_ent %>%
+  mutate(p_age = case_when(
+    participant_age == "60+y" ~ "60+y",
+    age == 60 & participant_age == "40-59y" ~ "50-59y",
+    age >= 50 & age <= 59 ~ "50-59y",
+    participant_age == "30-39y" ~ "30-39y",
+    age >= 40 & age <= 49 ~ "40-49y",
+    participant_age == "20-29y" ~ "20-29y",
+    participant_age %in% c("10-14y", "15-19y") ~ "10-19y",
+    participant_age == "5-9y" ~ "5-9y",
+    .default = "<4y")) %>%
+  mutate(p_age = factor(p_age, c("<4y", "5-9y", "10-19y", "20-29y", "30-39y",
+                                 "40-49y", "50-59y", "60+y")))
+
+
+adults_contacts_resp_ent <- contacts_resp_ent %>% 
+  filter(age >= 20, p_age %in% c("20-29y", "30-39y", "40-49y", "50-59y", "60+y"))
+
+table(adults_contacts_resp_ent$occupation, useNA = "always")
+table(adults_contacts_resp_ent$occupation, useNA = "always", adults_contacts_resp_ent$participant_age)
+table(adults_contacts_resp_ent$occupation, useNA = "always", adults_contacts_resp_ent$p_age)
+
 table(adults_contacts_resp_ent$participant_age)
 
 contacts_resp_ent %>% 
@@ -259,35 +270,24 @@ adults_contacts_resp_ent %>%
             meane = mean(avg_unique_ent_contacts, na.rm = T))
 
 ggplot(data = contacts_resp_ent)+
-  geom_histogram(aes(avg_unique_resp_contacts))+
+  geom_histogram(aes(avg_unique_resp_contacts), binwidth = 1)+
   geom_vline(aes(xintercept = contact_summaries$unique_resp_q75), color = "blue")+
   geom_vline(aes(xintercept = contact_summaries$unique_resp_q90), color = "red")+
   ggtitle("Unique Respiratory, Blue=Q75 and Red=Q90")
 
 ggplot(data = contacts_resp_ent)+
-  geom_histogram(aes(avg_unique_ent_contacts))+
+  geom_histogram(aes(avg_unique_ent_contacts), binwidth = 1)+
   geom_vline(aes(xintercept = contact_summaries$unique_ent_q75), color = "blue")+
   geom_vline(aes(xintercept = contact_summaries$unique_ent_q90), color = "red")+
   ggtitle("Unique Enteric, Blue=Q75 and Red=Q90")
 
-contacts_resp_ent <- contacts_resp_ent %>%
-  mutate(p_age = case_when(
-    participant_age == "60+y" ~ "60+y",
-    age == 60 & participant_age == "40-59y" ~ "50-59y",
-    age >= 50 & age <= 59 ~ "50-59y",
-    participant_age == "30-39y" ~ "30-39y",
-    age >= 40 & age <= 49 ~ "40-49y",
-    participant_age == "20-29y" ~ "20-29y",
-    participant_age %in% c("10-14y", "15-19y") ~ "10-19y",
-    participant_age == "5-9y" ~ "5-9y",
-    .default = "<4y")) %>%
-  mutate(p_age = factor(p_age, c("<4y", "5-9y", "10-19y", "20-29y", "30-39y",
-                                 "40-49y", "50-59y", "60+y")))
 
+table(adults_contacts_resp_ent$occupation, useNA = "always", adults_contacts_resp_ent$participant_age)
 
 write.csv(contacts_resp_ent, here("data/contacts_resp_ent.csv"))
 write.csv(contact_summaries, here("data/contact_summaries.csv"))
 write.csv(df_contact, here("data/df_contact.csv"))
+write.csv(adults_contacts_resp_ent, here("data/adults_contacts_resp_ent.csv"))
 
 
 # Non-household contacts -------------------------------------------------------
@@ -416,10 +416,10 @@ barplot(prop.table(table(contacts_resp_ent$hhsize)))
 
 contacts_resp_ent$age = as.numeric(contacts_resp_ent$age)
 adults_contacts_resp_ent <- contacts_resp_ent %>% filter(age >= 20, participant_age != "<6mo")
-adults_contacts_resp_ent$occupation[which(adults_contacts_resp_ent$occupation %in% 
-                                            c("Child", "Fisherman"))] <- "Other"
-adults_contacts_resp_ent$occupation[which(adults_contacts_resp_ent$occupation %in% 
-                                            c("Retired"))] <- "Unemployed"
+# adults_contacts_resp_ent$occupation[which(adults_contacts_resp_ent$occupation %in% 
+#                                             c("Child", "Fisherman"))] <- "Other"
+# adults_contacts_resp_ent$occupation[which(adults_contacts_resp_ent$occupation %in% 
+#                                             c("Retired"))] <- "Unemployed"
 
 table(adults_contacts_resp_ent$occupation)
 table(adults_contacts_resp_ent$participant_age)
@@ -439,3 +439,4 @@ adults_contacts_resp_ent %>%
             meane = mean(avg_unique_ent_contacts, na.rm = T))
 
 write.csv(contacts_resp_ent, here("data/contacts_resp_ent_nonHHcontacts.csv"))
+
