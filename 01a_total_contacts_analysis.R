@@ -9,6 +9,7 @@ library(lmerTest)
 
 participants <- readRDS(paste0(here(),"/../","globalmix-mozambique/data/clean/participant_data_aim1.RDS"))
 contacts <- readRDS(paste0(here(),"/../","globalmix-mozambique/data/clean/contact_data_aim1.RDS"))
+households <- readRDS(paste0(here(), "/../", "globalmix-mozambique/data/clean/household_survey_aim1.RDS"))
 
 ## Subset contacts to the IDs in participant list only
 contacts <- contacts %>%
@@ -60,7 +61,9 @@ contacts$cnt_otherplace <- factor(contacts$cnt_otherplace, levels = c(1, 0),
 
 df_contact <- contacts %>%
   dplyr::select(-study_site) %>%
-  left_join(participants, by=("rec_id"))
+  left_join(participants, by=("rec_id")) %>%
+  left_join( dplyr::select(households, "rec_id", "hh_occupants"), by=("rec_id"))
+
 
 df_contact_d1 <- df_contact %>%
   dplyr::filter(study_day==1)
@@ -114,146 +117,146 @@ variables <- data.frame(var=c("participant_sex","participant_age", "mask_uselb",
 
 list <- list(0)
 
-for (i in 1:nrow(variables)){
-  x <- df_contact_rural[,variables$var[[i]]] 
-  # include another variable n as the number of participants per strata
-  variables$var[[i]]
-  
-# Number and proportion of contacts in each strata
-  
-  t0 <- as.data.frame(cbind(table(x), # Total 
-                            round(prop.table(table(x))*100, digits=0) # Proportion
-                            )) # number of participants
- 
-  colnames(t0)[1:2] <- c("Total","Col") 
-  Tot <- rep("",5)
-  
-# Median contacts for day 1
-  t1 <- df_contact_d1 %>%
-    dplyr::filter(study_site == "Rural") %>%
-    # since this is total contacts per person, keep only 1 distinct record
-    distinct(rec_id, .keep_all = TRUE) %>% 
-    dplyr::group_by(.dots = variables$var[[i]]) %>% 
-    # na.omit() %>%
-    do(data.frame(t(quantile(.$num_contacts, na.rm=TRUE, probs=c(0.25,0.5,0.75))))) # Median and IQR      
-  t1$med_contact <- as.character(paste(t1$X50.," (",t1$X25.,"-",t1$X75.,")",sep="")) # Formatting for export
-  
-  # Median contacts for day 2
-  t2 <- df_contact_d2 %>%
-    dplyr::filter(study_site == "Rural") %>%
-    # since this is total contacts per person, keep only 1 distinct record
-    distinct(rec_id, .keep_all = TRUE) %>% 
-    dplyr::group_by(.dots = variables$var[[i]]) %>%
-    # na.omit() %>%
-    do(data.frame(t(quantile(.$num_contacts, na.rm=TRUE, probs=c(0.25,0.5,0.75))))) # Median and IQR      
-  t2$med_contact <- as.character(paste(t2$X50.," (",t2$X25.,"-",t2$X75.,")",sep="")) # Formatting for export
-  
-  # Bind columns together and select relevant columns
-  t0<-qpcR:::cbind.na(t0, t1$med_contact, t2$med_contact) 
-  
-  # convert to numerical and round off?
-  
-  t0<- t0[,c(1,2,3,4)]
-  
-  # rename total column
-  t0$Total <- paste(t0$Total," (","", t0$Col,")",sep="")
-  t0 <- t0[,c(1,3,4)]
-  t0[,1]<-as.character(t0[,1])
-  t0[,2]<-as.character(t0[,2])
+# for (i in 1:nrow(variables)){
+#   x <- df_contact_rural[,variables$var[[i]]] 
+#   # include another variable n as the number of participants per strata
+#   variables$var[[i]]
+#   
+# # Number and proportion of contacts in each strata
+#   
+#   t0 <- as.data.frame(cbind(table(x), # Total 
+#                             round(prop.table(table(x))*100, digits=0) # Proportion
+#                             )) # number of participants
+#  
+#   colnames(t0)[1:2] <- c("Total","Col") 
+#   Tot <- rep("",5)
+#   
+# # Median contacts for day 1
+#   t1 <- df_contact_d1 %>%
+#     dplyr::filter(study_site == "Rural") %>%
+#     # since this is total contacts per person, keep only 1 distinct record
+#     distinct(rec_id, .keep_all = TRUE) %>% 
+#     dplyr::group_by(.dots = variables$var[[i]]) %>% 
+#     # na.omit() %>%
+#     do(data.frame(t(quantile(.$num_contacts, na.rm=TRUE, probs=c(0.25,0.5,0.75))))) # Median and IQR      
+#   t1$med_contact <- as.character(paste(t1$X50.," (",t1$X25.,"-",t1$X75.,")",sep="")) # Formatting for export
+#   
+#   # Median contacts for day 2
+#   t2 <- df_contact_d2 %>%
+#     dplyr::filter(study_site == "Rural") %>%
+#     # since this is total contacts per person, keep only 1 distinct record
+#     distinct(rec_id, .keep_all = TRUE) %>% 
+#     dplyr::group_by(.dots = variables$var[[i]]) %>%
+#     # na.omit() %>%
+#     do(data.frame(t(quantile(.$num_contacts, na.rm=TRUE, probs=c(0.25,0.5,0.75))))) # Median and IQR      
+#   t2$med_contact <- as.character(paste(t2$X50.," (",t2$X25.,"-",t2$X75.,")",sep="")) # Formatting for export
+#   
+#   # Bind columns together and select relevant columns
+#   t0<-qpcR:::cbind.na(t0, t1$med_contact, t2$med_contact) 
+#   
+#   # convert to numerical and round off?
+#   
+#   t0<- t0[,c(1,2,3,4)]
+#   
+#   # rename total column
+#   t0$Total <- paste(t0$Total," (","", t0$Col,")",sep="")
+#   t0 <- t0[,c(1,3,4)]
+#   t0[,1]<-as.character(t0[,1])
+#   t0[,2]<-as.character(t0[,2])
+# 
+#   t0<-rbind(Tot, t0)
+#   
+#   rownames(t0)[1]<-variables$name[[i]]
+#   list[[i]] <- t0
+# }
+# 
+# # format table
+# res_restruct<- function(res){
+#   res1 <- lapply(res, as.data.frame)
+#   res1 <- do.call(rbind, res1)
+#   return(res1)
+# }
 
-  t0<-rbind(Tot, t0)
-  
-  rownames(t0)[1]<-variables$name[[i]]
-  list[[i]] <- t0
-}
-
-# format table
-res_restruct<- function(res){
-  res1 <- lapply(res, as.data.frame)
-  res1 <- do.call(rbind, res1)
-  return(res1)
-}
-
-table3 <- res_restruct(list)
-colnames(table3) <- c("Total (%)", "Day 1", "Day 2")
-
-table3 <- knitr::kable(table3, digits = 0, align = "r") %>%
-  kableExtra::kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
-
-table3
+# table3 <- res_restruct(list)
+# colnames(table3) <- c("Total (%)", "Day 1", "Day 2")
+# 
+# table3 <- knitr::kable(table3, digits = 0, align = "r") %>%
+#   kableExtra::kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
+# 
+# table3
 
 df_contact_urban <- df_contact %>%
   dplyr::filter(study_site == "Urban")
 
 list <- list(0)
 
-for (i in 1:nrow(variables)){
-  x <- df_contact_urban[,variables$var[[i]]] 
-  # include another variable n as the number of participants per strata
-  variables$var[[i]]
-  
-# Number and proportion of contacts in each strata
-  
-  t0 <- as.data.frame(cbind(table(x), # Total 
-                            round(prop.table(table(x))*100, digits=0) # Proportion
-                            )) # number of participants
- 
-  colnames(t0)[1:2] <- c("Total","Col") 
-  Tot <- rep("",5)
-  
-# Median contacts for day 1
-  t1 <- df_contact_d1 %>%
-    dplyr::filter(study_site == "Urban") %>%
-    # since this is total contacts per person, keep only 1 distinct record
-    distinct(rec_id, .keep_all = TRUE) %>% 
-    dplyr::group_by(.dots = variables$var[[i]]) %>% 
-    # na.omit() %>%
-    do(data.frame(t(quantile(.$num_contacts, na.rm=TRUE, probs=c(0.25,0.5,0.75))))) # Median and IQR      
-  t1$med_contact <- as.character(paste(t1$X50.," (",t1$X25.,"-",t1$X75.,")",sep="")) # Formatting for export
-  
-  # Median contacts for day 2
-  t2 <- df_contact_d2 %>%
-    dplyr::filter(study_site == "Urban") %>%
-    # since this is total contacts per person, keep only 1 distinct record
-    distinct(rec_id, .keep_all = TRUE) %>% 
-    dplyr::group_by(.dots = variables$var[[i]]) %>%
-    # na.omit() %>%
-    do(data.frame(t(quantile(.$num_contacts, na.rm=TRUE, probs=c(0.25,0.5,0.75))))) # Median and IQR      
-  t2$med_contact <- as.character(paste(t2$X50.," (",t2$X25.,"-",t2$X75.,")",sep="")) # Formatting for export
-  
-  # Bind columns together and select relevant columns
-  t0<-qpcR:::cbind.na(t0, t1$med_contact, t2$med_contact) 
-  
-  # convert to numerical and round off?
-  
-  t0<- t0[,c(1,2,3,4)]
-  
-  # rename total column
-  t0$Total <- paste(t0$Total," (","", t0$Col,")",sep="")
-  t0 <- t0[,c(1,3,4)]
-  t0[,1]<-as.character(t0[,1])
-  t0[,2]<-as.character(t0[,2])
-
-  t0<-rbind(Tot, t0)
-  
-  rownames(t0)[1]<-variables$name[[i]]
-  list[[i]] <- t0
-}
-
-# format table
-res_restruct<- function(res){
-  res1 <- lapply(res, as.data.frame)
-  res1 <- do.call(rbind, res1)
-  return(res1)
-}
-
-table3 <- res_restruct(list)
-colnames(table3) <- c("Total (%)", "Day 1", "Day 2")
-
-table3 <- knitr::kable(table3, digits = 0, align = "r") %>%
-  kableExtra::kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
-
-table3
+# for (i in 1:nrow(variables)){
+#   x <- df_contact_urban[,variables$var[[i]]] 
+#   # include another variable n as the number of participants per strata
+#   variables$var[[i]]
+#   
+# # Number and proportion of contacts in each strata
+#   
+#   t0 <- as.data.frame(cbind(table(x), # Total 
+#                             round(prop.table(table(x))*100, digits=0) # Proportion
+#                             )) # number of participants
+#  
+#   colnames(t0)[1:2] <- c("Total","Col") 
+#   Tot <- rep("",5)
+#   
+# # Median contacts for day 1
+#   t1 <- df_contact_d1 %>%
+#     dplyr::filter(study_site == "Urban") %>%
+#     # since this is total contacts per person, keep only 1 distinct record
+#     distinct(rec_id, .keep_all = TRUE) %>% 
+#     dplyr::group_by(.dots = variables$var[[i]]) %>% 
+#     # na.omit() %>%
+#     do(data.frame(t(quantile(.$num_contacts, na.rm=TRUE, probs=c(0.25,0.5,0.75))))) # Median and IQR      
+#   t1$med_contact <- as.character(paste(t1$X50.," (",t1$X25.,"-",t1$X75.,")",sep="")) # Formatting for export
+#   
+#   # Median contacts for day 2
+#   t2 <- df_contact_d2 %>%
+#     dplyr::filter(study_site == "Urban") %>%
+#     # since this is total contacts per person, keep only 1 distinct record
+#     distinct(rec_id, .keep_all = TRUE) %>% 
+#     dplyr::group_by(.dots = variables$var[[i]]) %>%
+#     # na.omit() %>%
+#     do(data.frame(t(quantile(.$num_contacts, na.rm=TRUE, probs=c(0.25,0.5,0.75))))) # Median and IQR      
+#   t2$med_contact <- as.character(paste(t2$X50.," (",t2$X25.,"-",t2$X75.,")",sep="")) # Formatting for export
+#   
+#   # Bind columns together and select relevant columns
+#   t0<-qpcR:::cbind.na(t0, t1$med_contact, t2$med_contact) 
+#   
+#   # convert to numerical and round off?
+#   
+#   t0<- t0[,c(1,2,3,4)]
+#   
+#   # rename total column
+#   t0$Total <- paste(t0$Total," (","", t0$Col,")",sep="")
+#   t0 <- t0[,c(1,3,4)]
+#   t0[,1]<-as.character(t0[,1])
+#   t0[,2]<-as.character(t0[,2])
+# 
+#   t0<-rbind(Tot, t0)
+#   
+#   rownames(t0)[1]<-variables$name[[i]]
+#   list[[i]] <- t0
+# }
+# 
+# # format table
+# res_restruct<- function(res){
+#   res1 <- lapply(res, as.data.frame)
+#   res1 <- do.call(rbind, res1)
+#   return(res1)
+# }
+# 
+# table3 <- res_restruct(list)
+# colnames(table3) <- c("Total (%)", "Day 1", "Day 2")
+# 
+# table3 <- knitr::kable(table3, digits = 0, align = "r") %>%
+#   kableExtra::kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
+# 
+# table3
 
 
 ## Day 1 contacts Histograms ----------------------------------------------
@@ -496,7 +499,8 @@ fig1_hist_d2
 
 # contacts by site
 contacts_site <- df_contact %>%
-  dplyr::group_by(rec_id, study_site, study_day, participant_age, participant_sex, age) %>%
+  dplyr::group_by(rec_id, study_site, study_day, participant_age, 
+                  participant_sex, age, hh_occupants, occupation) %>%
   dplyr::summarize(num_contacts = n())
   
 median_contacts_site <- contacts_site %>%
@@ -660,7 +664,8 @@ fig1_hist
 ## Average Daily Contacts Histograms ---------------------------------------
 
 contacts_daily <- contacts_site %>%
-  dplyr::group_by(rec_id, study_site, participant_age, participant_sex, age) %>%
+  dplyr::group_by(rec_id, study_site, participant_age, participant_sex, age, 
+                  hh_occupants, occupation) %>%
   summarise(avg_daily_contacts = mean(num_contacts))
 
 median_daily_site <- contacts_daily %>%
@@ -700,7 +705,7 @@ ci_contacts <- as.data.frame(round(confint(ci_contacts),1))
 ## Average Unique Contacts Histograms ---------------------------------------
 c <- df_contact %>%
   dplyr::group_by(rec_id, fromdayone, study_site, participant_age, 
-                  participant_sex, age) %>%
+                  participant_sex, age, hh_occupants, occupation) %>%
   dplyr::summarize(contacts = n())
 
 contacts_unique <- tidyr::pivot_wider(c, names_from = fromdayone, values_from=contacts)
@@ -820,6 +825,54 @@ linear_int_model <- glm(avg_unique_contacts ~ participant_age * sex * site,
 unique_linear_int <- as.data.frame(summary(linear_int_model)$coefficients)
 
 # save data --------------------------------------------------------------
+contacts_daily$hhsize <- if_else(contacts_daily$hh_occupants > 6, "7+",
+                                 if_else(contacts_daily$hh_occupants > 3, 
+                                         "4-6",
+                                         "0-3"))
+contacts_daily$hhsize <- factor(contacts_daily$hhsize, 
+                                levels = c("0-3", "4-6", "7+"))
+
+contacts_unique$hhsize <- ifelse(contacts_unique$hh_occupants > 6, "7+",
+                                 ifelse(contacts_unique$hh_occupants > 4, "5-6",
+                                        ifelse(contacts_unique$hh_occupants > 2, "3-4",
+                                               "1-2")))
+contacts_unique$hhsize <- factor(contacts_unique$hhsize, 
+                                 levels = c("1-2", "3-4", "5-6", "7+"))
+
+contacts_daily$age = as.numeric(contacts_daily$age)
+contacts_unique$age = as.numeric(contacts_unique$age)
+
+contacts_daily$occupation[which(contacts_daily$occupation %in% c("Child", "Fisherman") &
+                                  contacts_daily$age >= 20 & 
+                                  contacts_daily$participant_age != "<6mo")] <- "Other"
+contacts_daily$occupation[which(contacts_daily$occupation %in% c("Retired") &
+                                  contacts_daily$age >= 20 & 
+                                  contacts_daily$participant_age != "<6mo")] <- "Unemployed"
+
+contacts_unique$occupation[which(contacts_unique$occupation %in% c("Child", "Fisherman") &
+                                   contacts_unique$age >= 20 & 
+                                   contacts_unique$participant_age != "<6mo")] <- "Other"
+contacts_unique$occupation[which(contacts_unique$occupation %in% c("Retired") &
+                                   contacts_unique$age >= 20 & 
+                                   contacts_unique$participant_age != "<6mo")] <- "Unemployed"
+
+table(contacts_unique$hhsize)
+
+contacts_unique <- contacts_unique %>%
+  mutate(p_age = case_when(
+    participant_age == "60+y" ~ "60+y",
+    age == 60 & participant_age == "40-59y" ~ "50-59y",
+    age >= 50 & age <= 59 ~ "50-59y",
+    participant_age == "30-39y" ~ "30-39y",
+    age >= 40 & age <= 49 ~ "40-49y",
+    participant_age == "20-29y" ~ "20-29y",
+    participant_age %in% c("10-14y", "15-19y") ~ "10-19y",
+    participant_age == "5-9y" ~ "5-9y",
+    .default = "<4y")) %>%
+  mutate(p_age = factor(p_age, c("<4y", "5-9y", "10-19y", "20-29y", "30-39y",
+                                 "40-49y", "50-59y", "60+y")))
+
+
 saveRDS(contacts_daily, "data/contacts_daily.RDS")
 saveRDS(contacts_unique, "data/contacts_unique.RDS")
 

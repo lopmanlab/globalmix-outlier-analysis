@@ -2,7 +2,6 @@
 ############## Exploratory ###############
 ##########################################
 
-
 rm(list = ls())
 library(here)
 library(dplyr)
@@ -15,22 +14,29 @@ contact_summaries <- readRDS(here("data/contact_summaries.rds"))
 df_contact <- readRDS(here("data/df_contact.rds"))
 contacts_resp_ent <- readRDS(here("data/contacts_resp_ent.rds"))
 
-
 #Contact Definition Exploration ------------------------------------------------
 
 #Average/Q75 respiratory and enteric contacts
 contact_summaries
 
+table(df_contact$respiratory == 1)
+table(df_contact$enteric == 1)
+
+table(df_contact$respiratory == 0 & df_contact$enteric == 0, useNA = "always")
+table(df_contact$respiratory == 1 & df_contact$enteric == 0, useNA = "always")
+table(df_contact$respiratory == 0 & df_contact$enteric == 1, useNA = "always")
+
+
 # Proportion of contacts that were considered both
-table(df_contact$respiratory == 1 & df_contact$enteric == 1)
-16219 / (16219 + 3708)
+table(df_contact$respiratory == 1 & df_contact$enteric == 1, useNA = "always")
+16096 / (16096 + 3831)
 
 # Proportion of contacts that were considered both by site
 table(df_contact$respiratory == 1 & df_contact$enteric == 1, df_contact$study_site)
-#Rural: 78%
-9155/(9155+2627)
-#Urban: 87%
-7064/(7064+1081)
+#Rural: 77%
+9090/(9090+2692)
+#Urban: 86%
+7006/(7006+1139)
 
 # Respiratory contacts by age group
 table(df_contact$respiratory == 1, df_contact$participant_age)
@@ -53,7 +59,7 @@ df_contact %>%
 
 #Include number of outliers as well per each definition 
 table(contacts_resp_ent$daily_ent_q75_outlier)
-296/(296+1063)
+304/(304+1055)
 table(contacts_resp_ent$daily_resp_q75_outlier)
 297/(297+1065)
 
@@ -66,10 +72,10 @@ table(contacts_resp_ent$daily_resp_q75_outlier, contacts_resp_ent$study_site)
 
 #Number of outliers by site enteric
 table(contacts_resp_ent$daily_ent_q75_outlier, contacts_resp_ent$study_site)
-#Rural: 29%
-204/(204+489)
-#Urban: 14%
-92/(92+574)
+#Rural: 30%
+207/(207+486)
+#Urban: 15%
+97/(97+569)
 
 # Unique contact outliers by site
 table(contacts_resp_ent$unique_resp_q75_outlier, contacts_resp_ent$study_site)
@@ -154,7 +160,28 @@ contacts_unique %>%
             q95 = quantile(avg_unique_contacts, probs = 0.95),
             q99 = quantile(avg_unique_contacts, probs = 0.99))
 
-tapply(contacts_unique$avg_unique_contacts, contacts_daily$site, summary)
+tapply(contacts_unique$avg_unique_contacts, contacts_unique$site, summary)
+
+
+tapply(contacts_unique$avg_unique_contacts, contacts_unique$hhsize, summary)
+table(contacts_unique$hhsize, useNA = "always")
+prop.table(table(contacts_unique$hhsize, useNA = "always"))*100
+
+tapply(contacts_daily$avg_daily_contacts, contacts_daily$hhsize, summary)
+table(contacts_daily$hhsize, useNA = "always")
+prop.table(table(contacts_daily$hhsize, useNA = "always"))*100
+
+adults <- contacts_unique %>% filter(age >= 20, participant_age != "<6mo")
+tapply(adults$avg_unique_contacts, adults$occupation, summary)
+table(adults$occupation, useNA = "always")
+prop.table(table(adults$occupation, useNA = "always"))*100
+
+adults <- contacts_daily %>% filter(age >= 20, participant_age != "<6mo")
+tapply(adults$avg_daily_contacts, adults$occupation, summary)
+table(adults$occupation, useNA = "always")
+prop.table(table(adults$occupation, useNA = "always"))*100
+
+
 
 # Table 1 - respiratory contacts -----------------------------------------------
 summary(contacts_resp_ent$avg_daily_resp_contacts)
@@ -207,6 +234,15 @@ contacts_resp_ent %>%
             q99 = quantile(avg_unique_resp_contacts, probs = 0.99))
 
 tapply(contacts_resp_ent$avg_unique_resp_contacts, contacts_resp_ent$study_site, summary)
+
+tapply(contacts_resp_ent$avg_unique_resp_contacts, contacts_resp_ent$hhsize, summary)
+table(contacts_resp_ent$hhsize, useNA = "always")
+prop.table(table(contacts_resp_ent$hhsize, useNA = "always"))*100
+
+adults <- contacts_resp_ent %>% filter(age >= 20, participant_age != "<6mo")
+tapply(adults$avg_unique_resp_contacts, adults$occupation, summary)
+table(adults$occupation, useNA = "always")
+prop.table(table(adults$occupation, useNA = "always"))*100
 
 
 # Table 1 - enteric contacts -----------------------------------------------

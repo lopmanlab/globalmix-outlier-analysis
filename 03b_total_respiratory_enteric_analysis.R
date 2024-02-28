@@ -557,37 +557,65 @@ negbin_unique_ent <- as.data.frame(summary(negbin_unique_ent_mod)$coefficients)%
 names(negbin_unique_resp) <- c("term", "estimate", "SE", "test_statistic", "p_value")
 names(negbin_unique_ent) <- c("term", "estimate", "SE", "test_statistic", "p_value")
 
+negbin_unique_resp$Coefficient = c("(Intercept)","6-11mo", "1-4y", 
+                                  "5-9y", "10-14y", "15-19y", "20-29y", 
+                                  "30-39y", "40-59y", "60+y", "Male", "Urban")
 negbin_unique_resp$log_pvalue <- log(round(negbin_unique_resp$p_value, 2))
 negbin_unique_resp$log_pvalue[which(is.infinite(negbin_unique_resp$log_pvalue))] <- -5.99
 negbin_unique_resp$term <- factor(negbin_unique_resp$term, levels = factor_order)
+negbin_unique_resp$Coefficient <- factor(negbin_unique_resp$Coefficient, 
+                                        levels = negbin_unique_resp$Coefficient)
+negbin_unique_resp <- negbin_unique_resp[-1,]
+negbin_unique_resp$group = c(rep("Age \n(Ref: <6 months)", 9), 
+                            "Sex \n(Ref: Female)", 
+                            "Site \n(Ref: Rural)")
 
 png("figs/negbin_unique_resp_grp.png", width=4000, height=1500, res=300)
-ggplot(negbin_unique_resp, aes(x = term, y = estimate, color = log_pvalue)) + 
+ggplot(negbin_unique_resp, aes(x = factor(paste0(Coefficient, "&", group), 
+                                          level=paste0(Coefficient, "&", group)), 
+                               y = estimate, color = log_pvalue)) + 
   geom_point() +
+  geom_hline(yintercept = 0)+
   geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-  theme(axis.text.x = element_text(angle = 45))+
-  scale_colour_gradient2(low = "forestgreen",
-                         mid = "goldenrod1",
-                         high = "firebrick", 
-                         midpoint=log(0.05),
+  # theme(axis.text.x = element_text(angle = 45))+
+  theme(axis.text = element_text(size = 12))+
+  scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
+                         values = rescale(c(0.01,0.05,0.1)),
                          guide = "colorbar")+
+  ylab("Estimate")+
+  xlab("Coefficient")+
+  guides(x = ggh4x::guide_axis_nested(delim = "&"))+
   ggtitle("Negative Binomial: Unique Average Respiratory Contacts ~ Age + Sex + Site")
 dev.off()
 
+negbin_unique_ent$Coefficient = c("(Intercept)","6-11mo", "1-4y", 
+                                    "5-9y", "10-14y", "15-19y", "20-29y", 
+                                    "30-39y", "40-59y", "60+y", "Male", "Urban")
 negbin_unique_ent$log_pvalue <- log(round(negbin_unique_ent$p_value, 2))
 negbin_unique_ent$log_pvalue[which(is.infinite(negbin_unique_ent$log_pvalue))] <- -5.99
 negbin_unique_ent$term <- factor(negbin_unique_ent$term, levels = factor_order)
+negbin_unique_ent$Coefficient <- factor(negbin_unique_ent$Coefficient, 
+                                          levels = negbin_unique_ent$Coefficient)
+negbin_unique_ent <- negbin_unique_ent[-1,]
+negbin_unique_ent$group = c(rep("Age \n(Ref: <6 months)", 9), 
+                              "Sex \n(Ref: Female)", 
+                              "Site \n(Ref: Rural)")
 
 png("figs/negbin_unique_ent_grp.png", width=4000, height=1500, res=300)
-ggplot(negbin_unique_ent, aes(x = term, y = estimate, color = log_pvalue)) + 
+ggplot(negbin_unique_ent, aes(x = factor(paste0(Coefficient, "&", group), 
+                                         level=paste0(Coefficient, "&", group)), 
+                              y = estimate, color = log_pvalue)) + 
   geom_point() +
+  geom_hline(yintercept = 0)+
   geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-  theme(axis.text.x = element_text(angle = 45))+
-  scale_colour_gradient2(low = "forestgreen",
-                         mid = "goldenrod1",
-                         high = "firebrick", 
-                         midpoint=log(0.05),
+  # theme(axis.text.x = element_text(angle = 45))+
+  theme(axis.text = element_text(size = 12))+
+  scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
+                         values = rescale(c(0.01,0.05,0.1)),
                          guide = "colorbar")+
+  ylab("Beta Estimate")+
+  xlab("Coefficient")+
+  guides(x = ggh4x::guide_axis_nested(delim = "&"))+
   ggtitle("Negative Binomial: Unique Average Enteric Contacts ~ Age + Sex + Site")
 dev.off()
 

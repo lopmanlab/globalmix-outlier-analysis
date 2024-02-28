@@ -391,18 +391,35 @@ ggplot(unique_poisson, aes(x = term, y = estimate, color = log_pvalue)) +
   ggtitle("Poisson: Unique Daily Average Contacts ~ Age + Sex + Site")
 dev.off()
 
+unique_negbin$Coefficient = c("(Intercept)","6-11mo", "1-4y", 
+                 "5-9y", "10-14y", "15-19y", "20-29y", 
+                 "30-39y", "40-59y", "60+y", "Male", "Urban")
+
 unique_negbin$log_pvalue <- log(round(unique_negbin$p_value, 2))
 unique_negbin$log_pvalue[which(is.infinite(unique_negbin$log_pvalue))] <- -5.99
 unique_negbin$term <- factor(unique_negbin$term, levels = factor_order)
-
+unique_negbin$Coefficient <- factor(unique_negbin$Coefficient, levels = unique_negbin$Coefficient)
+unique_negbin <- unique_negbin[-1,]
+unique_negbin$group = c(rep("Age \n(Ref: <6 months)", 9), 
+                        "Sex \n(Ref: Female)", 
+                        "Site \n(Ref: Rural)")
+  
 png("figs/unique_negbin.png", width=4000, height=1500, res=300)
-ggplot(unique_negbin, aes(x = term, y = estimate, color = log_pvalue)) + 
+ggplot(unique_negbin, aes(x = factor(paste0(Coefficient, "&", group), 
+                                     level=paste0(Coefficient, "&", group)), 
+                          y = estimate, color = log_pvalue)) + 
   geom_point() +
   geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-  theme(axis.text.x = element_text(angle = 45))+
+  geom_hline(yintercept = 0)+
+  # theme(axis.text.x = element_text(angle = 45))+
+  theme(axis.text = element_text(size = 12))+
   scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
                          values = rescale(c(0.01,0.05,0.1)),
+                         # labels = c("", "0.05", "0.01"),
                          guide = "colorbar")+
+  ylab("Estimate")+
+  xlab("Coefficient")+
+  guides(x = ggh4x::guide_axis_nested(delim = "&"))+
   ggtitle("Negative Binomial: Unique Daily Average Contacts ~ Age + Sex + Site")
 dev.off()
 
