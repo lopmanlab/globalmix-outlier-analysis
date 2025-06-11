@@ -5,17 +5,17 @@ library(ggplot2)
 library(plotly)
 library(tidyverse)
 
-participants <- readRDS(paste0(here(),"/../","globalmix-mozambique/data/clean/participant_data_aim1.RDS"))
-contacts <- readRDS(paste0(here(),"/../", "globalmix-mozambique/data/clean/contact_data_aim1.RDS"))
-households <- readRDS(paste0(here(), "/../", "globalmix-mozambique/data/clean/household_survey_aim1.RDS"))
+participants <- readRDS(paste0(here(),"/../","GlobalMix/Mozambique/moz_participant_data_aim1.RDS"))
+contacts <- readRDS(paste0(here(),"/../", "GlobalMix/Mozambique/moz_contact_data_aim1.RDS"))
+households <- readRDS(paste0(here(), "/../", "globalmix-mozambique-aim2/data/diary/household_survey_aim2b.RDS"))
 
 ## Subset contacts to the IDs in participant list only
 contacts <- contacts %>%
   dplyr::filter(rec_id %in% unlist(participants$rec_id))
 
 # Filter contact relationship == self (you cannot have a contact with yourself)
-contacts <- contacts %>%
-  dplyr::filter(hh_member_relationship != "Self")
+# contacts <- contacts %>%
+#   dplyr::filter(hh_member_relationship != "Self")
 
 # relationship
 contacts$hh_membership <- factor(contacts$hh_membership,
@@ -23,40 +23,41 @@ contacts$hh_membership <- factor(contacts$hh_membership,
 
 
 # recategorize contact locations
-contacts <- contacts %>%
-  mutate(cnt_home = ifelse(location_contact___0==1, 1,0),
-         cnt_school = ifelse(location_contact___2==1, 1,0),
-         cnt_work = ifelse(location_contact___3==1, 1,0),
-         cnt_otherplace = ifelse(location_contact___1==1 | 
-                                   location_contact___4==1 | 
-                                   location_contact___5==1 | 
-                                   location_contact___6==1 | 
-                                   location_contact___7==1 |
-                                   location_contact___8==1 | 
-                                   location_contact___9==1 |
-                                   location_contact___10==1 | 
-                                   location_contact___11==1,1,0))
+# contacts <- contacts %>%
+#   mutate(cnt_home = ifelse(location_contact___0==1, 1,0),
+#          cnt_school = ifelse(location_contact___2==1, 1,0),
+#          cnt_work = ifelse(location_contact___3==1, 1,0),
+#          cnt_otherplace = ifelse(location_contact___1==1 | 
+#                                    location_contact___4==1 | 
+#                                    location_contact___5==1 | 
+#                                    location_contact___6==1 | 
+#                                    location_contact___7==1 |
+#                                    location_contact___8==1 | 
+#                                    location_contact___9==1 |
+#                                    location_contact___10==1 | 
+#                                    location_contact___11==1,1,0))
 # masking
-contacts <- contacts %>%
-  mutate(contact_mask2 = case_when(contact_mask == "Yes, for the entire encounter" ~ "Yes",
-                                   contact_mask == "Yes, during parts of encounter" ~ "Yes",
-                                   contact_mask == "No mask was worn during the encounter" ~ "No",
-                                   TRUE ~ "Can't recall"))
-contacts$contact_mask2 <- factor(contacts$contact_mask2, levels = c("Yes", "No",
+# contacts <- contacts %>%
+#   mutate(contact_mask2 = case_when(contact_mask == "Yes, for the entire encounter" ~ "Yes",
+#                                    contact_mask == "Yes, during parts of encounter" ~ "Yes",
+#                                    contact_mask == "No mask was worn during the encounter" ~ "No",
+#                                    TRUE ~ "Can't recall"))
+# contacts$contact_mask2 <- factor(contacts$contact_mask2, levels = c("Yes", "No",
                                                                     "Can't recall"))
 
-contacts$cnt_home <- factor(contacts$cnt_home, levels = c(1, 0),
-                            labels = c("Yes", "No"))
-contacts$cnt_work <- factor(contacts$cnt_work, levels = c(1, 0),
-                            labels = c("Yes", "No"))
-contacts$cnt_school <- factor(contacts$cnt_school, levels = c(1, 0),
-                              labels = c("Yes", "No"))
-contacts$cnt_otherplace <- factor(contacts$cnt_otherplace, levels = c(1, 0),
-                                  labels = c("Yes", "No"))
+# contacts$cnt_home <- factor(contacts$cnt_home, levels = c(1, 0),
+#                             labels = c("Yes", "No"))
+# contacts$cnt_work <- factor(contacts$cnt_work, levels = c(1, 0),
+#                             labels = c("Yes", "No"))
+# contacts$cnt_school <- factor(contacts$cnt_school, levels = c(1, 0),
+#                               labels = c("Yes", "No"))
+# contacts$cnt_otherplace <- factor(contacts$cnt_otherplace, levels = c(1, 0),
+#                                   labels = c("Yes", "No"))
 
 df_contact <- contacts %>%
   dplyr::select(-study_site) %>%
-  left_join(participants, by=("rec_id")) %>%
+  mutate(rec_id = as.numeric(rec_id)) %>%
+  left_join(participants%>% mutate(rec_id = as.numeric(rec_id)), by=("rec_id")) %>%
   left_join( dplyr::select(households, "rec_id", "hh_occupants"), by=("rec_id"))
 
 
@@ -76,13 +77,13 @@ df_contact <- df_contact %>%
                               duration_contact == "1-4 hrs" ~ 4,
                               duration_contact  == ">4 hrs" ~ 5))
 df_contact <- df_contact %>%
-  mutate(respiratory = ifelse(cnt_home == "Yes", 1,
+  mutate(respiratory = ifelse(location == "Home", 1,
                               ifelse(where_contact != "Outdoors" & duration >= 2, 1, 
                                      ifelse(where_contact == "Outdoors" & duration >= 4, 1, 0)
                                      )
                               )
          ) %>%
-  mutate(enteric = ifelse(cnt_home == "Yes", 1,
+  mutate(enteric = ifelse(location == "Home", 1,
                           ifelse(where_contact != "Outdoors" & touch_contact == "Yes", 1,
                                  ifelse(where_contact != "Outdoors" & touch_contact == "No" & duration >= 3, 1,
                                         ifelse(where_contact == "Outdoors" & touch_contact == "Yes", 1, 
@@ -103,27 +104,28 @@ dev.off()
 
 png("figs/duration_by_household.png", height = 500, width = 1250, res = 200)
 ggplot(df_contact %>% 
-         drop_na(cnt_home, duration_contact) %>%
+         drop_na(location, duration_contact) %>%
+         # filter(location == "Home") %>%
          mutate(duration_contact = factor(duration_contact, levels=c("<5 mins", "5-15 mins", "16-30 mins", "31 mins-1 hr", "1-4 hrs", ">4 hrs"))), 
-       aes(fill=duration_contact, y=cnt_home)) + 
+       aes(fill=duration_contact, y=location)) + 
   geom_bar(position="fill", stat="count")
 dev.off()
 
 contacts_resp <- df_contact %>%
   dplyr::group_by(rec_id, study_site, study_day, participant_age, 
-                  participant_sex, age, respiratory, occupation,
+                  participant_sex, contact_age, respiratory, occupation,
                   hh_occupants) %>%
   dplyr::summarize(num_contacts = n())
 
 contact_daily_resp <- contacts_resp %>%
   filter(respiratory == 1) %>%
-  dplyr::group_by(rec_id, study_site, participant_age, participant_sex, age, 
+  dplyr::group_by(rec_id, study_site, participant_age, participant_sex, contact_age, 
                   occupation, hh_occupants) %>%
   summarise(avg_daily_resp_contacts = (mean(num_contacts)))
 
 contacts_resp <- df_contact %>%
   dplyr::group_by(rec_id, fromdayone, respiratory, study_site, 
-                  participant_age, participant_sex, age,
+                  participant_age, participant_sex, contact_age,
                   occupation, hh_occupants) %>%
   dplyr::summarize(num_contacts = n())
 
@@ -141,19 +143,19 @@ contacts_unique_resp$avg_unique_resp_contacts <- (round(contacts_unique_resp$`Bo
 
 contacts_ent <- df_contact %>%
   dplyr::group_by(rec_id, study_site, study_day, participant_age, 
-                  participant_sex, age, enteric, occupation,
+                  participant_sex, contact_age, enteric, occupation,
                   hh_occupants) %>%
   dplyr::summarize(num_contacts = n())
 
 contact_daily_ent <- contacts_ent %>%
   filter(enteric == 1) %>%
-  dplyr::group_by(rec_id, study_site, participant_age, participant_sex, age,
+  dplyr::group_by(rec_id, study_site, participant_age, participant_sex, contact_age,
                   occupation, hh_occupants) %>%
   summarise(avg_daily_ent_contacts = (mean(num_contacts)))
 
 contacts_ent <- df_contact %>%
   dplyr::group_by(rec_id, fromdayone, enteric, study_site, 
-                  participant_age, participant_sex, age,
+                  participant_age, participant_sex, contact_age,
                   occupation, hh_occupants) %>%
   dplyr::summarize(num_contacts = n())
 
@@ -265,7 +267,7 @@ contacts_resp_ent$hhsize <- factor(contacts_resp_ent$hhsize,
 
 barplot(prop.table(table(contacts_resp_ent$hhsize)))
 
-contacts_resp_ent$age = as.numeric(contacts_resp_ent$age)
+contacts_resp_ent$age = as.numeric(contacts_resp_ent$contact_age)
 adults_contacts_resp_ent <- contacts_resp_ent %>% filter(age >= 20, participant_age != "<6mo")
 adults_contacts_resp_ent$occupation[which(adults_contacts_resp_ent$occupation %in% 
                                             c("Child", "Fisherman"))] <- "Other"
@@ -289,11 +291,13 @@ adults_contacts_resp_ent %>%
             mediane = median(avg_unique_ent_contacts, na.rm = T),
             meane = mean(avg_unique_ent_contacts, na.rm = T))
 
+png("figs/resp_hist_outlier.png", height = 750, width = 1250, res = 200)
 ggplot(data = contacts_resp_ent)+
   geom_histogram(aes(avg_unique_resp_contacts))+
   geom_vline(aes(xintercept = contact_summaries$unique_resp_q75), color = "blue")+
   geom_vline(aes(xintercept = contact_summaries$unique_resp_q90), color = "red")+
   ggtitle("Unique Respiratory, Blue=Q75 and Red=Q90")
+dev.off()
 
 ggplot(data = contacts_resp_ent)+
   geom_histogram(aes(avg_unique_ent_contacts))+
