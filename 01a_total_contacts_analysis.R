@@ -7,11 +7,17 @@ library(lme4)
 require(MASS)
 library(lmerTest)
 
-country = "Mozambique"
-cty = "moz"
+country = "Pakistan"
+cty = "pak"
+hhmbr = "Non-member"
 
 participants <- readRDS(paste0(here(),"/../","Globalmix/",country,"/", cty,"_participant_data_aim1.RDS"))
-contacts <- readRDS(paste0(here(),"/../","Globalmix/",country,"/", cty,"_contact_data_aim1.RDS"))
+if(hhmbr == "Non-member"){
+  contacts <- readRDS(paste0(here(),"/../","Globalmix/",country,"/", cty,"_contact_data_aim1.RDS")) %>%
+    filter(hh_membership == hhmbr)
+}else{
+  contacts <- readRDS(paste0(here(),"/../","Globalmix/",country,"/", cty,"_contact_data_aim1.RDS"))
+}
 
 ## Total Contacts Histograms -----------------------------------------------
 
@@ -196,6 +202,21 @@ daily <- contacts %>%
 contacts_daily = left_join(participants, daily, by = c("rec_id" = "rec_id")) %>%
   filter(!is.na(avg_daily_contacts))
 
+if(hhmbr == ""){
+  
+}else{
+  hhmbr = paste0("_", hhmbr)
+}
+
+png(filename = paste0(here(), "/figs/", cty, hhmbr, "_hist.png" ), height = 800, width = 1200)
+ggplot(data = contacts_daily, aes(x = avg_daily_contacts)) +
+  geom_histogram(stat = "bin")+
+  theme_bw() +
+  facet_wrap(~study_site)+
+  ggtitle("")+
+  xlab("")
+dev.off() 
+
 median_daily_site <- contacts_daily %>%
   dplyr::group_by(study_site) %>%
   dplyr::summarize(q25 = quantile(avg_daily_contacts, probs = 0.25),
@@ -270,11 +291,12 @@ rural_daily_linear <- as.data.frame(summary(rural_linear_model)$coefficients) %>
 
 # Save Data --------------------------------------------------------------------
 
-saveRDS(contacts_daily, "data/", cty, "_contacts_daily.RDS")
+saveRDS(contacts_daily, paste0(here(), "/data/","/", cty, hhmbr, "_contacts_daily.RDS"))
 
-write.csv(daily_linear, "data/", cty, "_daily_linear.csv")
-write.csv(daily_linear_int, "data/", cty, "_daily_linear_int.csv")
-write.csv(daily_poisson, "data/", cty, "_daily_poisson.csv")
-write.csv(daily_poisson_int, "data/", cty, "_daily_poisson_int.csv")
-write.csv(daily_negbin, "data/", cty, "_daily_negbin.csv")
-write.csv(daily_negbin_int, "data/", cty, "_daily_negbin_int.csv")
+write.csv(urban_daily_linear, paste0(here(),"/data/","/", cty, hhmbr, "_urban_daily_linear.csv"))
+write.csv(rural_daily_linear, paste0(here(),"/data/","/", cty, hhmbr, "_rural_daily_linear.csv"))
+write.csv(urban_daily_poisson, paste0(here(),"/data/","/", cty, hhmbr, "_urban_daily_poisson.csv"))
+write.csv(rural_daily_poisson, paste0(here(),"/data/","/", cty, hhmbr, "_rural_daily_poisson.csv"))
+write.csv(urban_daily_negbin, paste0(here(),"/data/","/", cty, hhmbr, "_urban_daily_negbin.csv"))
+write.csv(rural_daily_negbin, paste0(here(),"/data/","/", cty, hhmbr, "_rural_daily_negbin.csv"))
+ 
