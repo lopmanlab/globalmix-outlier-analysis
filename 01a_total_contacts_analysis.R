@@ -180,11 +180,8 @@ rural_daily_linear <- data.frame(
   Upper_95_CI = exp(coef_exp + 1.96 * sqrt(se_est))
 )
 
-# Plot fitted
-
 # Save Data --------------------------------------------------------------------
 
-saveRDS(contacts_daily, paste0(here(), "/data/","/", cty, hhmbr, "_contacts_daily.RDS"))
 
 write.csv(urban_daily_linear, paste0(here(),"/data/","/", cty, hhmbr, "_urban_daily_linear.csv"))
 write.csv(rural_daily_linear, paste0(here(),"/data/","/", cty, hhmbr, "_rural_daily_linear.csv"))

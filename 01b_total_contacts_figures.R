@@ -6,420 +6,89 @@ library(plotly)
 library(GGally)
 library(scales)
 library(ggpubr)
+library(legendry)
 
 # Read in Data -----------------------------------------------------------------
 
-unique_linear <- read.csv("data/unique_linear.csv")
-unique_linear_int <- read.csv("data/unique_linear_int.csv")
-unique_poisson <- read.csv("data/unique_poisson.csv")
-unique_poisson_int <- read.csv("data/unique_poisson_int.csv")
-unique_negbin <- read.csv("data/unique_negbin.csv")
-unique_negbin_int <- read.csv("data/unique_negbin_int.csv")
+country = "Pakistan"
+cty = "pak"
+hhmbr = ""
 
-daily_linear <- read.csv("data/daily_linear.csv")
-daily_linear_int <- read.csv("data/daily_linear_int.csv")
-daily_poisson <- read.csv("data/daily_poisson.csv")
-daily_poisson_int <- read.csv("data/daily_poisson_int.csv")
-daily_negbin <- read.csv("data/daily_negbin.csv")
-daily_negbin_int <- read.csv("data/daily_negbin_int.csv")
+urban <- read.csv(paste0(here(),"/data/", cty, hhmbr, "_urban_daily_negbin.csv")) %>%
+                    filter(Term != "(Intercept)") %>%
+                    select(-X) %>%
+                    mutate(Characteristic = c(rep("Age\nRef: 30-39y", 8),
+                                              "Sex\nRef: Female",
+                                              rep("Household Size\nRef: 0-2 members", 3),
+                                              rep("Occupation\nRef: Unemployed", 4), 
+                                              rep("Higher Education\nRef: Primary school", 4))) %>%
+                    mutate(Term = c("<6mo", "6-11mo", "1-4y", "5-9y", "10-19y", "20-29y", "40-59y", "60+y",
+                                    "Male",
+                                    "3-5", "6-10", "11+",
+                                    "Student", "Laborer", "Professional", "Other",
+                                    "In school", "Secondary", "College+", "None")) %>%
+                    mutate(Significance = ifelse((Lower_95_CI) < 1 & (Upper_95_CI) > 1, 0,
+                                         ifelse((Lower_95_CI) < 1 & (Upper_95_CI) < 1, -1, 1))) %>%
+  mutate(predictor = factor(paste(Term, Characteristic, sep = "&"),
+                            levels = paste(Term, Characteristic, sep = "&")))
 
-# Interaction plots-------------------------------------------------------------
-# names(daily_linear_int) <- c("term", "estimate", "SE", "test_statistic", "p_value")
-# names(daily_poisson_int) <- c("term", "estimate", "SE", "test_statistic", "p_value")
-# names(daily_negbin_int) <- c("term", "estimate", "SE", "test_statistic", "p_value")
-# names(unique_linear_int) <- c("term", "estimate", "SE", "test_statistic", "p_value")
-# names(unique_poisson_int) <- c("term", "estimate", "SE", "test_statistic", "p_value")
-# names(unique_negbin_int) <- c("term", "estimate", "SE", "test_statistic", "p_value")
-# 
-# daily_linear_int$facet <- c(rep("Main", 90),
-#                             rep("Age*Sex", 80),
-#                             rep("Age*Site & Sex*Site", 73),
-#                             rep("Age*Sex*Site", 56)) ->
-#   daily_poisson_int$facet ->
-#   daily_negbin_int$facet ->
-#   unique_linear_int$facet ->
-#   unique_poisson_int$facet ->
-#   unique_negbin_int$facet 
-# 
-# daily_linear_int$log_pvalue <- log(round(daily_linear_int$p_value, 2))
-# daily_linear_int$log_pvalue[which(is.infinite(daily_linear_int$log_pvalue))] <- -5.99
-# 
-# p1 <- ggplot(daily_linear_int %>% filter(facet == "Main"), aes(x = term, y = estimate, color = log_pvalue)) + 
-#   geom_point() +
-#   geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-#   theme(axis.text.x = element_text(angle = 45))+
-#   scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
-#                          values = rescale(c(0.01,0.05,0.1)),
-#                          guide = "colorbar")+
-#   ggtitle("Linear: Daily Average Contacts ~ Age * Sex * Site\nMain")
-# 
-# p2 <- ggplot(daily_linear_int %>% filter(facet == "Age*Sex"), aes(x = term, y = estimate, color = log_pvalue)) + 
-#   geom_point() +
-#   geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-#   theme(axis.text.x = element_text(angle = 45))+
-#   scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
-#                          values = rescale(c(0.01,0.05,0.1)),
-#                          guide = "colorbar")+
-#   ggtitle("Age*Sex")
-# 
-# p3 <- ggplot(daily_linear_int %>% filter(facet == "Age*Site & Sex*Site"), aes(x = term, y = estimate, color = log_pvalue)) + 
-#   geom_point() +
-#   geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-#   theme(axis.text.x = element_text(angle = 45))+
-#   scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
-#                          values = rescale(c(0.01,0.05,0.1)),
-#                          guide = "colorbar")+
-#   ggtitle("Age*Site & Sex*Site")
-# 
-# p4 <- ggplot(daily_linear_int %>% filter(facet == "Age*Sex*Site"), aes(x = term, y = estimate, color = log_pvalue)) + 
-#   geom_point() +
-#   geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-#   theme(axis.text.x = element_text(angle = 45))+
-#   scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
-#                          values = rescale(c(0.01,0.05,0.1)),
-#                          guide = "colorbar")+
-#   ggtitle("Age*Sex*Site")
-# 
-# png("figs/daily_linear_int.png", width=4000, height=5000, res=300)
-# ggarrange(p1, p2, p3, p4, nrow=4, ncol=1)
-# dev.off()
-# 
-# daily_poisson_int$log_pvalue <- log(round(daily_poisson_int$p_value, 2))
-# daily_poisson_int$log_pvalue[which(is.infinite(daily_poisson_int$log_pvalue))] <- -5.99
-# 
-# p1 <- ggplot(daily_poisson_int %>% filter(facet == "Main"), aes(x = term, y = estimate, color = log_pvalue)) + 
-#   geom_point() +
-#   geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-#   theme(axis.text.x = element_text(angle = 45))+
-#   scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
-#                          values = rescale(c(0.01,0.05,0.1)),
-#                          guide = "colorbar")+
-#   ggtitle("Poisson: Daily Average Contacts ~ Age * Sex * Site\nMain")
-# 
-# p2 <- ggplot(daily_poisson_int %>% filter(facet == "Age*Sex"), aes(x = term, y = estimate, color = log_pvalue)) + 
-#   geom_point() +
-#   geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-#   theme(axis.text.x = element_text(angle = 45))+
-#   scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
-#                          values = rescale(c(0.01,0.05,0.1)),
-#                          guide = "colorbar")+
-#   ggtitle("Age*Sex")
-# 
-# p3 <- ggplot(daily_poisson_int %>% filter(facet == "Age*Site & Sex*Site"), aes(x = term, y = estimate, color = log_pvalue)) + 
-#   geom_point() +
-#   geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-#   theme(axis.text.x = element_text(angle = 45))+
-#   scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
-#                          values = rescale(c(0.01,0.05,0.1)),
-#                          guide = "colorbar")+
-#   ggtitle("Age*Site & Sex*Site")
-# 
-# p4 <- ggplot(daily_poisson_int %>% filter(facet == "Age*Sex*Site"), aes(x = term, y = estimate, color = log_pvalue)) + 
-#   geom_point() +
-#   geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-#   theme(axis.text.x = element_text(angle = 45))+
-#   scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
-#                          values = rescale(c(0.01,0.05,0.1)),
-#                          guide = "colorbar")+
-#   ggtitle("Age*Sex*Site")
-# 
-# png("figs/daily_poisson_int.png", width=4000, height=5000, res=300)
-# ggarrange(p1, p2, p3, p4, nrow=4, ncol=1)
-# dev.off()
-# 
-# daily_negbin_int$log_pvalue <- log(round(daily_negbin_int$p_value, 2))
-# daily_negbin_int$log_pvalue[which(is.infinite(daily_negbin_int$log_pvalue))] <- -5.99
-# 
-# p1 <- ggplot(daily_negbin_int %>% filter(facet == "Main"), aes(x = term, y = estimate, color = log_pvalue)) + 
-#   geom_point() +
-#   geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-#   theme(axis.text.x = element_text(angle = 45))+
-#   scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
-#                          values = rescale(c(0.01,0.05,0.1)),
-#                          guide = "colorbar")+
-#   ggtitle("Negative Binomial: Daily Average Contacts ~ Age * Sex * Site\nMain")
-# 
-# p2 <- ggplot(daily_negbin_int %>% filter(facet == "Age*Sex"), aes(x = term, y = estimate, color = log_pvalue)) + 
-#   geom_point() +
-#   geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-#   theme(axis.text.x = element_text(angle = 45))+
-#   scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
-#                          values = rescale(c(0.01,0.05,0.1)),
-#                          guide = "colorbar")+
-#   ggtitle("Age*Sex")
-# 
-# p3 <- ggplot(daily_negbin_int %>% filter(facet == "Age*Site & Sex*Site"), aes(x = term, y = estimate, color = log_pvalue)) + 
-#   geom_point() +
-#   geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-#   theme(axis.text.x = element_text(angle = 45))+
-#   scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
-#                          values = rescale(c(0.01,0.05,0.1)),
-#                          guide = "colorbar")+
-#   ggtitle("Age*Site & Sex*Site")
-# 
-# p4 <- ggplot(daily_negbin_int %>% filter(facet == "Age*Sex*Site"), aes(x = term, y = estimate, color = log_pvalue)) + 
-#   geom_point() +
-#   geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-#   theme(axis.text.x = element_text(angle = 45))+
-#   scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
-#                          values = rescale(c(0.01,0.05,0.1)),
-#                          guide = "colorbar")+
-#   ggtitle("Age*Sex*Site")
-# 
-# png("figs/daily_negbin_int.png", width=4000, height=5000, res=300)
-# ggarrange(p1, p2, p3, p4, nrow=4, ncol=1)
-# dev.off()
-# 
-# unique_linear_int$log_pvalue <- log(round(unique_linear_int$p_value, 2))
-# unique_linear_int$log_pvalue[which(is.infinite(unique_linear_int$log_pvalue))] <- -5.99
-# 
-# p1 <- ggplot(unique_linear_int %>% filter(facet == "Main"), aes(x = term, y = estimate, color = log_pvalue)) + 
-#   geom_point() +
-#   geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-#   theme(axis.text.x = element_text(angle = 45))+
-#   scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
-#                          values = rescale(c(0.01,0.05,0.1)),
-#                          guide = "colorbar")+
-#   ggtitle("Linear: Unique Daily Average Contacts ~ Age + Sex + Site\nMain")
-# 
-# p2 <- ggplot(unique_linear_int %>% filter(facet == "Age*Sex"), aes(x = term, y = estimate, color = log_pvalue)) + 
-#   geom_point() +
-#   geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-#   theme(axis.text.x = element_text(angle = 45))+
-#   scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
-#                          values = rescale(c(0.01,0.05,0.1)),
-#                          guide = "colorbar")+
-#   ggtitle("Age*Sex")
-# 
-# p3 <- ggplot(unique_linear_int %>% filter(facet == "Age*Site & Sex*Site"), aes(x = term, y = estimate, color = log_pvalue)) + 
-#   geom_point() +
-#   geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-#   theme(axis.text.x = element_text(angle = 45))+
-#   scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
-#                          values = rescale(c(0.01,0.05,0.1)),
-#                          guide = "colorbar")+
-#   ggtitle("Age*Site & Sex*Site")
-# 
-# p4 <- ggplot(unique_linear_int %>% filter(facet == "Age*Sex*Site"), aes(x = term, y = estimate, color = log_pvalue)) + 
-#   geom_point() +
-#   geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-#   theme(axis.text.x = element_text(angle = 45))+
-#   scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
-#                          values = rescale(c(0.01,0.05,0.1)),
-#                          guide = "colorbar")+
-#   ggtitle("Age*Sex*Site")
-# 
-# 
-# png("figs/unique_linear_int.png", width=4000, height=5000, res=300)
-# ggarrange(p1, p2, p3, p4, nrow=4, ncol=1)
-# dev.off()
-# 
-# unique_poisson_int$log_pvalue <- log(round(unique_poisson_int$p_value, 2))
-# unique_poisson_int$log_pvalue[which(is.infinite(unique_poisson_int$log_pvalue))] <- -5.99
-# 
-# p1 <- ggplot(unique_poisson_int %>% filter(facet == "Main"), aes(x = term, y = estimate, color = log_pvalue)) + 
-#   geom_point() +
-#   geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-#   theme(axis.text.x = element_text(angle = 45))+
-#   scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
-#                          values = rescale(c(0.01,0.05,0.1)),
-#                          guide = "colorbar")+
-#   ggtitle("Poisson: Unique Daily Average Contacts ~ Age + Sex + Site\nMain")
-# 
-# p2 <- ggplot(unique_poisson_int %>% filter(facet == "Age*Sex"), aes(x = term, y = estimate, color = log_pvalue)) + 
-#   geom_point() +
-#   geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-#   theme(axis.text.x = element_text(angle = 45))+
-#   scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
-#                          values = rescale(c(0.01,0.05,0.1)),
-#                          guide = "colorbar")+
-#   ggtitle("Age*Sex")
-# 
-# p3 <- ggplot(unique_poisson_int %>% filter(facet == "Age*Site & Sex*Site"), aes(x = term, y = estimate, color = log_pvalue)) + 
-#   geom_point() +
-#   geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-#   theme(axis.text.x = element_text(angle = 45))+
-#   scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
-#                          values = rescale(c(0.01,0.05,0.1)),
-#                          guide = "colorbar")+
-#   ggtitle("Age*Site & Sex*Site")
-# 
-# p4 <- ggplot(unique_poisson_int %>% filter(facet == "Age*Sex*Site"), aes(x = term, y = estimate, color = log_pvalue)) + 
-#   geom_point() +
-#   geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-#   theme(axis.text.x = element_text(angle = 45))+
-#   scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
-#                          values = rescale(c(0.01,0.05,0.1)),
-#                          guide = "colorbar")+
-#   ggtitle("Age*Sex*Site")
-# 
-# png("figs/unique_poisson_int.png", width=4000, height=5000, res=300)
-# ggarrange(p1, p2, p3, p4, nrow=4, ncol=1)
-# dev.off()
-# 
-# unique_negbin_int$log_pvalue <- log(round(unique_negbin_int$p_value, 2))
-# unique_negbin_int$log_pvalue[which(is.infinite(unique_negbin_int$log_pvalue))] <- -5.99
-# 
-# p1 <- ggplot(unique_negbin_int %>% filter(facet == "Main"), aes(x = term, y = estimate, color = log_pvalue)) + 
-#   geom_point() +
-#   geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-#   theme(axis.text.x = element_text(angle = 45))+
-#   scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
-#                          values = rescale(c(0.01,0.05,0.1)),
-#                          guide = "colorbar")+
-#   ggtitle("Negative Binomial: Unique Daily Average Contacts ~ Age + Sex + Site\nMain")
-# 
-# p2 <- ggplot(unique_negbin_int %>% filter(facet == "Age*Sex"), aes(x = term, y = estimate, color = log_pvalue)) + 
-#   geom_point() +
-#   geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-#   theme(axis.text.x = element_text(angle = 45))+
-#   scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
-#                          values = rescale(c(0.01,0.05,0.1)),
-#                          guide = "colorbar")+
-#   ggtitle("Age*Sex")
-# 
-# p3 <- ggplot(unique_negbin_int %>% filter(facet == "Age*Site & Sex*Site"), aes(x = term, y = estimate, color = log_pvalue)) + 
-#   geom_point() +
-#   geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-#   theme(axis.text.x = element_text(angle = 45))+
-#   scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
-#                          values = rescale(c(0.01,0.05,0.1)),
-#                          guide = "colorbar")+
-#   ggtitle("Age*Site & Sex*Site")
-# 
-# p4 <- ggplot(unique_negbin_int %>% filter(facet == "Age*Sex*Site"), aes(x = term, y = estimate, color = log_pvalue)) + 
-#   geom_point() +
-#   geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-#   theme(axis.text.x = element_text(angle = 45))+
-#   scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
-#                          values = rescale(c(0.01,0.05,0.1)),
-#                          guide = "colorbar")+
-#   ggtitle("Age*Sex*Site")
-# 
-# 
-# png("figs/unique_negbin_int.png", width=4000, height=5000, res=300)
-# ggarrange(p1, p2, p3, p4, nrow=4, ncol=1)
-# dev.off()
+rural <- read.csv(paste0(here(),"/data/", cty, hhmbr, "_rural_daily_negbin.csv"))%>%
+  filter(Term != "(Intercept)") %>%
+  select(-X) %>%
+  mutate(Characteristic = c(rep("Age\nRef: 30-39y", 8),
+                            "Sex\nRef: Female",
+                            rep("Household Size\nRef: 0-2 members", 3),
+                            rep("Occupation\nRef: Unemployed", 4), 
+                            rep("Higher Education\nRef: Primary school", 4))) %>%
+  mutate(Term = c("<6mo", "6-11mo", "1-4y", "5-9y", "10-19y", "20-29y", "40-59y", "60+y",
+                  "Male",
+                  "3-5", "6-10", "11+",
+                  "Student", "Laborer", "Professional", "Other",
+                  "In school", "Secondary", "College+", "None")) %>%
+  mutate(Significance = ifelse((Lower_95_CI) < 1 & (Upper_95_CI) > 1, 0,
+                      ifelse((Lower_95_CI) < 1 & (Upper_95_CI) < 1, -1, 1))) %>%
+  mutate(predictor = factor(paste(Term, Characteristic, sep = "&"),
+                            levels = paste(Term, Characteristic, sep = "&")))
+
 
 # No interaction plots----------------------------------------------------------
-factor_order = c("(Intercept)","participant_age6-11mo", "participant_age1-4y", 
-                 "participant_age5-9y", "participant_age10-14y", 
-                 "participant_age15-19y", "participant_age20-29y", 
-                 "participant_age30-39y", "participant_age40-59y", 
-                 "participant_age60+y", "sexMale", "siteUrban")
-names(daily_linear) <- c("term", "estimate", "SE", "test_statistic", "p_value")
-names(daily_poisson) <- c("term", "estimate", "SE", "test_statistic", "p_value")
-names(daily_negbin) <- c("term", "estimate", "SE", "test_statistic", "p_value")
-names(unique_linear) <- c("term", "estimate", "SE", "test_statistic", "p_value")
-names(unique_poisson) <- c("term", "estimate", "SE", "test_statistic", "p_value")
-names(unique_negbin) <- c("term", "estimate", "SE", "test_statistic", "p_value")
 
-daily_linear$log_pvalue <- log(round(daily_linear$p_value, 2))
-daily_linear$log_pvalue[which(is.infinite(daily_linear$log_pvalue))] <- -5.99
-daily_linear$term <- factor(daily_linear$term, levels = factor_order)
-
-png("figs/daily_linear.png", width=4000, height=1500, res=300)
-ggplot(daily_linear, aes(x = term, y = estimate, color = log_pvalue)) + 
-  geom_point() +
-  geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-  theme(axis.text.x = element_text(angle = 45))+
-  scale_colour_gradient2(low = "forestgreen",
+png(paste0(here(),"/figs/", cty, "_", hhmbr, "_urban_daily_negbin.png"), width=6500, height=2500, res=300)
+ggplot(urban, aes(x = predictor,
+                  y = RR, color = Significance)) + 
+  geom_point(size = 3) +
+  geom_hline(yintercept = 1, lty = 2, color = "gray")+
+  geom_errorbar(aes(ymin=Lower_95_CI, ymax=Upper_95_CI), width = 0.4, lwd = 1.5)+
+  scale_colour_gradient2(low = "firebrick",
                          mid = "goldenrod1",
-                         high = "firebrick", 
-                         midpoint=log(0.05),
+                         high = "forestgreen", 
+                         midpoint=0,
                          guide = "colorbar")+
-  ggtitle("Linear: Daily Average Contacts ~ Age + Sex + Site")
+  ylab("Estimate (Risk Ratio)")+
+  xlab("Socio-Demographic Characteristic")+
+  guides(x = guide_axis_nested(key = "&")) +
+  ggtitle("Urban Mozambique\nDaily Contacts ~ Age + Sex + Household Size + Occupation + Higher Education")+
+  theme_classic()+
+  theme(text=element_text(size=20),
+        legend.position = "none")
 dev.off()
 
-daily_poisson$log_pvalue <- log(round(daily_poisson$p_value, 2))
-daily_poisson$log_pvalue[which(is.infinite(daily_poisson$log_pvalue))] <- -5.99
-daily_poisson$term <- factor(daily_poisson$term, levels = factor_order)
-
-png("figs/daily_poisson.png", width=4000, height=1500, res=300)
-ggplot(daily_poisson, aes(x = term, y = estimate, color = log_pvalue)) + 
+png(paste0(here(),"/figs/", cty, "_", hhmbr, "_rural_daily_negbin.png"), width=3500, height=1500, res=250)
+ggplot(rural, aes(x = predictor,
+                  y = RR, color = Significance)) + 
   geom_point() +
-  geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-  theme(axis.text.x = element_text(angle = 45))+
-  scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
-                         values = rescale(c(0.01,0.05,0.1)),
+  geom_hline(yintercept = 1, lty = 2, color = "gray")+
+  geom_errorbar(aes(ymin=Lower_95_CI, ymax=Upper_95_CI), width = 0.5)+
+  scale_colour_gradient2(low = "firebrick",
+                         mid = "goldenrod1",
+                         high = "forestgreen", 
+                         midpoint=0,
                          guide = "colorbar")+
-  ggtitle("Poisson: Daily Average Contacts ~ Age + Sex + Site")
+  ylab("Estimate (Risk Ratio)")+
+  xlab("Socio-Demographic Characteristic")+
+  guides(x = guide_axis_nested(key = "&")) +
+  ggtitle("Urban Mozambique\nDaily Contacts ~ Age + Sex + Household Size + Occupation + Higher Education")+
+  theme_classic()
 dev.off()
 
-daily_negbin$log_pvalue <- log(round(daily_negbin$p_value, 2))
-daily_negbin$log_pvalue[which(is.infinite(daily_negbin$log_pvalue))] <- -5.99
-daily_negbin$term <- factor(daily_negbin$term, levels = factor_order)
-
-png("figs/daily_negbin.png", width=4000, height=1500, res=300)
-ggplot(daily_negbin, aes(x = term, y = estimate, color = log_pvalue)) + 
-  geom_point() +
-  geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-  theme(axis.text.x = element_text(angle = 45))+
-  scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
-                         values = rescale(c(0.01,0.05,0.1)),
-                         guide = "colorbar")+
-  ggtitle("Negative Binomial: Daily Average Contacts ~ Age + Sex + Site")
-dev.off()
-
-unique_linear$log_pvalue <- log(round(unique_linear$p_value, 2))
-unique_linear$log_pvalue[which(is.infinite(unique_linear$log_pvalue))] <- -5.99
-unique_linear$term <- factor(unique_linear$term, levels = factor_order)
-
-png("figs/unique_linear.png", width=4000, height=1500, res=300)
-ggplot(unique_linear, aes(x = term, y = estimate, color = log_pvalue)) + 
-  geom_point() +
-  geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-  theme(axis.text.x = element_text(angle = 45))+
-  scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
-                         values = rescale(c(0.01,0.05,0.1)),
-                         guide = "colorbar")+
-  ggtitle("Linear: Unique Daily Average Contacts ~ Age + Sex + Site")
-dev.off()
-
-unique_poisson$log_pvalue <- log(round(unique_poisson$p_value, 2))
-unique_poisson$log_pvalue[which(is.infinite(unique_poisson$log_pvalue))] <- -5.99
-unique_poisson$term <- factor(unique_poisson$term, levels = factor_order)
-
-png("figs/unique_poisson.png", width=4000, height=1500, res=300)
-ggplot(unique_poisson, aes(x = term, y = estimate, color = log_pvalue)) + 
-  geom_point() +
-  geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-  theme(axis.text.x = element_text(angle = 45))+
-  scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
-                         values = rescale(c(0.01,0.05,0.1)),
-                         guide = "colorbar")+
-  ggtitle("Poisson: Unique Daily Average Contacts ~ Age + Sex + Site")
-dev.off()
-
-unique_negbin$Coefficient = c("(Intercept)","6-11mo", "1-4y", 
-                 "5-9y", "10-14y", "15-19y", "20-29y", 
-                 "30-39y", "40-59y", "60+y", "Male", "Urban")
-
-unique_negbin$log_pvalue <- log(round(unique_negbin$p_value, 2))
-unique_negbin$log_pvalue[which(is.infinite(unique_negbin$log_pvalue))] <- -5.99
-unique_negbin$term <- factor(unique_negbin$term, levels = factor_order)
-unique_negbin$Coefficient <- factor(unique_negbin$Coefficient, levels = unique_negbin$Coefficient)
-unique_negbin <- unique_negbin[-1,]
-unique_negbin$group = c(rep("Age \n(Ref: <6 months)", 9), 
-                        "Sex \n(Ref: Female)", 
-                        "Site \n(Ref: Rural)")
-  
-png("figs/unique_negbin.png", width=4000, height=1500, res=300)
-ggplot(unique_negbin, aes(x = factor(paste0(Coefficient, "&", group), 
-                                     level=paste0(Coefficient, "&", group)), 
-                          y = estimate, color = log_pvalue)) + 
-  geom_point() +
-  geom_errorbar(aes(ymin=estimate-1.96*SE, ymax=estimate+1.96*SE))+
-  geom_hline(yintercept = 0)+
-  # theme(axis.text.x = element_text(angle = 45))+
-  theme(axis.text = element_text(size = 12))+
-  scale_colour_gradientn(colours = c("forestgreen","goldenrod1","firebrick"), 
-                         values = rescale(c(0.01,0.05,0.1)),
-                         # labels = c("", "0.05", "0.01"),
-                         guide = "colorbar")+
-  ylab("Estimate")+
-  xlab("Coefficient")+
-  guides(x = ggh4x::guide_axis_nested(delim = "&"))+
-  ggtitle("Negative Binomial: Unique Daily Average Contacts ~ Age + Sex + Site")
-dev.off()
 
