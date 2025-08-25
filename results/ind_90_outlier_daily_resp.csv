@@ -1,0 +1,64 @@
+"","Term","RR","Lower_95_CI","Upper_95_CI","Characteristic","Significance","predictor"
+"age<6mo","<6mo",1.09330457050184e-08,0,Inf,"Age
+Ref: 30-39y",0,"<6mo&Age
+Ref: 30-39y"
+"age6-11mo","6-11mo",0.471534408875529,0.092742388987564,2.39744415882374,"Age
+Ref: 30-39y",0,"6-11mo&Age
+Ref: 30-39y"
+"age1-4y","1-4y",0.518367988592996,0.101525820711976,2.64667027277969,"Age
+Ref: 30-39y",0,"1-4y&Age
+Ref: 30-39y"
+"age5-9y","5-9y",2390323829.73925,0,Inf,"Age
+Ref: 30-39y",0,"5-9y&Age
+Ref: 30-39y"
+"age10-19y","10-19y",3.39007413212416,1.24636103346535,9.22092580938901,"Age
+Ref: 30-39y",1,"10-19y&Age
+Ref: 30-39y"
+"age20-29y","20-29y",3.11362597568846,1.22380352052743,7.92175096236341,"Age
+Ref: 30-39y",1,"20-29y&Age
+Ref: 30-39y"
+"age40-59y","40-59y",1.27695796366463e-08,0,Inf,"Age
+Ref: 30-39y",0,"40-59y&Age
+Ref: 30-39y"
+"age60+y","60+y",0.323423339866655,0.0764821687119627,1.36767377981191,"Age
+Ref: 30-39y",0,"60+y&Age
+Ref: 30-39y"
+"sexMale","Male",0.278203860646546,0.188691857146982,0.410178739288967,"Sex
+Ref: Female",-1,"Male&Sex
+Ref: Female"
+"study_siteUrban","Urban",0.740221609077931,0.527871298797339,1.03799549586098,"Site
+Ref: Rural",0,"Urban&Site
+Ref: Rural"
+"hh_size_cat(2,5]","3-5",45218019.2923091,0,Inf,"Household Size
+Ref: 0-2 members",0,"3-5&Household Size
+Ref: 0-2 members"
+"hh_size_cat(5,10]","6-10",92912323.9953385,0,Inf,"Household Size
+Ref: 0-2 members",0,"6-10&Household Size
+Ref: 0-2 members"
+"hh_size_cat(10,50]","11+",2.2107809927652e+26,0,Inf,"Household Size
+Ref: 0-2 members",0,"11+&Household Size
+Ref: 0-2 members"
+"occupationStudent","Student",1222739090.84985,0,Inf,"Occupation
+Ref: Unemployed",0,"Student&Occupation
+Ref: Unemployed"
+"occupationSemiskilled / skilled labor","Laborer",0.474709860951886,0.168335186115096,1.33869488183463,"Occupation
+Ref: Unemployed",0,"Laborer&Occupation
+Ref: Unemployed"
+"occupationSemiprofessional / professional","Professional",2.56637156525667e-08,0,Inf,"Occupation
+Ref: Unemployed",0,"Professional&Occupation
+Ref: Unemployed"
+"occupationOther","Other",7.78503476888975,3.18329054471959,19.0390306826866,"Occupation
+Ref: Unemployed",1,"Other&Occupation
+Ref: Unemployed"
+"high_educCurrently enrolled in school","In school",2.92557646181485e-10,0,Inf,"Higher Education
+Ref: Primary school",0,"In school&Higher Education
+Ref: Primary school"
+"high_educSecondary school","Secondary",0.0658250024169784,0.0180733352970509,0.239741634401164,"Higher Education
+Ref: Primary school",-1,"Secondary&Higher Education
+Ref: Primary school"
+"high_educSome college or higher","College+",0.242591124680872,0.0631283388372134,0.932235108002535,"Higher Education
+Ref: Primary school",-1,"College+&Higher Education
+Ref: Primary school"
+"high_educNone","None",0.589309161153706,0.124987399974738,2.77856237900683,"Higher Education
+Ref: Primary school",0,"None&Higher Education
+Ref: Primary school"

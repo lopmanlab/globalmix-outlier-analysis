@@ -1,0 +1,64 @@
+"","Term","RR","Lower_95_CI","Upper_95_CI","Characteristic","Significance","predictor"
+"age<6mo","<6mo",0.560865614245877,0.292127248822191,1.07682606984354,"Age
+Ref: 30-39y",0,"<6mo&Age
+Ref: 30-39y"
+"age6-11mo","6-11mo",0.308086721053186,0.156620344909977,0.606035108298735,"Age
+Ref: 30-39y",-1,"6-11mo&Age
+Ref: 30-39y"
+"age1-4y","1-4y",1.30536925548976,0.734574122687293,2.31969632546296,"Age
+Ref: 30-39y",0,"1-4y&Age
+Ref: 30-39y"
+"age5-9y","5-9y",2.97351706740226,1.69859381260329,5.20536674779328,"Age
+Ref: 30-39y",1,"5-9y&Age
+Ref: 30-39y"
+"age10-19y","10-19y",0.614136807922575,0.382016684858627,0.987297240655619,"Age
+Ref: 30-39y",-1,"10-19y&Age
+Ref: 30-39y"
+"age20-29y","20-29y",0.473871767484425,0.286475161080067,0.783853131183169,"Age
+Ref: 30-39y",-1,"20-29y&Age
+Ref: 30-39y"
+"age40-59y","40-59y",0.486662909036961,0.302120032185134,0.783929437976444,"Age
+Ref: 30-39y",-1,"40-59y&Age
+Ref: 30-39y"
+"age60+y","60+y",0.188049532555789,0.0954791355730235,0.370370201638502,"Age
+Ref: 30-39y",-1,"60+y&Age
+Ref: 30-39y"
+"sexMale","Male",0.501815374222577,0.366708405376874,0.686700021362602,"Sex
+Ref: Female",-1,"Male&Sex
+Ref: Female"
+"study_siteUrban","Urban",0.0570546924077012,0.0342223001691243,0.0951203720863366,"Site
+Ref: Rural",-1,"Urban&Site
+Ref: Rural"
+"hh_size_cat(2,5]","3-5",1.49606816661362,0.547306378144826,4.08951923188142,"Household Size
+Ref: 0-2 members",0,"3-5&Household Size
+Ref: 0-2 members"
+"hh_size_cat(5,10]","6-10",0.785958184190613,0.288466278380392,2.14142973925577,"Household Size
+Ref: 0-2 members",0,"6-10&Household Size
+Ref: 0-2 members"
+"hh_size_cat(10,50]","11+",0.597266666172753,0.204729216477741,1.7424355773857,"Household Size
+Ref: 0-2 members",0,"11+&Household Size
+Ref: 0-2 members"
+"occupationStudent","Student",2.20419820166577,1.1532544151954,4.21285160343688,"Occupation
+Ref: Unemployed",1,"Student&Occupation
+Ref: Unemployed"
+"occupationSemiskilled / skilled labor","Laborer",0.968747358479244,0.633457163767564,1.48150735083465,"Occupation
+Ref: Unemployed",0,"Laborer&Occupation
+Ref: Unemployed"
+"occupationSemiprofessional / professional","Professional",0.53683098509256,0.136306958263632,2.11425381526057,"Occupation
+Ref: Unemployed",0,"Professional&Occupation
+Ref: Unemployed"
+"occupationOther","Other",1.98956161087821e-06,9.78503127706407e-249,4.04531706787518e+236,"Occupation
+Ref: Unemployed",0,"Other&Occupation
+Ref: Unemployed"
+"high_educCurrently enrolled in school","In school",0.30641339112418,0.175192788276848,0.535919127628995,"Higher Education
+Ref: Primary school",-1,"In school&Higher Education
+Ref: Primary school"
+"high_educSecondary school","Secondary",0.441414256041926,0.229411998139349,0.84933023127541,"Higher Education
+Ref: Primary school",-1,"Secondary&Higher Education
+Ref: Primary school"
+"high_educSome college or higher","College+",1.91371567330932,0.509099218806491,7.19370123343639,"Higher Education
+Ref: Primary school",0,"College+&Higher Education
+Ref: Primary school"
+"high_educNone","None",0.609805716940094,0.4062913810711,0.91526187789779,"Higher Education
+Ref: Primary school",-1,"None&Higher Education
+Ref: Primary school"

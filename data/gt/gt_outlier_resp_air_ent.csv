@@ -1,0 +1,1142 @@
+"","rec_id","date_particpant_enrolled","study_site","participant_age","participant_sex","hh_size","hh_size_cat","occupation","high_educ","avg_daily_resp_contacts","avg_daily_ent_contacts","avg_daily_air_contacts","daily_resp_mean_outlier","daily_resp_q50_outlier","daily_resp_q75_outlier","daily_resp_q90_outlier","daily_air_mean_outlier","daily_air_q50_outlier","daily_air_q75_outlier","daily_air_q90_outlier","daily_ent_mean_outlier","daily_ent_q50_outlier","daily_ent_q75_outlier","daily_ent_q90_outlier"
+"1","280-1",2022-06-28,"Urban","<6mo","Female",4,"(2,5]","Unemployed outside home","None",4,4,4,0,0,0,0,0,0,0,0,0,0,0,0
+"2","583-1",2022-09-26,"Rural","6-11mo","Female",2,"[0,2]","Unemployed outside home","None",5,5.5,4.5,0,0,0,0,0,0,0,0,1,0,0,0
+"3","597-1",2022-09-28,"Rural","6-11mo","Female",3,"(2,5]","Unemployed outside home","None",5,6,4,0,0,0,0,0,0,0,0,1,1,0,0
+"4","601-1",2022-09-28,"Rural","6-11mo","Female",4,"(2,5]","Unemployed outside home","None",7,7,7,1,1,1,0,1,1,1,0,1,1,1,0
+"5","602-1",2022-09-28,"Rural","6-11mo","Male",4,"(2,5]","Unemployed outside home","None",3.5,4,3,0,0,0,0,0,0,0,0,0,0,0,0
+"6","605-1",2022-09-29,"Rural","6-11mo","Female",3,"(2,5]","Unemployed outside home","None",4.5,4.5,4.5,0,0,0,0,0,0,0,0,0,0,0,0
+"7","620-1",2022-10-03,"Rural","<6mo","Female",5,"(2,5]","Unemployed outside home","None",5.5,6.5,5.5,1,0,0,0,1,1,0,0,1,1,0,0
+"8","623-1",2022-10-03,"Urban","6-11mo","Female",4,"(2,5]","Unemployed outside home","None",5,5.5,4,0,0,0,0,0,0,0,0,1,0,0,0
+"9","624-1",2022-09-30,"Rural","6-11mo","Male",3,"(2,5]","Unemployed outside home","None",4,4.5,2,0,0,0,0,0,0,0,0,0,0,0,0
+"10","628-1",2022-10-03,"Rural","6-11mo","Female",3,"(2,5]","Unemployed outside home","None",4,4.5,2,0,0,0,0,0,0,0,0,0,0,0,0
+"11","630-1",2022-10-04,"Rural","<6mo","Male",3,"(2,5]","Unemployed outside home","None",6.5,6.5,6.5,1,1,0,0,1,1,1,0,1,1,0,0
+"12","631-1",2022-10-04,"Rural","<6mo","Female",4,"(2,5]","Unemployed outside home","None",6,6,5,1,1,0,0,1,1,0,0,1,1,0,0
+"13","644-1",2022-10-05,"Rural","6-11mo","Male",3,"(2,5]","Unemployed outside home","None",5,6,4,0,0,0,0,0,0,0,0,1,1,0,0
+"14","651-1",2022-10-06,"Rural","6-11mo","Female",5,"(2,5]","Unemployed outside home","None",7,7,6.5,1,1,1,0,1,1,1,0,1,1,1,0
+"15","657-1",2022-10-07,"Rural","6-11mo","Male",3,"(2,5]","Unemployed outside home","None",5,6.5,4.5,0,0,0,0,0,0,0,0,1,1,0,0
+"16","659-1",2022-10-07,"Rural","6-11mo","Female",2,"[0,2]","Unemployed outside home","None",7,7,6.5,1,1,1,0,1,1,1,0,1,1,1,0
+"17","662-1",2022-10-07,"Rural","<6mo","Female",3,"(2,5]","Unemployed outside home","None",5.5,6.5,4.5,1,0,0,0,0,0,0,0,1,1,0,0
+"18","667-1",2022-10-12,"Rural","6-11mo","Female",6,"(5,50]","Unemployed outside home","None",7,7,5,1,1,1,0,1,1,0,0,1,1,1,0
+"19","678-1",2022-10-13,"Rural","<6mo","Male",6,"(5,50]","Unemployed outside home","None",7,7,7,1,1,1,0,1,1,1,0,1,1,1,0
+"20","680-1",2022-10-13,"Rural","<6mo","Male",7,"(5,50]","Unemployed outside home","None",7,7,7,1,1,1,0,1,1,1,0,1,1,1,0
+"21","688-1",2022-10-14,"Rural","<6mo","Male",3,"(2,5]","Unemployed outside home","None",7,7,7,1,1,1,0,1,1,1,0,1,1,1,0
+"22","705-1",2022-10-17,"Rural","<6mo","Male",5,"(2,5]","Unemployed outside home","None",7,7,7,1,1,1,0,1,1,1,0,1,1,1,0
+"23","706-1",2022-10-17,"Rural","6-11mo","Female",2,"[0,2]","Unemployed outside home","None",3,6,2.5,0,0,0,0,0,0,0,0,1,1,0,0
+"24","710-1",2022-10-19,"Rural","<6mo","Male",7,"(5,50]","Unemployed outside home","None",6,7,5.5,1,1,0,0,1,1,0,0,1,1,1,0
+"25","713-1",2022-10-18,"Rural","<6mo","Male",3,"(2,5]","Unemployed outside home","None",6,7,4,1,1,0,0,0,0,0,0,1,1,1,0
+"26","714-1",2022-10-18,"Rural","<6mo","Male",3,"(2,5]","Unemployed outside home","None",6,7,2,1,1,0,0,0,0,0,0,1,1,1,0
+"27","715-1",2022-10-19,"Rural","<6mo","Male",3,"(2,5]","Unemployed outside home","None",7,7,2.5,1,1,1,0,0,0,0,0,1,1,1,0
+"28","723-1",2022-10-20,"Rural","<6mo","Male",6,"(5,50]","Unemployed outside home","None",5.5,7,5,1,0,0,0,1,1,0,0,1,1,1,0
+"29","728-1",2022-10-20,"Rural","6-11mo","Female",6,"(5,50]","Unemployed outside home","None",6.5,7.5,5,1,1,0,0,1,1,0,0,1,1,1,0
+"30","730-1",2022-10-20,"Rural","<6mo","Female",4,"(2,5]","Unemployed outside home","None",5,5,3,0,0,0,0,0,0,0,0,0,0,0,0
+"31","732-1",2022-10-24,"Rural","6-11mo","Male",5,"(2,5]","Unemployed outside home","None",4.5,5,4.5,0,0,0,0,0,0,0,0,0,0,0,0
+"32","734-1",2022-10-24,"Rural","6-11mo","Male",3,"(2,5]","Unemployed outside home","None",4,5,4,0,0,0,0,0,0,0,0,0,0,0,0
+"33","738-1",2022-10-24,"Rural","<6mo","Female",4,"(2,5]","Unemployed outside home","None",4,5,3,0,0,0,0,0,0,0,0,0,0,0,0
+"34","763-1",2022-10-27,"Urban","6-11mo","Male",5,"(2,5]","Unemployed outside home","None",7.5,7.5,6.5,1,1,1,0,1,1,1,0,1,1,1,0
+"35","772-1",2022-10-28,"Urban","<6mo","Female",4,"(2,5]","Unemployed outside home","None",4,5,3.5,0,0,0,0,0,0,0,0,0,0,0,0
+"36","774-1",2022-10-28,"Urban","6-11mo","Female",5,"(2,5]","Unemployed outside home","None",5,5,5,0,0,0,0,1,1,0,0,0,0,0,0
+"37","780-1",2022-10-31,"Urban","<6mo","Male",3,"(2,5]","Unemployed outside home","None",5.5,6,5.5,1,0,0,0,1,1,0,0,1,1,0,0
+"38","782-1",2022-10-31,"Urban","<6mo","Male",4,"(2,5]","Unemployed outside home","None",5,4,3,0,0,0,0,0,0,0,0,0,0,0,0
+"39","790-1",2022-11-02,"Urban","6-11mo","Female",4,"(2,5]","Unemployed outside home","None",6,6,6,1,1,0,0,1,1,0,0,1,1,0,0
+"40","797-1",2022-11-03,"Urban","6-11mo","Female",5,"(2,5]","Unemployed outside home","None",6,6,5,1,1,0,0,1,1,0,0,1,1,0,0
+"41","799-1",2022-11-03,"Urban","<6mo","Male",3,"(2,5]","Unemployed outside home","None",4,6,3.5,0,0,0,0,0,0,0,0,1,1,0,0
+"42","800-1",2022-11-03,"Urban","6-11mo","Female",4,"(2,5]","Unemployed outside home","None",6,6,6,1,1,0,0,1,1,0,0,1,1,0,0
+"43","801-1",2022-11-03,"Urban","<6mo","Male",5,"(2,5]","Unemployed outside home","None",6,6,6,1,1,0,0,1,1,0,0,1,1,0,0
+"44","802-1",2022-11-03,"Urban","<6mo","Female",6,"(5,50]","Unemployed outside home","None",6.5,6.5,6.5,1,1,0,0,1,1,1,0,1,1,0,0
+"45","807-1",2022-11-04,"Urban","6-11mo","Male",4,"(2,5]","Unemployed outside home","None",6.5,6.5,5.5,1,1,0,0,1,1,0,0,1,1,0,0
+"46","812-1",2022-11-07,"Urban","<6mo","Male",4,"(2,5]","Unemployed outside home","Currently enrolled in school",6.5,6.5,6.5,1,1,0,0,1,1,1,0,1,1,0,0
+"47","817-1",2022-11-07,"Urban","<6mo","Male",4,"(2,5]","Unemployed outside home","None",5,6,3.5,0,0,0,0,0,0,0,0,1,1,0,0
+"48","818-1",2022-11-07,"Urban","<6mo","Male",4,"(2,5]","Unemployed outside home","None",6.5,7,3.5,1,1,0,0,0,0,0,0,1,1,1,0
+"49","824-1",2022-11-08,"Urban","<6mo","Female",5,"(2,5]","Unemployed outside home","None",6.5,6.5,5,1,1,0,0,1,1,0,0,1,1,0,0
+"50","825-1",2022-11-08,"Urban","6-11mo","Female",4,"(2,5]","Unemployed outside home","None",4.5,4.5,4,0,0,0,0,0,0,0,0,0,0,0,0
+"51","832-1",2022-11-09,"Urban","<6mo","Female",5,"(2,5]","Unemployed outside home","None",6,6,5,1,1,0,0,1,1,0,0,1,1,0,0
+"52","834-1",2022-11-09,"Urban","<6mo","Female",3,"(2,5]","Unemployed outside home","None",2,6,2,0,0,0,0,0,0,0,0,1,1,0,0
+"53","836-1",2022-11-09,"Urban","<6mo","Female",5,"(2,5]","Unemployed outside home","None",6,6,6,1,1,0,0,1,1,0,0,1,1,0,0
+"54","839-1",2022-11-10,"Urban","<6mo","Male",7,"(5,50]","Unemployed outside home","None",7.5,7.5,7.5,1,1,1,0,1,1,1,1,1,1,1,0
+"55","842-1",2022-11-10,"Urban","<6mo","Female",4,"(2,5]","Unemployed outside home","None",6,6.5,5.5,1,1,0,0,1,1,0,0,1,1,0,0
+"56","843-1",2022-11-10,"Urban","<6mo","Male",4,"(2,5]","Unemployed outside home","None",6,6,6,1,1,0,0,1,1,0,0,1,1,0,0
+"57","846-1",2022-11-10,"Urban","<6mo","Female",4,"(2,5]","Unemployed outside home","None",5.5,6,4,1,0,0,0,0,0,0,0,1,1,0,0
+"58","850-1",2022-11-11,"Urban","<6mo","Male",9,"(5,50]","Unemployed outside home","None",8.5,9,8,1,1,1,1,1,1,1,1,1,1,1,1
+"59","856-1",2022-11-11,"Urban","6-11mo","Female",3,"(2,5]","Unemployed outside home","None",7,7,7,1,1,1,0,1,1,1,0,1,1,1,0
+"60","858-1",2022-11-15,"Urban","6-11mo","Female",5,"(2,5]","Unemployed outside home","None",4,4.5,4,0,0,0,0,0,0,0,0,0,0,0,0
+"61","862-1",2022-11-15,"Urban","6-11mo","Female",3,"(2,5]","Unemployed outside home","None",2,6,2,0,0,0,0,0,0,0,0,1,1,0,0
+"62","864-1",2022-11-16,"Urban","6-11mo","Female",3,"(2,5]","Unemployed outside home","None",6,6,6,1,1,0,0,1,1,0,0,1,1,0,0
+"63","870-1",2022-11-15,"Urban","6-11mo","Male",5,"(2,5]","Unemployed outside home","None",5.5,6,5,1,0,0,0,1,1,0,0,1,1,0,0
+"64","871-1",2022-11-16,"Urban","<6mo","Male",4,"(2,5]","Unemployed outside home","None",3.5,3.5,3.5,0,0,0,0,0,0,0,0,0,0,0,0
+"65","873-1",2022-11-21,"Urban","<6mo","Male",5,"(2,5]","Unemployed outside home","None",5,5,5,0,0,0,0,1,1,0,0,0,0,0,0
+"66","887-1",2022-11-22,"Urban","6-11mo","Male",2,"[0,2]","Unemployed outside home","None",6.5,6.5,4.5,1,1,0,0,0,0,0,0,1,1,0,0
+"67","894-1",2022-11-23,"Urban","<6mo","Male",4,"(2,5]","Unemployed outside home","None",6,6,6,1,1,0,0,1,1,0,0,1,1,0,0
+"68","909-1",2022-11-25,"Urban","6-11mo","Male",6,"(5,50]","Unemployed outside home","None",6.5,7.5,6.5,1,1,0,0,1,1,1,0,1,1,1,0
+"69","910-1",2022-11-25,"Urban","<6mo","Male",4,"(2,5]","Unemployed outside home","None",3.5,3.5,3.5,0,0,0,0,0,0,0,0,0,0,0,0
+"70","915-1",2022-11-25,"Urban","<6mo","Male",3,"(2,5]","Unemployed outside home","None",6,6.5,4.5,1,1,0,0,0,0,0,0,1,1,0,0
+"71","916-1",2022-11-25,"Urban","6-11mo","Male",3,"(2,5]","Unemployed outside home","None",5,5.5,4,0,0,0,0,0,0,0,0,1,0,0,0
+"72","932-1",2022-11-30,"Urban","6-11mo","Male",4,"(2,5]","Unemployed outside home","None",4,5,3,0,0,0,0,0,0,0,0,0,0,0,0
+"73","934-1",2022-11-30,"Urban","6-11mo","Female",8,"(5,50]","Unemployed outside home","None",8.5,9.5,7.5,1,1,1,1,1,1,1,1,1,1,1,1
+"74","937-1",2022-11-29,"Urban","<6mo","Female",5,"(2,5]","Unemployed outside home","None",6,6,6,1,1,0,0,1,1,0,0,1,1,0,0
+"75","941-1",2022-12-01,"Urban","<6mo","Male",5,"(2,5]","Unemployed outside home","None",6.5,7,6.5,1,1,0,0,1,1,1,0,1,1,1,0
+"76","942-1",2022-12-01,"Urban","6-11mo","Male",3,"(2,5]","Unemployed outside home","None",6,6,6,1,1,0,0,1,1,0,0,1,1,0,0
+"77","943-1",2022-12-01,"Urban","<6mo","Male",4,"(2,5]","Unemployed outside home","None",6,6,5.5,1,1,0,0,1,1,0,0,1,1,0,0
+"78","944-1",2022-12-05,"Urban","6-11mo","Male",3,"(2,5]","Unemployed outside home","None",6,6,6,1,1,0,0,1,1,0,0,1,1,0,0
+"79","945-1",2022-12-05,"Urban","6-11mo","Female",5,"(2,5]","Unemployed outside home","None",6,6,6,1,1,0,0,1,1,0,0,1,1,0,0
+"80","946-1",2022-12-05,"Urban","6-11mo","Female",5,"(2,5]","Unemployed outside home","None",5.5,6,4,1,0,0,0,0,0,0,0,1,1,0,0
+"81","947-1",2022-12-05,"Urban","6-11mo","Female",5,"(2,5]","Unemployed outside home","None",6,7,5,1,1,0,0,1,1,0,0,1,1,1,0
+"82","948-1",2022-12-06,"Urban","6-11mo","Male",3,"(2,5]","Unemployed outside home","None",6.5,6.5,6.5,1,1,0,0,1,1,1,0,1,1,0,0
+"83","949-1",2022-12-06,"Urban","6-11mo","Male",3,"(2,5]","Unemployed outside home","None",6,6,5,1,1,0,0,1,1,0,0,1,1,0,0
+"84","950-1",2022-12-06,"Urban","6-11mo","Female",4,"(2,5]","Unemployed outside home","None",7,7,7,1,1,1,0,1,1,1,0,1,1,1,0
+"85","951-1",2022-12-06,"Urban","6-11mo","Male",5,"(2,5]","Unemployed outside home","None",6.5,6.5,6.5,1,1,0,0,1,1,1,0,1,1,0,0
+"86","952-1",2022-12-01,"Urban","<6mo","Female",4,"(2,5]","Unemployed outside home","None",3.5,3.5,3.5,0,0,0,0,0,0,0,0,0,0,0,0
+"87","953-1",2022-12-01,"Urban","6-11mo","Male",4,"(2,5]","Unemployed outside home","None",4,4,4,0,0,0,0,0,0,0,0,0,0,0,0
+"88","956-1",2022-12-05,"Urban","6-11mo","Female",6,"(5,50]","Unemployed outside home","None",9.5,9.5,9,1,1,1,1,1,1,1,1,1,1,1,1
+"89","957-1",2022-12-05,"Urban","<6mo","Male",7,"(5,50]","Unemployed outside home","None",6,6,6,1,1,0,0,1,1,0,0,1,1,0,0
+"90","958-1",2022-12-05,"Urban","6-11mo","Female",8,"(5,50]","Unemployed outside home","None",6.5,6.5,6.5,1,1,0,0,1,1,1,0,1,1,0,0
+"91","959-1",2022-12-05,"Urban","<6mo","Male",6,"(5,50]","Unemployed outside home","None",6,6,5.5,1,1,0,0,1,1,0,0,1,1,0,0
+"92","960-1",2022-12-06,"Urban","6-11mo","Female",4,"(2,5]","Unemployed outside home","None",3.5,4.5,3,0,0,0,0,0,0,0,0,0,0,0,0
+"93","962-1",2022-12-06,"Urban","<6mo","Female",5,"(2,5]","Unemployed outside home","None",4.5,4.5,4.5,0,0,0,0,0,0,0,0,0,0,0,0
+"94","964-1",2022-12-07,"Urban","6-11mo","Female",4,"(2,5]","Unemployed outside home","None",6.5,7,5.5,1,1,0,0,1,1,0,0,1,1,1,0
+"95","965-1",2022-12-07,"Urban","<6mo","Female",3,"(2,5]","Unemployed outside home","None",4,6,4,0,0,0,0,0,0,0,0,1,1,0,0
+"96","966-1",2022-12-07,"Urban","6-11mo","Female",3,"(2,5]","Unemployed outside home","None",4.5,6,3.5,0,0,0,0,0,0,0,0,1,1,0,0
+"97","967-1",2022-12-07,"Urban","6-11mo","Male",3,"(2,5]","Unemployed outside home","None",4.5,5.5,3,0,0,0,0,0,0,0,0,1,0,0,0
+"98","968-1",2022-12-07,"Urban","<6mo","Female",7,"(5,50]","Unemployed outside home","None",5,5,5,0,0,0,0,1,1,0,0,0,0,0,0
+"99","969-1",2022-12-07,"Urban","<6mo","Female",2,"[0,2]","Unemployed outside home","None",2,3,1,0,0,0,0,0,0,0,0,0,0,0,0
+"100","970-1",2022-12-07,"Urban","6-11mo","Female",5,"(2,5]","Unemployed outside home","None",5,5,5,0,0,0,0,1,1,0,0,0,0,0,0
+"101","971-1",2022-12-07,"Urban","<6mo","Female",5,"(2,5]","Unemployed outside home","None",6,6,6,1,1,0,0,1,1,0,0,1,1,0,0
+"102","975-1",2022-12-01,"Urban","6-11mo","Female",7,"(5,50]","Unemployed outside home","None",8,8,8,1,1,1,1,1,1,1,1,1,1,1,1
+"103","976-1",2022-12-01,"Urban","<6mo","Female",8,"(5,50]","Unemployed outside home","None",7,7,7,1,1,1,0,1,1,1,0,1,1,1,0
+"104","977-1",2022-12-01,"Urban","<6mo","Female",4,"(2,5]","Unemployed outside home","None",6.5,6.5,6.5,1,1,0,0,1,1,1,0,1,1,0,0
+"105","978-1",2022-12-05,"Urban","6-11mo","Male",5,"(2,5]","Unemployed outside home","None",6,6,6,1,1,0,0,1,1,0,0,1,1,0,0
+"106","979-1",2022-12-05,"Urban","6-11mo","Male",4,"(2,5]","Unemployed outside home","None",6.5,6,5,1,1,0,0,1,1,0,0,1,1,0,0
+"107","980-1",2022-12-05,"Urban","6-11mo","Male",4,"(2,5]","Unemployed outside home","None",5,5,5,0,0,0,0,1,1,0,0,0,0,0,0
+"108","981-1",2022-12-05,"Urban","6-11mo","Male",4,"(2,5]","Unemployed outside home","None",7.5,6,5,1,1,1,0,1,1,0,0,1,1,0,0
+"109","982-1",2022-12-06,"Urban","6-11mo","Female",3,"(2,5]","Unemployed outside home","None",2,2.5,2,0,0,0,0,0,0,0,0,0,0,0,0
+"110","983-1",2022-12-06,"Urban","6-11mo","Male",3,"(2,5]","Unemployed outside home","None",6,7,5,1,1,0,0,1,1,0,0,1,1,1,0
+"111","984-1",2022-12-06,"Urban","6-11mo","Male",3,"(2,5]","Unemployed outside home","None",2,3.5,2,0,0,0,0,0,0,0,0,0,0,0,0
+"112","985-1",2022-12-06,"Urban","6-11mo","Female",3,"(2,5]","Unemployed outside home","None",5,7.5,2,0,0,0,0,0,0,0,0,1,1,1,0
+"113","986-1",2022-12-07,"Urban","6-11mo","Female",3,"(2,5]","Unemployed outside home","None",6.5,6.5,6,1,1,0,0,1,1,0,0,1,1,0,0
+"114","987-1",2022-12-07,"Urban","<6mo","Female",3,"(2,5]","Unemployed outside home","None",7,7,6,1,1,1,0,1,1,0,0,1,1,1,0
+"115","988-1",2022-12-07,"Urban","<6mo","Male",3,"(2,5]","Unemployed outside home","None",6,6,5,1,1,0,0,1,1,0,0,1,1,0,0
+"116","989-1",2022-12-07,"Urban","6-11mo","Female",4,"(2,5]","Unemployed outside home","None",6.5,7,6.5,1,1,0,0,1,1,1,0,1,1,1,0
+"117","990-1",2022-12-08,"Urban","6-11mo","Male",3,"(2,5]","Unemployed outside home","None",5.5,6,5,1,0,0,0,1,1,0,0,1,1,0,0
+"118","991-1",2022-12-08,"Urban","<6mo","Male",5,"(2,5]","Unemployed outside home","None",6,6,6,1,1,0,0,1,1,0,0,1,1,0,0
+"119","993-1",2022-12-08,"Urban","<6mo","Male",7,"(5,50]","Unemployed outside home","None",6,6,6,1,1,0,0,1,1,0,0,1,1,0,0
+"120","996-1",2022-12-09,"Rural","6-11mo","Female",3,"(2,5]","Unemployed outside home","None",4.5,4.5,4.5,0,0,0,0,0,0,0,0,0,0,0,0
+"121","997-1",2022-12-09,"Rural","<6mo","Female",5,"(2,5]","Unemployed outside home","None",4,4,4,0,0,0,0,0,0,0,0,0,0,0,0
+"122","998-1",2022-12-09,"Rural","<6mo","Female",4,"(2,5]","Unemployed outside home","None",5,6,5,0,0,0,0,1,1,0,0,1,1,0,0
+"123","1002-1",2022-12-09,"Rural","<6mo","Male",4,"(2,5]","Unemployed outside home","None",5.5,5.5,4.5,1,0,0,0,0,0,0,0,1,0,0,0
+"124","1003-1",2022-12-09,"Rural","<6mo","Male",4,"(2,5]","Unemployed outside home","None",5,5,5,0,0,0,0,1,1,0,0,0,0,0,0
+"125","1004-1",2022-12-09,"Rural","<6mo","Male",5,"(2,5]","Unemployed outside home","None",4.5,4.5,4,0,0,0,0,0,0,0,0,0,0,0,0
+"126","1005-1",2022-12-12,"Rural","6-11mo","Male",5,"(2,5]","Unemployed outside home","None",5.5,6,5.5,1,0,0,0,1,1,0,0,1,1,0,0
+"127","1006-1",2022-12-12,"Rural","6-11mo","Female",3,"(2,5]","Unemployed outside home","None",3.5,4.5,2.5,0,0,0,0,0,0,0,0,0,0,0,0
+"128","1007-1",2022-12-12,"Rural","<6mo","Female",3,"(2,5]","Unemployed outside home","None",3.5,4.5,2.5,0,0,0,0,0,0,0,0,0,0,0,0
+"129","1009-1",2022-12-12,"Rural","6-11mo","Female",5,"(2,5]","Unemployed outside home","None",6,6,6,1,1,0,0,1,1,0,0,1,1,0,0
+"130","1010-1",2022-12-12,"Rural","<6mo","Male",4,"(2,5]","Unemployed outside home","None",6,6,6,1,1,0,0,1,1,0,0,1,1,0,0
+"131","1011-1",2022-12-08,"Urban","6-11mo","Male",5,"(2,5]","Unemployed outside home","None",6,6,5,1,1,0,0,1,1,0,0,1,1,0,0
+"132","1012-1",2022-12-08,"Urban","6-11mo","Female",5,"(2,5]","Unemployed outside home","None",6,5.5,5,1,1,0,0,1,1,0,0,1,0,0,0
+"133","1014-1",2022-12-09,"Rural","6-11mo","Male",5,"(2,5]","Unemployed outside home","None",6,6,6,1,1,0,0,1,1,0,0,1,1,0,0
+"134","1015-1",2022-12-09,"Rural","6-11mo","Male",4,"(2,5]","Unemployed outside home","None",5,5,3,0,0,0,0,0,0,0,0,0,0,0,0
+"135","1016-1",2022-12-09,"Rural","6-11mo","Male",3,"(2,5]","Unemployed outside home","None",6,3.5,3,1,1,0,0,0,0,0,0,0,0,0,0
+"136","1017-1",2022-12-12,"Rural","<6mo","Female",5,"(2,5]","Unemployed outside home","None",6,6,4,1,1,0,0,0,0,0,0,1,1,0,0
+"137","1018-1",2022-12-12,"Rural","6-11mo","Male",3,"(2,5]","Unemployed outside home","None",5,5.5,5,0,0,0,0,1,1,0,0,1,0,0,0
+"138","1019-1",2022-12-12,"Rural","<6mo","Female",3,"(2,5]","Unemployed outside home","None",4,4,3,0,0,0,0,0,0,0,0,0,0,0,0
+"139","1021-1",2022-12-13,"Rural","<6mo","Female",4,"(2,5]","Unemployed outside home","None",5,5,4.5,0,0,0,0,0,0,0,0,0,0,0,0
+"140","1022-1",2022-12-13,"Rural","<6mo","Male",4,"(2,5]","Unemployed outside home","None",3,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+"141","1023-1",2022-12-13,"Rural","6-11mo","Male",3,"(2,5]","Unemployed outside home","None",4.5,5.5,3.5,0,0,0,0,0,0,0,0,1,0,0,0
+"142","1024-1",2022-12-13,"Rural","<6mo","Male",2,"[0,2]","Unemployed outside home","None",6.5,6.5,6.5,1,1,0,0,1,1,1,0,1,1,0,0
+"143","1025-1",2022-12-13,"Rural","<6mo","Female",3,"(2,5]","Unemployed outside home","None",5,6,5,0,0,0,0,1,1,0,0,1,1,0,0
+"144","1026-1",2022-12-14,"Rural","6-11mo","Male",5,"(2,5]","Unemployed outside home","None",5.5,6,4.5,1,0,0,0,0,0,0,0,1,1,0,0
+"145","1027-1",2022-12-14,"Rural","<6mo","Female",5,"(2,5]","Unemployed outside home","None",3.5,5,3.5,0,0,0,0,0,0,0,0,0,0,0,0
+"146","1028-1",2022-12-14,"Rural","<6mo","Female",5,"(2,5]","Unemployed outside home","None",6,6,6,1,1,0,0,1,1,0,0,1,1,0,0
+"147","1029-1",2022-12-13,"Rural","6-11mo","Female",2,"[0,2]","Unemployed outside home","None",4.5,5,3,0,0,0,0,0,0,0,0,0,0,0,0
+"148","1030-1",2022-12-13,"Rural","6-11mo","Female",5,"(2,5]","Unemployed outside home","None",6,6,4,1,1,0,0,0,0,0,0,1,1,0,0
+"149","1031-1",2022-12-13,"Rural","6-11mo","Female",4,"(2,5]","Unemployed outside home","None",6.5,6.5,6.5,1,1,0,0,1,1,1,0,1,1,0,0
+"150","1032-1",2022-12-14,"Rural","<6mo","Female",4,"(2,5]","Unemployed outside home","None",6,6.5,4.5,1,1,0,0,0,0,0,0,1,1,0,0
+"151","1033-1",2022-12-14,"Rural","<6mo","Female",3,"(2,5]","Unemployed outside home","None",5.5,5.5,5,1,0,0,0,1,1,0,0,1,0,0,0
+"152","1034-1",2022-12-14,"Rural","<6mo","Female",3,"(2,5]","Unemployed outside home","None",6.5,6.5,6.5,1,1,0,0,1,1,1,0,1,1,0,0
+"153","1035-1",2022-12-15,"Rural","<6mo","Female",3,"(2,5]","Unemployed outside home","None",4,4,2,0,0,0,0,0,0,0,0,0,0,0,0
+"154","1036-1",2022-12-15,"Rural","<6mo","Female",4,"(2,5]","Unemployed outside home","None",5,5,3,0,0,0,0,0,0,0,0,0,0,0,0
+"155","1037-1",2022-12-15,"Rural","<6mo","Male",3,"(2,5]","Unemployed outside home","None",4,4,2.5,0,0,0,0,0,0,0,0,0,0,0,0
+"156","1038-1",2022-12-14,"Rural","6-11mo","Male",3,"(2,5]","Unemployed outside home","None",5.5,6,4.5,1,0,0,0,0,0,0,0,1,1,0,0
+"157","1039-1",2022-12-14,"Rural","<6mo","Male",3,"(2,5]","Unemployed outside home","None",4.5,6,3.5,0,0,0,0,0,0,0,0,1,1,0,0
+"158","1040-1",2022-12-14,"Rural","<6mo","Female",4,"(2,5]","Unemployed outside home","None",6,6,6,1,1,0,0,1,1,0,0,1,1,0,0
+"159","1041-1",2022-12-15,"Rural","<6mo","Male",5,"(2,5]","Unemployed outside home","None",6,6,6,1,1,0,0,1,1,0,0,1,1,0,0
+"160","1042-1",2022-12-15,"Rural","<6mo","Female",3,"(2,5]","Unemployed outside home","None",5.5,5.5,5.5,1,0,0,0,1,1,0,0,1,0,0,0
+"161","1043-1",2022-12-15,"Rural","6-11mo","Male",3,"(2,5]","Unemployed outside home","None",6,6,6,1,1,0,0,1,1,0,0,1,1,0,0
+"162","1044-1",2022-12-15,"Rural","<6mo","Female",6,"(5,50]","Unemployed outside home","None",6.5,6.5,6.5,1,1,0,0,1,1,1,0,1,1,0,0
+"163","1045-1",2022-12-15,"Rural","<6mo","Male",5,"(2,5]","Unemployed outside home","None",4.5,4.5,4.5,0,0,0,0,0,0,0,0,0,0,0,0
+"164","1046-1",2022-12-15,"Rural","<6mo","Female",6,"(5,50]","Unemployed outside home","None",5,5,5,0,0,0,0,1,1,0,0,0,0,0,0
+"165","1047-1",2022-12-16,"Rural","<6mo","Male",6,"(5,50]","Unemployed outside home","None",6,6,6,1,1,0,0,1,1,0,0,1,1,0,0
+"166","1048-1",2022-12-16,"Rural","<6mo","Female",3,"(2,5]","Unemployed outside home","None",3,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+"167","1049-1",2022-12-16,"Rural","<6mo","Female",4,"(2,5]","Unemployed outside home","None",3,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+"168","1050-1",2022-12-16,"Rural","<6mo","Female",5,"(2,5]","Unemployed outside home","None",6,5,5,1,1,0,0,1,1,0,0,0,0,0,0
+"169","1051-1",2022-12-16,"Rural","<6mo","Female",2,"[0,2]","Unemployed outside home","None",4,4,2,0,0,0,0,0,0,0,0,0,0,0,0
+"170","1052-1",2022-12-16,"Rural","<6mo","Male",3,"(2,5]","Unemployed outside home","None",6,6.5,6,1,1,0,0,1,1,0,0,1,1,0,0
+"171","1053-1",2022-12-16,"Rural","<6mo","Female",3,"(2,5]","Unemployed outside home","None",6,6,6,1,1,0,0,1,1,0,0,1,1,0,0
+"172","1054-1",2022-12-16,"Rural","<6mo","Female",6,"(5,50]","Unemployed outside home","None",6,6,5.5,1,1,0,0,1,1,0,0,1,1,0,0
+"173","1055-1",2022-12-16,"Rural","6-11mo","Male",3,"(2,5]","Unemployed outside home","None",6,6,6,1,1,0,0,1,1,0,0,1,1,0,0
+"174","29-2",2022-03-28,"Rural","<6mo","Male",2,"[0,2]","Unemployed outside home","None",3.5,4,3.5,0,0,0,0,0,0,0,0,0,0,0,0
+"175","34-2",2022-03-28,"Rural","6-11mo","Female",3,"(2,5]","Unemployed outside home","None",4.5,4.5,4.5,0,0,0,0,0,0,0,0,0,0,0,0
+"176","36-2",2022-03-28,"Rural","6-11mo","Male",2,"[0,2]","Unemployed outside home","None",4.5,4.5,4.5,0,0,0,0,0,0,0,0,0,0,0,0
+"177","45-2",2022-03-30,"Rural","<6mo","Male",3,"(2,5]","Unemployed outside home","None",5,5,5,0,0,0,0,1,1,0,0,0,0,0,0
+"178","100-2",2022-05-05,"Rural","<6mo","Female",6,"(5,50]","Unemployed outside home","None",11.5,11.5,11.5,1,1,1,1,1,1,1,1,1,1,1,1
+"179","102-2",2022-05-05,"Rural","6-11mo","Male",2,"[0,2]","Unemployed outside home","None",1.5,1.5,1,0,0,0,0,0,0,0,0,0,0,0,0
+"180","107-2",2022-05-06,"Rural","6-11mo","Male",2,"[0,2]","Unemployed outside home","None",4.5,4.5,4,0,0,0,0,0,0,0,0,0,0,0,0
+"181","122-2",2022-05-12,"Rural","<6mo","Male",3,"(2,5]","Unemployed outside home","None",5,5,5,0,0,0,0,1,1,0,0,0,0,0,0
+"182","124-2",2022-05-12,"Rural","6-11mo","Female",2,"[0,2]","Unemployed outside home","None",7,7,7,1,1,1,0,1,1,1,0,1,1,1,0
+"183","131-2",2022-05-13,"Rural","<6mo","Female",5,"(2,5]","Unemployed outside home","None",7.5,7.5,5.5,1,1,1,0,1,1,0,0,1,1,1,0
+"184","140-2",2022-05-18,"Rural","6-11mo","Male",3,"(2,5]","Unemployed outside home","None",7,7,7,1,1,1,0,1,1,1,0,1,1,1,0
+"185","144-2",2022-05-18,"Rural","<6mo","Female",4,"(2,5]","Unemployed outside home","None",5.5,5.5,5.5,1,0,0,0,1,1,0,0,1,0,0,0
+"186","147-2",2022-05-23,"Urban","<6mo","Female",3,"(2,5]","Unemployed outside home","None",5.5,5.5,5.5,1,0,0,0,1,1,0,0,1,0,0,0
+"187","178-2",2022-06-10,"Urban","6-11mo","Male",3,"(2,5]","Unemployed outside home","None",6.5,6,3,1,1,0,0,0,0,0,0,1,1,0,0
+"188","199-2",2022-06-20,"Urban","6-11mo","Female",3,"(2,5]","Unemployed outside home","None",7,8,6,1,1,1,0,1,1,0,0,1,1,1,1
+"189","201-2",2022-06-23,"Urban","<6mo","Female",2,"[0,2]","Unemployed outside home","None",3,3,2,0,0,0,0,0,0,0,0,0,0,0,0
+"190","220-2",2022-07-11,"Urban","<6mo","Female",3,"(2,5]","Unemployed outside home","None",5.5,5.5,5.5,1,0,0,0,1,1,0,0,1,0,0,0
+"191","229-2",2022-07-15,"Urban","6-11mo","Female",2,"[0,2]","Unemployed outside home","None",4.5,4.5,4.5,0,0,0,0,0,0,0,0,0,0,0,0
+"192","236-2",2022-07-18,"Urban","6-11mo","Female",3,"(2,5]","Unemployed outside home","None",2,2,2,0,0,0,0,0,0,0,0,0,0,0,0
+"193","239-2",2022-07-18,"Urban","<6mo","Female",3,"(2,5]","Unemployed outside home","None",5,5,5,0,0,0,0,1,1,0,0,0,0,0,0
+"194","242-2",2022-07-18,"Urban","<6mo","Female",3,"(2,5]","Unemployed outside home","None",4.5,5,3.5,0,0,0,0,0,0,0,0,0,0,0,0
+"195","281-2",2022-07-25,"Urban","6-11mo","Male",3,"(2,5]","Unemployed outside home","None",3,4,2.5,0,0,0,0,0,0,0,0,0,0,0,0
+"196","283-2",2022-07-26,"Urban","6-11mo","Male",2,"[0,2]","Unemployed outside home","None",4,4.5,4,0,0,0,0,0,0,0,0,0,0,0,0
+"197","288-2",2022-07-26,"Urban","<6mo","Male",3,"(2,5]","Unemployed outside home","None",7,7,6,1,1,1,0,1,1,0,0,1,1,1,0
+"198","291-2",2022-07-27,"Urban","<6mo","Female",3,"(2,5]","Unemployed outside home","None",8,8,8,1,1,1,1,1,1,1,1,1,1,1,1
+"199","293-2",2022-07-28,"Urban","6-11mo","Female",2,"[0,2]","Unemployed outside home","None",5,5,4.5,0,0,0,0,0,0,0,0,0,0,0,0
+"200","299-2",2022-07-29,"Urban","6-11mo","Female",4,"(2,5]","Unemployed outside home","None",5.5,6.5,5.5,1,0,0,0,1,1,0,0,1,1,0,0
+"201","301-2",2022-08-01,"Urban","<6mo","Male",2,"[0,2]","Unemployed outside home","None",6,6,4,1,1,0,0,0,0,0,0,1,1,0,0
+"202","307-2",2022-08-03,"Urban","6-11mo","Male",2,"[0,2]","Unemployed outside home","None",7,7,7,1,1,1,0,1,1,1,0,1,1,1,0
+"203","309-2",2022-08-05,"Urban","<6mo",NA,2,"[0,2]","Unemployed outside home","None",2.5,1.5,1.5,0,0,0,0,0,0,0,0,0,0,0,0
+"204","311-2",2022-08-05,"Urban","<6mo","Male",2,"[0,2]","Unemployed outside home","None",4,4,2,0,0,0,0,0,0,0,0,0,0,0,0
+"205","313-2",2022-08-05,"Urban","<6mo","Female",2,"[0,2]","Unemployed outside home","None",3,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+"206","336-2",2022-08-25,"Rural","6-11mo","Female",2,"[0,2]","Unemployed outside home","None",5,5,4,0,0,0,0,0,0,0,0,0,0,0,0
+"207","339-2",2022-08-25,"Rural","6-11mo","Female",3,"(2,5]","Unemployed outside home","None",7,7,2,1,1,1,0,0,0,0,0,1,1,1,0
+"208","341-2",2022-09-01,"Rural","6-11mo","Male",2,"[0,2]","Unemployed outside home","None",4,3.5,3.5,0,0,0,0,0,0,0,0,0,0,0,0
+"209","343-2",2022-09-01,"Rural","6-11mo","Female",2,"[0,2]","Unemployed outside home","None",4.5,4,4,0,0,0,0,0,0,0,0,0,0,0,0
+"210","345-2",2022-09-01,"Rural","6-11mo","Female",2,"[0,2]","Unemployed outside home","None",6,6,6,1,1,0,0,1,1,0,0,1,1,0,0
+"211","357-2",2022-08-31,"Rural","<6mo","Female",1,"[0,2]","Unemployed outside home","None",6,6,6,1,1,0,0,1,1,0,0,1,1,0,0
+"212","359-2",2022-08-31,"Rural","6-11mo","Female",2,"[0,2]","Unemployed outside home","None",6,6,4.5,1,1,0,0,0,0,0,0,1,1,0,0
+"213","366-2",2022-09-02,"Rural","6-11mo","Female",2,"[0,2]","Unemployed outside home","None",4,5,4,0,0,0,0,0,0,0,0,0,0,0,0
+"214","369-2",2022-09-09,"Rural","<6mo","Male",3,"(2,5]","Unemployed outside home","None",6.5,6.5,6.5,1,1,0,0,1,1,1,0,1,1,0,0
+"215","1-1",2022-02-28,"Rural","40-59y","Female",4,"(2,5]","Unemployed outside home","Secondary school",4.5,4.5,4.5,0,0,0,0,0,0,0,0,0,0,0,0
+"216","4-1",2022-02-28,"Rural","10-19y","Female",6,"(5,50]","Student","Secondary school",5.5,5.5,5.5,1,0,0,0,1,1,0,0,1,0,0,0
+"217","8-1",2022-02-28,"Rural","5-9y","Female",6,"(5,50]","Unemployed outside home","Currently enrolled in school",6,7.5,5,1,1,0,0,1,1,0,0,1,1,1,0
+"218","9-1",2022-03-07,"Rural","10-19y","Female",7,"(5,50]","Student","Currently enrolled in school",9.5,9.5,9.5,1,1,1,1,1,1,1,1,1,1,1,1
+"219","13-1",2022-03-01,"Rural","40-59y","Female",6,"(5,50]","Unemployed outside home","Primary school",7,7,7,1,1,1,0,1,1,1,0,1,1,1,0
+"220","18-1",2022-03-02,"Rural","30-39y","Female",8,"(5,50]","Unemployed outside home","Secondary school",3.5,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+"221","19-1",2022-03-08,"Rural","20-29y","Female",4,"(2,5]","Unemployed outside home","Primary school",3.5,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+"222","20-1",2022-03-02,"Rural","10-19y","Female",5,"(2,5]","Student","Currently enrolled in school",5,4.5,3.5,0,0,0,0,0,0,0,0,0,0,0,0
+"223","21-1",2022-03-09,"Rural","40-59y","Female",1,"[0,2]","Unemployed outside home","None",1.5,0.5,0.5,0,0,0,0,0,0,0,0,0,0,0,0
+"224","22-1",2022-03-09,"Rural","20-29y","Female",3,"(2,5]","Unemployed outside home","Currently enrolled in school",5,5,5,0,0,0,0,1,1,0,0,0,0,0,0
+"225","23-1",2022-03-09,"Rural","10-19y","Female",5,"(2,5]","Student","Currently enrolled in school",3,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+"226","24-1",2022-03-10,"Rural","40-59y","Female",4,"(2,5]","Unemployed outside home","None",3,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+"227","25-1",2022-03-08,"Rural","20-29y","Female",3,"(2,5]","Unemployed outside home","Secondary school",3,3.5,3,0,0,0,0,0,0,0,0,0,0,0,0
+"228","26-1",2022-03-08,"Rural","5-9y","Female",5,"(2,5]","Unemployed outside home","Currently enrolled in school",5.5,5.5,5.5,1,0,0,0,1,1,0,0,1,0,0,0
+"229","27-1",2022-03-09,"Rural","20-29y","Female",7,"(5,50]","Unemployed outside home","Primary school",4.5,5,4.5,0,0,0,0,0,0,0,0,0,0,0,0
+"230","28-1",2022-03-09,"Rural","30-39y","Female",1,"[0,2]","Unemployed outside home","None",4,4,3,0,0,0,0,0,0,0,0,0,0,0,0
+"231","29-1",2022-03-09,"Rural","20-29y","Female",7,"(5,50]","Unemployed outside home","Primary school",6,6,6,1,1,0,0,1,1,0,0,1,1,0,0
+"232","30-1",2022-03-10,"Rural","20-29y","Female",7,"(5,50]","Student","Currently enrolled in school",7,5.5,5.5,1,1,1,0,1,1,0,0,1,0,0,0
+"233","31-1",2022-03-11,"Rural","60+y","Female",3,"(2,5]","Unemployed outside home","None",3.5,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+"234","32-1",2022-03-14,"Rural","20-29y","Female",4,"(2,5]","Student","Some college or higher",5,5,5,0,0,0,0,1,1,0,0,0,0,0,0
+"235","33-1",2022-03-14,"Rural","20-29y","Female",3,"(2,5]","Unemployed outside home","Primary school",4.5,5,4,0,0,0,0,0,0,0,0,0,0,0,0
+"236","34-1",2022-03-03,"Rural","30-39y","Female",7,"(5,50]","Unemployed outside home","None",1.5,2,1.5,0,0,0,0,0,0,0,0,0,0,0,0
+"237","35-1",2022-03-17,"Urban","20-29y","Male",3,"(2,5]","Semiprofessional / professional","Currently enrolled in school",3,2,2,0,0,0,0,0,0,0,0,0,0,0,0
+"238","36-1",2022-03-11,"Rural","30-39y","Female",7,"(5,50]","Unemployed outside home","None",7,6.5,6,1,1,1,0,1,1,0,0,1,1,0,0
+"239","37-1",2022-03-07,"Rural","5-9y","Male",4,"(2,5]","Unemployed outside home","Currently enrolled in school",5,4,3,0,0,0,0,0,0,0,0,0,0,0,0
+"240","38-1",2022-03-14,"Rural","20-29y","Female",3,"(2,5]","Unemployed outside home","Secondary school",2,3,2,0,0,0,0,0,0,0,0,0,0,0,0
+"241","39-1",2022-03-14,"Rural","20-29y","Female",3,"(2,5]","Unemployed outside home","Secondary school",3.5,2,2,0,0,0,0,0,0,0,0,0,0,0,0
+"242","40-1",2022-03-16,"Urban","40-59y","Female",4,"(2,5]","Unemployed outside home","None",4,5,4,0,0,0,0,0,0,0,0,0,0,0,0
+"243","41-1",2022-03-17,"Urban","60+y","Female",6,"(5,50]","Unemployed outside home","None",5.5,6,5.5,1,0,0,0,1,1,0,0,1,1,0,0
+"244","42-1",2022-03-22,"Urban","5-9y","Female",4,"(2,5]","Unemployed outside home","Currently enrolled in school",5,7,5,0,0,0,0,1,1,0,0,1,1,1,0
+"245","43-1",2022-03-17,"Urban","40-59y","Male",2,"[0,2]","Unemployed outside home","None",4.5,4.5,4,0,0,0,0,0,0,0,0,0,0,0,0
+"246","44-1",2022-03-18,"Urban","10-19y","Female",5,"(2,5]","Unemployed outside home","Primary school",5.5,6,5.5,1,0,0,0,1,1,0,0,1,1,0,0
+"247","45-1",2022-03-16,"Urban","40-59y","Male",8,"(5,50]","Semiskilled / skilled labor","None",8.5,8,8,1,1,1,1,1,1,1,1,1,1,1,1
+"248","46-1",2022-03-17,"Urban","20-29y","Male",1,"[0,2]","Semiprofessional / professional","Secondary school",3.5,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"249","47-1",2022-03-17,"Urban","20-29y","Female",5,"(2,5]","Semiprofessional / professional","Secondary school",5,5,4.5,0,0,0,0,0,0,0,0,0,0,0,0
+"250","48-1",2022-03-23,"Urban","30-39y","Female",6,"(5,50]","Unemployed outside home","Primary school",6,5.5,5,1,1,0,0,1,1,0,0,1,0,0,0
+"251","49-1",2022-03-17,"Urban","20-29y","Female",3,"(2,5]","Unemployed outside home","Secondary school",6,6,5.5,1,1,0,0,1,1,0,0,1,1,0,0
+"252","50-1",2022-03-22,"Urban","30-39y","Female",2,"[0,2]","Unemployed outside home","Primary school",3,2.5,2.5,0,0,0,0,0,0,0,0,0,0,0,0
+"253","51-1",2022-03-23,"Urban","30-39y","Female",4,"(2,5]","Unemployed outside home","Secondary school",3,2.5,2.5,0,0,0,0,0,0,0,0,0,0,0,0
+"254","52-1",2022-03-23,"Urban","30-39y","Female",3,"(2,5]","Unemployed outside home","Secondary school",4.5,4,2.5,0,0,0,0,0,0,0,0,0,0,0,0
+"255","53-1",2022-03-24,"Urban","5-9y","Male",3,"(2,5]","Unemployed outside home","None",7.5,8,7,1,1,1,0,1,1,1,0,1,1,1,1
+"256","54-1",2022-03-24,"Urban","5-9y","Female",3,"(2,5]","Unemployed outside home","Currently enrolled in school",3.5,3.5,3.5,0,0,0,0,0,0,0,0,0,0,0,0
+"257","55-1",2022-03-25,"Urban","20-29y","Female",5,"(2,5]","Unemployed outside home","Primary school",5.5,5.5,4,1,0,0,0,0,0,0,0,1,0,0,0
+"258","56-1",2022-03-25,"Urban","20-29y","Female",11,"(5,50]","Unemployed outside home","None",3.5,4.5,3.5,0,0,0,0,0,0,0,0,0,0,0,0
+"259","57-1",2022-03-25,"Urban","30-39y","Female",4,"(2,5]","Semiprofessional / professional","Some college or higher",3,3,2.5,0,0,0,0,0,0,0,0,0,0,0,0
+"260","58-1",2022-03-25,"Urban","40-59y","Female",7,"(5,50]","Semiskilled / skilled labor","None",6.5,6.5,6.5,1,1,0,0,1,1,1,0,1,1,0,0
+"261","59-1",2022-03-25,"Urban","60+y","Female",3,"(2,5]","Semiskilled / skilled labor","None",3,3,2.5,0,0,0,0,0,0,0,0,0,0,0,0
+"262","60-1",2022-03-28,"Rural","20-29y","Male",3,"(2,5]","Unemployed outside home","Primary school",8,8.5,5.5,1,1,1,1,1,1,0,0,1,1,1,1
+"263","61-1",2022-03-28,"Rural","20-29y","Female",3,"(2,5]","Unemployed outside home","Secondary school",4.5,3,2.5,0,0,0,0,0,0,0,0,0,0,0,0
+"264","62-1",2022-03-28,"Rural","40-59y","Female",3,"(2,5]","Unemployed outside home","None",4,4,3,0,0,0,0,0,0,0,0,0,0,0,0
+"265","63-1",2022-03-29,"Rural","40-59y","Female",7,"(5,50]","Unemployed outside home","None",8,8,8,1,1,1,1,1,1,1,1,1,1,1,1
+"266","64-1",2022-03-29,"Rural","10-19y","Female",5,"(2,5]","Unemployed outside home","Primary school",5,5,4.5,0,0,0,0,0,0,0,0,0,0,0,0
+"267","65-1",2022-03-30,"Rural","10-19y","Female",6,"(5,50]","Student","Currently enrolled in school",5,5.5,4.5,0,0,0,0,0,0,0,0,1,0,0,0
+"268","66-1",2022-03-30,"Rural","30-39y","Female",4,"(2,5]","Unemployed outside home","None",5,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+"269","67-1",2022-03-30,"Rural","40-59y","Male",5,"(2,5]","Unemployed outside home","Primary school",6.5,6.5,5.5,1,1,0,0,1,1,0,0,1,1,0,0
+"270","68-1",2022-03-30,"Rural","10-19y","Female",6,"(5,50]","Student","Currently enrolled in school",3.5,5,2.5,0,0,0,0,0,0,0,0,0,0,0,0
+"271","69-1",2022-02-28,"Rural","10-19y","Male",5,"(2,5]","Student","Currently enrolled in school",3.5,4,3,0,0,0,0,0,0,0,0,0,0,0,0
+"272","70-1",2022-04-04,"Rural","20-29y","Female",8,"(5,50]","Unemployed outside home","Secondary school",10,8.5,8.5,1,1,1,1,1,1,1,1,1,1,1,1
+"273","71-1",2022-04-04,"Rural","60+y","Female",3,"(2,5]","Unemployed outside home","None",4.5,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+"274","72-1",2022-04-04,"Rural","30-39y","Female",4,"(2,5]","Semiprofessional / professional","Secondary school",6.5,6.5,6,1,1,0,0,1,1,0,0,1,1,0,0
+"275","73-1",2022-04-04,"Rural","40-59y","Male",7,"(5,50]","Semiskilled / skilled labor","None",6,6,6,1,1,0,0,1,1,0,0,1,1,0,0
+"276","74-1",2022-04-06,"Rural","30-39y","Female",6,"(5,50]","Unemployed outside home","None",7,8,6.5,1,1,1,0,1,1,1,0,1,1,1,1
+"277","75-1",2022-04-06,"Rural","30-39y","Female",6,"(5,50]","Unemployed outside home","None",8,8.5,8,1,1,1,1,1,1,1,1,1,1,1,1
+"278","76-1",2022-04-06,"Rural","30-39y","Female",4,"(2,5]","Unemployed outside home","Primary school",7,7,6,1,1,1,0,1,1,0,0,1,1,1,0
+"279","77-1",2022-04-07,"Rural","40-59y","Female",5,"(2,5]","Unemployed outside home","None",7.5,6.5,6.5,1,1,1,0,1,1,1,0,1,1,0,0
+"280","78-1",2022-04-07,"Rural","5-9y","Male",6,"(5,50]","Unemployed outside home","Currently enrolled in school",6.5,6.5,6.5,1,1,0,0,1,1,1,0,1,1,0,0
+"281","79-1",2022-04-07,"Rural","20-29y","Female",7,"(5,50]","Unemployed outside home","Primary school",5.5,4,4,1,0,0,0,0,0,0,0,0,0,0,0
+"282","80-1",2022-04-07,"Rural","10-19y","Female",6,"(5,50]","Student","Currently enrolled in school",8.5,8.5,7.5,1,1,1,1,1,1,1,1,1,1,1,1
+"283","81-1",2022-04-08,"Rural","30-39y","Male",3,"(2,5]","Semiskilled / skilled labor","Primary school",5,5.5,5,0,0,0,0,1,1,0,0,1,0,0,0
+"284","82-1",2022-04-08,"Rural","40-59y","Female",3,"(2,5]","Unemployed outside home","None",5.5,5.5,5.5,1,0,0,0,1,1,0,0,1,0,0,0
+"285","83-1",2022-04-18,"Rural","30-39y","Male",3,"(2,5]","Unemployed outside home","Secondary school",6,4.5,3.5,1,1,0,0,0,0,0,0,0,0,0,0
+"286","84-1",2022-04-18,"Rural","20-29y","Female",2,"[0,2]","Unemployed outside home","Secondary school",4,4,3.5,0,0,0,0,0,0,0,0,0,0,0,0
+"287","85-1",2022-04-18,"Rural","30-39y","Female",2,"[0,2]","Unemployed outside home","Primary school",2.5,3,1.5,0,0,0,0,0,0,0,0,0,0,0,0
+"288","86-1",2022-04-18,"Rural","5-9y","Male",3,"(2,5]","Unemployed outside home","Currently enrolled in school",3.5,4.5,3.5,0,0,0,0,0,0,0,0,0,0,0,0
+"289","87-1",2022-04-18,"Rural","40-59y","Male",6,"(5,50]","Semiskilled / skilled labor","None",7,7,6.5,1,1,1,0,1,1,1,0,1,1,1,0
+"290","88-1",2022-04-19,"Rural","20-29y","Male",3,"(2,5]","Semiprofessional / professional","Secondary school",5,4.5,4.5,0,0,0,0,0,0,0,0,0,0,0,0
+"291","89-1",2022-04-19,"Rural","40-59y","Female",2,"[0,2]","Unemployed outside home","Primary school",3,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+"292","90-1",2022-04-19,"Rural","60+y","Male",2,"[0,2]","Unemployed outside home","Secondary school",4,4,3,0,0,0,0,0,0,0,0,0,0,0,0
+"293","91-1",2022-04-19,"Rural","5-9y","Male",3,"(2,5]","Unemployed outside home","Currently enrolled in school",7.5,7.5,7,1,1,1,0,1,1,1,0,1,1,1,0
+"294","92-1",2022-04-20,"Rural","40-59y","Female",5,"(2,5]","Unemployed outside home","None",5.5,5.5,5,1,0,0,0,1,1,0,0,1,0,0,0
+"295","93-1",2022-04-20,"Rural","60+y","Female",4,"(2,5]","Unemployed outside home","None",6.5,6.5,6.5,1,1,0,0,1,1,1,0,1,1,0,0
+"296","94-1",2022-04-20,"Rural","30-39y","Female",2,"[0,2]","Unemployed outside home","Primary school",3.5,3.5,3.5,0,0,0,0,0,0,0,0,0,0,0,0
+"297","95-1",2022-04-20,"Rural","30-39y","Female",5,"(2,5]","Unemployed outside home","None",10,8,8,1,1,1,1,1,1,1,1,1,1,1,1
+"298","96-1",2022-04-21,"Rural","30-39y","Female",3,"(2,5]","Unemployed outside home","Currently enrolled in school",4.5,3.5,3.5,0,0,0,0,0,0,0,0,0,0,0,0
+"299","97-1",2022-04-21,"Rural","30-39y","Female",3,"(2,5]","Unemployed outside home","Primary school",3,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+"300","98-1",2022-04-21,"Rural","60+y","Female",5,"(2,5]","Unemployed outside home","None",6,6.5,5,1,1,0,0,1,1,0,0,1,1,0,0
+"301","99-1",2022-04-21,"Rural","5-9y","Female",3,"(2,5]","Unemployed outside home","Currently enrolled in school",5.5,6,5,1,0,0,0,1,1,0,0,1,1,0,0
+"302","100-1",2022-04-21,"Rural","10-19y","Female",3,"(2,5]","Student","Currently enrolled in school",4,4.5,4,0,0,0,0,0,0,0,0,0,0,0,0
+"303","101-1",2022-04-22,"Rural","40-59y","Female",10,"(5,50]","Unemployed outside home","None",12,10.5,10.5,1,1,1,1,1,1,1,1,1,1,1,1
+"304","102-1",2022-04-22,"Rural","40-59y","Male",3,"(2,5]","Semiskilled / skilled labor","None",4,4,4,0,0,0,0,0,0,0,0,0,0,0,0
+"305","103-1",2022-04-22,"Rural","60+y","Male",4,"(2,5]","Semiskilled / skilled labor","Secondary school",3.5,3.5,3,0,0,0,0,0,0,0,0,0,0,0,0
+"306","104-1",2022-04-22,"Rural","30-39y","Female",2,"[0,2]","Unemployed outside home","Primary school",4,2.5,2.5,0,0,0,0,0,0,0,0,0,0,0,0
+"307","105-1",2022-04-25,"Rural","20-29y","Female",2,"[0,2]","Unemployed outside home","Primary school",4.5,4,4,0,0,0,0,0,0,0,0,0,0,0,0
+"308","106-1",2022-04-25,"Rural","10-19y","Male",4,"(2,5]","Student","Currently enrolled in school",6,7,5.5,1,1,0,0,1,1,0,0,1,1,1,0
+"309","107-1",2022-04-25,"Rural","60+y","Male",2,"[0,2]","Semiskilled / skilled labor","Primary school",3,6.5,3,0,0,0,0,0,0,0,0,1,1,0,0
+"310","108-1",2022-04-25,"Rural","30-39y","Female",2,"[0,2]","Unemployed outside home","None",4,4,4,0,0,0,0,0,0,0,0,0,0,0,0
+"311","109-1",2022-04-27,"Rural","30-39y","Female",2,"[0,2]","Unemployed outside home","Primary school",3,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+"312","110-1",2022-04-27,"Rural","20-29y","Male",3,"(2,5]","Student","Currently enrolled in school",2.5,3,2,0,0,0,0,0,0,0,0,0,0,0,0
+"313","111-1",2022-04-27,"Rural","20-29y","Female",4,"(2,5]","Semiskilled / skilled labor","Secondary school",5.5,5.5,5,1,0,0,0,1,1,0,0,1,0,0,0
+"314","112-1",2022-04-27,"Rural","10-19y","Female",3,"(2,5]","Unemployed outside home","Primary school",7.5,7,5.5,1,1,1,0,1,1,0,0,1,1,1,0
+"315","113-1",2022-04-25,"Rural","40-59y","Female",3,"(2,5]","Unemployed outside home","None",5,5,4,0,0,0,0,0,0,0,0,0,0,0,0
+"316","114-1",2022-04-25,"Rural","40-59y","Female",7,"(5,50]","Unemployed outside home","Primary school",6,6,6,1,1,0,0,1,1,0,0,1,1,0,0
+"317","115-1",2022-05-25,"Rural","20-29y","Female",5,"(2,5]","Unemployed outside home","Secondary school",6,6,4.5,1,1,0,0,0,0,0,0,1,1,0,0
+"318","116-1",2022-04-25,"Rural","20-29y","Male",5,"(2,5]","Semiskilled / skilled labor","Primary school",5.5,5.5,5,1,0,0,0,1,1,0,0,1,0,0,0
+"319","117-1",2022-04-28,"Rural","10-19y","Female",5,"(2,5]","Unemployed outside home","Primary school",4.5,4.5,4,0,0,0,0,0,0,0,0,0,0,0,0
+"320","118-1",2022-04-28,"Rural","20-29y","Female",5,"(2,5]","Unemployed outside home","None",6,6,6,1,1,0,0,1,1,0,0,1,1,0,0
+"321","119-1",2022-04-28,"Rural","40-59y","Female",6,"(5,50]","Unemployed outside home","None",8,7.5,7,1,1,1,1,1,1,1,0,1,1,1,0
+"322","120-1",2022-04-28,"Rural","5-9y","Female",4,"(2,5]","Unemployed outside home","Currently enrolled in school",7,7,7,1,1,1,0,1,1,1,0,1,1,1,0
+"323","121-1",2022-04-28,"Rural","10-19y","Female",10,"(5,50]","Unemployed outside home","None",9.5,9.5,9,1,1,1,1,1,1,1,1,1,1,1,1
+"324","122-1",2022-04-29,"Rural","20-29y","Male",1,"[0,2]","Unemployed outside home","Primary school",1,1,1,0,0,0,0,0,0,0,0,0,0,0,0
+"325","123-1",2022-04-29,"Rural","60+y","Female",2,"[0,2]","Unemployed outside home","None",1.5,1.5,1,0,0,0,0,0,0,0,0,0,0,0,0
+"326","124-1",2022-04-29,"Rural","30-39y","Female",4,"(2,5]","Unemployed outside home","Primary school",4.5,4.5,3,0,0,0,0,0,0,0,0,0,0,0,0
+"327","125-1",2022-04-26,"Rural","20-29y","Male",10,"(5,50]","Semiprofessional / professional","Currently enrolled in school",11.5,11.5,11,1,1,1,1,1,1,1,1,1,1,1,1
+"328","126-1",2022-04-29,"Rural","40-59y","Female",2,"[0,2]","Unemployed outside home","None",4,4,4,0,0,0,0,0,0,0,0,0,0,0,0
+"329","127-1",2022-05-03,"Rural","20-29y","Female",7,"(5,50]","Unemployed outside home","Primary school",7.5,7.5,7.5,1,1,1,0,1,1,1,1,1,1,1,0
+"330","128-1",2022-05-03,"Rural","20-29y","Female",2,"[0,2]","Unemployed outside home","Primary school",4.5,5,4.5,0,0,0,0,0,0,0,0,0,0,0,0
+"331","129-1",2022-05-03,"Rural","40-59y","Female",2,"[0,2]","Unemployed outside home","None",3.5,2,2,0,0,0,0,0,0,0,0,0,0,0,0
+"332","130-1",2022-05-04,"Rural","10-19y","Female",4,"(2,5]","Unemployed outside home","Secondary school",4,4,4,0,0,0,0,0,0,0,0,0,0,0,0
+"333","131-1",2022-05-04,"Rural","20-29y","Female",2,"[0,2]","Unemployed outside home","None",3.5,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+"334","132-1",2022-05-04,"Rural","10-19y","Female",4,"(2,5]","Unemployed outside home","None",8,6.5,6,1,1,1,1,1,1,0,0,1,1,0,0
+"335","133-1",2022-05-04,"Rural","60+y","Female",2,"[0,2]","Unemployed outside home","None",2,2,2,0,0,0,0,0,0,0,0,0,0,0,0
+"336","134-1",2022-05-03,"Rural","40-59y","Female",3,"(2,5]","Unemployed outside home","None",4.5,6.5,3.5,0,0,0,0,0,0,0,0,1,1,0,0
+"337","135-1",2022-05-03,"Rural","5-9y","Female",3,"(2,5]","Unemployed outside home","Currently enrolled in school",5.5,5.5,5.5,1,0,0,0,1,1,0,0,1,0,0,0
+"338","136-1",2022-05-03,"Rural","5-9y","Female",5,"(2,5]","Unemployed outside home","Currently enrolled in school",6.5,7,6.5,1,1,0,0,1,1,1,0,1,1,1,0
+"339","137-1",2022-05-04,"Rural","60+y","Female",3,"(2,5]","Unemployed outside home","None",6.5,2,2,1,1,0,0,0,0,0,0,0,0,0,0
+"340","138-1",2022-05-04,"Rural","10-19y","Female",3,"(2,5]","Unemployed outside home","Primary school",3.5,2.5,2.5,0,0,0,0,0,0,0,0,0,0,0,0
+"341","139-1",2022-05-04,"Rural","60+y","Female",4,"(2,5]","Unemployed outside home","None",3,3.5,3,0,0,0,0,0,0,0,0,0,0,0,0
+"342","140-1",2022-05-05,"Rural","20-29y","Female",5,"(2,5]","Student","Currently enrolled in school",7.5,8,5.5,1,1,1,0,1,1,0,0,1,1,1,1
+"343","141-1",2022-05-05,"Rural","30-39y","Male",3,"(2,5]","Student","Currently enrolled in school",5,4.5,4.5,0,0,0,0,0,0,0,0,0,0,0,0
+"344","142-1",2022-05-05,"Rural","30-39y","Female",2,"[0,2]","Unemployed outside home","None",3.5,3.5,2.5,0,0,0,0,0,0,0,0,0,0,0,0
+"345","143-1",2022-05-06,"Rural","30-39y","Female",3,"(2,5]","Unemployed outside home","None",5.5,3.5,3,1,0,0,0,0,0,0,0,0,0,0,0
+"346","144-1",2022-05-06,"Rural","60+y","Female",2,"[0,2]","Unemployed outside home","None",5.5,5.5,5.5,1,0,0,0,1,1,0,0,1,0,0,0
+"347","145-1",2022-05-06,"Rural","10-19y","Female",2,"[0,2]","Unemployed outside home","Secondary school",3.5,3.5,3,0,0,0,0,0,0,0,0,0,0,0,0
+"348","146-1",2022-05-09,"Rural","40-59y","Female",4,"(2,5]","Unemployed outside home","None",5.5,5.5,5.5,1,0,0,0,1,1,0,0,1,0,0,0
+"349","147-1",2022-05-09,"Rural","10-19y","Female",1,"[0,2]","Unemployed outside home","Primary school",3,2.5,2.5,0,0,0,0,0,0,0,0,0,0,0,0
+"350","148-1",2022-05-09,"Rural","20-29y","Female",2,"[0,2]","Unemployed outside home","Primary school",3.5,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+"351","149-1",2022-05-09,"Rural","20-29y","Male",3,"(2,5]","Semiskilled / skilled labor","Primary school",5.5,4,4,1,0,0,0,0,0,0,0,0,0,0,0
+"352","150-1",2022-05-10,"Rural","10-19y","Female",9,"(5,50]","Unemployed outside home","Primary school",9.5,9.5,9,1,1,1,1,1,1,1,1,1,1,1,1
+"353","151-1",2022-05-10,"Rural","10-19y","Female",2,"[0,2]","Student","Currently enrolled in school",7,6.5,6.5,1,1,1,0,1,1,1,0,1,1,0,0
+"354","152-1",2022-05-06,"Rural","5-9y","Male",4,"(2,5]","Unemployed outside home","Currently enrolled in school",10,10,9,1,1,1,1,1,1,1,1,1,1,1,1
+"355","153-1",2022-05-10,"Rural","20-29y","Female",3,"(2,5]","Unemployed outside home","Secondary school",4,3,2.5,0,0,0,0,0,0,0,0,0,0,0,0
+"356","154-1",2022-05-10,"Rural","30-39y","Female",5,"(2,5]","Unemployed outside home","Primary school",4.5,5,4.5,0,0,0,0,0,0,0,0,0,0,0,0
+"357","155-1",2022-05-11,"Rural","40-59y","Female",2,"[0,2]","Unemployed outside home","None",4,4,4,0,0,0,0,0,0,0,0,0,0,0,0
+"358","156-1",2022-05-11,"Rural","20-29y","Female",3,"(2,5]","Unemployed outside home","None",3,2.5,2,0,0,0,0,0,0,0,0,0,0,0,0
+"359","157-1",2022-05-09,"Rural","30-39y","Female",2,"[0,2]","Unemployed outside home","Primary school",2,3.5,1.5,0,0,0,0,0,0,0,0,0,0,0,0
+"360","158-1",2022-05-13,"Rural","30-39y","Male",3,"(2,5]","Unemployed outside home","Currently enrolled in school",5.5,5.5,2.5,1,0,0,0,0,0,0,0,1,0,0,0
+"361","159-1",2022-05-13,"Rural","5-9y","Female",2,"[0,2]","Unemployed outside home",NA,4.5,4,3.5,0,0,0,0,0,0,0,0,0,0,0,0
+"362","160-1",2022-05-13,"Rural","10-19y","Female",6,"(5,50]","Student","Currently enrolled in school",6.5,6,5.5,1,1,0,0,1,1,0,0,1,1,0,0
+"363","161-1",2022-05-16,"Rural","40-59y","Female",5,"(2,5]","Unemployed outside home","None",6,4.5,4.5,1,1,0,0,0,0,0,0,0,0,0,0
+"364","162-1",2022-05-16,"Rural","20-29y","Female",4,"(2,5]","Student","Currently enrolled in school",4,4,4,0,0,0,0,0,0,0,0,0,0,0,0
+"365","163-1",2022-05-16,"Rural","20-29y","Female",8,"(5,50]","Student","Currently enrolled in school",8.5,8,7,1,1,1,1,1,1,1,0,1,1,1,1
+"366","164-1",2022-05-16,"Rural","10-19y","Female",6,"(5,50]","Student","Currently enrolled in school",11,11.5,10.5,1,1,1,1,1,1,1,1,1,1,1,1
+"367","165-1",2022-05-11,"Rural","40-59y","Male",6,"(5,50]","Unemployed outside home","Primary school",5,6,5,0,0,0,0,1,1,0,0,1,1,0,0
+"368","167-1",2022-05-17,"Rural","60+y","Female",3,"(2,5]","Unemployed outside home","None",3.5,3.5,3.5,0,0,0,0,0,0,0,0,0,0,0,0
+"369","168-1",2022-05-12,"Rural","5-9y","Male",4,"(2,5]","Unemployed outside home",NA,6,6,6,1,1,0,0,1,1,0,0,1,1,0,0
+"370","171-1",2022-05-18,"Rural","30-39y","Male",4,"(2,5]","Semiskilled / skilled labor","Primary school",5,6.5,4.5,0,0,0,0,0,0,0,0,1,1,0,0
+"371","172-1",2022-05-19,"Rural","20-29y","Female",4,"(2,5]","Unemployed outside home","Secondary school",8.5,7.5,7,1,1,1,1,1,1,1,0,1,1,1,0
+"372","173-1",2022-05-19,"Rural","20-29y","Male",5,"(2,5]","Semiskilled / skilled labor","Secondary school",6.5,6.5,5.5,1,1,0,0,1,1,0,0,1,1,0,0
+"373","174-1",2022-05-19,"Rural","60+y","Female",4,"(2,5]","Unemployed outside home","None",3,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+"374","175-1",2022-05-20,"Rural","10-19y","Female",5,"(2,5]","Student","Currently enrolled in school",6,6.5,5.5,1,1,0,0,1,1,0,0,1,1,0,0
+"375","176-1",2022-05-06,"Rural","20-29y","Male",7,"(5,50]","Semiskilled / skilled labor","Primary school",10,10,6,1,1,1,1,1,1,0,0,1,1,1,1
+"376","178-1",2022-05-18,"Rural","30-39y","Female",4,"(2,5]","Unemployed outside home","Primary school",9.5,8.5,8.5,1,1,1,1,1,1,1,1,1,1,1,1
+"377","179-1",2022-05-18,"Rural","5-9y","Female",3,"(2,5]","Unemployed outside home",NA,5.5,5.5,5.5,1,0,0,0,1,1,0,0,1,0,0,0
+"378","180-1",2022-05-18,"Rural","5-9y","Female",3,"(2,5]","Unemployed outside home","Currently enrolled in school",4.5,4.5,4.5,0,0,0,0,0,0,0,0,0,0,0,0
+"379","181-1",2022-05-20,"Rural","40-59y","Female",2,"[0,2]","Unemployed outside home","None",4.5,4,3.5,0,0,0,0,0,0,0,0,0,0,0,0
+"380","182-1",2022-05-19,"Rural","60+y","Female",2,"[0,2]","Unemployed outside home","None",4.5,4.5,4.5,0,0,0,0,0,0,0,0,0,0,0,0
+"381","183-1",2022-05-19,"Rural","30-39y","Female",5,"(2,5]","Unemployed outside home","Currently enrolled in school",5,5.5,4,0,0,0,0,0,0,0,0,1,0,0,0
+"382","184-1",2022-05-23,"Urban","20-29y","Female",6,"(5,50]","Unemployed outside home","Some college or higher",10,10,8.5,1,1,1,1,1,1,1,1,1,1,1,1
+"383","185-1",2022-05-23,"Urban","20-29y","Female",6,"(5,50]","Student","Some college or higher",5,5,5,0,0,0,0,1,1,0,0,0,0,0,0
+"384","186-1",2022-05-23,"Urban","20-29y","Female",3,"(2,5]","Semiprofessional / professional","Secondary school",6,6,5.5,1,1,0,0,1,1,0,0,1,1,0,0
+"385","187-1",2022-05-23,"Urban","40-59y","Female",3,"(2,5]","Unemployed outside home","None",3,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+"386","188-1",2022-05-23,"Urban","60+y","Female",3,"(2,5]","Unemployed outside home","None",4.5,4.5,4.5,0,0,0,0,0,0,0,0,0,0,0,0
+"387","189-1",2022-05-23,"Urban","60+y","Female",3,"(2,5]","Unemployed outside home","None",4,3,2.5,0,0,0,0,0,0,0,0,0,0,0,0
+"388","190-1",2022-05-24,"Urban","10-19y","Female",4,"(2,5]","Semiskilled / skilled labor","Secondary school",6.5,7,6,1,1,0,0,1,1,0,0,1,1,1,0
+"389","191-1",2022-05-24,"Urban","40-59y","Female",4,"(2,5]","Semiskilled / skilled labor","Primary school",6.5,6.5,6,1,1,0,0,1,1,0,0,1,1,0,0
+"390","192-1",2022-05-24,"Urban","30-39y","Female",4,"(2,5]","Unemployed outside home","Currently enrolled in school",6.5,5,4,1,1,0,0,0,0,0,0,0,0,0,0
+"391","193-1",2022-05-25,"Urban","40-59y","Female",6,"(5,50]","Semiskilled / skilled labor","Secondary school",7.5,7.5,7.5,1,1,1,0,1,1,1,1,1,1,1,0
+"392","194-1",2022-05-25,"Urban","30-39y","Female",5,"(2,5]","Unemployed outside home","Secondary school",4,4,4,0,0,0,0,0,0,0,0,0,0,0,0
+"393","195-1",2022-05-26,"Urban","40-59y","Female",2,"[0,2]","Unemployed outside home","None",5.5,5.5,5.5,1,0,0,0,1,1,0,0,1,0,0,0
+"394","196-1",2022-05-26,"Urban","40-59y","Female",2,"[0,2]","Semiprofessional / professional","Some college or higher",5,4.5,4,0,0,0,0,0,0,0,0,0,0,0,0
+"395","197-1",2022-05-26,"Urban","30-39y","Male",3,"(2,5]","Semiskilled / skilled labor","None",4.5,4,3.5,0,0,0,0,0,0,0,0,0,0,0,0
+"396","198-1",2022-05-26,"Urban","40-59y","Female",2,"[0,2]","Semiskilled / skilled labor","Secondary school",2.5,2,2,0,0,0,0,0,0,0,0,0,0,0,0
+"397","199-1",2022-05-26,"Urban","30-39y","Male",3,"(2,5]","Semiskilled / skilled labor","Secondary school",3,3,2,0,0,0,0,0,0,0,0,0,0,0,0
+"398","200-1",2022-05-27,"Urban","30-39y","Female",8,"(5,50]","Semiskilled / skilled labor","None",11,11,11,1,1,1,1,1,1,1,1,1,1,1,1
+"399","201-1",2022-05-27,"Urban","40-59y","Female",3,"(2,5]","Unemployed outside home","None",3,4.5,2.5,0,0,0,0,0,0,0,0,0,0,0,0
+"400","202-1",2022-05-25,"Urban","60+y","Female",2,"[0,2]","Unemployed outside home","None",2.5,1.5,1.5,0,0,0,0,0,0,0,0,0,0,0,0
+"401","203-1",2022-05-25,"Urban","60+y","Female",2,"[0,2]","Unemployed outside home","None",1,1,1,0,0,0,0,0,0,0,0,0,0,0,0
+"402","204-1",2022-05-25,"Urban","20-29y","Female",5,"(2,5]","Unemployed outside home","None",9,7.5,7,1,1,1,1,1,1,1,0,1,1,1,0
+"403","205-1",2022-05-27,"Urban","40-59y","Male",6,"(5,50]","Semiskilled / skilled labor","Primary school",5,5,5,0,0,0,0,1,1,0,0,0,0,0,0
+"404","206-1",2022-05-27,"Urban","20-29y","Female",3,"(2,5]","Unemployed outside home","Secondary school",2.5,2.5,2,0,0,0,0,0,0,0,0,0,0,0,0
+"405","207-1",2022-05-27,"Urban","40-59y","Female",2,"[0,2]","Unemployed outside home","Primary school",3.5,3.5,3.5,0,0,0,0,0,0,0,0,0,0,0,0
+"406","208-1",2022-05-30,"Urban","40-59y","Female",4,"(2,5]","Unemployed outside home","Secondary school",5,6,5,0,0,0,0,1,1,0,0,1,1,0,0
+"407","209-1",2022-05-30,"Urban","20-29y","Female",5,"(2,5]","Semiskilled / skilled labor","Secondary school",7,6.5,6.5,1,1,1,0,1,1,1,0,1,1,0,0
+"408","210-1",2022-05-30,"Urban","60+y","Male",3,"(2,5]","Semiskilled / skilled labor","None",2.5,2.5,2.5,0,0,0,0,0,0,0,0,0,0,0,0
+"409","211-1",2022-05-30,"Urban","10-19y","Male",4,"(2,5]","Student","Currently enrolled in school",9,8.5,8.5,1,1,1,1,1,1,1,1,1,1,1,1
+"410","212-1",2022-06-03,"Urban","30-39y","Female",6,"(5,50]","Semiprofessional / professional","Secondary school",7.5,7.5,7.5,1,1,1,0,1,1,1,1,1,1,1,0
+"411","213-1",2022-06-03,"Urban","60+y","Female",2,"[0,2]","Unemployed outside home","None",3.5,3.5,3.5,0,0,0,0,0,0,0,0,0,0,0,0
+"412","214-1",2022-06-03,"Urban","20-29y","Male",12,"(5,50]","Semiskilled / skilled labor","Some college or higher",12,11.5,11,1,1,1,1,1,1,1,1,1,1,1,1
+"413","215-1",2022-06-06,"Urban","60+y","Female",2,"[0,2]","Unemployed outside home","None",2.5,2.5,1.5,0,0,0,0,0,0,0,0,0,0,0,0
+"414","216-1",2022-06-06,"Urban","60+y","Female",1,"[0,2]","Semiskilled / skilled labor","None",3,3,2,0,0,0,0,0,0,0,0,0,0,0,0
+"415","217-1",2022-06-06,"Urban","60+y","Female",1,"[0,2]","Semiskilled / skilled labor","None",0,3.5,0,0,0,0,0,0,0,0,0,0,0,0,0
+"416","218-1",2022-06-06,"Urban","60+y","Female",3,"(2,5]","Unemployed outside home","None",2.5,2,2,0,0,0,0,0,0,0,0,0,0,0,0
+"417","219-1",2022-06-07,"Urban","30-39y","Female",4,"(2,5]","Semiskilled / skilled labor","Some college or higher",7,5,5,1,1,1,0,1,1,0,0,0,0,0,0
+"418","220-1",2022-06-07,"Urban","20-29y","Female",4,"(2,5]","Semiskilled / skilled labor","Secondary school",7,7,7,1,1,1,0,1,1,1,0,1,1,1,0
+"419","221-1",2022-06-03,"Urban","20-29y","Male",4,"(2,5]","Semiskilled / skilled labor","None",3.5,4,3.5,0,0,0,0,0,0,0,0,0,0,0,0
+"420","222-1",2022-06-03,"Urban","10-19y","Female",4,"(2,5]","Student","Currently enrolled in school",8,7.5,6,1,1,1,1,1,1,0,0,1,1,1,0
+"421","223-1",2022-06-06,"Urban","60+y","Male",2,"[0,2]","Semiskilled / skilled labor","None",3.5,3.5,3,0,0,0,0,0,0,0,0,0,0,0,0
+"422","224-1",2022-06-06,"Urban","20-29y","Female",3,"(2,5]","Semiskilled / skilled labor","Currently enrolled in school",6,7,4.5,1,1,0,0,0,0,0,0,1,1,1,0
+"423","225-1",2022-06-08,"Urban","20-29y","Male",2,"[0,2]","Semiskilled / skilled labor","Secondary school",2.5,1,1,0,0,0,0,0,0,0,0,0,0,0,0
+"424","226-1",2022-06-08,"Urban","30-39y","Female",1,"[0,2]","Unemployed outside home","None",3.5,4.5,3,0,0,0,0,0,0,0,0,0,0,0,0
+"425","227-1",2022-06-09,"Urban","60+y","Male",4,"(2,5]","Semiskilled / skilled labor","Primary school",3.5,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+"426","228-1",2022-06-09,"Urban","60+y","Female",3,"(2,5]","Unemployed outside home","None",6.5,6.5,5,1,1,0,0,1,1,0,0,1,1,0,0
+"427","229-1",2022-06-10,"Urban","60+y","Female",1,"[0,2]","Unemployed outside home","Primary school",2.5,2,2,0,0,0,0,0,0,0,0,0,0,0,0
+"428","230-1",2022-06-10,"Urban","20-29y","Female",3,"(2,5]","Unemployed outside home","Primary school",5,5,5,0,0,0,0,1,1,0,0,0,0,0,0
+"429","231-1",2022-06-10,"Urban","40-59y","Female",2,"[0,2]","Unemployed outside home","Primary school",3,2.5,2.5,0,0,0,0,0,0,0,0,0,0,0,0
+"430","232-1",2022-06-08,"Urban","20-29y","Female",4,"(2,5]","Semiskilled / skilled labor","Secondary school",6,6,6,1,1,0,0,1,1,0,0,1,1,0,0
+"431","233-1",2022-06-08,"Urban","20-29y","Female",2,"[0,2]","Semiskilled / skilled labor","Primary school",6,6,5,1,1,0,0,1,1,0,0,1,1,0,0
+"432","234-1",2022-06-08,"Urban","40-59y","Female",3,"(2,5]","Semiskilled / skilled labor","None",4,3,2.5,0,0,0,0,0,0,0,0,0,0,0,0
+"433","235-1",2022-06-09,"Urban","60+y","Female",2,"[0,2]","Unemployed outside home","None",2.5,3.5,1.5,0,0,0,0,0,0,0,0,0,0,0,0
+"434","236-1",2022-06-09,"Urban","60+y","Female",2,"[0,2]","Unemployed outside home","Primary school",2,2.5,1,0,0,0,0,0,0,0,0,0,0,0,0
+"435","237-1",2022-06-09,"Urban","20-29y","Female",2,"[0,2]","Unemployed outside home","None",4,4.5,2.5,0,0,0,0,0,0,0,0,0,0,0,0
+"436","238-1",2022-06-10,"Urban","10-19y","Male",4,"(2,5]","Student","Currently enrolled in school",8,8,8,1,1,1,1,1,1,1,1,1,1,1,1
+"437","239-1",2022-06-14,"Urban","40-59y","Female",4,"(2,5]","Semiskilled / skilled labor","Primary school",7,7,7,1,1,1,0,1,1,1,0,1,1,1,0
+"438","240-1",2022-06-14,"Urban","30-39y","Female",5,"(2,5]","Semiskilled / skilled labor","None",6,4.5,4.5,1,1,0,0,0,0,0,0,0,0,0,0
+"439","241-1",2022-06-14,"Urban","60+y","Female",2,"[0,2]","Unemployed outside home","None",4.5,4.5,2.5,0,0,0,0,0,0,0,0,0,0,0,0
+"440","242-1",2022-06-15,"Urban","40-59y","Female",2,"[0,2]","Unemployed outside home","Secondary school",1,1,1,0,0,0,0,0,0,0,0,0,0,0,0
+"441","243-1",2022-06-15,"Urban","20-29y","Male",5,"(2,5]","Semiprofessional / professional","Currently enrolled in school",6,6,6,1,1,0,0,1,1,0,0,1,1,0,0
+"442","244-1",2022-06-15,"Urban","20-29y","Female",3,"(2,5]","Student","Currently enrolled in school",3.5,4,3.5,0,0,0,0,0,0,0,0,0,0,0,0
+"443","245-1",2022-06-14,"Urban","40-59y","Female",1,"[0,2]","Unemployed outside home","None",3.5,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+"444","246-1",2022-06-14,"Urban","40-59y","Female",4,"(2,5]","Semiskilled / skilled labor","None",7,7,5.5,1,1,1,0,1,1,0,0,1,1,1,0
+"445","247-1",2022-06-14,"Urban","40-59y","Female",8,"(5,50]","Semiskilled / skilled labor","Primary school",7,7,7,1,1,1,0,1,1,1,0,1,1,1,0
+"446","248-1",2022-06-15,"Urban","20-29y","Female",6,"(5,50]","Semiskilled / skilled labor","Some college or higher",9.5,9,8,1,1,1,1,1,1,1,1,1,1,1,1
+"447","249-1",2022-06-16,"Urban","40-59y","Female",1,"[0,2]","Unemployed outside home","None",7,7,6.5,1,1,1,0,1,1,1,0,1,1,1,0
+"448","250-1",2022-06-16,"Urban","10-19y","Female",4,"(2,5]","Student","Currently enrolled in school",7,7,7,1,1,1,0,1,1,1,0,1,1,1,0
+"449","251-1",2022-06-16,"Urban","60+y","Male",4,"(2,5]","Semiskilled / skilled labor","Primary school",3.5,7,3,0,0,0,0,0,0,0,0,1,1,1,0
+"450","252-1",2022-06-16,"Urban","60+y","Female",3,"(2,5]","Unemployed outside home","Primary school",2,2,2,0,0,0,0,0,0,0,0,0,0,0,0
+"451","253-1",2022-06-16,"Urban","60+y","Female",3,"(2,5]","Semiskilled / skilled labor","Primary school",6.5,6.5,6.5,1,1,0,0,1,1,1,0,1,1,0,0
+"452","254-1",2022-06-16,"Urban","10-19y","Female",3,"(2,5]","Unemployed outside home","Currently enrolled in school",5,4,4,0,0,0,0,0,0,0,0,0,0,0,0
+"453","255-1",2022-06-17,"Urban","40-59y","Female",5,"(2,5]","Unemployed outside home","None",6,6,5,1,1,0,0,1,1,0,0,1,1,0,0
+"454","256-1",2022-06-17,"Urban","60+y","Female",3,"(2,5]","Unemployed outside home","None",3,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+"455","257-1",2022-06-20,"Urban","10-19y","Male",2,"[0,2]","Student","Currently enrolled in school",7.5,7.5,7,1,1,1,0,1,1,1,0,1,1,1,0
+"456","258-1",2022-06-20,"Urban","60+y","Male",6,"(5,50]","Semiskilled / skilled labor","Primary school",5,7,5,0,0,0,0,1,1,0,0,1,1,1,0
+"457","259-1",2022-06-17,"Urban","20-29y","Female",2,"[0,2]","Unemployed outside home","Primary school",6,5,5,1,1,0,0,1,1,0,0,0,0,0,0
+"458","260-1",2022-06-17,"Urban","60+y","Female",2,"[0,2]","Unemployed outside home","None",3,2.5,2.5,0,0,0,0,0,0,0,0,0,0,0,0
+"459","261-1",2022-06-20,"Urban","40-59y","Male",4,"(2,5]","Semiprofessional / professional","Some college or higher",3,3.5,3,0,0,0,0,0,0,0,0,0,0,0,0
+"460","262-1",2022-06-20,"Urban","40-59y","Female",3,"(2,5]","Semiskilled / skilled labor","Primary school",5,4.5,4.5,0,0,0,0,0,0,0,0,0,0,0,0
+"461","263-1",2022-06-20,"Urban","20-29y","Female",3,"(2,5]","Unemployed outside home","None",4,5,3,0,0,0,0,0,0,0,0,0,0,0,0
+"462","264-1",2022-06-22,"Urban","10-19y","Female",2,"[0,2]","Unemployed outside home","Primary school",2,2,2,0,0,0,0,0,0,0,0,0,0,0,0
+"463","265-1",2022-06-22,"Urban","40-59y","Female",2,"[0,2]","Unemployed outside home","Primary school",5,5,3.5,0,0,0,0,0,0,0,0,0,0,0,0
+"464","266-1",2022-06-22,"Urban","40-59y","Male",4,"(2,5]","Semiskilled / skilled labor","None",6.5,6.5,3.5,1,1,0,0,0,0,0,0,1,1,0,0
+"465","267-1",2022-06-22,"Urban","10-19y","Female",5,"(2,5]","Semiskilled / skilled labor","Primary school",8,5.5,5.5,1,1,1,1,1,1,0,0,1,0,0,0
+"466","268-1",2022-06-23,"Urban","10-19y","Female",4,"(2,5]","Student","Currently enrolled in school",6,4.5,4,1,1,0,0,0,0,0,0,0,0,0,0
+"467","269-1",2022-06-23,"Urban","5-9y","Female",3,"(2,5]","Unemployed outside home","Currently enrolled in school",4,4,2,0,0,0,0,0,0,0,0,0,0,0,0
+"468","270-1",2022-06-23,"Urban","40-59y","Male",5,"(2,5]","Semiprofessional / professional","Some college or higher",7,7,6.5,1,1,1,0,1,1,1,0,1,1,1,0
+"469","271-1",2022-06-22,"Urban","30-39y","Female",6,"(5,50]","Unemployed outside home","Primary school",5,5.5,5,0,0,0,0,1,1,0,0,1,0,0,0
+"470","272-1",2022-06-23,"Urban","40-59y","Male",2,"[0,2]","Semiskilled / skilled labor","Primary school",6.5,5.5,4,1,1,0,0,0,0,0,0,1,0,0,0
+"471","273-1",2022-06-23,"Urban","60+y","Male",1,"[0,2]","Semiskilled / skilled labor","Primary school",3.5,3.5,0.5,0,0,0,0,0,0,0,0,0,0,0,0
+"472","274-1",2022-06-23,"Urban","60+y","Female",2,"[0,2]","Unemployed outside home","None",3.5,3.5,3.5,0,0,0,0,0,0,0,0,0,0,0,0
+"473","275-1",2022-06-27,"Urban","40-59y","Female",4,"(2,5]","Unemployed outside home","Secondary school",2.5,2.5,2.5,0,0,0,0,0,0,0,0,0,0,0,0
+"474","276-1",2022-06-27,"Urban","40-59y","Female",6,"(5,50]","Unemployed outside home","Secondary school",5.5,5.5,5.5,1,0,0,0,1,1,0,0,1,0,0,0
+"475","277-1",2022-06-28,"Urban","20-29y","Female",3,"(2,5]","Semiskilled / skilled labor","Some college or higher",2,3,1.5,0,0,0,0,0,0,0,0,0,0,0,0
+"476","278-1",2022-06-28,"Urban","60+y","Female",3,"(2,5]","Semiskilled / skilled labor","None",2.5,3,2.5,0,0,0,0,0,0,0,0,0,0,0,0
+"477","279-1",2022-06-28,"Urban","40-59y","Female",4,"(2,5]","Unemployed outside home","Primary school",6.5,6.5,6.5,1,1,0,0,1,1,1,0,1,1,0,0
+"478","281-1",2022-06-29,"Urban","40-59y","Female",2,"[0,2]","Unemployed outside home","Primary school",2.5,1.5,1,0,0,0,0,0,0,0,0,0,0,0,0
+"479","282-1",2022-06-29,"Urban","40-59y","Male",7,"(5,50]","Semiskilled / skilled labor","Primary school",7,7,7,1,1,1,0,1,1,1,0,1,1,1,0
+"480","283-1",2022-06-29,"Urban","30-39y","Male",4,"(2,5]","Semiskilled / skilled labor","Primary school",5.5,5,4.5,1,0,0,0,0,0,0,0,0,0,0,0
+"481","284-1",2022-06-29,"Urban","40-59y","Female",2,"[0,2]","Unemployed outside home","Primary school",6,5.5,5.5,1,1,0,0,1,1,0,0,1,0,0,0
+"482","285-1",2022-06-29,"Urban","60+y","Female",1,"[0,2]","Semiskilled / skilled labor","None",2,1,1,0,0,0,0,0,0,0,0,0,0,0,0
+"483","286-1",2022-06-29,"Urban","40-59y","Female",4,"(2,5]","Semiskilled / skilled labor","None",4,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+"484","287-1",2022-06-29,"Urban","20-29y","Male",2,"[0,2]","Semiprofessional / professional","Some college or higher",3.5,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+"485","288-1",2022-06-30,"Urban","40-59y","Female",2,"[0,2]","Unemployed outside home","Primary school",4,5,2.5,0,0,0,0,0,0,0,0,0,0,0,0
+"486","289-1",2022-06-30,"Urban","30-39y","Female",1,"[0,2]","Unemployed outside home","Primary school",5,3,2.5,0,0,0,0,0,0,0,0,0,0,0,0
+"487","290-1",2022-06-30,"Urban","40-59y","Male",2,"[0,2]","Semiskilled / skilled labor","None",3,4.5,2.5,0,0,0,0,0,0,0,0,0,0,0,0
+"488","291-1",2022-06-30,"Urban","40-59y","Female",4,"(2,5]","Unemployed outside home","None",3,3.5,3,0,0,0,0,0,0,0,0,0,0,0,0
+"489","292-1",2022-06-30,"Urban","60+y","Male",3,"(2,5]","Semiskilled / skilled labor","None",3,3,2,0,0,0,0,0,0,0,0,0,0,0,0
+"490","293-1",2022-06-30,"Urban","40-59y","Female",7,"(5,50]","Unemployed outside home","None",6,7,6,1,1,0,0,1,1,0,0,1,1,1,0
+"491","294-1",2022-07-01,"Urban","40-59y","Female",5,"(2,5]","Unemployed outside home","Primary school",4.5,6,4.5,0,0,0,0,0,0,0,0,1,1,0,0
+"492","295-1",2022-07-01,"Urban","60+y","Female",4,"(2,5]","Semiskilled / skilled labor","None",4,4,4,0,0,0,0,0,0,0,0,0,0,0,0
+"493","296-1",2022-07-01,"Urban","60+y","Male",1,"[0,2]","Unemployed outside home","None",2.5,2.5,1,0,0,0,0,0,0,0,0,0,0,0,0
+"494","297-1",2022-07-05,"Urban","40-59y","Female",3,"(2,5]","Unemployed outside home","None",6,5,5,1,1,0,0,1,1,0,0,0,0,0,0
+"495","298-1",2022-07-05,"Urban","40-59y","Female",5,"(2,5]","Semiskilled / skilled labor","None",4,4.5,4,0,0,0,0,0,0,0,0,0,0,0,0
+"496","299-1",2022-07-01,"Urban","20-29y","Female",3,"(2,5]","Unemployed outside home","Secondary school",3.5,4,3.5,0,0,0,0,0,0,0,0,0,0,0,0
+"497","300-1",2022-07-01,"Urban","20-29y","Female",2,"[0,2]","Unemployed outside home","Currently enrolled in school",3.5,6,3,0,0,0,0,0,0,0,0,1,1,0,0
+"498","301-1",2022-07-01,"Urban","40-59y","Female",7,"(5,50]","Unemployed outside home","None",6.5,7,6,1,1,0,0,1,1,0,0,1,1,1,0
+"499","302-1",2022-07-01,"Urban","40-59y","Female",1,"[0,2]","Unemployed outside home","None",5,4.5,4,0,0,0,0,0,0,0,0,0,0,0,0
+"500","303-1",2022-07-05,"Urban","20-29y","Female",4,"(2,5]","Unemployed outside home","Primary school",6,6,5,1,1,0,0,1,1,0,0,1,1,0,0
+"501","304-1",2022-07-05,"Urban","20-29y","Female",4,"(2,5]","Unemployed outside home","None",3.5,4,3.5,0,0,0,0,0,0,0,0,0,0,0,0
+"502","305-1",2022-07-06,"Urban","40-59y","Female",1,"[0,2]","Unemployed outside home","None",4.5,4.5,4,0,0,0,0,0,0,0,0,0,0,0,0
+"503","306-1",2022-07-06,"Urban","60+y","Female",3,"(2,5]","Unemployed outside home","None",4,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+"504","307-1",2022-07-06,"Urban","40-59y","Female",3,"(2,5]","Unemployed outside home","Primary school",4,5.5,4,0,0,0,0,0,0,0,0,1,0,0,0
+"505","308-1",2022-07-06,"Urban","10-19y","Female",6,"(5,50]","Semiskilled / skilled labor","None",6.5,6.5,5,1,1,0,0,1,1,0,0,1,1,0,0
+"506","309-1",2022-07-06,"Urban","40-59y","Female",2,"[0,2]","Unemployed outside home","None",2,2,1.5,0,0,0,0,0,0,0,0,0,0,0,0
+"507","310-1",2022-07-06,"Urban","60+y","Female",2,"[0,2]","Unemployed outside home","None",3.5,3.5,3.5,0,0,0,0,0,0,0,0,0,0,0,0
+"508","311-1",2022-07-07,"Urban","20-29y","Male",2,"[0,2]","Semiskilled / skilled labor","Primary school",4,4,4,0,0,0,0,0,0,0,0,0,0,0,0
+"509","312-1",2022-07-07,"Urban","60+y","Male",1,"[0,2]","Semiskilled / skilled labor","Primary school",3,2.5,2.5,0,0,0,0,0,0,0,0,0,0,0,0
+"510","313-1",2022-07-07,"Urban","30-39y","Female",4,"(2,5]","Semiskilled / skilled labor","Primary school",3,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+"511","314-1",2022-07-07,"Urban","60+y","Female",2,"[0,2]","Unemployed outside home","None",6.5,6.5,6,1,1,0,0,1,1,0,0,1,1,0,0
+"512","315-1",2022-07-08,"Urban","60+y","Female",1,"[0,2]","Unemployed outside home","Primary school",1,2,1,0,0,0,0,0,0,0,0,0,0,0,0
+"513","316-1",2022-07-08,"Urban","20-29y","Female",3,"(2,5]","Semiprofessional / professional","Some college or higher",3,3,2,0,0,0,0,0,0,0,0,0,0,0,0
+"514","317-1",2022-07-08,"Urban","60+y","Male",2,"[0,2]","Unemployed outside home","Primary school",3,2.5,1,0,0,0,0,0,0,0,0,0,0,0,0
+"515","318-1",2022-07-08,"Urban","20-29y","Female",6,"(5,50]","Semiskilled / skilled labor","Primary school",6.5,5.5,5,1,1,0,0,1,1,0,0,1,0,0,0
+"516","319-1",2022-07-08,"Urban","40-59y","Female",5,"(2,5]","Unemployed outside home","Primary school",6,6.5,5.5,1,1,0,0,1,1,0,0,1,1,0,0
+"517","320-1",2022-07-08,"Urban","30-39y","Male",2,"[0,2]","Semiskilled / skilled labor","Primary school",3.5,3.5,3.5,0,0,0,0,0,0,0,0,0,0,0,0
+"518","321-1",2022-07-11,"Urban","60+y","Male",3,"(2,5]","Semiskilled / skilled labor","Primary school",4,4,4,0,0,0,0,0,0,0,0,0,0,0,0
+"519","322-1",2022-07-11,"Urban","40-59y","Male",3,"(2,5]","Semiskilled / skilled labor","None",5,4.5,2.5,0,0,0,0,0,0,0,0,0,0,0,0
+"520","323-1",2022-07-11,"Urban","40-59y","Male",2,"[0,2]","Semiprofessional / professional","Secondary school",3,2.5,2,0,0,0,0,0,0,0,0,0,0,0,0
+"521","324-1",2022-07-11,"Urban","10-19y","Male",2,"[0,2]","Student","Currently enrolled in school",5.5,5,2,1,0,0,0,0,0,0,0,0,0,0,0
+"522","325-1",2022-07-12,"Urban","30-39y","Female",2,"[0,2]","Unemployed outside home","None",3,3,2.5,0,0,0,0,0,0,0,0,0,0,0,0
+"523","326-1",2022-07-12,"Urban","30-39y","Female",2,"[0,2]","Semiprofessional / professional","Currently enrolled in school",3.5,3.5,3.5,0,0,0,0,0,0,0,0,0,0,0,0
+"524","327-1",2022-07-13,"Urban","20-29y","Female",4,"(2,5]","Semiskilled / skilled labor","Secondary school",6.5,5,3,1,1,0,0,0,0,0,0,0,0,0,0
+"525","328-1",2022-07-13,"Urban","60+y","Female",3,"(2,5]","Semiskilled / skilled labor","None",3.5,4,2,0,0,0,0,0,0,0,0,0,0,0,0
+"526","329-1",2022-07-13,"Urban","20-29y","Female",7,"(5,50]","Semiskilled / skilled labor","Secondary school",7.5,7.5,7,1,1,1,0,1,1,1,0,1,1,1,0
+"527","330-1",2022-07-12,"Urban","30-39y","Male",6,"(5,50]","Semiprofessional / professional","Some college or higher",5.5,5,5,1,0,0,0,1,1,0,0,0,0,0,0
+"528","331-1",2022-07-12,"Urban","5-9y","Female",4,"(2,5]","Unemployed outside home","Currently enrolled in school",10,9.5,8.5,1,1,1,1,1,1,1,1,1,1,1,1
+"529","332-1",2022-07-13,"Urban","60+y","Male",2,"[0,2]","Semiskilled / skilled labor","None",2,1,1,0,0,0,0,0,0,0,0,0,0,0,0
+"530","333-1",2022-07-13,"Urban","60+y","Female",1,"[0,2]","Unemployed outside home","Secondary school",1.5,1.5,1.5,0,0,0,0,0,0,0,0,0,0,0,0
+"531","334-1",2022-07-13,"Urban","60+y","Female",2,"[0,2]","Semiskilled / skilled labor","None",1.5,1.5,1.5,0,0,0,0,0,0,0,0,0,0,0,0
+"532","335-1",2022-07-14,"Urban","40-59y","Male",5,"(2,5]","Unemployed outside home","None",5,5,4,0,0,0,0,0,0,0,0,0,0,0,0
+"533","336-1",2022-07-14,"Urban","10-19y","Female",3,"(2,5]","Student","Currently enrolled in school",7,7,5.5,1,1,1,0,1,1,0,0,1,1,1,0
+"534","337-1",2022-07-14,"Urban","5-9y","Male",2,"[0,2]","Unemployed outside home","Currently enrolled in school",3,3,2,0,0,0,0,0,0,0,0,0,0,0,0
+"535","338-1",2022-07-14,"Urban","20-29y","Female",5,"(2,5]","Student","Currently enrolled in school",8.5,7.5,7,1,1,1,1,1,1,1,0,1,1,1,0
+"536","339-1",2022-07-14,"Urban","10-19y","Female",7,"(5,50]","Semiskilled / skilled labor","Currently enrolled in school",8,8.5,7,1,1,1,1,1,1,1,0,1,1,1,1
+"537","340-1",2022-07-14,"Urban","40-59y","Female",3,"(2,5]","Unemployed outside home","Primary school",4.5,4.5,3,0,0,0,0,0,0,0,0,0,0,0,0
+"538","341-1",2022-07-14,"Urban","20-29y","Male",3,"(2,5]","Semiskilled / skilled labor","Secondary school",3.5,3.5,2,0,0,0,0,0,0,0,0,0,0,0,0
+"539","342-1",2022-07-15,"Urban","60+y","Male",2,"[0,2]","Unemployed outside home","None",3.5,2.5,2.5,0,0,0,0,0,0,0,0,0,0,0,0
+"540","343-1",2022-07-15,"Urban","5-9y","Female",6,"(5,50]","Unemployed outside home","Currently enrolled in school",8,8,7,1,1,1,1,1,1,1,0,1,1,1,1
+"541","344-1",2022-07-15,"Urban","40-59y","Female",3,"(2,5]","Unemployed outside home","None",5,4,4,0,0,0,0,0,0,0,0,0,0,0,0
+"542","345-1",2022-07-20,"Urban","20-29y","Female",3,"(2,5]","Unemployed outside home","None",4.5,4,3.5,0,0,0,0,0,0,0,0,0,0,0,0
+"543","346-1",2022-07-20,"Urban","40-59y","Male",4,"(2,5]","Semiprofessional / professional","Some college or higher",5,5,5,0,0,0,0,1,1,0,0,0,0,0,0
+"544","347-1",2022-07-18,"Urban","30-39y","Female",3,"(2,5]","Semiskilled / skilled labor","Secondary school",2.5,2.5,2,0,0,0,0,0,0,0,0,0,0,0,0
+"545","348-1",2022-07-18,"Urban","30-39y","Female",2,"[0,2]","Semiprofessional / professional","Secondary school",3.5,3,2.5,0,0,0,0,0,0,0,0,0,0,0,0
+"546","349-1",2022-07-18,"Urban","20-29y","Male",7,"(5,50]","Semiprofessional / professional","Secondary school",6.5,6,6,1,1,0,0,1,1,0,0,1,1,0,0
+"547","350-1",2022-07-19,"Urban","40-59y","Female",5,"(2,5]","Unemployed outside home","Currently enrolled in school",6,6,6,1,1,0,0,1,1,0,0,1,1,0,0
+"548","351-1",2022-07-19,"Urban","60+y","Male",3,"(2,5]","Semiskilled / skilled labor","None",5.5,4,2,1,0,0,0,0,0,0,0,0,0,0,0
+"549","352-1",2022-07-21,"Urban","20-29y","Female",3,"(2,5]","Unemployed outside home","Secondary school",2.5,2,2,0,0,0,0,0,0,0,0,0,0,0,0
+"550","353-1",2022-07-21,"Urban","60+y","Male",2,"[0,2]","Unemployed outside home","None",1.5,1.5,1,0,0,0,0,0,0,0,0,0,0,0,0
+"551","354-1",2022-07-21,"Urban","20-29y","Male",2,"[0,2]","Student","Currently enrolled in school",4.5,4.5,4.5,0,0,0,0,0,0,0,0,0,0,0,0
+"552","355-1",2022-07-21,"Urban","20-29y","Female",3,"(2,5]","Unemployed outside home","Primary school",3.5,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+"553","356-1",2022-07-21,"Urban","30-39y","Female",2,"[0,2]","Unemployed outside home","Primary school",5.5,5,4.5,1,0,0,0,0,0,0,0,0,0,0,0
+"554","357-1",2022-07-21,"Urban","40-59y","Male",3,"(2,5]","Semiskilled / skilled labor","None",4,3.5,3,0,0,0,0,0,0,0,0,0,0,0,0
+"555","358-1",2022-07-22,"Urban","5-9y","Female",2,"[0,2]","Unemployed outside home","Currently enrolled in school",6,6.5,5,1,1,0,0,1,1,0,0,1,1,0,0
+"556","359-1",2022-07-22,"Urban","20-29y","Male",5,"(2,5]","Student","Currently enrolled in school",7,7,7,1,1,1,0,1,1,1,0,1,1,1,0
+"557","360-1",2022-07-22,"Urban","40-59y","Female",3,"(2,5]","Unemployed outside home","Primary school",2.5,2.5,2,0,0,0,0,0,0,0,0,0,0,0,0
+"558","361-1",2022-07-25,"Urban","10-19y","Female",4,"(2,5]","Student","Currently enrolled in school",6,6,6,1,1,0,0,1,1,0,0,1,1,0,0
+"559","362-1",2022-07-25,"Urban","10-19y","Male",2,"[0,2]","Student","Currently enrolled in school",6,6,6,1,1,0,0,1,1,0,0,1,1,0,0
+"560","363-1",2022-07-26,"Urban","10-19y","Male",3,"(2,5]","Student","Currently enrolled in school",3,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+"561","364-1",2022-07-26,"Urban","10-19y","Female",2,"[0,2]","Student","Currently enrolled in school",8,8,7.5,1,1,1,1,1,1,1,1,1,1,1,1
+"562","365-1",2022-07-26,"Urban","10-19y","Female",4,"(2,5]","Student","Currently enrolled in school",6.5,6,5,1,1,0,0,1,1,0,0,1,1,0,0
+"563","366-1",2022-07-26,"Urban","60+y","Male",2,"[0,2]","Semiskilled / skilled labor","None",2,1.5,1.5,0,0,0,0,0,0,0,0,0,0,0,0
+"564","367-1",2022-07-25,"Urban","30-39y","Male",3,"(2,5]","Semiskilled / skilled labor","Primary school",4,4,3.5,0,0,0,0,0,0,0,0,0,0,0,0
+"565","368-1",2022-07-25,"Urban","20-29y","Female",5,"(2,5]","Semiprofessional / professional","Some college or higher",7,5,5,1,1,1,0,1,1,0,0,0,0,0,0
+"566","369-1",2022-07-26,"Urban","20-29y","Female",3,"(2,5]","Unemployed outside home","None",3,4.5,2.5,0,0,0,0,0,0,0,0,0,0,0,0
+"567","370-1",2022-07-26,"Urban","30-39y","Female",5,"(2,5]","Unemployed outside home","None",4,4,4,0,0,0,0,0,0,0,0,0,0,0,0
+"568","371-1",2022-07-26,"Urban","10-19y","Male",8,"(5,50]","Student","Currently enrolled in school",9.5,9.5,9.5,1,1,1,1,1,1,1,1,1,1,1,1
+"569","372-1",2022-07-28,"Urban","10-19y","Male",5,"(2,5]","Student","Currently enrolled in school",4,4,4,0,0,0,0,0,0,0,0,0,0,0,0
+"570","373-1",2022-07-28,"Urban","60+y","Female",2,"[0,2]","Unemployed outside home","None",3.5,4.5,3.5,0,0,0,0,0,0,0,0,0,0,0,0
+"571","374-1",2022-07-29,"Urban","20-29y","Female",3,"(2,5]","Unemployed outside home","Primary school",4,4.5,3,0,0,0,0,0,0,0,0,0,0,0,0
+"572","375-1",2022-07-29,"Urban","10-19y","Female",5,"(2,5]","Student","Currently enrolled in school",5.5,5.5,4.5,1,0,0,0,0,0,0,0,1,0,0,0
+"573","376-1",2022-07-29,"Urban","20-29y","Female",2,"[0,2]","Semiprofessional / professional","Some college or higher",3.5,3.5,3.5,0,0,0,0,0,0,0,0,0,0,0,0
+"574","377-1",2022-07-29,"Urban","30-39y","Female",2,"[0,2]","Unemployed outside home","None",3.5,3.5,3,0,0,0,0,0,0,0,0,0,0,0,0
+"575","378-1",2022-07-27,"Urban","20-29y","Male",3,"(2,5]","Semiskilled / skilled labor","Secondary school",4,5,2.5,0,0,0,0,0,0,0,0,0,0,0,0
+"576","379-1",2022-07-27,"Urban","10-19y","Male",6,"(5,50]","Student","Currently enrolled in school",8,7.5,5,1,1,1,1,1,1,0,0,1,1,1,0
+"577","380-1",2022-07-27,"Urban","10-19y","Male",3,"(2,5]","Student","Currently enrolled in school",5,4,2,0,0,0,0,0,0,0,0,0,0,0,0
+"578","381-1",2022-07-27,"Urban","40-59y","Female",2,"[0,2]","Unemployed outside home","None",2,2,1,0,0,0,0,0,0,0,0,0,0,0,0
+"579","382-1",2022-07-28,"Urban","60+y","Female",1,"[0,2]","Unemployed outside home","None",2,2,0,0,0,0,0,0,0,0,0,0,0,0,0
+"580","383-1",2022-07-29,"Urban","20-29y","Female",4,"(2,5]","Student","Currently enrolled in school",7,6.5,5,1,1,1,0,1,1,0,0,1,1,0,0
+"581","384-1",2022-07-29,"Urban","60+y","Female",1,"[0,2]","Unemployed outside home","None",1.5,1.5,1.5,0,0,0,0,0,0,0,0,0,0,0,0
+"582","385-1",2022-08-01,"Urban","10-19y","Female",4,"(2,5]","Unemployed outside home","None",5,4,3.5,0,0,0,0,0,0,0,0,0,0,0,0
+"583","386-1",2022-08-01,"Urban","40-59y","Female",4,"(2,5]","Unemployed outside home","Primary school",3.5,3.5,3,0,0,0,0,0,0,0,0,0,0,0,0
+"584","387-1",2022-08-01,"Urban","20-29y","Female",3,"(2,5]","Unemployed outside home","Primary school",4,3.5,2,0,0,0,0,0,0,0,0,0,0,0,0
+"585","388-1",2022-08-01,"Urban","10-19y","Male",5,"(2,5]","Student","Currently enrolled in school",6,5.5,5,1,1,0,0,1,1,0,0,1,0,0,0
+"586","389-1",2022-08-01,"Urban","20-29y","Male",3,"(2,5]","Student","Currently enrolled in school",3,3,2.5,0,0,0,0,0,0,0,0,0,0,0,0
+"587","390-1",2022-08-01,"Urban","20-29y","Male",2,"[0,2]","Semiprofessional / professional","Primary school",4,3.5,3.5,0,0,0,0,0,0,0,0,0,0,0,0
+"588","391-1",2022-08-02,"Urban","30-39y","Female",5,"(2,5]","Unemployed outside home","None",5,5,4,0,0,0,0,0,0,0,0,0,0,0,0
+"589","392-1",2022-08-02,"Urban","20-29y","Female",3,"(2,5]","Unemployed outside home","Primary school",2.5,2.5,2,0,0,0,0,0,0,0,0,0,0,0,0
+"590","393-1",2022-08-02,"Urban","60+y","Female",1,"[0,2]","Unemployed outside home","None",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"591","394-1",2022-08-03,"Urban","60+y","Male",5,"(2,5]","Unemployed outside home","None",6,5.5,5,1,1,0,0,1,1,0,0,1,0,0,0
+"592","395-1",2022-08-03,"Urban","60+y","Female",2,"[0,2]","Unemployed outside home","None",5,5,4,0,0,0,0,0,0,0,0,0,0,0,0
+"593","396-1",2022-08-05,"Urban","10-19y","Female",6,"(5,50]","Student","Currently enrolled in school",5.5,5.5,5.5,1,0,0,0,1,1,0,0,1,0,0,0
+"594","397-1",2022-08-05,"Urban","60+y","Female",1,"[0,2]","Unemployed outside home","None",3,3,2.5,0,0,0,0,0,0,0,0,0,0,0,0
+"595","398-1",2022-08-05,"Urban","40-59y","Female",2,"[0,2]","Unemployed outside home","None",1,1.5,1,0,0,0,0,0,0,0,0,0,0,0,0
+"596","399-1",2022-08-02,"Urban","10-19y","Male",7,"(5,50]","Student","Currently enrolled in school",7,7,7,1,1,1,0,1,1,1,0,1,1,1,0
+"597","400-1",2022-08-02,"Urban","10-19y","Male",4,"(2,5]","Student","Currently enrolled in school",6,6,4.5,1,1,0,0,0,0,0,0,1,1,0,0
+"598","401-1",2022-08-02,"Urban","10-19y","Male",3,"(2,5]","Student","Currently enrolled in school",5,4.5,4.5,0,0,0,0,0,0,0,0,0,0,0,0
+"599","402-1",2022-08-03,"Urban","40-59y","Male",2,"[0,2]","Semiskilled / skilled labor","None",3.5,4.5,3.5,0,0,0,0,0,0,0,0,0,0,0,0
+"600","403-1",2022-08-03,"Urban","10-19y","Male",3,"(2,5]","Student","Currently enrolled in school",4,3.5,3,0,0,0,0,0,0,0,0,0,0,0,0
+"601","404-1",2022-08-09,"Urban","30-39y","Female",5,"(2,5]","Unemployed outside home","Secondary school",5,5.5,4,0,0,0,0,0,0,0,0,1,0,0,0
+"602","405-1",2022-08-09,"Urban","5-9y","Male",3,"(2,5]","Unemployed outside home","Currently enrolled in school",4,5,3,0,0,0,0,0,0,0,0,0,0,0,0
+"603","406-1",2022-08-09,"Urban","10-19y","Female",3,"(2,5]","Student","Currently enrolled in school",6,6.5,4.5,1,1,0,0,0,0,0,0,1,1,0,0
+"604","407-1",2022-08-09,"Urban","1-4y","Male",4,"(2,5]","Unemployed outside home","None",7,7,6,1,1,1,0,1,1,0,0,1,1,1,0
+"605","408-1",2022-08-10,"Rural","10-19y","Male",3,"(2,5]","Student","Currently enrolled in school",4.5,4.5,4.5,0,0,0,0,0,0,0,0,0,0,0,0
+"606","409-1",2022-08-10,"Rural","30-39y","Female",3,"(2,5]","Unemployed outside home","Primary school",5.5,4.5,4,1,0,0,0,0,0,0,0,0,0,0,0
+"607","410-1",2022-08-10,"Rural","10-19y","Female",5,"(2,5]","Student","Currently enrolled in school",4.5,4,4,0,0,0,0,0,0,0,0,0,0,0,0
+"608","411-1",2022-08-11,"Rural","10-19y","Male",3,"(2,5]","Student","Currently enrolled in school",4.5,4,4,0,0,0,0,0,0,0,0,0,0,0,0
+"609","412-1",2022-08-11,"Rural","60+y","Female",1,"[0,2]","Unemployed outside home","None",4.5,4.5,4.5,0,0,0,0,0,0,0,0,0,0,0,0
+"610","413-1",2022-08-09,"Urban","20-29y","Female",5,"(2,5]","Unemployed outside home","Primary school",4,5,4,0,0,0,0,0,0,0,0,0,0,0,0
+"611","414-1",2022-08-09,"Urban","10-19y","Male",3,"(2,5]","Student","Currently enrolled in school",4.5,4.5,3.5,0,0,0,0,0,0,0,0,0,0,0,0
+"612","415-1",2022-08-10,"Rural","60+y","Male",3,"(2,5]","Unemployed outside home","Secondary school",4,4,4,0,0,0,0,0,0,0,0,0,0,0,0
+"613","416-1",2022-08-10,"Rural","5-9y","Female",4,"(2,5]","Unemployed outside home","Currently enrolled in school",4,4,4,0,0,0,0,0,0,0,0,0,0,0,0
+"614","417-1",2022-08-10,"Rural","5-9y","Female",4,"(2,5]","Unemployed outside home","Currently enrolled in school",4.5,4.5,4.5,0,0,0,0,0,0,0,0,0,0,0,0
+"615","418-1",2022-08-18,"Rural","60+y","Female",2,"[0,2]","Unemployed outside home","None",3,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+"616","419-1",2022-08-11,"Rural","30-39y","Female",6,"(5,50]","Unemployed outside home","Secondary school",9,8,8,1,1,1,1,1,1,1,1,1,1,1,1
+"617","420-1",2022-08-11,"Rural","60+y","Male",4,"(2,5]","Semiskilled / skilled labor","None",3.5,3.5,3.5,0,0,0,0,0,0,0,0,0,0,0,0
+"618","421-1",2022-08-16,"Rural","60+y","Female",2,"[0,2]","Unemployed outside home","None",6,9,5,1,1,0,0,1,1,0,0,1,1,1,1
+"619","422-1",2022-08-17,"Rural","60+y","Male",3,"(2,5]","Unemployed outside home","None",3.5,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+"620","423-1",2022-08-17,"Rural","5-9y","Male",6,"(5,50]","Unemployed outside home",NA,9.5,9.5,8,1,1,1,1,1,1,1,1,1,1,1,1
+"621","424-1",2022-08-17,"Rural","40-59y","Male",2,"[0,2]","Semiskilled / skilled labor","None",1,1,1,0,0,0,0,0,0,0,0,0,0,0,0
+"622","425-1",2022-08-18,"Rural","5-9y","Male",8,"(5,50]","Unemployed outside home","Currently enrolled in school",9,9,9,1,1,1,1,1,1,1,1,1,1,1,1
+"623","426-1",2022-08-18,"Rural","40-59y","Male",3,"(2,5]","Unemployed outside home","Primary school",7.5,7.5,3,1,1,1,0,0,0,0,0,1,1,1,0
+"624","427-1",2022-08-18,"Rural","1-4y","Female",3,"(2,5]","Unemployed outside home","None",4,5.5,4,0,0,0,0,0,0,0,0,1,0,0,0
+"625","428-1",2022-08-16,"Rural","20-29y","Female",3,"(2,5]","Semiskilled / skilled labor","Primary school",4,3.5,3.5,0,0,0,0,0,0,0,0,0,0,0,0
+"626","429-1",2022-08-16,"Rural","30-39y","Female",2,"[0,2]","Unemployed outside home","Primary school",3,3,2.5,0,0,0,0,0,0,0,0,0,0,0,0
+"627","430-1",2022-08-17,"Rural","40-59y","Female",2,"[0,2]","Unemployed outside home","Primary school",6.5,7,4,1,1,0,0,0,0,0,0,1,1,1,0
+"628","431-1",2022-08-17,"Rural","40-59y","Female",3,"(2,5]","Unemployed outside home","Primary school",5.5,5.5,3.5,1,0,0,0,0,0,0,0,1,0,0,0
+"629","432-1",2022-08-17,"Rural","30-39y","Female",1,"[0,2]","Semiskilled / skilled labor","Primary school",1,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"630","433-1",2022-08-18,"Rural","40-59y","Female",6,"(5,50]","Unemployed outside home","None",5.5,5.5,5.5,1,0,0,0,1,1,0,0,1,0,0,0
+"631","434-1",2022-08-18,"Rural","60+y","Female",2,"[0,2]","Unemployed outside home","None",4.5,4.5,4.5,0,0,0,0,0,0,0,0,0,0,0,0
+"632","435-1",2022-08-22,"Rural","30-39y","Male",4,"(2,5]","Semiskilled / skilled labor","Primary school",4,4,4,0,0,0,0,0,0,0,0,0,0,0,0
+"633","436-1",2022-08-22,"Rural","10-19y","Female",2,"[0,2]","Student","Currently enrolled in school",3,3,1.5,0,0,0,0,0,0,0,0,0,0,0,0
+"634","437-1",2022-08-22,"Rural","10-19y","Female",3,"(2,5]","Student","Currently enrolled in school",5.5,5.5,5.5,1,0,0,0,1,1,0,0,1,0,0,0
+"635","438-1",2022-08-23,"Rural","40-59y","Female",3,"(2,5]","Unemployed outside home","Primary school",4,3.5,2.5,0,0,0,0,0,0,0,0,0,0,0,0
+"636","439-1",2022-08-23,"Rural","60+y","Female",3,"(2,5]","Unemployed outside home","None",4.5,4,4,0,0,0,0,0,0,0,0,0,0,0,0
+"637","440-1",2022-08-23,"Rural","5-9y","Female",3,"(2,5]","Unemployed outside home","Currently enrolled in school",5,4.5,4.5,0,0,0,0,0,0,0,0,0,0,0,0
+"638","441-1",2022-08-23,"Rural","40-59y","Female",4,"(2,5]","Unemployed outside home","Primary school",6,6,6,1,1,0,0,1,1,0,0,1,1,0,0
+"639","442-1",2022-08-19,"Rural","60+y","Male",2,"[0,2]","Semiskilled / skilled labor","None",2.5,2,2,0,0,0,0,0,0,0,0,0,0,0,0
+"640","443-1",2022-08-19,"Rural","60+y","Female",4,"(2,5]","Unemployed outside home","None",5,5.5,5,0,0,0,0,1,1,0,0,1,0,0,0
+"641","444-1",2022-08-19,"Rural","40-59y","Male",7,"(5,50]","Semiskilled / skilled labor","Primary school",8,8,8,1,1,1,1,1,1,1,1,1,1,1,1
+"642","445-1",2022-08-22,"Rural","20-29y","Female",3,"(2,5]","Semiskilled / skilled labor","Secondary school",6,5.5,5.5,1,1,0,0,1,1,0,0,1,0,0,0
+"643","446-1",2022-08-22,"Rural","5-9y","Male",3,"(2,5]","Unemployed outside home",NA,6,6,2,1,1,0,0,0,0,0,0,1,1,0,0
+"644","447-1",2022-08-22,"Rural","10-19y","Female",4,"(2,5]","Student","Currently enrolled in school",7,7,6,1,1,1,0,1,1,0,0,1,1,1,0
+"645","448-1",2022-08-22,"Rural","40-59y","Female",4,"(2,5]","Unemployed outside home","None",6,6,6,1,1,0,0,1,1,0,0,1,1,0,0
+"646","449-1",2022-08-23,"Rural","60+y","Male",2,"[0,2]","Unemployed outside home","Primary school",4,4,3,0,0,0,0,0,0,0,0,0,0,0,0
+"647","450-1",2022-08-23,"Rural","5-9y","Male",4,"(2,5]","Unemployed outside home",NA,3,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+"648","451-1",2022-08-23,"Rural","60+y","Female",5,"(2,5]","Semiskilled / skilled labor","None",4.5,4.5,4,0,0,0,0,0,0,0,0,0,0,0,0
+"649","452-1",2022-08-24,"Rural","5-9y","Male",4,"(2,5]","Unemployed outside home",NA,6,6,3.5,1,1,0,0,0,0,0,0,1,1,0,0
+"650","453-1",2022-08-24,"Rural","10-19y","Female",2,"[0,2]","Student","Currently enrolled in school",2,2,2,0,0,0,0,0,0,0,0,0,0,0,0
+"651","454-1",2022-08-24,"Rural","20-29y","Female",2,"[0,2]","Unemployed outside home","Primary school",4.5,5,3.5,0,0,0,0,0,0,0,0,0,0,0,0
+"652","455-1",2022-08-24,"Rural","30-39y","Female",3,"(2,5]","Unemployed outside home","Secondary school",5,5.5,4,0,0,0,0,0,0,0,0,1,0,0,0
+"653","456-1",2022-08-24,"Rural","30-39y","Male",2,"[0,2]","Semiskilled / skilled labor","Primary school",5,5.5,5,0,0,0,0,1,1,0,0,1,0,0,0
+"654","457-1",2022-08-25,"Rural","20-29y","Female",2,"[0,2]","Student","Currently enrolled in school",1.5,1.5,1,0,0,0,0,0,0,0,0,0,0,0,0
+"655","458-1",2022-08-25,"Rural","10-19y","Female",4,"(2,5]","Student","Currently enrolled in school",5.5,5,5,1,0,0,0,1,1,0,0,0,0,0,0
+"656","459-1",2022-08-26,"Rural","10-19y","Male",5,"(2,5]","Student","Currently enrolled in school",6.5,7,6.5,1,1,0,0,1,1,1,0,1,1,1,0
+"657","460-1",2022-08-26,"Rural","20-29y","Female",4,"(2,5]","Unemployed outside home","Primary school",7,7,7,1,1,1,0,1,1,1,0,1,1,1,0
+"658","461-1",2022-08-26,"Rural","40-59y","Female",7,"(5,50]","Unemployed outside home","Currently enrolled in school",6.5,6,6,1,1,0,0,1,1,0,0,1,1,0,0
+"659","462-1",2022-08-31,"Rural","10-19y","Female",5,"(2,5]","Student","Currently enrolled in school",7,7,7,1,1,1,0,1,1,1,0,1,1,1,0
+"660","463-1",2022-08-31,"Rural","30-39y","Male",5,"(2,5]","Semiskilled / skilled labor","Primary school",6,7,6,1,1,0,0,1,1,0,0,1,1,1,0
+"661","464-1",2022-08-31,"Rural","20-29y","Male",2,"[0,2]","Semiskilled / skilled labor","Primary school",3.5,3.5,1.5,0,0,0,0,0,0,0,0,0,0,0,0
+"662","465-1",2022-09-01,"Rural","20-29y","Female",3,"(2,5]","Unemployed outside home","Primary school",6.5,6.5,6.5,1,1,0,0,1,1,1,0,1,1,0,0
+"663","466-1",2022-08-31,"Rural","10-19y","Male",6,"(5,50]","Student","Currently enrolled in school",7.5,7,7.5,1,1,1,0,1,1,1,1,1,1,1,0
+"664","467-1",2022-09-01,"Rural","40-59y","Female",2,"[0,2]","Unemployed outside home","None",7,7,3.5,1,1,1,0,0,0,0,0,1,1,1,0
+"665","468-1",2022-09-01,"Rural","10-19y","Female",4,"(2,5]","Student","Currently enrolled in school",7,7,7,1,1,1,0,1,1,1,0,1,1,1,0
+"666","469-1",2022-09-01,"Rural","10-19y","Female",2,"[0,2]","Unemployed outside home","None",2.5,3,2.5,0,0,0,0,0,0,0,0,0,0,0,0
+"667","470-1",2022-08-25,"Rural","40-59y","Male",1,"[0,2]","Semiskilled / skilled labor","Primary school",4,4.5,3.5,0,0,0,0,0,0,0,0,0,0,0,0
+"668","471-1",2022-08-25,"Rural","10-19y","Female",4,"(2,5]","Student","Currently enrolled in school",7,7,7,1,1,1,0,1,1,1,0,1,1,1,0
+"669","472-1",2022-08-26,"Rural","30-39y","Female",2,"[0,2]","Unemployed outside home","None",1.5,1.5,1,0,0,0,0,0,0,0,0,0,0,0,0
+"670","473-1",2022-08-26,"Rural","20-29y","Female",3,"(2,5]","Unemployed outside home","Primary school",4.5,4,4,0,0,0,0,0,0,0,0,0,0,0,0
+"671","474-1",2022-08-26,"Rural","20-29y","Female",2,"[0,2]","Unemployed outside home","Primary school",3,3,2,0,0,0,0,0,0,0,0,0,0,0,0
+"672","475-1",2022-09-02,"Rural","30-39y","Female",3,"(2,5]","Unemployed outside home","None",3.5,2.5,2,0,0,0,0,0,0,0,0,0,0,0,0
+"673","476-1",2022-09-02,"Rural","20-29y","Female",7,"(5,50]","Semiskilled / skilled labor","Some college or higher",6,8,6,1,1,0,0,1,1,0,0,1,1,1,1
+"674","477-1",2022-09-05,"Rural","30-39y","Male",4,"(2,5]","Semiskilled / skilled labor","Primary school",5.5,5.5,5.5,1,0,0,0,1,1,0,0,1,0,0,0
+"675","478-1",2022-09-05,"Rural","10-19y","Male",2,"[0,2]","Student","Currently enrolled in school",5,5.5,4.5,0,0,0,0,0,0,0,0,1,0,0,0
+"676","479-1",2022-09-02,"Rural","10-19y","Female",5,"(2,5]","Student","Currently enrolled in school",10,10,10,1,1,1,1,1,1,1,1,1,1,1,1
+"677","480-1",2022-09-02,"Rural","10-19y","Female",4,"(2,5]","Student","Currently enrolled in school",8,8,3,1,1,1,1,0,0,0,0,1,1,1,1
+"678","481-1",2022-09-05,"Rural","5-9y","Female",4,"(2,5]","Unemployed outside home","Currently enrolled in school",9,10,9,1,1,1,1,1,1,1,1,1,1,1,1
+"679","482-1",2022-09-02,"Rural","1-4y","Male",6,"(5,50]","Unemployed outside home","None",8,8,7.5,1,1,1,1,1,1,1,1,1,1,1,1
+"680","483-1",2022-09-05,"Rural","60+y","Female",4,"(2,5]","Unemployed outside home","Primary school",5,4,3,0,0,0,0,0,0,0,0,0,0,0,0
+"681","484-1",2022-09-05,"Rural","20-29y","Female",3,"(2,5]","Unemployed outside home","Primary school",6.5,6.5,4.5,1,1,0,0,0,0,0,0,1,1,0,0
+"682","485-1",2022-09-05,"Rural","10-19y","Female",5,"(2,5]","Student","Currently enrolled in school",6,6,6,1,1,0,0,1,1,0,0,1,1,0,0
+"683","486-1",2022-09-06,"Rural","10-19y","Male",2,"[0,2]","Student","Currently enrolled in school",4.5,4,2.5,0,0,0,0,0,0,0,0,0,0,0,0
+"684","487-1",2022-09-06,"Rural","40-59y","Female",4,"(2,5]","Unemployed outside home","None",4,4,4,0,0,0,0,0,0,0,0,0,0,0,0
+"685","488-1",2022-09-06,"Rural","30-39y","Female",4,"(2,5]","Unemployed outside home","Primary school",5,4,4,0,0,0,0,0,0,0,0,0,0,0,0
+"686","489-1",2022-09-06,"Rural","30-39y","Female",4,"(2,5]","Unemployed outside home","Secondary school",4.5,4.5,4.5,0,0,0,0,0,0,0,0,0,0,0,0
+"687","490-1",2022-09-06,"Rural","10-19y","Female",4,"(2,5]","Student","Currently enrolled in school",3.5,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+"688","491-1",2022-09-06,"Rural","10-19y","Female",4,"(2,5]","Student","Currently enrolled in school",6.5,6.5,6.5,1,1,0,0,1,1,1,0,1,1,0,0
+"689","492-1",2022-09-06,"Rural","30-39y","Female",6,"(5,50]","Unemployed outside home","Primary school",6,5.5,5.5,1,1,0,0,1,1,0,0,1,0,0,0
+"690","493-1",2022-09-07,"Rural","1-4y","Male",5,"(2,5]","Unemployed outside home","None",7,7,7,1,1,1,0,1,1,1,0,1,1,1,0
+"691","494-1",2022-09-07,"Rural","5-9y","Female",6,"(5,50]","Unemployed outside home",NA,8,8,8,1,1,1,1,1,1,1,1,1,1,1,1
+"692","495-1",2022-09-07,"Rural","5-9y","Female",3,"(2,5]","Unemployed outside home","Currently enrolled in school",4.5,4,4,0,0,0,0,0,0,0,0,0,0,0,0
+"693","496-1",2022-09-07,"Rural","5-9y","Male",6,"(5,50]","Unemployed outside home","Currently enrolled in school",10,9.5,9.5,1,1,1,1,1,1,1,1,1,1,1,1
+"694","497-1",2022-09-07,"Rural","40-59y","Male",5,"(2,5]","Semiskilled / skilled labor","None",6.5,5.5,5.5,1,1,0,0,1,1,0,0,1,0,0,0
+"695","498-1",2022-09-07,"Rural","10-19y","Male",4,"(2,5]","Student","Currently enrolled in school",7,7,7,1,1,1,0,1,1,1,0,1,1,1,0
+"696","499-1",2022-09-07,"Rural","10-19y","Male",3,"(2,5]","Student","Currently enrolled in school",4.5,3.5,3.5,0,0,0,0,0,0,0,0,0,0,0,0
+"697","500-1",2022-09-08,"Rural","10-19y","Male",6,"(5,50]","Student","Currently enrolled in school",11,8.5,6.5,1,1,1,1,1,1,1,0,1,1,1,1
+"698","501-1",2022-09-08,"Rural","5-9y","Female",6,"(5,50]","Unemployed outside home","Currently enrolled in school",7,7,7,1,1,1,0,1,1,1,0,1,1,1,0
+"699","502-1",2022-09-08,"Rural","60+y","Female",3,"(2,5]","Unemployed outside home","None",4,4,3.5,0,0,0,0,0,0,0,0,0,0,0,0
+"700","503-1",2022-09-08,"Rural","30-39y","Male",2,"[0,2]","Semiskilled / skilled labor","None",2.5,2,1.5,0,0,0,0,0,0,0,0,0,0,0,0
+"701","504-1",2022-09-08,"Rural","5-9y","Male",3,"(2,5]","Unemployed outside home","Currently enrolled in school",7,7,7,1,1,1,0,1,1,1,0,1,1,1,0
+"702","505-1",2022-09-08,"Rural","20-29y","Male",3,"(2,5]","Semiskilled / skilled labor","Primary school",6,6.5,4.5,1,1,0,0,0,0,0,0,1,1,0,0
+"703","506-1",2022-09-09,"Rural","20-29y","Female",2,"[0,2]","Unemployed outside home","Primary school",3.5,3.5,2,0,0,0,0,0,0,0,0,0,0,0,0
+"704","507-1",2022-09-09,"Rural","20-29y","Female",2,"[0,2]","Unemployed outside home","Primary school",4.5,3.5,2.5,0,0,0,0,0,0,0,0,0,0,0,0
+"705","508-1",2022-09-09,"Rural","10-19y","Male",4,"(2,5]","Student","Currently enrolled in school",6,6,6,1,1,0,0,1,1,0,0,1,1,0,0
+"706","509-1",2022-09-12,"Rural","1-4y","Female",3,"(2,5]","Unemployed outside home","None",5,7,5,0,0,0,0,1,1,0,0,1,1,1,0
+"707","510-1",2022-09-12,"Rural","40-59y","Female",3,"(2,5]","Unemployed outside home","None",6,5.5,3.5,1,1,0,0,0,0,0,0,1,0,0,0
+"708","511-1",2022-09-12,"Rural","10-19y","Male",5,"(2,5]","Student","Currently enrolled in school",7,6,4.5,1,1,1,0,0,0,0,0,1,1,0,0
+"709","512-1",2022-09-13,"Rural","20-29y","Female",5,"(2,5]","Unemployed outside home","Primary school",7,7,7,1,1,1,0,1,1,1,0,1,1,1,0
+"710","513-1",2022-09-13,"Urban","60+y","Male",4,"(2,5]","Semiskilled / skilled labor","None",5.5,7,5.5,1,0,0,0,1,1,0,0,1,1,1,0
+"711","514-1",2022-09-13,"Rural","10-19y","Female",6,"(5,50]","Student","Currently enrolled in school",7,7,7,1,1,1,0,1,1,1,0,1,1,1,0
+"712","515-1",2022-09-09,"Rural","20-29y","Female",7,"(5,50]","Student","Currently enrolled in school",6,6,6,1,1,0,0,1,1,0,0,1,1,0,0
+"713","516-1",2022-09-09,"Rural","10-19y","Female",5,"(2,5]","Student","Currently enrolled in school",7,7,6,1,1,1,0,1,1,0,0,1,1,1,0
+"714","517-1",2022-09-09,"Rural","5-9y","Female",4,"(2,5]","Unemployed outside home","Currently enrolled in school",6,6.5,3,1,1,0,0,0,0,0,0,1,1,0,0
+"715","518-1",2022-09-12,"Rural","5-9y","Male",4,"(2,5]","Unemployed outside home",NA,6,7,3,1,1,0,0,0,0,0,0,1,1,1,0
+"716","519-1",2022-09-12,"Rural","5-9y","Male",6,"(5,50]","Unemployed outside home","Currently enrolled in school",6.5,7,5,1,1,0,0,1,1,0,0,1,1,1,0
+"717","520-1",2022-09-12,"Rural","60+y","Female",2,"[0,2]","Unemployed outside home","None",3.5,4.5,3,0,0,0,0,0,0,0,0,0,0,0,0
+"718","521-1",2022-09-13,"Rural","1-4y","Male",5,"(2,5]","Unemployed outside home","None",6,7,5.5,1,1,0,0,1,1,0,0,1,1,1,0
+"719","522-1",2022-09-13,"Rural","20-29y","Male",3,"(2,5]","Semiskilled / skilled labor","None",5.5,5.5,4,1,0,0,0,0,0,0,0,1,0,0,0
+"720","523-1",2022-09-13,"Rural","1-4y","Female",5,"(2,5]","Unemployed outside home","None",5,4,3.5,0,0,0,0,0,0,0,0,0,0,0,0
+"721","524-1",2022-09-14,"Rural","10-19y","Female",7,"(5,50]","Unemployed outside home","Primary school",7,6,6,1,1,1,0,1,1,0,0,1,1,0,0
+"722","525-1",2022-09-14,"Rural","5-9y","Male",3,"(2,5]","Unemployed outside home","Currently enrolled in school",7,7,5.5,1,1,1,0,1,1,0,0,1,1,1,0
+"723","526-1",2022-09-14,"Rural","10-19y","Male",5,"(2,5]","Student","Currently enrolled in school",7,7,6,1,1,1,0,1,1,0,0,1,1,1,0
+"724","527-1",2022-09-16,"Rural","30-39y","Female",3,"(2,5]","Unemployed outside home","Primary school",4,4,4,0,0,0,0,0,0,0,0,0,0,0,0
+"725","528-1",2022-09-16,"Rural","20-29y","Female",2,"[0,2]","Unemployed outside home","Primary school",5,4.5,4,0,0,0,0,0,0,0,0,0,0,0,0
+"726","529-1",2022-09-16,"Rural","10-19y","Female",5,"(2,5]","Student","Currently enrolled in school",6,6,6,1,1,0,0,1,1,0,0,1,1,0,0
+"727","530-1",2022-09-14,"Rural","20-29y","Female",4,"(2,5]","Unemployed outside home","None",3.5,3.5,3.5,0,0,0,0,0,0,0,0,0,0,0,0
+"728","531-1",2022-09-14,"Rural","5-9y","Female",5,"(2,5]","Unemployed outside home","Currently enrolled in school",8,8,8,1,1,1,1,1,1,1,1,1,1,1,1
+"729","532-1",2022-09-14,"Rural","1-4y","Male",4,"(2,5]","Unemployed outside home","None",7,7,3.5,1,1,1,0,0,0,0,0,1,1,1,0
+"730","533-1",2022-09-16,"Rural","5-9y","Female",5,"(2,5]","Unemployed outside home","Currently enrolled in school",4.5,4.5,4,0,0,0,0,0,0,0,0,0,0,0,0
+"731","534-1",2022-09-16,"Rural","5-9y","Male",6,"(5,50]","Unemployed outside home","Currently enrolled in school",5.5,6.5,4,1,0,0,0,0,0,0,0,1,1,0,0
+"732","535-1",2022-09-16,"Rural","40-59y","Male",2,"[0,2]","Unemployed outside home","Currently enrolled in school",3,4.5,1,0,0,0,0,0,0,0,0,0,0,0,0
+"733","536-1",2022-09-19,"Rural","5-9y","Male",3,"(2,5]","Unemployed outside home","Currently enrolled in school",6,6,6,1,1,0,0,1,1,0,0,1,1,0,0
+"734","537-1",2022-09-19,"Rural","40-59y","Female",6,"(5,50]","Unemployed outside home","None",6.5,5.5,5,1,1,0,0,1,1,0,0,1,0,0,0
+"735","538-1",2022-09-19,"Rural","60+y","Male",3,"(2,5]","Semiskilled / skilled labor","None",4.5,4.5,4,0,0,0,0,0,0,0,0,0,0,0,0
+"736","539-1",2022-09-20,"Rural","60+y","Female",2,"[0,2]","Unemployed outside home","None",4,4.5,4,0,0,0,0,0,0,0,0,0,0,0,0
+"737","540-1",2022-09-20,"Rural","20-29y","Female",3,"(2,5]","Unemployed outside home","Primary school",4.5,3.5,3.5,0,0,0,0,0,0,0,0,0,0,0,0
+"738","541-1",2022-09-20,"Rural","40-59y","Male",3,"(2,5]","Semiskilled / skilled labor","None",5.5,5.5,5,1,0,0,0,1,1,0,0,1,0,0,0
+"739","542-1",2022-09-21,"Rural","40-59y","Male",3,"(2,5]","Semiskilled / skilled labor","None",5,3.5,2,0,0,0,0,0,0,0,0,0,0,0,0
+"740","543-1",2022-09-21,"Rural","5-9y","Female",5,"(2,5]","Unemployed outside home","Currently enrolled in school",8,8,8,1,1,1,1,1,1,1,1,1,1,1,1
+"741","544-1",2022-09-21,"Rural","1-4y","Male",2,"[0,2]","Unemployed outside home","None",6,7,1,1,1,0,0,0,0,0,0,1,1,1,0
+"742","545-1",2022-09-20,"Rural","30-39y","Female",3,"(2,5]","Unemployed outside home","Primary school",4,4,4,0,0,0,0,0,0,0,0,0,0,0,0
+"743","546-1",2022-09-20,"Rural","5-9y","Male",4,"(2,5]","Unemployed outside home",NA,7,6.5,5.5,1,1,1,0,1,1,0,0,1,1,0,0
+"744","547-1",2022-09-20,"Rural","10-19y","Male",3,"(2,5]","Student","Currently enrolled in school",6,5,5,1,1,0,0,1,1,0,0,0,0,0,0
+"745","548-1",2022-09-22,"Rural","30-39y","Female",3,"(2,5]","Unemployed outside home","Primary school",3,3.5,3,0,0,0,0,0,0,0,0,0,0,0,0
+"746","549-1",2022-09-22,"Rural","1-4y","Male",4,"(2,5]","Unemployed outside home","None",8.5,8.5,7.5,1,1,1,1,1,1,1,1,1,1,1,1
+"747","550-1",2022-09-22,"Rural","40-59y","Female",4,"(2,5]","Unemployed outside home","Primary school",6,6,6,1,1,0,0,1,1,0,0,1,1,0,0
+"748","551-1",2022-09-21,"Rural","10-19y","Female",2,"[0,2]","Student","Currently enrolled in school",6,5,5,1,1,0,0,1,1,0,0,0,0,0,0
+"749","552-1",2022-09-21,"Rural","10-19y","Male",2,"[0,2]","Student","Currently enrolled in school",6.5,6.5,6,1,1,0,0,1,1,0,0,1,1,0,0
+"750","553-1",2022-09-21,"Rural","5-9y","Female",3,"(2,5]","Unemployed outside home",NA,6,6,5,1,1,0,0,1,1,0,0,1,1,0,0
+"751","554-1",2022-09-22,"Rural","10-19y","Male",5,"(2,5]","Student","Currently enrolled in school",7,7,6.5,1,1,1,0,1,1,1,0,1,1,1,0
+"752","555-1",2022-09-22,"Rural","5-9y","Female",3,"(2,5]","Unemployed outside home","Currently enrolled in school",6,6,6,1,1,0,0,1,1,0,0,1,1,0,0
+"753","556-1",2022-09-22,"Rural","10-19y","Male",3,"(2,5]","Student","Currently enrolled in school",6,6,6,1,1,0,0,1,1,0,0,1,1,0,0
+"754","557-1",2022-09-19,"Rural","40-59y","Female",3,"(2,5]","Unemployed outside home","Primary school",4,4,4,0,0,0,0,0,0,0,0,0,0,0,0
+"755","558-1",2022-09-19,"Rural","1-4y","Female",3,"(2,5]","Unemployed outside home","None",5.5,5,3.5,1,0,0,0,0,0,0,0,0,0,0,0
+"756","559-1",2022-09-19,"Rural","10-19y","Female",5,"(2,5]","Unemployed outside home","Primary school",5.5,5,4.5,1,0,0,0,0,0,0,0,0,0,0,0
+"757","560-1",2022-09-22,"Rural","1-4y","Female",3,"(2,5]","Unemployed outside home","None",5,6.5,3.5,0,0,0,0,0,0,0,0,1,1,0,0
+"758","561-1",2022-09-22,"Rural","40-59y","Female",1,"[0,2]","Unemployed outside home","None",5,1.5,0.5,0,0,0,0,0,0,0,0,0,0,0,0
+"759","562-1",2022-09-22,"Rural","10-19y","Female",5,"(2,5]","Student","Currently enrolled in school",6,5,4,1,1,0,0,0,0,0,0,0,0,0,0
+"760","563-1",2022-09-23,"Rural","5-9y","Male",4,"(2,5]","Unemployed outside home",NA,5.5,5.5,4.5,1,0,0,0,0,0,0,0,1,0,0,0
+"761","564-1",2022-09-23,"Rural","30-39y","Female",4,"(2,5]","Unemployed outside home","Primary school",3.5,3.5,3.5,0,0,0,0,0,0,0,0,0,0,0,0
+"762","565-1",2022-09-23,"Rural","10-19y","Male",5,"(2,5]","Semiskilled / skilled labor","Primary school",7,7,5,1,1,1,0,1,1,0,0,1,1,1,0
+"763","566-1",2022-09-23,"Rural","1-4y","Male",3,"(2,5]","Unemployed outside home","None",5,5,3.5,0,0,0,0,0,0,0,0,0,0,0,0
+"764","567-1",2022-09-23,"Rural","60+y","Female",2,"[0,2]","Unemployed outside home","None",4.5,5.5,4.5,0,0,0,0,0,0,0,0,1,0,0,0
+"765","568-1",2022-09-23,"Rural","10-19y","Female",8,"(5,50]","Student","Currently enrolled in school",14,12.5,12.5,1,1,1,1,1,1,1,1,1,1,1,1
+"766","569-1",2022-09-23,"Rural","10-19y","Female",3,"(2,5]","Student","Currently enrolled in school",6,6,4,1,1,0,0,0,0,0,0,1,1,0,0
+"767","570-1",2022-09-23,"Rural","20-29y","Female",2,"[0,2]","Unemployed outside home","Primary school",2.5,3.5,2.5,0,0,0,0,0,0,0,0,0,0,0,0
+"768","571-1",2022-09-23,"Rural","30-39y","Female",3,"(2,5]","Semiskilled / skilled labor","Primary school",5,5,5,0,0,0,0,1,1,0,0,0,0,0,0
+"769","572-1",2022-09-26,"Rural","20-29y","Female",7,"(5,50]","Unemployed outside home","None",9.5,9.5,9,1,1,1,1,1,1,1,1,1,1,1,1
+"770","573-1",2022-09-26,"Rural","60+y","Male",2,"[0,2]","Semiskilled / skilled labor","None",5.5,5.5,5.5,1,0,0,0,1,1,0,0,1,0,0,0
+"771","574-1",2022-09-26,"Rural","5-9y","Male",2,"[0,2]","Unemployed outside home",NA,6.5,6.5,6.5,1,1,0,0,1,1,1,0,1,1,0,0
+"772","575-1",2022-09-26,"Rural","40-59y","Female",1,"[0,2]","Unemployed outside home","None",5,5,3,0,0,0,0,0,0,0,0,0,0,0,0
+"773","576-1",2022-09-26,"Rural","10-19y","Male",6,"(5,50]","Semiskilled / skilled labor","None",5,5,5,0,0,0,0,1,1,0,0,0,0,0,0
+"774","580-1",2022-09-26,"Rural","1-4y","Female",4,"(2,5]","Unemployed outside home","None",8,8,8,1,1,1,1,1,1,1,1,1,1,1,1
+"775","581-1",2022-09-26,"Rural","60+y","Female",2,"[0,2]","Unemployed outside home","None",3.5,3.5,3.5,0,0,0,0,0,0,0,0,0,0,0,0
+"776","582-1",2022-09-26,"Rural","40-59y","Female",2,"[0,2]","Unemployed outside home","None",3,3.5,2.5,0,0,0,0,0,0,0,0,0,0,0,0
+"777","584-1",2022-09-27,"Rural","1-4y","Female",5,"(2,5]","Unemployed outside home","None",7,7,6,1,1,1,0,1,1,0,0,1,1,1,0
+"778","585-1",2022-09-27,"Rural","1-4y","Male",3,"(2,5]","Unemployed outside home","None",6.5,6.5,6.5,1,1,0,0,1,1,1,0,1,1,0,0
+"779","586-1",2022-09-27,"Rural","20-29y","Female",2,"[0,2]","Unemployed outside home","None",6,6,4,1,1,0,0,0,0,0,0,1,1,0,0
+"780","587-1",2022-09-27,"Rural","1-4y","Female",6,"(5,50]","Unemployed outside home","None",4,4.5,4,0,0,0,0,0,0,0,0,0,0,0,0
+"781","588-1",2022-09-27,"Rural","5-9y","Female",6,"(5,50]","Unemployed outside home","Currently enrolled in school",7.5,7.5,7,1,1,1,0,1,1,1,0,1,1,1,0
+"782","589-1",2022-09-27,"Rural","40-59y","Female",1,"[0,2]","Unemployed outside home","None",0.5,7,0,0,0,0,0,0,0,0,0,1,1,1,0
+"783","590-1",2022-09-27,"Rural","5-9y","Male",7,"(5,50]","Unemployed outside home",NA,10,9.5,8.5,1,1,1,1,1,1,1,1,1,1,1,1
+"784","591-1",2022-09-27,"Rural","20-29y","Female",3,"(2,5]","Unemployed outside home","None",3,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+"785","592-1",2022-09-27,"Rural","1-4y","Male",4,"(2,5]","Unemployed outside home","None",6.5,7,5.5,1,1,0,0,1,1,0,0,1,1,1,0
+"786","593-1",2022-09-28,"Rural","1-4y","Male",3,"(2,5]","Unemployed outside home","None",6.5,7,6,1,1,0,0,1,1,0,0,1,1,1,0
+"787","594-1",2022-09-28,"Rural","10-19y","Male",3,"(2,5]","Student","Currently enrolled in school",5,5,5,0,0,0,0,1,1,0,0,0,0,0,0
+"788","595-1",2022-09-28,"Rural","5-9y","Female",2,"[0,2]","Unemployed outside home","Currently enrolled in school",5,4.5,4.5,0,0,0,0,0,0,0,0,0,0,0,0
+"789","596-1",2022-09-28,"Rural","40-59y","Female",3,"(2,5]","Unemployed outside home","None",3.5,4.5,3,0,0,0,0,0,0,0,0,0,0,0,0
+"790","598-1",2022-09-28,"Rural","40-59y","Female",3,"(2,5]","Unemployed outside home","None",6.5,6,4.5,1,1,0,0,0,0,0,0,1,1,0,0
+"791","599-1",2022-09-28,"Rural","5-9y","Male",7,"(5,50]","Unemployed outside home",NA,10,10,10,1,1,1,1,1,1,1,1,1,1,1,1
+"792","600-1",2022-09-28,"Rural","5-9y","Female",2,"[0,2]","Unemployed outside home","Currently enrolled in school",7,6.5,3,1,1,1,0,0,0,0,0,1,1,0,0
+"793","603-1",2022-09-29,"Rural","10-19y","Female",3,"(2,5]","Student","Currently enrolled in school",8,8,8,1,1,1,1,1,1,1,1,1,1,1,1
+"794","604-1",2022-09-29,"Rural","10-19y","Female",5,"(2,5]","Student","Currently enrolled in school",8.5,8.5,8.5,1,1,1,1,1,1,1,1,1,1,1,1
+"795","606-1",2022-09-29,"Rural","40-59y","Female",3,"(2,5]","Unemployed outside home","None",4.5,4,4,0,0,0,0,0,0,0,0,0,0,0,0
+"796","607-1",2022-09-29,"Rural","20-29y","Female",4,"(2,5]","Semiprofessional / professional","Primary school",7,6.5,6,1,1,1,0,1,1,0,0,1,1,0,0
+"797","608-1",2022-09-29,"Rural","5-9y","Female",3,"(2,5]","Unemployed outside home",NA,9.5,9.5,9,1,1,1,1,1,1,1,1,1,1,1,1
+"798","609-1",2022-09-29,"Rural","5-9y","Female",4,"(2,5]","Unemployed outside home","Currently enrolled in school",5,5,4.5,0,0,0,0,0,0,0,0,0,0,0,0
+"799","610-1",2022-09-29,"Rural","20-29y","Female",2,"[0,2]","Unemployed outside home","None",3.5,3.5,1,0,0,0,0,0,0,0,0,0,0,0,0
+"800","611-1",2022-09-29,"Rural","10-19y","Male",5,"(2,5]","Student","Currently enrolled in school",5,5,4,0,0,0,0,0,0,0,0,0,0,0,0
+"801","612-1",2022-09-29,"Rural","40-59y","Male",5,"(2,5]","Semiskilled / skilled labor","None",4,4,4,0,0,0,0,0,0,0,0,0,0,0,0
+"802","613-1",2022-09-30,"Rural","10-19y","Male",3,"(2,5]","Student","Currently enrolled in school",6,6,6,1,1,0,0,1,1,0,0,1,1,0,0
+"803","614-1",2022-09-30,"Rural","60+y","Female",2,"[0,2]","Unemployed outside home","None",2.5,3,2,0,0,0,0,0,0,0,0,0,0,0,0
+"804","615-1",2022-09-30,"Rural","30-39y","Female",2,"[0,2]","Unemployed outside home","Secondary school",4,3.5,2.5,0,0,0,0,0,0,0,0,0,0,0,0
+"805","616-1",2022-09-30,"Rural","60+y","Female",1,"[0,2]","Unemployed outside home","None",7,7,7,1,1,1,0,1,1,1,0,1,1,1,0
+"806","617-1",2022-10-03,"Rural","60+y","Male",7,"(5,50]","Semiskilled / skilled labor","None",9,8,8,1,1,1,1,1,1,1,1,1,1,1,1
+"807","618-1",2022-10-03,"Rural","5-9y","Female",6,"(5,50]","Unemployed outside home",NA,10.5,10.5,10.5,1,1,1,1,1,1,1,1,1,1,1,1
+"808","619-1",2022-10-03,"Rural","10-19y","Male",5,"(2,5]","Student","Currently enrolled in school",7.5,7.5,7.5,1,1,1,0,1,1,1,1,1,1,1,0
+"809","621-1",2022-10-03,"Rural","40-59y","Female",2,"[0,2]","Unemployed outside home","None",4.5,4.5,4.5,0,0,0,0,0,0,0,0,0,0,0,0
+"810","622-1",2022-10-03,"Rural","40-59y","Male",2,"[0,2]","Semiskilled / skilled labor","None",1.5,2.5,1.5,0,0,0,0,0,0,0,0,0,0,0,0
+"811","625-1",2022-09-30,"Rural","60+y","Male",1,"[0,2]","Unemployed outside home","None",3,7,0.5,0,0,0,0,0,0,0,0,1,1,1,0
+"812","626-1",2022-10-03,"Rural","60+y","Male",2,"[0,2]","Semiskilled / skilled labor","None",3,2,1,0,0,0,0,0,0,0,0,0,0,0,0
+"813","627-1",2022-10-03,"Rural","40-59y","Female",3,"(2,5]","Unemployed outside home","None",4,5.5,2.5,0,0,0,0,0,0,0,0,1,0,0,0
+"814","629-1",2022-10-04,"Rural","60+y","Female",4,"(2,5]","Unemployed outside home","None",5,5.5,4,0,0,0,0,0,0,0,0,1,0,0,0
+"815","632-1",2022-10-04,"Rural","30-39y","Female",3,"(2,5]","Unemployed outside home","Secondary school",6,6,5,1,1,0,0,1,1,0,0,1,1,0,0
+"816","633-1",2022-10-04,"Rural","10-19y","Male",4,"(2,5]","Student","Currently enrolled in school",6,6,5.5,1,1,0,0,1,1,0,0,1,1,0,0
+"817","634-1",2022-10-04,"Rural","5-9y","Female",4,"(2,5]","Unemployed outside home","Currently enrolled in school",4,4,4,0,0,0,0,0,0,0,0,0,0,0,0
+"818","635-1",2022-10-04,"Rural","10-19y","Female",3,"(2,5]","Student","Currently enrolled in school",7,7,7,1,1,1,0,1,1,1,0,1,1,1,0
+"819","636-1",2022-10-04,"Rural","40-59y","Female",3,"(2,5]","Unemployed outside home","None",2.5,5,2,0,0,0,0,0,0,0,0,0,0,0,0
+"820","637-1",2022-10-04,"Rural","40-59y","Female",3,"(2,5]","Unemployed outside home","None",3,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+"821","638-1",2022-10-05,"Rural","60+y","Female",6,"(5,50]","Unemployed outside home","None",8,5.5,5.5,1,1,1,1,1,1,0,0,1,0,0,0
+"822","639-1",2022-10-05,"Rural","10-19y","Male",4,"(2,5]","Student","Currently enrolled in school",6.5,6.5,5,1,1,0,0,1,1,0,0,1,1,0,0
+"823","640-1",2022-10-05,"Rural","60+y","Male",5,"(2,5]","Semiskilled / skilled labor","None",5,4,4,0,0,0,0,0,0,0,0,0,0,0,0
+"824","641-1",2022-10-05,"Rural","40-59y","Male",1,"[0,2]","Semiskilled / skilled labor","None",4,3.5,2,0,0,0,0,0,0,0,0,0,0,0,0
+"825","642-1",2022-10-05,"Rural","10-19y","Male",3,"(2,5]","Student","Currently enrolled in school",5.5,5.5,5,1,0,0,0,1,1,0,0,1,0,0,0
+"826","643-1",2022-10-05,"Rural","60+y","Female",4,"(2,5]","Semiskilled / skilled labor","None",2.5,2.5,2,0,0,0,0,0,0,0,0,0,0,0,0
+"827","645-1",2022-10-05,"Rural","10-19y","Female",5,"(2,5]","Student","Currently enrolled in school",6.5,6.5,6.5,1,1,0,0,1,1,1,0,1,1,0,0
+"828","646-1",2022-10-05,"Rural","5-9y","Male",3,"(2,5]","Unemployed outside home",NA,5,5.5,5,0,0,0,0,1,1,0,0,1,0,0,0
+"829","647-1",2022-10-06,"Rural","60+y","Female",4,"(2,5]","Unemployed outside home","None",6.5,6.5,6.5,1,1,0,0,1,1,1,0,1,1,0,0
+"830","648-1",2022-10-06,"Rural","10-19y","Female",7,"(5,50]","Student","Currently enrolled in school",9.5,9,8.5,1,1,1,1,1,1,1,1,1,1,1,1
+"831","649-1",2022-10-06,"Rural","10-19y","Female",5,"(2,5]","Student","Currently enrolled in school",5,5,4,0,0,0,0,0,0,0,0,0,0,0,0
+"832","650-1",2022-10-06,"Rural","60+y","Female",2,"[0,2]","Unemployed outside home","None",7,6.5,6.5,1,1,1,0,1,1,1,0,1,1,0,0
+"833","652-1",2022-10-06,"Rural","5-9y","Male",2,"[0,2]","Unemployed outside home",NA,7.5,7.5,7.5,1,1,1,0,1,1,1,1,1,1,1,0
+"834","653-1",2022-10-06,"Rural","5-9y","Female",4,"(2,5]","Unemployed outside home","Currently enrolled in school",7,7,7,1,1,1,0,1,1,1,0,1,1,1,0
+"835","654-1",2022-10-06,"Rural","60+y","Female",3,"(2,5]","Unemployed outside home","None",4,3,2.5,0,0,0,0,0,0,0,0,0,0,0,0
+"836","655-1",2022-10-06,"Rural","60+y","Female",2,"[0,2]","Unemployed outside home","None",4,5,4,0,0,0,0,0,0,0,0,0,0,0,0
+"837","656-1",2022-10-07,"Rural","5-9y","Female",5,"(2,5]","Unemployed outside home",NA,6,7,4.5,1,1,0,0,0,0,0,0,1,1,1,0
+"838","658-1",2022-10-07,"Urban","5-9y","Male",4,"(2,5]","Unemployed outside home",NA,6,5.5,5.5,1,1,0,0,1,1,0,0,1,0,0,0
+"839","660-1",2022-10-07,"Rural","5-9y","Male",8,"(5,50]","Unemployed outside home","Currently enrolled in school",9,8.5,7.5,1,1,1,1,1,1,1,1,1,1,1,1
+"840","661-1",2022-10-07,"Rural","10-19y","Female",3,"(2,5]","Student","Currently enrolled in school",6.5,5,4.5,1,1,0,0,0,0,0,0,0,0,0,0
+"841","663-1",2022-10-07,"Rural","20-29y","Female",2,"[0,2]","Unemployed outside home","Primary school",3,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+"842","664-1",2022-10-07,"Rural","60+y","Female",1,"[0,2]","Unemployed outside home","None",6.5,6.5,6.5,1,1,0,0,1,1,1,0,1,1,0,0
+"843","665-1",2022-10-12,"Rural","30-39y","Male",2,"[0,2]","Student","Currently enrolled in school",6,5.5,3.5,1,1,0,0,0,0,0,0,1,0,0,0
+"844","666-1",2022-10-12,"Rural","10-19y","Female",3,"(2,5]","Unemployed outside home","Primary school",3.5,3.5,3,0,0,0,0,0,0,0,0,0,0,0,0
+"845","671-1",2022-10-12,"Rural","60+y","Female",2,"[0,2]","Unemployed outside home","None",5,7,3.5,0,0,0,0,0,0,0,0,1,1,1,0
+"846","672-1",2022-10-12,"Rural","60+y","Female",2,"[0,2]","Unemployed outside home","None",1.5,1,1,0,0,0,0,0,0,0,0,0,0,0,0
+"847","673-1",2022-10-12,"Rural","10-19y","Male",2,"[0,2]","Student","Currently enrolled in school",5.5,5.5,5,1,0,0,0,1,1,0,0,1,0,0,0
+"848","674-1",2022-10-12,"Rural","60+y","Female",2,"[0,2]","Unemployed outside home","None",2,2,2,0,0,0,0,0,0,0,0,0,0,0,0
+"849","675-1",2022-10-12,"Rural","60+y","Male",2,"[0,2]","Unemployed outside home","None",5.5,5.5,5.5,1,0,0,0,1,1,0,0,1,0,0,0
+"850","676-1",2022-10-12,"Rural","10-19y","Male",4,"(2,5]","Student","Currently enrolled in school",5,5,5,0,0,0,0,1,1,0,0,0,0,0,0
+"851","677-1",2022-10-13,"Rural","30-39y","Female",2,"[0,2]","Unemployed outside home","None",5.5,5.5,4.5,1,0,0,0,0,0,0,0,1,0,0,0
+"852","679-1",2022-10-13,"Rural","5-9y","Male",2,"[0,2]","Unemployed outside home","Currently enrolled in school",7,7,7,1,1,1,0,1,1,1,0,1,1,1,0
+"853","681-1",2022-10-13,"Rural","5-9y","Male",3,"(2,5]","Unemployed outside home",NA,7,7,3.5,1,1,1,0,0,0,0,0,1,1,1,0
+"854","682-1",2022-10-13,"Rural","10-19y","Female",5,"(2,5]","Student","Currently enrolled in school",8,7.5,7.5,1,1,1,1,1,1,1,1,1,1,1,0
+"855","683-1",2022-10-13,"Rural","60+y","Female",2,"[0,2]","Unemployed outside home","None",6.5,6.5,6,1,1,0,0,1,1,0,0,1,1,0,0
+"856","684-1",2022-10-13,"Rural","5-9y","Female",2,"[0,2]","Unemployed outside home",NA,2.5,3,1,0,0,0,0,0,0,0,0,0,0,0,0
+"857","685-1",2022-10-13,"Rural","5-9y","Male",4,"(2,5]","Unemployed outside home",NA,5,6,5,0,0,0,0,1,1,0,0,1,1,0,0
+"858","686-1",2022-10-14,"Rural","5-9y","Female",4,"(2,5]","Unemployed outside home","Currently enrolled in school",5.5,6,5.5,1,0,0,0,1,1,0,0,1,1,0,0
+"859","687-1",2022-10-14,"Urban","10-19y","Female",2,"[0,2]","Student","Currently enrolled in school",7.5,7.5,7.5,1,1,1,0,1,1,1,1,1,1,1,0
+"860","689-1",2022-10-14,"Rural","1-4y","Male",4,"(2,5]","Unemployed outside home","None",4,4,3,0,0,0,0,0,0,0,0,0,0,0,0
+"861","690-1",2022-10-14,"Rural","60+y","Female",2,"[0,2]","Unemployed outside home","None",4.5,3.5,1,0,0,0,0,0,0,0,0,0,0,0,0
+"862","691-1",2022-10-14,"Rural","10-19y","Female",4,"(2,5]","Student","Currently enrolled in school",3,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+"863","692-1",2022-10-14,"Rural","60+y","Male",2,"[0,2]","Unemployed outside home","None",2.5,2.5,2.5,0,0,0,0,0,0,0,0,0,0,0,0
+"864","693-1",2022-10-14,"Rural","30-39y","Female",2,"[0,2]","Unemployed outside home","None",4.5,4,4,0,0,0,0,0,0,0,0,0,0,0,0
+"865","694-1",2022-10-14,"Rural","10-19y","Male",2,"[0,2]","Student","Currently enrolled in school",7.5,7.5,7.5,1,1,1,0,1,1,1,1,1,1,1,0
+"866","695-1",2022-10-17,"Rural","5-9y","Male",6,"(5,50]","Unemployed outside home","Currently enrolled in school",7.5,7.5,7,1,1,1,0,1,1,1,0,1,1,1,0
+"867","696-1",2022-10-17,"Rural","60+y","Male",2,"[0,2]","Semiskilled / skilled labor","None",3,1,1,0,0,0,0,0,0,0,0,0,0,0,0
+"868","697-1",2022-10-17,"Rural","10-19y","Female",5,"(2,5]","Student","Currently enrolled in school",7.5,7.5,7.5,1,1,1,0,1,1,1,1,1,1,1,0
+"869","698-1",2022-10-17,"Rural","10-19y","Male",5,"(2,5]","Student","Currently enrolled in school",4,4,4,0,0,0,0,0,0,0,0,0,0,0,0
+"870","699-1",2022-10-17,"Rural","10-19y","Female",5,"(2,5]","Student","Currently enrolled in school",5,5,5,0,0,0,0,1,1,0,0,0,0,0,0
+"871","700-1",2022-10-17,"Rural","60+y","Female",2,"[0,2]","Unemployed outside home","None",3.5,3,1,0,0,0,0,0,0,0,0,0,0,0,0
+"872","701-1",2022-10-18,"Rural","5-9y","Male",4,"(2,5]","Unemployed outside home",NA,7.5,7.5,7.5,1,1,1,0,1,1,1,1,1,1,1,0
+"873","702-1",2022-10-18,"Rural","60+y","Male",2,"[0,2]","Semiskilled / skilled labor","None",4.5,3.5,3.5,0,0,0,0,0,0,0,0,0,0,0,0
+"874","703-1",2022-10-18,"Rural","10-19y","Female",5,"(2,5]","Student","Currently enrolled in school",8,9.5,6.5,1,1,1,1,1,1,1,0,1,1,1,1
+"875","704-1",2022-10-17,"Rural","5-9y","Female",4,"(2,5]","Unemployed outside home","Currently enrolled in school",5.5,7,5,1,0,0,0,1,1,0,0,1,1,1,0
+"876","707-1",2022-10-18,"Rural","10-19y","Male",3,"(2,5]","Student","Currently enrolled in school",5,4.5,4.5,0,0,0,0,0,0,0,0,0,0,0,0
+"877","708-1",2022-10-18,"Rural","10-19y","Male",4,"(2,5]","Student","Currently enrolled in school",6,6.5,6,1,1,0,0,1,1,0,0,1,1,0,0
+"878","709-1",2022-10-18,"Rural","10-19y","Male",3,"(2,5]","Student","Currently enrolled in school",4,5,3.5,0,0,0,0,0,0,0,0,0,0,0,0
+"879","711-1",2022-10-19,"Rural","10-19y","Male",5,"(2,5]","Student","Currently enrolled in school",6.5,6.5,5.5,1,1,0,0,1,1,0,0,1,1,0,0
+"880","712-1",2022-10-18,"Rural","30-39y","Female",5,"(2,5]","Unemployed outside home","None",6.5,6,6,1,1,0,0,1,1,0,0,1,1,0,0
+"881","716-1",2022-10-19,"Rural","60+y","Female",2,"[0,2]","Unemployed outside home","None",4,4,2,0,0,0,0,0,0,0,0,0,0,0,0
+"882","717-1",2022-10-19,"Rural","30-39y","Female",6,"(5,50]","Semiskilled / skilled labor","Primary school",6,6,6,1,1,0,0,1,1,0,0,1,1,0,0
+"883","718-1",2022-10-19,"Rural","60+y","Female",2,"[0,2]","Unemployed outside home","None",3,3.5,3,0,0,0,0,0,0,0,0,0,0,0,0
+"884","719-1",2022-10-19,"Rural","10-19y","Male",5,"(2,5]","Student","Currently enrolled in school",6.5,6.5,6.5,1,1,0,0,1,1,1,0,1,1,0,0
+"885","720-1",2022-10-19,"Rural","30-39y","Female",4,"(2,5]","Unemployed outside home","None",3.5,4,3.5,0,0,0,0,0,0,0,0,0,0,0,0
+"886","721-1",2022-10-19,"Rural","10-19y","Male",4,"(2,5]","Student","Currently enrolled in school",5.5,6,5.5,1,0,0,0,1,1,0,0,1,1,0,0
+"887","722-1",2022-10-20,"Rural","60+y","Male",2,"[0,2]","Semiskilled / skilled labor","None",5,5.5,5,0,0,0,0,1,1,0,0,1,0,0,0
+"888","724-1",2022-10-20,"Rural","10-19y","Female",4,"(2,5]","Student","Currently enrolled in school",5,5.5,5,0,0,0,0,1,1,0,0,1,0,0,0
+"889","725-1",2022-10-20,"Rural","10-19y","Female",2,"[0,2]","Unemployed outside home","Primary school",6,6.5,4,1,1,0,0,0,0,0,0,1,1,0,0
+"890","726-1",2022-10-20,"Rural","60+y","Female",1,"[0,2]","Unemployed outside home","None",0,3,0,0,0,0,0,0,0,0,0,0,0,0,0
+"891","727-1",2022-10-20,"Rural","30-39y","Female",3,"(2,5]","Unemployed outside home","Primary school",4,4,2,0,0,0,0,0,0,0,0,0,0,0,0
+"892","729-1",2022-10-20,"Rural","10-19y","Female",11,"(5,50]","Student","Currently enrolled in school",14.5,14.5,14,1,1,1,1,1,1,1,1,1,1,1,1
+"893","731-1",2022-10-24,"Rural","60+y","Female",2,"[0,2]","Unemployed outside home","None",6,5.5,2.5,1,1,0,0,0,0,0,0,1,0,0,0
+"894","733-1",2022-10-24,"Rural","30-39y","Female",3,"(2,5]","Semiskilled / skilled labor","Primary school",6.5,6,6,1,1,0,0,1,1,0,0,1,1,0,0
+"895","735-1",2022-10-24,"Rural","10-19y","Male",5,"(2,5]","Semiskilled / skilled labor","Primary school",5,5,5,0,0,0,0,1,1,0,0,0,0,0,0
+"896","736-1",2022-10-24,"Rural","30-39y","Female",3,"(2,5]","Semiskilled / skilled labor","Primary school",4,4,3,0,0,0,0,0,0,0,0,0,0,0,0
+"897","737-1",2022-10-24,"Rural","30-39y","Female",5,"(2,5]","Unemployed outside home","None",4,4.5,4,0,0,0,0,0,0,0,0,0,0,0,0
+"898","739-1",2022-10-24,"Rural","30-39y","Female",5,"(2,5]","Semiskilled / skilled labor","Some college or higher",4,4.5,4,0,0,0,0,0,0,0,0,0,0,0,0
+"899","740-1",2022-10-25,"Urban","60+y","Male",2,"[0,2]","Semiskilled / skilled labor","None",6,5,2,1,1,0,0,0,0,0,0,0,0,0,0
+"900","741-1",2022-10-25,"Urban","1-4y","Female",2,"[0,2]","Unemployed outside home","None",3,4,3,0,0,0,0,0,0,0,0,0,0,0,0
+"901","742-1",2022-10-25,"Urban","60+y","Female",1,"[0,2]","Unemployed outside home","None",7,7,6.5,1,1,1,0,1,1,1,0,1,1,1,0
+"902","743-1",2022-10-25,"Urban","40-59y","Female",3,"(2,5]","Unemployed outside home","None",3.5,3.5,3.5,0,0,0,0,0,0,0,0,0,0,0,0
+"903","744-1",2022-10-25,"Urban","10-19y","Male",3,"(2,5]","Student","Currently enrolled in school",5,5,5,0,0,0,0,1,1,0,0,0,0,0,0
+"904","745-1",2022-10-25,"Urban","1-4y","Female",8,"(5,50]","Unemployed outside home","None",9,9,8,1,1,1,1,1,1,1,1,1,1,1,1
+"905","746-1",2022-10-25,"Urban","40-59y","Male",3,"(2,5]","Semiskilled / skilled labor","None",5,5.5,3.5,0,0,0,0,0,0,0,0,1,0,0,0
+"906","747-1",2022-10-25,"Urban","10-19y","Female",5,"(2,5]","Student","Currently enrolled in school",6,6,5,1,1,0,0,1,1,0,0,1,1,0,0
+"907","748-1",2022-10-25,"Urban","10-19y","Female",4,"(2,5]","Student","Currently enrolled in school",5,5,5,0,0,0,0,1,1,0,0,0,0,0,0
+"908","749-1",2022-10-26,"Urban","30-39y","Female",1,"[0,2]","Unemployed outside home","None",1,1.5,1,0,0,0,0,0,0,0,0,0,0,0,0
+"909","750-1",2022-10-26,"Urban","60+y","Female",2,"[0,2]","Unemployed outside home","None",3,1,1,0,0,0,0,0,0,0,0,0,0,0,0
+"910","751-1",2022-10-26,"Urban","60+y","Female",3,"(2,5]","Unemployed outside home","None",2,3.5,2,0,0,0,0,0,0,0,0,0,0,0,0
+"911","752-1",2022-10-26,"Urban","10-19y","Male",3,"(2,5]","Student","Currently enrolled in school",4.5,4.5,4.5,0,0,0,0,0,0,0,0,0,0,0,0
+"912","753-1",2022-10-26,"Urban","5-9y","Female",5,"(2,5]","Unemployed outside home",NA,6,6,6,1,1,0,0,1,1,0,0,1,1,0,0
+"913","754-1",2022-10-26,"Urban","10-19y","Female",5,"(2,5]","Student","Currently enrolled in school",7,7.5,6.5,1,1,1,0,1,1,1,0,1,1,1,0
+"914","755-1",2022-10-26,"Urban","60+y","Female",1,"[0,2]","Unemployed outside home","None",5,5,4.5,0,0,0,0,0,0,0,0,0,0,0,0
+"915","756-1",2022-10-26,"Urban","1-4y","Female",3,"(2,5]","Unemployed outside home","None",4,5,3.5,0,0,0,0,0,0,0,0,0,0,0,0
+"916","757-1",2022-10-26,"Urban","10-19y","Male",3,"(2,5]","Student","Currently enrolled in school",5,5.5,4,0,0,0,0,0,0,0,0,1,0,0,0
+"917","758-1",2022-10-27,"Urban","20-29y","Male",2,"[0,2]","Semiskilled / skilled labor","Primary school",6,4,2.5,1,1,0,0,0,0,0,0,0,0,0,0
+"918","759-1",2022-10-27,"Urban","1-4y","Female",2,"[0,2]","Unemployed outside home","None",6,6,5.5,1,1,0,0,1,1,0,0,1,1,0,0
+"919","760-1",2022-10-27,"Urban","5-9y","Female",4,"(2,5]","Unemployed outside home","Currently enrolled in school",8,8,7.5,1,1,1,1,1,1,1,1,1,1,1,1
+"920","761-1",2022-10-27,"Urban","10-19y","Female",4,"(2,5]","Student","Currently enrolled in school",5,5,5,0,0,0,0,1,1,0,0,0,0,0,0
+"921","762-1",2022-10-27,"Urban","20-29y","Female",4,"(2,5]","Semiskilled / skilled labor","Primary school",5.5,5,5,1,0,0,0,1,1,0,0,0,0,0,0
+"922","764-1",2022-10-27,"Urban","10-19y","Male",3,"(2,5]","Student","Currently enrolled in school",5.5,5.5,4.5,1,0,0,0,0,0,0,0,1,0,0,0
+"923","765-1",2022-10-27,"Urban","10-19y","Female",3,"(2,5]","Student","Currently enrolled in school",5,5,4,0,0,0,0,0,0,0,0,0,0,0,0
+"924","766-1",2022-10-27,"Urban","1-4y","Male",3,"(2,5]","Unemployed outside home","None",5.5,5.5,4,1,0,0,0,0,0,0,0,1,0,0,0
+"925","767-1",2022-10-28,"Urban","5-9y","Female",3,"(2,5]","Unemployed outside home",NA,4.5,5,4.5,0,0,0,0,0,0,0,0,0,0,0,0
+"926","768-1",2022-10-28,"Urban","60+y","Female",2,"[0,2]","Unemployed outside home","None",6,4,3,1,1,0,0,0,0,0,0,0,0,0,0
+"927","769-1",2022-10-28,"Urban","60+y","Female",2,"[0,2]","Unemployed outside home","None",6,6,6,1,1,0,0,1,1,0,0,1,1,0,0
+"928","770-1",2022-10-28,"Urban","60+y","Male",2,"[0,2]","Semiskilled / skilled labor","None",4.5,6.5,4.5,0,0,0,0,0,0,0,0,1,1,0,0
+"929","771-1",2022-10-28,"Urban","1-4y","Female",3,"(2,5]","Unemployed outside home","None",6.5,7,6,1,1,0,0,1,1,0,0,1,1,1,0
+"930","773-1",2022-10-28,"Urban","10-19y","Male",5,"(2,5]","Student","Currently enrolled in school",8.5,8.5,6.5,1,1,1,1,1,1,1,0,1,1,1,1
+"931","775-1",2022-10-28,"Urban","60+y","Female",2,"[0,2]","Unemployed outside home","None",4,4,1,0,0,0,0,0,0,0,0,0,0,0,0
+"932","779-1",2022-10-31,"Urban","1-4y","Female",3,"(2,5]","Unemployed outside home","None",6,6,5,1,1,0,0,1,1,0,0,1,1,0,0
+"933","781-1",2022-10-31,"Urban","5-9y","Female",3,"(2,5]","Unemployed outside home",NA,6,6,4.5,1,1,0,0,0,0,0,0,1,1,0,0
+"934","783-1",2022-10-31,"Urban","60+y","Female",1,"[0,2]","Unemployed outside home","None",1,6,1,0,0,0,0,0,0,0,0,1,1,0,0
+"935","784-1",2022-10-31,"Urban","20-29y","Female",6,"(5,50]","Unemployed outside home","Primary school",6.5,5,5,1,1,0,0,1,1,0,0,0,0,0,0
+"936","785-1",2022-10-31,"Urban","60+y","Female",1,"[0,2]","Unemployed outside home","None",0.5,0.5,0.5,0,0,0,0,0,0,0,0,0,0,0,0
+"937","786-1",2022-10-31,"Urban","20-29y","Female",5,"(2,5]","Semiskilled / skilled labor","Some college or higher",4.5,6,4,0,0,0,0,0,0,0,0,1,1,0,0
+"938","787-1",2022-10-31,"Urban","5-9y","Male",8,"(5,50]","Unemployed outside home","Currently enrolled in school",12,12,12,1,1,1,1,1,1,1,1,1,1,1,1
+"939","788-1",2022-11-02,"Urban","1-4y","Male",3,"(2,5]","Unemployed outside home","None",5,5,3.5,0,0,0,0,0,0,0,0,0,0,0,0
+"940","789-1",2022-11-02,"Urban","10-19y","Female",4,"(2,5]","Student","Currently enrolled in school",6.5,8,5.5,1,1,0,0,1,1,0,0,1,1,1,1
+"941","791-1",2022-11-02,"Urban","1-4y","Male",3,"(2,5]","Unemployed outside home","None",6,6,5.5,1,1,0,0,1,1,0,0,1,1,0,0
+"942","792-1",2022-11-02,"Urban","60+y","Female",2,"[0,2]","Unemployed outside home","None",5,4.5,4,0,0,0,0,0,0,0,0,0,0,0,0
+"943","793-1",2022-11-02,"Urban","20-29y","Male",1,"[0,2]","Semiskilled / skilled labor","None",7,7,2,1,1,1,0,0,0,0,0,1,1,1,0
+"944","794-1",2022-11-02,"Urban","1-4y","Male",4,"(2,5]","Unemployed outside home","None",7,7,7,1,1,1,0,1,1,1,0,1,1,1,0
+"945","795-1",2022-11-02,"Urban","10-19y","Male",4,"(2,5]","Student","Currently enrolled in school",4.5,4.5,4.5,0,0,0,0,0,0,0,0,0,0,0,0
+"946","796-1",2022-11-02,"Urban","5-9y","Male",4,"(2,5]","Unemployed outside home",NA,6,7,3.5,1,1,0,0,0,0,0,0,1,1,1,0
+"947","798-1",2022-11-03,"Urban","1-4y","Female",4,"(2,5]","Unemployed outside home","None",6.5,6.5,3.5,1,1,0,0,0,0,0,0,1,1,0,0
+"948","803-1",2022-11-03,"Urban","10-19y","Male",3,"(2,5]","Student","Currently enrolled in school",5.5,6,3,1,0,0,0,0,0,0,0,1,1,0,0
+"949","804-1",2022-11-03,"Urban","10-19y","Female",4,"(2,5]","Student","Currently enrolled in school",5.5,5.5,4,1,0,0,0,0,0,0,0,1,0,0,0
+"950","805-1",2022-11-03,"Urban","10-19y","Male",6,"(5,50]","Student","Currently enrolled in school",5,5,5,0,0,0,0,1,1,0,0,0,0,0,0
+"951","806-1",2022-11-04,"Urban","10-19y","Male",3,"(2,5]","Student","Currently enrolled in school",6.5,6.5,6,1,1,0,0,1,1,0,0,1,1,0,0
+"952","808-1",2022-11-04,"Urban","1-4y","Female",2,"[0,2]","Unemployed outside home","None",1,1.5,1,0,0,0,0,0,0,0,0,0,0,0,0
+"953","809-1",2022-11-04,"Urban","1-4y","Male",6,"(5,50]","Unemployed outside home","None",6.5,6.5,5.5,1,1,0,0,1,1,0,0,1,1,0,0
+"954","810-1",2022-11-07,"Urban","1-4y","Male",4,"(2,5]","Unemployed outside home","None",5,5,5,0,0,0,0,1,1,0,0,0,0,0,0
+"955","811-1",2022-11-07,"Urban","10-19y","Female",3,"(2,5]","Student","Currently enrolled in school",5.5,7,2,1,0,0,0,0,0,0,0,1,1,1,0
+"956","813-1",2022-11-07,"Urban","1-4y","Female",3,"(2,5]","Unemployed outside home","None",5.5,7,3,1,0,0,0,0,0,0,0,1,1,1,0
+"957","814-1",2022-11-04,"Urban","10-19y","Female",4,"(2,5]","Student","Currently enrolled in school",6.5,6.5,4.5,1,1,0,0,0,0,0,0,1,1,0,0
+"958","815-1",2022-11-04,"Urban","1-4y","Male",5,"(2,5]","Unemployed outside home","None",6,6,6,1,1,0,0,1,1,0,0,1,1,0,0
+"959","816-1",2022-11-07,"Urban","30-39y","Female",3,"(2,5]","Unemployed outside home","Secondary school",4.5,6,2.5,0,0,0,0,0,0,0,0,1,1,0,0
+"960","819-1",2022-11-07,"Urban","1-4y","Female",7,"(5,50]","Unemployed outside home","None",7.5,7.5,7.5,1,1,1,0,1,1,1,1,1,1,1,0
+"961","820-1",2022-11-07,"Urban","1-4y","Female",7,"(5,50]","Unemployed outside home","None",7,7,7,1,1,1,0,1,1,1,0,1,1,1,0
+"962","821-1",2022-11-08,"Urban","30-39y","Female",3,"(2,5]","Unemployed outside home","Primary school",5,5,4,0,0,0,0,0,0,0,0,0,0,0,0
+"963","822-1",2022-11-08,"Urban","1-4y","Male",2,"[0,2]","Unemployed outside home","None",6,7,4,1,1,0,0,0,0,0,0,1,1,1,0
+"964","823-1",2022-11-08,"Urban","1-4y","Male",3,"(2,5]","Unemployed outside home","None",7,7,7,1,1,1,0,1,1,1,0,1,1,1,0
+"965","826-1",2022-11-08,"Urban","5-9y","Female",4,"(2,5]","Unemployed outside home","Currently enrolled in school",4,4.5,3.5,0,0,0,0,0,0,0,0,0,0,0,0
+"966","827-1",2022-11-08,"Urban","1-4y","Male",13,"(5,50]","Unemployed outside home","None",14,14,14,1,1,1,1,1,1,1,1,1,1,1,1
+"967","828-1",2022-11-08,"Urban","10-19y","Male",7,"(5,50]","Student","Currently enrolled in school",6.5,6,6,1,1,0,0,1,1,0,0,1,1,0,0
+"968","829-1",2022-11-08,"Urban","30-39y","Female",3,"(2,5]","Unemployed outside home","Some college or higher",3.5,5,2.5,0,0,0,0,0,0,0,0,0,0,0,0
+"969","830-1",2022-11-09,"Urban","10-19y","Female",7,"(5,50]","Student","Currently enrolled in school",8,8,8,1,1,1,1,1,1,1,1,1,1,1,1
+"970","831-1",2022-11-09,"Urban","5-9y","Male",4,"(2,5]","Unemployed outside home",NA,6,6,3,1,1,0,0,0,0,0,0,1,1,0,0
+"971","833-1",2022-11-09,"Urban","30-39y","Female",3,"(2,5]","Unemployed outside home","Secondary school",3,6,2,0,0,0,0,0,0,0,0,1,1,0,0
+"972","835-1",2022-11-09,"Urban","5-9y","Male",4,"(2,5]","Unemployed outside home","Currently enrolled in school",6.5,7,3.5,1,1,0,0,0,0,0,0,1,1,1,0
+"973","837-1",2022-11-09,"Urban","5-9y","Female",4,"(2,5]","Unemployed outside home",NA,5.5,5.5,5.5,1,0,0,0,1,1,0,0,1,0,0,0
+"974","838-1",2022-11-09,"Urban","10-19y","Female",5,"(2,5]","Student","Currently enrolled in school",5,6,5,0,0,0,0,1,1,0,0,1,1,0,0
+"975","840-1",2022-11-10,"Urban","30-39y","Female",3,"(2,5]","Unemployed outside home","Primary school",2.5,2.5,2.5,0,0,0,0,0,0,0,0,0,0,0,0
+"976","841-1",2022-11-10,"Urban","10-19y","Female",8,"(5,50]","Student","Currently enrolled in school",9,9,9,1,1,1,1,1,1,1,1,1,1,1,1
+"977","844-1",2022-11-10,"Urban","10-19y","Female",3,"(2,5]","Unemployed outside home","Primary school",3,3.5,2.5,0,0,0,0,0,0,0,0,0,0,0,0
+"978","845-1",2022-11-10,"Urban","5-9y","Female",4,"(2,5]","Unemployed outside home",NA,7,7,7,1,1,1,0,1,1,1,0,1,1,1,0
+"979","847-1",2022-11-10,"Urban","10-19y","Female",3,"(2,5]","Student","Secondary school",6,5.5,5.5,1,1,0,0,1,1,0,0,1,0,0,0
+"980","848-1",2022-11-11,"Urban","10-19y","Female",2,"[0,2]","Student","Currently enrolled in school",1.5,1,1,0,0,0,0,0,0,0,0,0,0,0,0
+"981","849-1",2022-11-11,"Urban","30-39y","Male",4,"(2,5]","Student","Currently enrolled in school",3,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+"982","851-1",2022-11-11,"Urban","10-19y","Female",2,"[0,2]","Semiprofessional / professional","Currently enrolled in school",2,6,1,0,0,0,0,0,0,0,0,1,1,0,0
+"983","852-1",2022-11-11,"Urban","10-19y","Female",2,"[0,2]","Unemployed outside home","Secondary school",5,5,4,0,0,0,0,0,0,0,0,0,0,0,0
+"984","853-1",2022-11-11,"Urban","5-9y","Male",4,"(2,5]","Unemployed outside home","Currently enrolled in school",3,6,3,0,0,0,0,0,0,0,0,1,1,0,0
+"985","854-1",2022-11-11,"Urban","30-39y","Female",2,"[0,2]","Unemployed outside home","Primary school",8,6,4.5,1,1,1,1,0,0,0,0,1,1,0,0
+"986","855-1",2022-11-11,"Urban","10-19y","Female",5,"(2,5]","Student","Currently enrolled in school",7,5.5,5.5,1,1,1,0,1,1,0,0,1,0,0,0
+"987","857-1",2022-11-15,"Urban","5-9y","Female",4,"(2,5]","Unemployed outside home",NA,6,6,6,1,1,0,0,1,1,0,0,1,1,0,0
+"988","859-1",2022-11-15,"Urban","10-19y","Female",5,"(2,5]","Student","Currently enrolled in school",5.5,5.5,4.5,1,0,0,0,0,0,0,0,1,0,0,0
+"989","860-1",2022-11-17,"Urban","5-9y","Female",5,"(2,5]","Unemployed outside home","None",5,5,5,0,0,0,0,1,1,0,0,0,0,0,0
+"990","861-1",2022-11-15,"Urban","5-9y","Male",3,"(2,5]","Unemployed outside home",NA,7,7,2,1,1,1,0,0,0,0,0,1,1,1,0
+"991","863-1",2022-11-15,"Urban","5-9y","Male",5,"(2,5]","Unemployed outside home",NA,7,7,6,1,1,1,0,1,1,0,0,1,1,1,0
+"992","865-1",2022-11-21,"Urban","5-9y","Female",4,"(2,5]","Unemployed outside home",NA,6,6,4,1,1,0,0,0,0,0,0,1,1,0,0
+"993","866-1",2022-11-21,"Urban","30-39y","Female",3,"(2,5]","Unemployed outside home","None",2,4,2,0,0,0,0,0,0,0,0,0,0,0,0
+"994","867-1",2022-11-21,"Urban","30-39y","Female",3,"(2,5]","Unemployed outside home","Primary school",4.5,2,2,0,0,0,0,0,0,0,0,0,0,0,0
+"995","868-1",2022-11-15,"Urban","10-19y","Male",5,"(2,5]","Student","Currently enrolled in school",7.5,7.5,7,1,1,1,0,1,1,1,0,1,1,1,0
+"996","869-1",2022-11-15,"Urban","10-19y","Female",4,"(2,5]","Student","None",5.5,6,4.5,1,0,0,0,0,0,0,0,1,1,0,0
+"997","872-1",2022-11-21,"Urban","10-19y","Female",8,"(5,50]","Student","Currently enrolled in school",7.5,7.5,7,1,1,1,0,1,1,1,0,1,1,1,0
+"998","874-1",2022-11-21,"Urban","5-9y","Male",6,"(5,50]","Unemployed outside home","Currently enrolled in school",5,7,5,0,0,0,0,1,1,0,0,1,1,1,0
+"999","875-1",2022-11-21,"Urban","10-19y","Female",3,"(2,5]","Student","Currently enrolled in school",5,5,3.5,0,0,0,0,0,0,0,0,0,0,0,0
+"1000","876-1",2022-11-21,"Urban","30-39y","Female",3,"(2,5]","Unemployed outside home","Primary school",6.5,4.5,4.5,1,1,0,0,0,0,0,0,0,0,0,0
+"1001","877-1",2022-11-21,"Urban","10-19y","Female",4,"(2,5]","Student","None",5,7,2,0,0,0,0,0,0,0,0,1,1,1,0
+"1002","878-1",2022-11-22,"Urban","10-19y","Male",3,"(2,5]","Student","Primary school",6,6,3,1,1,0,0,0,0,0,0,1,1,0,0
+"1003","879-1",2022-11-22,"Urban","10-19y","Female",3,"(2,5]","Student","Primary school",5,5.5,3,0,0,0,0,0,0,0,0,1,0,0,0
+"1004","880-1",2022-11-22,"Urban","10-19y","Female",2,"[0,2]","Student","Currently enrolled in school",5.5,5,4.5,1,0,0,0,0,0,0,0,0,0,0,0
+"1005","881-1",2022-11-22,"Urban","5-9y","Male",3,"(2,5]","Unemployed outside home","Currently enrolled in school",3.5,4.5,3,0,0,0,0,0,0,0,0,0,0,0,0
+"1006","882-1",2022-11-22,"Urban","5-9y","Female",3,"(2,5]","Unemployed outside home",NA,3,3,2,0,0,0,0,0,0,0,0,0,0,0,0
+"1007","883-1",2022-11-22,"Urban","10-19y","Female",4,"(2,5]","Student","Currently enrolled in school",5.5,6.5,5,1,0,0,0,1,1,0,0,1,1,0,0
+"1008","884-1",2022-11-22,"Urban","10-19y","Female",6,"(5,50]","Student","Currently enrolled in school",8,8,6.5,1,1,1,1,1,1,1,0,1,1,1,1
+"1009","885-1",2022-11-22,"Urban","10-19y","Female",5,"(2,5]","Student","Currently enrolled in school",5.5,4,4,1,0,0,0,0,0,0,0,0,0,0,0
+"1010","886-1",2022-11-22,"Urban","10-19y","Female",3,"(2,5]","Student","Currently enrolled in school",3.5,6,3.5,0,0,0,0,0,0,0,0,1,1,0,0
+"1011","888-1",2022-11-22,"Urban","10-19y","Female",3,"(2,5]","Student","Currently enrolled in school",2,6,2,0,0,0,0,0,0,0,0,1,1,0,0
+"1012","889-1",2022-11-22,"Urban","10-19y","Female",3,"(2,5]","Student","Currently enrolled in school",6,6,6,1,1,0,0,1,1,0,0,1,1,0,0
+"1013","890-1",2022-11-23,"Urban","30-39y","Female",4,"(2,5]","Semiprofessional / professional","Some college or higher",3,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+"1014","891-1",2022-11-23,"Urban","10-19y","Male",4,"(2,5]","Student","Currently enrolled in school",6.5,6.5,5.5,1,1,0,0,1,1,0,0,1,1,0,0
+"1015","892-1",2022-11-23,"Urban","10-19y","Female",3,"(2,5]","Student","Currently enrolled in school",4,4.5,4,0,0,0,0,0,0,0,0,0,0,0,0
+"1016","893-1",2022-11-23,"Urban","30-39y","Male",4,"(2,5]","Semiskilled / skilled labor","Secondary school",6.5,5,5,1,1,0,0,1,1,0,0,0,0,0,0
+"1017","895-1",2022-11-23,"Urban","30-39y","Female",4,"(2,5]","Unemployed outside home","Primary school",6.5,5.5,5.5,1,1,0,0,1,1,0,0,1,0,0,0
+"1018","896-1",2022-11-23,"Urban","5-9y","Female",3,"(2,5]","Unemployed outside home","Currently enrolled in school",2,5.5,2,0,0,0,0,0,0,0,0,1,0,0,0
+"1019","897-1",2022-11-23,"Urban","10-19y","Female",2,"[0,2]","Student","Currently enrolled in school",2,6,2,0,0,0,0,0,0,0,0,1,1,0,0
+"1020","898-1",2022-11-23,"Urban","30-39y","Female",2,"[0,2]","Unemployed outside home","Primary school",4.5,5,4.5,0,0,0,0,0,0,0,0,0,0,0,0
+"1021","899-1",2022-11-24,"Urban","10-19y","Male",5,"(2,5]","Student","Currently enrolled in school",7.5,7,3,1,1,1,0,0,0,0,0,1,1,1,0
+"1022","900-1",2022-11-24,"Urban","5-9y","Female",2,"[0,2]","Unemployed outside home",NA,1,4,1,0,0,0,0,0,0,0,0,0,0,0,0
+"1023","901-1",2022-11-24,"Urban","10-19y","Female",5,"(2,5]","Student","Currently enrolled in school",8,8,7,1,1,1,1,1,1,1,0,1,1,1,1
+"1024","902-1",2022-11-24,"Urban","30-39y","Male",5,"(2,5]","Semiskilled / skilled labor","None",5,5,4.5,0,0,0,0,0,0,0,0,0,0,0,0
+"1025","903-1",2022-11-24,"Urban","10-19y","Male",3,"(2,5]","Student","Currently enrolled in school",3,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+"1026","904-1",2022-11-24,"Urban","10-19y","Male",3,"(2,5]","Student","Currently enrolled in school",3,3.5,2,0,0,0,0,0,0,0,0,0,0,0,0
+"1027","905-1",2022-11-24,"Urban","10-19y","Female",2,"[0,2]","Unemployed outside home","Primary school",6,6,6,1,1,0,0,1,1,0,0,1,1,0,0
+"1028","906-1",2022-11-24,"Urban","10-19y","Female",5,"(2,5]","Student","Currently enrolled in school",7,6.5,4.5,1,1,1,0,0,0,0,0,1,1,0,0
+"1029","907-1",2022-11-24,"Urban","5-9y","Male",4,"(2,5]","Unemployed outside home","Currently enrolled in school",7,7,7,1,1,1,0,1,1,1,0,1,1,1,0
+"1030","908-1",2022-11-25,"Urban","5-9y","Male",4,"(2,5]","Unemployed outside home","Currently enrolled in school",5,5,5,0,0,0,0,1,1,0,0,0,0,0,0
+"1031","911-1",2022-11-28,"Urban","5-9y","Male",7,"(5,50]","Unemployed outside home",NA,5.5,5.5,5.5,1,0,0,0,1,1,0,0,1,0,0,0
+"1032","912-1",2022-11-28,"Urban","30-39y","Female",3,"(2,5]","Semiprofessional / professional","Secondary school",2,2,2,0,0,0,0,0,0,0,0,0,0,0,0
+"1033","913-1",2022-11-28,"Urban","5-9y","Female",4,"(2,5]","Unemployed outside home",NA,6,6,4,1,1,0,0,0,0,0,0,1,1,0,0
+"1034","914-1",2022-11-25,"Urban","5-9y","Male",4,"(2,5]","Unemployed outside home",NA,6.5,6.5,5,1,1,0,0,1,1,0,0,1,1,0,0
+"1035","917-1",2022-11-28,"Urban","10-19y","Male",2,"[0,2]","Student","Primary school",5.5,6,3,1,0,0,0,0,0,0,0,1,1,0,0
+"1036","918-1",2022-11-28,"Urban","5-9y","Female",2,"[0,2]","Unemployed outside home","None",4.5,5,4,0,0,0,0,0,0,0,0,0,0,0,0
+"1037","919-1",2022-11-28,"Urban","5-9y","Male",3,"(2,5]","Unemployed outside home",NA,5,4.5,4.5,0,0,0,0,0,0,0,0,0,0,0,0
+"1038","920-1",2022-11-25,"Urban","10-19y","Male",3,"(2,5]","Student","Currently enrolled in school",3,5.5,3,0,0,0,0,0,0,0,0,1,0,0,0
+"1039","921-1",2022-11-25,"Urban","5-9y","Male",4,"(2,5]","Unemployed outside home","Currently enrolled in school",7.5,7.5,3.5,1,1,1,0,0,0,0,0,1,1,1,0
+"1040","922-1",2022-11-25,"Urban","5-9y","Male",5,"(2,5]","Unemployed outside home","Currently enrolled in school",7,7,7,1,1,1,0,1,1,1,0,1,1,1,0
+"1041","923-1",2022-11-28,"Urban","10-19y","Female",3,"(2,5]","Student","Currently enrolled in school",7,5.5,5.5,1,1,1,0,1,1,0,0,1,0,0,0
+"1042","924-1",2022-11-28,"Urban","5-9y","Female",2,"[0,2]","Unemployed outside home","Currently enrolled in school",5,5,5,0,0,0,0,1,1,0,0,0,0,0,0
+"1043","925-1",2022-11-28,"Urban","5-9y","Female",2,"[0,2]","Unemployed outside home","Currently enrolled in school",8,8,3.5,1,1,1,1,0,0,0,0,1,1,1,1
+"1044","926-1",2022-11-29,"Urban","5-9y","Female",2,"[0,2]","Unemployed outside home",NA,6,6,4,1,1,0,0,0,0,0,0,1,1,0,0
+"1045","927-1",2022-11-29,"Urban","5-9y","Male",3,"(2,5]","Unemployed outside home","Currently enrolled in school",8.5,9,3,1,1,1,1,0,0,0,0,1,1,1,1
+"1046","928-1",2022-11-29,"Urban","10-19y","Male",3,"(2,5]","Student","Currently enrolled in school",2,5,2,0,0,0,0,0,0,0,0,0,0,0,0
+"1047","929-1",2022-11-29,"Urban","10-19y","Female",5,"(2,5]","Student","Currently enrolled in school",5.5,6.5,5.5,1,0,0,0,1,1,0,0,1,1,0,0
+"1048","930-1",2022-11-29,"Urban","10-19y","Male",4,"(2,5]","Student","Currently enrolled in school",6,6,4,1,1,0,0,0,0,0,0,1,1,0,0
+"1049","931-1",2022-11-29,"Urban","5-9y","Male",5,"(2,5]","Unemployed outside home","Currently enrolled in school",6,6,6,1,1,0,0,1,1,0,0,1,1,0,0
+"1050","933-1",2022-11-30,"Urban","10-19y","Female",3,"(2,5]","Student","Currently enrolled in school",2,2,2,0,0,0,0,0,0,0,0,0,0,0,0
+"1051","935-1",2022-11-29,"Urban","10-19y","Female",5,"(2,5]","Student","Primary school",6,6,4.5,1,1,0,0,0,0,0,0,1,1,0,0
+"1052","936-1",2022-11-29,"Urban","5-9y","Female",4,"(2,5]","Unemployed outside home","Currently enrolled in school",6,6,5.5,1,1,0,0,1,1,0,0,1,1,0,0
+"1053","938-1",2022-11-30,"Urban","5-9y","Female",3,"(2,5]","Unemployed outside home","Currently enrolled in school",5.5,6,3.5,1,0,0,0,0,0,0,0,1,1,0,0
+"1054","939-1",2022-11-30,"Urban","10-19y","Female",4,"(2,5]","Student","Currently enrolled in school",4,5.5,3.5,0,0,0,0,0,0,0,0,1,0,0,0
+"1055","940-1",2022-11-30,"Urban","10-19y","Female",4,"(2,5]","Student","Currently enrolled in school",4,4.5,3.5,0,0,0,0,0,0,0,0,0,0,0,0
+"1056","954-1",2022-12-01,"Urban","5-9y","Male",4,"(2,5]","Unemployed outside home",NA,3,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+"1057","955-1",2022-12-01,"Urban","5-9y","Male",3,"(2,5]","Unemployed outside home","Currently enrolled in school",7,5,3,1,1,1,0,0,0,0,0,0,0,0,0
+"1058","961-1",2022-12-06,"Urban","1-4y","Female",7,"(5,50]","Unemployed outside home","None",6.5,6.5,6.5,1,1,0,0,1,1,1,0,1,1,0,0
+"1059","963-1",2022-12-06,"Urban","1-4y","Female",2,"[0,2]","Unemployed outside home","None",3,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+"1060","972-1",2022-11-30,"Urban","5-9y","Female",2,"[0,2]","Unemployed outside home",NA,3,7,1.5,0,0,0,0,0,0,0,0,1,1,1,0
+"1061","973-1",2022-11-30,"Urban","10-19y","Female",3,"(2,5]","Student","Currently enrolled in school",6.5,6.5,6.5,1,1,0,0,1,1,1,0,1,1,0,0
+"1062","974-1",2022-11-30,"Urban","10-19y","Female",4,"(2,5]","Student","Currently enrolled in school",3,6,3,0,0,0,0,0,0,0,0,1,1,0,0
+"1063","992-1",2022-12-08,"Urban","10-19y","Female",4,"(2,5]","Student","Currently enrolled in school",4.5,5,3.5,0,0,0,0,0,0,0,0,0,0,0,0
+"1064","994-1",2022-12-08,"Urban","5-9y","Female",6,"(5,50]","Unemployed outside home","Currently enrolled in school",6,6,6,1,1,0,0,1,1,0,0,1,1,0,0
+"1065","995-1",2022-12-08,"Urban","10-19y","Female",5,"(2,5]","Student","Currently enrolled in school",5,4.5,4,0,0,0,0,0,0,0,0,0,0,0,0
+"1066","1008-1",2022-12-12,"Rural","1-4y","Female",5,"(2,5]","Unemployed outside home","None",5.5,5.5,5,1,0,0,0,1,1,0,0,1,0,0,0
+"1067","1013-1",2022-12-08,"Urban","10-19y","Male",5,"(2,5]","Student","Currently enrolled in school",4,6,4,0,0,0,0,0,0,0,0,1,1,0,0
+"1068","1020-1",2022-12-13,"Rural","1-4y","Male",6,"(5,50]","Unemployed outside home","None",5.5,5.5,5.5,1,0,0,0,1,1,0,0,1,0,0,0
+"1069","5-2",2022-03-07,"Rural","1-4y","Male",1,"[0,2]","Unemployed outside home","None",7,7,7,1,1,1,0,1,1,1,0,1,1,1,0
+"1070","20-2",2022-03-07,"Rural","1-4y","Female",7,"(5,50]","Unemployed outside home","None",7,7,7,1,1,1,0,1,1,1,0,1,1,1,0
+"1071","31-2",2022-03-28,"Rural","1-4y","Female",2,"[0,2]","Unemployed outside home","None",6.5,7,6,1,1,0,0,1,1,0,0,1,1,1,0
+"1072","39-2",2022-03-28,"Rural","1-4y","Male",3,"(2,5]","Unemployed outside home","None",7,5,5,1,1,1,0,1,1,0,0,0,0,0,0
+"1073","42-2",2022-03-30,"Rural","1-4y","Female",3,"(2,5]","Unemployed outside home","None",9,8,4.5,1,1,1,1,0,0,0,0,1,1,1,1
+"1074","51-2",2022-04-06,"Rural","1-4y","Female",9,"(5,50]","Unemployed outside home","None",8,8,8,1,1,1,1,1,1,1,1,1,1,1,1
+"1075","54-2",2022-04-06,"Rural","1-4y","Female",3,"(2,5]","Unemployed outside home","None",5,5,5,0,0,0,0,1,1,0,0,0,0,0,0
+"1076","64-2",2022-04-06,"Rural","1-4y","Female",2,"[0,2]","Unemployed outside home","None",6,6.5,5.5,1,1,0,0,1,1,0,0,1,1,0,0
+"1077","67-2",2022-04-06,"Rural","1-4y","Male",3,"(2,5]","Unemployed outside home","None",6.5,6.5,6.5,1,1,0,0,1,1,1,0,1,1,0,0
+"1078","70-2",2022-04-18,"Rural","1-4y","Male",3,"(2,5]","Unemployed outside home","None",3.5,6,3,0,0,0,0,0,0,0,0,1,1,0,0
+"1079","74-2",2022-04-19,"Rural","1-4y","Male",4,"(2,5]","Unemployed outside home","None",8.5,9,7.5,1,1,1,1,1,1,1,1,1,1,1,1
+"1080","76-2",2022-04-19,"Rural","1-4y","Female",2,"[0,2]","Unemployed outside home","None",3.5,5.5,3,0,0,0,0,0,0,0,0,1,0,0,0
+"1081","78-2",2022-04-22,"Rural","1-4y","Male",2,"[0,2]","Unemployed outside home","None",3,4,2,0,0,0,0,0,0,0,0,0,0,0,0
+"1082","82-2",2022-04-22,"Rural","1-4y","Female",2,"[0,2]","Unemployed outside home","None",6.5,6.5,6.5,1,1,0,0,1,1,1,0,1,1,0,0
+"1083","90-2",2022-05-03,"Rural","1-4y","Female",2,"[0,2]","Unemployed outside home","None",6,6,4.5,1,1,0,0,0,0,0,0,1,1,0,0
+"1084","94-2",2022-05-05,"Rural","1-4y","Female",4,"(2,5]","Unemployed outside home","None",5.5,5,5,1,0,0,0,1,1,0,0,0,0,0,0
+"1085","105-2",2022-05-06,"Rural","1-4y","Male",3,"(2,5]","Unemployed outside home","None",6,6,6,1,1,0,0,1,1,0,0,1,1,0,0
+"1086","111-2",2022-05-09,"Rural","1-4y","Male",2,"[0,2]","Unemployed outside home","None",3.5,3.5,3.5,0,0,0,0,0,0,0,0,0,0,0,0
+"1087","117-2",2022-05-11,"Rural","1-4y","Male",3,"(2,5]","Unemployed outside home","None",7,7,7,1,1,1,0,1,1,1,0,1,1,1,0
+"1088","119-2",2022-05-11,"Rural","1-4y","Male",2,"[0,2]","Unemployed outside home","None",5.5,5,5,1,0,0,0,1,1,0,0,0,0,0,0
+"1089","126-2",2022-05-12,"Rural","1-4y","Male",2,"[0,2]","Unemployed outside home","None",6.5,7,6.5,1,1,0,0,1,1,1,0,1,1,1,0
+"1090","134-2",2022-05-13,"Rural","1-4y","Male",3,"(2,5]","Unemployed outside home","None",8,8,7,1,1,1,1,1,1,1,0,1,1,1,1
+"1091","137-2",2022-05-11,"Rural","1-4y","Female",3,"(2,5]","Unemployed outside home","None",4,4.5,4,0,0,0,0,0,0,0,0,0,0,0,0
+"1092","149-2",2022-05-23,"Urban","1-4y","Female",2,"[0,2]","Unemployed outside home","None",5.5,5.5,5.5,1,0,0,0,1,1,0,0,1,0,0,0
+"1093","152-2",2022-05-24,"Urban","1-4y","Male",3,"(2,5]","Unemployed outside home","None",5,4.5,4,0,0,0,0,0,0,0,0,0,0,0,0
+"1094","155-2",2022-05-24,"Urban","1-4y","Female",3,"(2,5]","Unemployed outside home","None",2,2,2,0,0,0,0,0,0,0,0,0,0,0,0
+"1095","158-2",2022-05-25,"Urban","1-4y","Male",3,"(2,5]","Unemployed outside home","None",5.5,5.5,5.5,1,0,0,0,1,1,0,0,1,0,0,0
+"1096","160-2",2022-06-03,"Urban","1-4y","Female",2,"[0,2]","Unemployed outside home","None",6.5,6.5,6.5,1,1,0,0,1,1,1,0,1,1,0,0
+"1097","163-2",2022-06-07,"Urban","1-4y","Female",3,"(2,5]","Unemployed outside home","None",6.5,6.5,6.5,1,1,0,0,1,1,1,0,1,1,0,0
+"1098","167-2",2022-06-07,"Urban","1-4y","Male",4,"(2,5]","Unemployed outside home","None",7.5,7,5.5,1,1,1,0,1,1,0,0,1,1,1,0
+"1099","170-2",2022-06-07,"Urban","1-4y","Female",3,"(2,5]","Unemployed outside home","None",7,7,7,1,1,1,0,1,1,1,0,1,1,1,0
+"1100","173-2",2022-06-07,"Urban","1-4y","Male",3,"(2,5]","Unemployed outside home","None",5.5,6.5,5.5,1,0,0,0,1,1,0,0,1,1,0,0
+"1101","175-2",2022-06-07,"Urban","1-4y","Male",2,"[0,2]","Unemployed outside home","None",7,7,6.5,1,1,1,0,1,1,1,0,1,1,1,0
+"1102","180-2",2022-06-09,"Urban","1-4y","Female",2,"[0,2]","Unemployed outside home","None",7.5,7.5,7.5,1,1,1,0,1,1,1,1,1,1,1,0
+"1103","182-2",2022-06-09,"Urban","1-4y","Female",2,"[0,2]","Unemployed outside home","None",6,7,5.5,1,1,0,0,1,1,0,0,1,1,1,0
+"1104","184-2",2022-06-15,"Urban","1-4y","Male",2,"[0,2]","Unemployed outside home","None",2,2,2,0,0,0,0,0,0,0,0,0,0,0,0
+"1105","187-2",2022-06-15,"Urban","1-4y","Female",3,"(2,5]","Unemployed outside home","None",5.5,5.5,3.5,1,0,0,0,0,0,0,0,1,0,0,0
+"1106","189-2",2022-06-16,"Urban","1-4y","Female",2,"[0,2]","Unemployed outside home","None",2.5,3.5,2.5,0,0,0,0,0,0,0,0,0,0,0,0
+"1107","193-2",2022-06-16,"Urban","1-4y","Female",4,"(2,5]","Unemployed outside home","None",5,4,4,0,0,0,0,0,0,0,0,0,0,0,0
+"1108","196-2",2022-06-20,"Urban","1-4y","Male",3,"(2,5]","Unemployed outside home","None",6,6,2,1,1,0,0,0,0,0,0,1,1,0,0
+"1109","203-2",2022-06-23,"Urban","1-4y","Female",2,"[0,2]","Unemployed outside home","None",6,5.5,5.5,1,1,0,0,1,1,0,0,1,0,0,0
+"1110","205-2",2022-06-27,"Urban","1-4y","Female",2,"[0,2]","Unemployed outside home","None",5.5,5.5,4.5,1,0,0,0,0,0,0,0,1,0,0,0
+"1111","208-2",2022-06-27,"Urban","1-4y","Male",3,"(2,5]","Unemployed outside home","None",7,6.5,6,1,1,1,0,1,1,0,0,1,1,0,0
+"1112","211-2",2022-06-27,"Urban","1-4y","Male",3,"(2,5]","Unemployed outside home","None",9,9,9,1,1,1,1,1,1,1,1,1,1,1,1
+"1113","213-2",2022-07-07,"Urban","1-4y","Male",2,"[0,2]","Unemployed outside home","None",7,6.5,5.5,1,1,1,0,1,1,0,0,1,1,0,0
+"1114","215-2",2022-07-07,"Urban","1-4y","Male",2,"[0,2]","Unemployed outside home","None",4,4.5,2,0,0,0,0,0,0,0,0,0,0,0,0
+"1115","217-2",2022-07-08,"Urban","1-4y","Female",2,"[0,2]","Unemployed outside home","None",3,3.5,3,0,0,0,0,0,0,0,0,0,0,0,0
+"1116","222-2",2022-07-11,"Urban","1-4y","Male",2,"[0,2]","Unemployed outside home","None",3.5,2,2,0,0,0,0,0,0,0,0,0,0,0,0
+"1117","225-2",2022-07-13,"Urban","1-4y","Male",3,"(2,5]","Unemployed outside home","None",5,5,4.5,0,0,0,0,0,0,0,0,0,0,0,0
+"1118","227-2",2022-07-15,"Urban","1-4y","Male",2,"[0,2]","Unemployed outside home","None",4,4,3.5,0,0,0,0,0,0,0,0,0,0,0,0
+"1119","231-2",2022-07-15,"Urban","1-4y","Female",2,"[0,2]","Unemployed outside home","None",6,6,5.5,1,1,0,0,1,1,0,0,1,1,0,0
+"1120","233-2",2022-07-15,"Urban","1-4y","Female",2,"[0,2]","Unemployed outside home","None",4,3.5,2.5,0,0,0,0,0,0,0,0,0,0,0,0
+"1121","245-2",2022-07-18,"Urban","1-4y","Female",3,"(2,5]","Unemployed outside home","None",7.5,7.5,7.5,1,1,1,0,1,1,1,1,1,1,1,0
+"1122","248-2",2022-07-18,"Urban","1-4y","Female",3,"(2,5]","Unemployed outside home","None",7.5,7.5,7.5,1,1,1,0,1,1,1,1,1,1,1,0
+"1123","251-2",2022-07-11,"Urban","1-4y","Female",NA,NA,"Unemployed outside home","None",4.5,4.5,3.5,0,0,0,0,0,0,0,0,0,0,0,0
+"1124","263-2",2022-07-28,"Urban","1-4y","Male",5,"(2,5]","Unemployed outside home","None",6,4.5,4.5,1,1,0,0,0,0,0,0,0,0,0,0
+"1125","267-2",2022-07-28,"Urban","1-4y","Female",4,"(2,5]","Unemployed outside home","None",4.5,5,4.5,0,0,0,0,0,0,0,0,0,0,0,0
+"1126","270-2",2022-07-25,"Urban","1-4y","Female",3,"(2,5]","Unemployed outside home","None",7,7,7,1,1,1,0,1,1,1,0,1,1,1,0
+"1127","273-2",2022-07-22,"Urban","1-4y","Male",2,"[0,2]","Unemployed outside home","None",4.5,4.5,4.5,0,0,0,0,0,0,0,0,0,0,0,0
+"1128","285-2",2022-07-26,"Urban","1-4y","Female",2,"[0,2]","Unemployed outside home","None",3.5,3.5,3,0,0,0,0,0,0,0,0,0,0,0,0
+"1129","295-2",2022-07-28,"Urban","1-4y","Female",2,"[0,2]","Unemployed outside home","None",7,8,7,1,1,1,0,1,1,1,0,1,1,1,1
+"1130","303-2",2022-08-03,"Urban","1-4y","Male",2,"[0,2]","Unemployed outside home","None",1.5,4,1,0,0,0,0,0,0,0,0,0,0,0,0
+"1131","315-2",2022-08-16,"Rural","1-4y","Male",2,"[0,2]","Unemployed outside home","None",4,5,4,0,0,0,0,0,0,0,0,0,0,0,0
+"1132","317-2",2022-08-16,"Rural","1-4y","Female",2,"[0,2]","Unemployed outside home","None",5,5,3.5,0,0,0,0,0,0,0,0,0,0,0,0
+"1133","323-2",2022-08-17,"Rural","1-4y","Female",3,"(2,5]","Unemployed outside home","None",5,2,2,0,0,0,0,0,0,0,0,0,0,0,0
+"1134","325-2",2022-08-17,"Rural","1-4y","Male",2,"[0,2]","Unemployed outside home","None",4.5,4.5,4.5,0,0,0,0,0,0,0,0,0,0,0,0
+"1135","331-2",2022-08-22,"Rural","1-4y","Female",3,"(2,5]","Unemployed outside home","None",7,7,7,1,1,1,0,1,1,1,0,1,1,1,0
+"1136","334-2",2022-08-24,"Rural","1-4y","Female",3,"(2,5]","Unemployed outside home","None",6,6.5,5,1,1,0,0,1,1,0,0,1,1,0,0
+"1137","349-2",2022-08-31,"Rural","1-4y","Male",4,"(2,5]","Unemployed outside home","None",8,8,7,1,1,1,1,1,1,1,0,1,1,1,1
+"1138","353-2",2022-08-31,"Rural","1-4y","Male",4,"(2,5]","Unemployed outside home","None",6.5,6.5,4.5,1,1,0,0,0,0,0,0,1,1,0,0
+"1139","355-2",2022-08-31,"Rural","1-4y","Male",2,"[0,2]","Unemployed outside home","None",6,6,4.5,1,1,0,0,0,0,0,0,1,1,0,0
+"1140","362-2",2022-08-25,"Rural","1-4y","Female",3,"(2,5]","Unemployed outside home","None",3,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+"1141","364-2",2022-08-25,"Rural","1-4y","Female",2,"[0,2]","Unemployed outside home","None",5,5,5,0,0,0,0,1,1,0,0,0,0,0,0
