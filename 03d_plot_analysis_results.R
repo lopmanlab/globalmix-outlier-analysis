@@ -48,7 +48,7 @@ plot_regression_results <- function(hhmbr = "", prctl = 90, name = "daily_5"){
     title = "Age + Sex + Household Size + Occupation"
   }
   
-  png(paste0("figs/",hhmbr,"negbin_", name, "_resp.png"), width=7000, height=3500, res=300)
+  png(paste0("figs/",hhmbr,"negbin_", name, "_resp.png"), width=7000, height=4000, res=300)
   print(ggplot(total_resp, aes(x = predictor,y = RR, color = Significance)) + 
           geom_point(size = 3) +
           geom_hline(yintercept = 1, lty = 2, color = "gray")+
@@ -69,7 +69,7 @@ plot_regression_results <- function(hhmbr = "", prctl = 90, name = "daily_5"){
                 legend.position = "none"))
   dev.off()
   
-  png(paste0("figs/",hhmbr,"negbin_", name, "_air.png"), width=7000, height=3500, res=300)
+  png(paste0("figs/",hhmbr,"negbin_", name, "_air.png"), width=7000, height=4000, res=300)
   print(ggplot(total_air, aes(x = predictor,y = RR, color = Significance)) + 
           geom_point(size = 3) +
           geom_hline(yintercept = 1, lty = 2, color = "gray")+
@@ -90,7 +90,7 @@ plot_regression_results <- function(hhmbr = "", prctl = 90, name = "daily_5"){
                 legend.position = "none"))
   dev.off()
   
-  png(paste0("figs/",hhmbr,"negbin_", name, "_ent.png"), width=7000, height=3500, res=300)
+  png(paste0("figs/",hhmbr,"negbin_", name, "_ent.png"), width=7000, height=4000, res=300)
   print(ggplot(total_ent, aes(x = predictor,y = RR, color = Significance)) + 
           geom_point(size = 3) +
           geom_hline(yintercept = 1, lty = 2, color = "gray")+
@@ -111,9 +111,18 @@ plot_regression_results <- function(hhmbr = "", prctl = 90, name = "daily_5"){
                 legend.position = "none"))
   dev.off()
   
+  # Scaling outlier bounds -------
+  fspec = function(x) ifelse(x<5, x, 5+(x-5)/10)
+  fspec_1 = function(x) ifelse(x<5, x, 5+(x-5)*10)
+  
+  specTrans = trans_new(name = "specialTras",
+                        transform = fspec,
+                        inverse = fspec_1,
+                        breaks = c(0, 1, 2, 3, 4, 5, 10, 20, 50, 100, 150))
+  
   # Outlier ---------
   
-  png(paste0("figs/",hhmbr,prctl,"_outlier_", name, "_resp.png"), width=7000, height=3500, res=300)
+  png(paste0("figs/",hhmbr,prctl,"_outlier_", name, "_resp.png"), width=7000, height=4000, res=300)
   print(ggplot(outlier_resp, aes(x = predictor,y = RR, color = Significance)) +
           geom_point(size = 3) +
           geom_hline(yintercept = 1, lty = 2, color = "gray")+
@@ -131,10 +140,11 @@ plot_regression_results <- function(hhmbr = "", prctl = 90, name = "daily_5"){
           # ylim(0, 3)+
           theme_classic()+
           theme(text=element_text(size=18),
-                legend.position = "none"))
+                legend.position = "none")+
+          coord_trans(y = specTrans))
   dev.off()
   
-  png(paste0("figs/",hhmbr,prctl,"_outlier_", name, "_air.png"), width=7000, height=3500, res=300)
+  png(paste0("figs/",hhmbr,prctl,"_outlier_", name, "_air.png"), width=7000, height=4000, res=300)
   print(ggplot(outlier_air, aes(x = predictor,y = RR, color = Significance)) +
           geom_point(size = 3) +
           geom_hline(yintercept = 1, lty = 2, color = "gray")+
@@ -152,10 +162,11 @@ plot_regression_results <- function(hhmbr = "", prctl = 90, name = "daily_5"){
           # ylim(0, 3)+
           theme_classic()+
           theme(text=element_text(size=18),
-                legend.position = "none"))
+                legend.position = "none")+
+    coord_trans(y = specTrans))
   dev.off()
 
-  png(paste0("figs/",hhmbr,prctl,"_outlier_", name, "_ent.png"), width=7000, height=3500, res=300)
+  png(paste0("figs/",hhmbr,prctl,"_outlier_", name, "_ent.png"), width=7000, height=4000, res=300)
   print(ggplot(outlier_ent, aes(x = predictor,y = RR, color = Significance)) +
           geom_point(size = 3) +
           geom_hline(yintercept = 1, lty = 2, color = "gray")+
@@ -173,6 +184,7 @@ plot_regression_results <- function(hhmbr = "", prctl = 90, name = "daily_5"){
           # ylim(0, 3)+
           theme_classic()+
           theme(text=element_text(size=18),
-                legend.position = "none"))
+                legend.position = "none")+
+    coord_trans(y = specTrans))
   dev.off()
 }

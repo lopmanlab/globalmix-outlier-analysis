@@ -24,7 +24,7 @@ for(c in countries){
 # The following line loads this function: total_resp_ent_contacts_regression()
 source("03b_total_respiratory_enteric_analysis.R")
 
-reference =  c(rep("Age\nRef: 30-39y", 8),
+ref =  c(rep("Age\nRef: 30-39y", 8),
          "Sex\nRef: Female",
          "Site\nRef: Rural",
          rep("Household Size\nRef: 0-2 members", 2),
@@ -43,7 +43,7 @@ equation = "age + sex + study_site + hh_size_cat + occupation"
 
 for(c in countries){
   for(h in hhmembership){
-    dat <- total_resp_ent_contacts_regression(cty = c, hhmbr = h, ref = reference, term = term)
+    dat <- total_resp_ent_contacts_regression(cty = c, hhmbr = h, ref = ref, term = term)
     write.csv(dat[[1]], paste0("results/", c, h,"_negbin_daily_5_resp.csv"))
     write.csv(dat[[2]], paste0("results/", c, h,"_negbin_daily_5_air.csv"))
     write.csv(dat[[3]], paste0("results/", c, h,"_negbin_daily_5_ent.csv"))
@@ -55,11 +55,11 @@ for(c in countries){
 # The following line loads this function: outlier_resp_ent_contacts_regression()
 source("03c_respiratory_enteric_outlier_analysis.R")
 
-percentile = 90
+prctl = 75
 
 for(c in countries){
   for(h in hhmembership){
-    dat <- outlier_resp_ent_contacts_regression(cty = c, hhmbr = h, prctl = percentile, ref = reference, term = term)
+    dat <- outlier_resp_ent_contacts_regression(cty = c, hhmbr = h, prctl = prctl, ref = ref, term = term)
     write.csv(dat[[1]], paste0("results/", c, h,"_", percentile, "_outlier_daily_5_resp.csv"))
     write.csv(dat[[2]], paste0("results/", c, h,"_", percentile,"_outlier_daily_5_air.csv"))
     write.csv(dat[[3]], paste0("results/", c, h,"_", percentile,"_outlier_daily_5_ent.csv"))
@@ -72,7 +72,7 @@ for(c in countries){
 source("03d_plot_analysis_results.R")
 
 for(h in hhmembership){
-  plot_regression_results(hhmbr = h, prctl = percentile, name = "daily_5") #could also be daily_5
+  plot_regression_results(hhmbr = h, prctl = prctl, name = "daily_5") #could also be daily_5
 }
 
 

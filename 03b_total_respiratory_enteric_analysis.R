@@ -31,6 +31,7 @@ get_rr_ci_by_group <- function(model, digits = 2) {
   se <- sqrt(diag(mm %*% vcov_mat %*% t(mm)))
   
   RR <- exp(log_rr)
+  conf_int <- confint(model)
   lower_CI <- exp(log_rr - 1.96 * se)
   upper_CI <- exp(log_rr + 1.96 * se)
   

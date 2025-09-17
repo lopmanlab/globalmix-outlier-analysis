@@ -7,7 +7,9 @@ pacman::p_load(here,
                ggpubr,
                legendry,
                quantreg,
-               pls)
+               pls,
+               performance,
+               regclass)
 
 outlier_resp_ent_contacts_regression <- function(cty = "moz", hhmbr = "", prctl = 90, equation = "age + sex + study_site + hh_size_cat + occupation", ref, term){
   
@@ -52,11 +54,12 @@ outlier_resp_ent_contacts_regression <- function(cty = "moz", hhmbr = "", prctl 
                           data = contacts_daily, 
                           family = binomial(link = "logit"))
   coef_exp  <- coef(daily_resp_model)[!is.na(coef(daily_resp_model))]
+  conf_int <- confint(daily_resp_model)
   daily_resp <- data.frame(
     Term = names(coef_exp),
     RR =  exp(coef_exp),
-    Lower_95_CI = exp(coef_exp - 1.96 * na.omit(sqrt(diag(vcov(daily_resp_model))))),
-    Upper_95_CI = exp(coef_exp + 1.96 * na.omit(sqrt(diag(vcov(daily_resp_model)))))
+    Lower_95_CI = conf_int[,1],
+    Upper_95_CI = conf_int[,2]
   )%>%
     filter(Term != "(Intercept)") %>%
     mutate(Characteristic = ref) %>%
@@ -70,11 +73,12 @@ outlier_resp_ent_contacts_regression <- function(cty = "moz", hhmbr = "", prctl 
                           data = contacts_daily, 
                           family = binomial(link = "logit"))
   coef_exp  <- coef(daily_air_model)[!is.na(coef(daily_air_model))]
+  conf_int <- confint(daily_air_model)
   daily_air <- data.frame(
     Term = names(coef_exp),
     RR =  exp(coef_exp),
-    Lower_95_CI = exp(coef_exp - 1.96 * na.omit(sqrt(diag(vcov(daily_air_model))))),
-    Upper_95_CI = exp(coef_exp + 1.96 * na.omit(sqrt(diag(vcov(daily_air_model)))))
+    Lower_95_CI = conf_int[,1],
+    Upper_95_CI = conf_int[,2]
   )%>%
     filter(Term != "(Intercept)") %>%
     mutate(Characteristic = ref) %>%#, 
@@ -88,11 +92,12 @@ outlier_resp_ent_contacts_regression <- function(cty = "moz", hhmbr = "", prctl 
                          data = contacts_daily, 
                          family = binomial(link = "logit"))
   coef_exp <- coef(daily_ent_model)[!is.na(coef(daily_ent_model))]
+  conf_int <- confint(daily_ent_model)
   daily_ent <- data.frame(
     Term = names(coef_exp),
     RR =  exp(coef_exp),
-    Lower_95_CI = exp(coef_exp - 1.96 * na.omit(sqrt(diag(vcov(daily_ent_model))))),
-    Upper_95_CI = exp(coef_exp + 1.96 * na.omit(sqrt(diag(vcov(daily_ent_model)))))
+    Lower_95_CI = conf_int[,1],
+    Upper_95_CI = conf_int[,2]
   )%>%
     filter(Term != "(Intercept)") %>%
     mutate(Characteristic = ref) %>%  
@@ -101,24 +106,29 @@ outlier_resp_ent_contacts_regression <- function(cty = "moz", hhmbr = "", prctl 
                                  ifelse((Lower_95_CI) < 1 & (Upper_95_CI) < 1, -1, 1))) %>%
     mutate(predictor = factor(paste(Term, Characteristic, sep = "&"),
                               levels = paste(Term, Characteristic, sep = "&")))
-  
   # Quintile Regression -------------------------------------------------------
   
   
-  # multi_rqfit <- rq(avg_daily_resp_contacts ~ age + sex + study_site + hh_size_cat + occupation, 
-  #                   data = contacts_daily, tau = seq(0, 1, by = 0.2))
-  # multi_rqfit
+  # multi_rqfit <- rq(avg_daily_resp_contacts ~ age + sex + study_site + hh_size_cat + occupation,
+  #                   data = contacts_daily, 
+  #                   tau = seq(0.2, 0.8, by = 0.2))
+  # multi_rqfit$coefficients
+  # plot(multi_rqfit)
+  # QR = summary.rqs(multi_rqfit, se="iid", covariance = TRUE)
+  # exp(coef(QR[[1]]))
+  # exp(coef_exp + 1.96 * na.omit(sqrt(diag(vcov(daily_resp_model)))))
+  # confint(QR[[1]], parm=NULL, level = 0.95, method = "iid")
+  # # sapply(multi_rqfit, function(x) c(tau=x$tau, x$coefficients[-1, ]))
+  # individual_rq_fit <- multi_rqfit[[1]]
+  # vcov(individual_rq_fit)
   # 
-  # pcr_model <- pcr(avg_daily_resp_contacts ~ age + sex + study_site + hh_size_cat + occupation, 
-  #                  data = contacts_daily, scale = TRUE, validation = "CV")
-  # 
-  # (pcr_model)
-  # # Plot the root mean squared error
-  # validationplot(pcr_model)
-  # # Plot the cross validation MSE
-  # validationplot(pcr_model, val.type="MSEP")
-  # coefplot(pcr_model)
-  
+  # cor(contacts_daily %>% 
+  #       mutate(age = as.numeric(age),
+  #              sex = ifelse(sex == "Male", 1, 0), 
+  #              study_site = ifelse(study_site == "Rural", 1, 0), 
+  #              hh_size_cat = as.numeric(hh_size_cat), 
+  #              occupation = as.numeric(occupation)) %>%
+  #       dplyr::select(age, sex, study_site, hh_size_cat, occupation))
   
   return(list(daily_resp, daily_air, daily_ent))
 }
