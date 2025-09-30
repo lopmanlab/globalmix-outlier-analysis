@@ -55,14 +55,14 @@ for(c in countries){
 # The following line loads this function: outlier_resp_ent_contacts_regression()
 source("03c_respiratory_enteric_outlier_analysis.R")
 
-prctl = 75
+prctl = 80
 
 for(c in countries){
   for(h in hhmembership){
     dat <- outlier_resp_ent_contacts_regression(cty = c, hhmbr = h, prctl = prctl, ref = ref, term = term)
-    write.csv(dat[[1]], paste0("results/", c, h,"_", percentile, "_outlier_daily_5_resp.csv"))
-    write.csv(dat[[2]], paste0("results/", c, h,"_", percentile,"_outlier_daily_5_air.csv"))
-    write.csv(dat[[3]], paste0("results/", c, h,"_", percentile,"_outlier_daily_5_ent.csv"))
+    write.csv(dat[[1]], paste0("results/", c, h,"_", prctl, "_outlier_daily_5_resp.csv"))
+    write.csv(dat[[2]], paste0("results/", c, h,"_", prctl,"_outlier_daily_5_air.csv"))
+    write.csv(dat[[3]], paste0("results/", c, h,"_", prctl,"_outlier_daily_5_ent.csv"))
   }
 }
 

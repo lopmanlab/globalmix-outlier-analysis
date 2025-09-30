@@ -128,14 +128,17 @@ prepare_resp_ent_outlier_datasets <- function(cty = "moz", hhmbr = ""){
     ungroup() %>%
     dplyr::summarize(daily_resp_q50 = quantile(avg_daily_resp_contacts, probs = 0.50, na.rm=T),
                      daily_resp_q75 = quantile(avg_daily_resp_contacts, probs = 0.75, na.rm=T),
+                     daily_resp_q80 = quantile(avg_daily_resp_contacts, probs = 0.80, na.rm=T),
                      daily_resp_q90 = quantile(avg_daily_resp_contacts, probs = 0.90, na.rm=T),
                      daily_resp_mean = mean(avg_daily_resp_contacts, na.rm=T),
                      daily_air_q50 = quantile(avg_daily_air_contacts, probs = 0.50, na.rm=T),
                      daily_air_q75 = quantile(avg_daily_air_contacts, probs = 0.75, na.rm=T),
+                     daily_air_q80 = quantile(avg_daily_air_contacts, probs = 0.80, na.rm=T),
                      daily_air_q90 = quantile(avg_daily_air_contacts, probs = 0.90, na.rm=T),
                      daily_air_mean = mean(avg_daily_air_contacts, na.rm=T),
                      daily_ent_q50 = quantile(avg_daily_ent_contacts, probs = 0.50, na.rm=T),
                      daily_ent_q75 = quantile(avg_daily_ent_contacts, probs = 0.75, na.rm=T),
+                     daily_ent_q80 = quantile(avg_daily_ent_contacts, probs = 0.80, na.rm=T),
                      daily_ent_q90 = quantile(avg_daily_ent_contacts, probs = 0.90, na.rm=T),
                      daily_ent_mean = mean(avg_daily_ent_contacts, na.rm=T))
   
@@ -143,14 +146,17 @@ prepare_resp_ent_outlier_datasets <- function(cty = "moz", hhmbr = ""){
     mutate(daily_resp_mean_outlier = ifelse(avg_daily_resp_contacts > contact_summaries$daily_resp_mean, 1, 0),
            daily_resp_q50_outlier = ifelse(avg_daily_resp_contacts > contact_summaries$daily_resp_q50, 1, 0),
            daily_resp_q75_outlier = ifelse(avg_daily_resp_contacts > contact_summaries$daily_resp_q75, 1, 0),
+           daily_resp_q80_outlier = ifelse(avg_daily_resp_contacts > contact_summaries$daily_resp_q80, 1, 0),
            daily_resp_q90_outlier = ifelse(avg_daily_resp_contacts > contact_summaries$daily_resp_q90, 1, 0),
            daily_air_mean_outlier = ifelse(avg_daily_air_contacts > contact_summaries$daily_air_mean, 1, 0),
            daily_air_q50_outlier = ifelse(avg_daily_air_contacts > contact_summaries$daily_air_q50, 1, 0),
            daily_air_q75_outlier = ifelse(avg_daily_air_contacts > contact_summaries$daily_air_q75, 1, 0),
+           daily_air_q80_outlier = ifelse(avg_daily_air_contacts > contact_summaries$daily_air_q80, 1, 0),
            daily_air_q90_outlier = ifelse(avg_daily_air_contacts > contact_summaries$daily_air_q90, 1, 0),
            daily_ent_mean_outlier = ifelse(avg_daily_ent_contacts > contact_summaries$daily_ent_mean, 1, 0),
            daily_ent_q50_outlier = ifelse(avg_daily_ent_contacts > contact_summaries$daily_ent_q50, 1, 0),
            daily_ent_q75_outlier = ifelse(avg_daily_ent_contacts > contact_summaries$daily_ent_q75, 1, 0),
+           daily_ent_q80_outlier = ifelse(avg_daily_ent_contacts > contact_summaries$daily_ent_q80, 1, 0),
            daily_ent_q90_outlier = ifelse(avg_daily_ent_contacts > contact_summaries$daily_ent_q90, 1, 0))
   
   return(contacts_resp_air_ent)

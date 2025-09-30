@@ -39,14 +39,17 @@ outlier_resp_ent_contacts_regression <- function(cty = "moz", hhmbr = "", prctl 
                                                         "(2,5]",
                                                         "(5,50]"))) %>%
     mutate(resp_outlier = case_when(prctl == 90 ~ daily_resp_q90_outlier,
-                               prctl == 75 ~ daily_resp_q75_outlier,
-                               .default = daily_resp_q50_outlier)) %>%
+                                    prctl == 80 ~ daily_resp_q80_outlier,
+                                    prctl == 75 ~ daily_resp_q75_outlier,
+                                    .default = daily_resp_q50_outlier)) %>%
     mutate(air_outlier = case_when(prctl == 90 ~ daily_air_q90_outlier,
-                                    prctl == 75 ~ daily_air_q75_outlier,
-                                    .default = daily_air_q50_outlier)) %>%
+                                   prctl == 80 ~ daily_air_q80_outlier,
+                                   prctl == 75 ~ daily_air_q75_outlier,
+                                   .default = daily_air_q50_outlier)) %>%
     mutate(ent_outlier = case_when(prctl == 90 ~ daily_ent_q90_outlier,
-                                    prctl == 75 ~ daily_ent_q75_outlier,
-                                    .default = daily_ent_q50_outlier))
+                                   prctl == 80 ~ daily_ent_q80_outlier,
+                                   prctl == 75 ~ daily_ent_q75_outlier,
+                                   .default = daily_ent_q50_outlier))
   
   # Daily Q"prctl" threshold outlier model -------------------------------------------------
   
@@ -54,12 +57,11 @@ outlier_resp_ent_contacts_regression <- function(cty = "moz", hhmbr = "", prctl 
                           data = contacts_daily, 
                           family = binomial(link = "logit"))
   coef_exp  <- coef(daily_resp_model)[!is.na(coef(daily_resp_model))]
-  conf_int <- confint(daily_resp_model)
   daily_resp <- data.frame(
     Term = names(coef_exp),
     RR =  exp(coef_exp),
-    Lower_95_CI = conf_int[,1],
-    Upper_95_CI = conf_int[,2]
+    Lower_95_CI = exp(coef_exp - 1.96 * na.omit(sqrt(diag(vcov(daily_resp_model))))),
+    Upper_95_CI = exp(coef_exp + 1.96 * na.omit(sqrt(diag(vcov(daily_resp_model)))))
   )%>%
     filter(Term != "(Intercept)") %>%
     mutate(Characteristic = ref) %>%
@@ -73,12 +75,11 @@ outlier_resp_ent_contacts_regression <- function(cty = "moz", hhmbr = "", prctl 
                           data = contacts_daily, 
                           family = binomial(link = "logit"))
   coef_exp  <- coef(daily_air_model)[!is.na(coef(daily_air_model))]
-  conf_int <- confint(daily_air_model)
   daily_air <- data.frame(
     Term = names(coef_exp),
     RR =  exp(coef_exp),
-    Lower_95_CI = conf_int[,1],
-    Upper_95_CI = conf_int[,2]
+    Lower_95_CI = exp(coef_exp - 1.96 * na.omit(sqrt(diag(vcov(daily_air_model))))),
+    Upper_95_CI = exp(coef_exp + 1.96 * na.omit(sqrt(diag(vcov(daily_air_model)))))
   )%>%
     filter(Term != "(Intercept)") %>%
     mutate(Characteristic = ref) %>%#, 
@@ -92,12 +93,11 @@ outlier_resp_ent_contacts_regression <- function(cty = "moz", hhmbr = "", prctl 
                          data = contacts_daily, 
                          family = binomial(link = "logit"))
   coef_exp <- coef(daily_ent_model)[!is.na(coef(daily_ent_model))]
-  conf_int <- confint(daily_ent_model)
   daily_ent <- data.frame(
     Term = names(coef_exp),
     RR =  exp(coef_exp),
-    Lower_95_CI = conf_int[,1],
-    Upper_95_CI = conf_int[,2]
+    Lower_95_CI = exp(coef_exp - 1.96 * na.omit(sqrt(diag(vcov(daily_ent_model))))),
+    Upper_95_CI = exp(coef_exp + 1.96 * na.omit(sqrt(diag(vcov(daily_ent_model)))))
   )%>%
     filter(Term != "(Intercept)") %>%
     mutate(Characteristic = ref) %>%  
