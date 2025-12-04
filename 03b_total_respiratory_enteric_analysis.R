@@ -60,64 +60,103 @@ total_resp_ent_contacts_regression <- function(cty = "moz", hhmbr = "", equation
            avg_daily_ent_contacts = as.numeric(avg_daily_ent_contacts))
   
   # # Determine if negative binomial distribution is the best for resp -----------
-  # lm_model <- lm(data = contacts_daily, avg_daily_resp_contacts ~ 1) # Linear model (mean only)
-  # pois_model <- glm(data = contacts_daily, avg_daily_resp_contacts ~ 1, family = poisson())  # Poisson model
-  # nb_model <- glm.nb(data = contacts_daily, avg_daily_resp_contacts ~ 1) # Negative binomial model
-  # mu_lm <- coef(lm_model)[1]
-  # mu_pois <- exp(coef(pois_model)[1])
-  # mu_nb <- exp(coef(nb_model)[1])
-  # theta_nb <- nb_model$theta
-  # 
-  # y_vals <- 0:max(contacts_daily$avg_daily_resp_contacts, na.rm = T)  # range of y values to plot
-  # df <- data.frame(
-  #   y = y_vals,
-  #   Normal = dnorm(y_vals, mean = mu_lm, sd = sd(residuals(lm_model))),
-  #   Poisson = dpois(y_vals, lambda = mu_pois),
-  #   NegBinom = dnbinom(y_vals, size = theta_nb, mu = mu_nb)
-  # )
-  # df_long <- pivot_longer(df, cols = -y, names_to = "Dist", values_to = "Density") 
-  # 
-  # png(filename = paste0(here(), "/figs/", cty, hhmbr, "_resp_hist.png" ), height = 800, width = 1200)
-  # print(ggplot() +
-  #   geom_histogram(data = contacts_daily, aes(x = avg_daily_resp_contacts, y = ..density..), 
-  #                  bins = length(unique((contacts_daily$avg_daily_resp_contacts))), 
-  #                  fill = "gray80", color = "black") +
-  #   geom_line(data = df_long, aes(x = y, y = Density, color = Dist, lty=Dist), size = 1.3) +
-  #   theme_bw() +
-  #   ggtitle("")+
-  #   xlab("")+
-  #   theme(text = element_text(size = 20)))
-  # dev.off() 
-  # 
-  # # Determine if negative binomial distribution is the best for ent -----------
-  # lm_model <- lm(data = contacts_daily, avg_daily_ent_contacts ~ 1) # Linear model (mean only)
-  # pois_model <- glm(data = contacts_daily, avg_daily_ent_contacts ~ 1, family = poisson())  # Poisson model
-  # nb_model <- glm.nb(data = contacts_daily, avg_daily_ent_contacts ~ 1) # Negative binomial model
-  # mu_lm <- coef(lm_model)[1]
-  # mu_pois <- exp(coef(pois_model)[1])
-  # mu_nb <- exp(coef(nb_model)[1])
-  # theta_nb <- nb_model$theta
-  # 
-  # y_vals <- 0:max(contacts_daily$avg_daily_ent_contacts, na.rm = T)  # range of y values to plot
-  # df <- data.frame(
-  #   y = y_vals,
-  #   Normal = dnorm(y_vals, mean = mu_lm, sd = sd(residuals(lm_model))),
-  #   Poisson = dpois(y_vals, lambda = mu_pois),
-  #   NegBinom = dnbinom(y_vals, size = theta_nb, mu = mu_nb)
-  # )
-  # df_long <- pivot_longer(df, cols = -y, names_to = "Dist", values_to = "Density") 
-  # 
-  # png(filename = paste0(here(), "/figs/", cty, hhmbr, "_ent_hist.png" ), height = 800, width = 1200)
-  # print(ggplot() +
-  #   geom_histogram(data = contacts_daily, aes(x = avg_daily_ent_contacts, y = ..density..), 
-  #                  bins = length(unique((contacts_daily$avg_daily_ent_contacts))), 
-  #                  fill = "gray80", color = "black") +
-  #   geom_line(data = df_long, aes(x = y, y = Density, color = Dist, lty=Dist), size = 1.3) +
-  #   theme_bw() +
-  #   ggtitle("")+
-  #   xlab("")+
-  #   theme(text = element_text(size = 20)))
-  # dev.off() 
+  lm_model <- lm(data = contacts_daily, avg_daily_resp_contacts ~ 1) # Linear model (mean only)
+  pois_model <- glm(data = contacts_daily, avg_daily_resp_contacts ~ 1, family = poisson())  # Poisson model
+  nb_model <- glm.nb(data = contacts_daily, avg_daily_resp_contacts ~ 1) # Negative binomial model
+  mu_lm <- coef(lm_model)[1]
+  mu_pois <- exp(coef(pois_model)[1])
+  mu_nb <- exp(coef(nb_model)[1])
+  theta_nb <- nb_model$theta
+
+  y_vals <- 0:max(contacts_daily$avg_daily_resp_contacts, na.rm = T)  # range of y values to plot
+  df <- data.frame(
+    y = y_vals,
+    Normal = dnorm(y_vals, mean = mu_lm, sd = sd(residuals(lm_model))),
+    Poisson = dpois(y_vals, lambda = mu_pois),
+    NegBinom = dnbinom(y_vals, size = theta_nb, mu = mu_nb)
+  )
+  df_long <- pivot_longer(df, cols = -y, names_to = "Dist", values_to = "Density")
+
+  png(filename = paste0(here(), "/figs/histograms/", cty, hhmbr, "_resp_hist.png" ), height = 800, width = 1200)
+  print(ggplot() +
+    geom_histogram(data = contacts_daily, aes(x = avg_daily_resp_contacts, y = ..density..),
+                   bins = length(unique((contacts_daily$avg_daily_resp_contacts))),
+                   fill = "gray80", color = "black") +
+    geom_line(data = df_long, aes(x = y, y = Density, color = Dist)) +
+      geom_vline(aes(xintercept=quantile(contacts_daily$avg_daily_resp_contacts, probs = 0.75, na.rm=T)), lty = 2, size=1.5)+
+      geom_vline(aes(xintercept=quantile(contacts_daily$avg_daily_resp_contacts, probs = 0.80, na.rm=T)), lty = 3, size=1.5)+
+      geom_vline(aes(xintercept=quantile(contacts_daily$avg_daily_resp_contacts, probs = 0.90, na.rm=T)), lty = 4, size=1.5)+
+    theme_bw() +
+    ggtitle("")+
+    xlab("")+
+    theme(text = element_text(size = 20)))
+  dev.off()
+
+  # Determine if negative binomial distribution is the best for ent -----------
+  lm_model <- lm(data = contacts_daily, avg_daily_ent_contacts ~ 1) # Linear model (mean only)
+  pois_model <- glm(data = contacts_daily, avg_daily_ent_contacts ~ 1, family = poisson())  # Poisson model
+  nb_model <- glm.nb(data = contacts_daily, avg_daily_ent_contacts ~ 1) # Negative binomial model
+  mu_lm <- coef(lm_model)[1]
+  mu_pois <- exp(coef(pois_model)[1])
+  mu_nb <- exp(coef(nb_model)[1])
+  theta_nb <- nb_model$theta
+
+  y_vals <- 0:max(contacts_daily$avg_daily_ent_contacts, na.rm = T)  # range of y values to plot
+  df <- data.frame(
+    y = y_vals,
+    Normal = dnorm(y_vals, mean = mu_lm, sd = sd(residuals(lm_model))),
+    Poisson = dpois(y_vals, lambda = mu_pois),
+    NegBinom = dnbinom(y_vals, size = theta_nb, mu = mu_nb)
+  )
+  df_long <- pivot_longer(df, cols = -y, names_to = "Dist", values_to = "Density")
+
+  png(filename = paste0(here(), "/figs/histograms/", cty, hhmbr, "_ent_hist.png" ), height = 800, width = 1200)
+  print(ggplot() +
+    geom_histogram(data = contacts_daily, aes(x = avg_daily_ent_contacts, y = ..density..),
+                   bins = length(unique((contacts_daily$avg_daily_ent_contacts))),
+                   fill = "gray80", color = "black") +
+    geom_line(data = df_long, aes(x = y, y = Density, color = Dist)) +
+      geom_vline(aes(xintercept=quantile(contacts_daily$avg_daily_ent_contacts, probs = 0.75, na.rm=T)), lty = 2, size=1.5)+
+      geom_vline(aes(xintercept=quantile(contacts_daily$avg_daily_ent_contacts, probs = 0.80, na.rm=T)), lty = 3, size=1.5)+
+      geom_vline(aes(xintercept=quantile(contacts_daily$avg_daily_ent_contacts, probs = 0.90, na.rm=T)), lty = 4, size=1.5)+
+    theme_bw() +
+    ggtitle("")+
+    xlab("")+
+    theme(text = element_text(size = 20)))
+  dev.off()
+  
+  # Determine if negative binomial distribution is the best for air -----------
+  lm_model <- lm(data = contacts_daily, avg_daily_air_contacts ~ 1) # Linear model (mean only)
+  pois_model <- glm(data = contacts_daily, avg_daily_air_contacts ~ 1, family = poisson())  # Poisson model
+  nb_model <- glm.nb(data = contacts_daily, avg_daily_air_contacts ~ 1) # Negative binomial model
+  mu_lm <- coef(lm_model)[1]
+  mu_pois <- exp(coef(pois_model)[1])
+  mu_nb <- exp(coef(nb_model)[1])
+  theta_nb <- nb_model$theta
+  
+  y_vals <- 0:max(contacts_daily$avg_daily_air_contacts, na.rm = T)  # range of y values to plot
+  df <- data.frame(
+    y = y_vals,
+    Normal = dnorm(y_vals, mean = mu_lm, sd = sd(residuals(lm_model))),
+    Poisson = dpois(y_vals, lambda = mu_pois),
+    NegBinom = dnbinom(y_vals, size = theta_nb, mu = mu_nb)
+  )
+  df_long <- pivot_longer(df, cols = -y, names_to = "Dist", values_to = "Density")
+  
+  png(filename = paste0(here(), "/figs/histograms/", cty, hhmbr, "_air_hist.png" ), height = 800, width = 1200)
+  print(ggplot() +
+          geom_histogram(data = contacts_daily, aes(x = avg_daily_air_contacts, y = ..density..),
+                         bins = length(unique((contacts_daily$avg_daily_air_contacts))),
+                         fill = "gray80", color = "black") +
+          geom_line(data = df_long, aes(x = y, y = Density, color = Dist)) +
+          geom_vline(aes(xintercept=quantile(contacts_daily$avg_daily_air_contacts, probs = 0.75, na.rm=T)), lty = 2, size=1.5)+
+          geom_vline(aes(xintercept=quantile(contacts_daily$avg_daily_air_contacts, probs = 0.80, na.rm=T)), lty = 3, size=1.5)+
+          geom_vline(aes(xintercept=quantile(contacts_daily$avg_daily_air_contacts, probs = 0.90, na.rm=T)), lty = 4, size=1.5)+
+          theme_bw() +
+          ggtitle("")+
+          xlab("")+
+          theme(text = element_text(size = 20)))
+  dev.off()
   
   # Specify comparison groups --------------------------------------------------
   

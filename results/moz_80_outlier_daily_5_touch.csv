@@ -1,0 +1,46 @@
+"","Term","RR","Lower_95_CI","Upper_95_CI","Characteristic","Significance","predictor"
+"age<6mo","<6mo",0.478217254215254,0.168830954188467,1.35456050300993,"Age
+Ref: 30-39y",0,"<6mo&Age
+Ref: 30-39y"
+"age6-11mo","6-11mo",1.56789282064546,0.710436779085653,3.46024863774009,"Age
+Ref: 30-39y",0,"6-11mo&Age
+Ref: 30-39y"
+"age1-4y","1-4y",1.69224439706178,0.758635652262717,3.77479108824598,"Age
+Ref: 30-39y",0,"1-4y&Age
+Ref: 30-39y"
+"age5-9y","5-9y",2.97965140709814,1.42004697582042,6.25213296390601,"Age
+Ref: 30-39y",1,"5-9y&Age
+Ref: 30-39y"
+"age10-19y","10-19y",1.982027820069,0.817267366001011,4.8067920523363,"Age
+Ref: 30-39y",0,"10-19y&Age
+Ref: 30-39y"
+"age20-29y","20-29y",0.878237419162659,0.405391813485628,1.9026061670701,"Age
+Ref: 30-39y",0,"20-29y&Age
+Ref: 30-39y"
+"age40-59y","40-59y",0.448501599009256,0.202508608188144,0.993309302323454,"Age
+Ref: 30-39y",-1,"40-59y&Age
+Ref: 30-39y"
+"age60+y","60+y",0.0897421338237943,0.01963623483602,0.410142303272645,"Age
+Ref: 30-39y",-1,"60+y&Age
+Ref: 30-39y"
+"sexMale","Male",1.0923822642673,0.794139838084193,1.50263083912842,"Sex
+Ref: Female",0,"Male&Sex
+Ref: Female"
+"study_siteUrban","Urban",0.476924826331124,0.343583083215122,0.662015393314806,"Site
+Ref: Rural",-1,"Urban&Site
+Ref: Rural"
+"hh_size_cat(2,5]","3-5",0.5927881525122,0.308899187040492,1.13758083057941,"Household Size
+Ref: 0-2 members",0,"3-5&Household Size
+Ref: 0-2 members"
+"hh_size_cat(5,50]","6+",0.493150035244994,0.255732659432745,0.950981223131952,"Household Size
+Ref: 0-2 members",-1,"6+&Household Size
+Ref: 0-2 members"
+"occupationStudent","Student",1.84026801290222,0.863311711541547,3.92278514705183,"Occupation
+Ref: Unemployed, Child, Other",0,"Student&Occupation
+Ref: Unemployed, Child, Other"
+"occupationSemiskilled / skilled labor","Laborer",0.878401691889273,0.450937247277484,1.7110796168921,"Occupation
+Ref: Unemployed, Child, Other",0,"Laborer&Occupation
+Ref: Unemployed, Child, Other"
+"occupationSemiprofessional / professional","Professional",0.479848809627902,0.156378406874096,1.47242119103246,"Occupation
+Ref: Unemployed, Child, Other",0,"Professional&Occupation
+Ref: Unemployed, Child, Other"

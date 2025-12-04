@@ -130,5 +130,6 @@ outlier_resp_ent_contacts_regression <- function(cty = "moz", hhmbr = "", prctl 
   #              occupation = as.numeric(occupation)) %>%
   #       dplyr::select(age, sex, study_site, hh_size_cat, occupation))
   
+  
   return(list(daily_resp, daily_air, daily_ent))
 }

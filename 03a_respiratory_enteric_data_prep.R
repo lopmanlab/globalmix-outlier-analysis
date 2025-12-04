@@ -1,6 +1,8 @@
 pacman::p_load(here,
                tidyverse,
-               plotly)
+               plotly,
+               UpSetR,
+               ComplexUpset)
 
 prepare_resp_ent_outlier_datasets <- function(cty = "moz", hhmbr = ""){
   
@@ -131,16 +133,22 @@ prepare_resp_ent_outlier_datasets <- function(cty = "moz", hhmbr = ""){
                      daily_resp_q80 = quantile(avg_daily_resp_contacts, probs = 0.80, na.rm=T),
                      daily_resp_q90 = quantile(avg_daily_resp_contacts, probs = 0.90, na.rm=T),
                      daily_resp_mean = mean(avg_daily_resp_contacts, na.rm=T),
+                     daily_resp_min = min(avg_daily_resp_contacts, na.rm=T),
+                     daily_resp_max = max(avg_daily_resp_contacts, na.rm=T),
                      daily_air_q50 = quantile(avg_daily_air_contacts, probs = 0.50, na.rm=T),
                      daily_air_q75 = quantile(avg_daily_air_contacts, probs = 0.75, na.rm=T),
                      daily_air_q80 = quantile(avg_daily_air_contacts, probs = 0.80, na.rm=T),
                      daily_air_q90 = quantile(avg_daily_air_contacts, probs = 0.90, na.rm=T),
                      daily_air_mean = mean(avg_daily_air_contacts, na.rm=T),
+                     daily_air_min = min(avg_daily_air_contacts, na.rm=T),
+                     daily_air_max = max(avg_daily_air_contacts, na.rm=T),
                      daily_ent_q50 = quantile(avg_daily_ent_contacts, probs = 0.50, na.rm=T),
                      daily_ent_q75 = quantile(avg_daily_ent_contacts, probs = 0.75, na.rm=T),
                      daily_ent_q80 = quantile(avg_daily_ent_contacts, probs = 0.80, na.rm=T),
                      daily_ent_q90 = quantile(avg_daily_ent_contacts, probs = 0.90, na.rm=T),
-                     daily_ent_mean = mean(avg_daily_ent_contacts, na.rm=T))
+                     daily_ent_mean = mean(avg_daily_ent_contacts, na.rm=T),
+                     daily_ent_min = min(avg_daily_ent_contacts, na.rm=T),
+                     daily_ent_max = max(avg_daily_ent_contacts, na.rm=T))
   
   contacts_resp_air_ent <- contacts_resp_air_ent %>%
     mutate(daily_resp_mean_outlier = ifelse(avg_daily_resp_contacts > contact_summaries$daily_resp_mean, 1, 0),
@@ -158,6 +166,37 @@ prepare_resp_ent_outlier_datasets <- function(cty = "moz", hhmbr = ""){
            daily_ent_q75_outlier = ifelse(avg_daily_ent_contacts > contact_summaries$daily_ent_q75, 1, 0),
            daily_ent_q80_outlier = ifelse(avg_daily_ent_contacts > contact_summaries$daily_ent_q80, 1, 0),
            daily_ent_q90_outlier = ifelse(avg_daily_ent_contacts > contact_summaries$daily_ent_q90, 1, 0))
+  # print(cty)
+  # print(hhmbr)
+  # print(contact_summaries)
+  
+  UpSetR::upset(daily %>% 
+          dplyr::select(droplet = respiratory, airborne, enteric), 
+        sets = c("droplet", "airborne", "enteric"),
+        order.by = "freq",
+        main.bar.color = "#1b9e77",
+        sets.bar.color = "#7570b3",
+        text.scale = 1.3)
+  
+  ComplexUpset::upset(
+    daily %>%
+      dplyr::select(droplet = respiratory, airborne, enteric),
+    intersect = c("droplet", "airborne", "enteric"),
+    base_annotations = list(
+      'Intersection size' = (
+        intersection_size(
+          text_mapping = aes(
+            label = paste0(round(!!get_size_mode('exclusive_intersection') / nrow(daily) * 100, 1), '%')
+          )
+        ) +
+          ylab('Intersection %') +
+          scale_y_continuous(
+            labels = scales::percent_format(scale = 100 / nrow(daily)),
+            breaks = c(0, 5, 10, 15, 20) / 100 * nrow(daily) # Adjust breaks as needed
+          )
+      )
+    )
+  )
   
   return(contacts_resp_air_ent)
 }

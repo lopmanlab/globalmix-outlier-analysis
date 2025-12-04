@@ -75,4 +75,16 @@ for(h in hhmembership){
   plot_regression_results(hhmbr = h, prctl = prctl, name = "daily_5") #could also be daily_5
 }
 
+ # PCA --------------
+
+# The following line loads this function: pca_analysis()
+source("03e_pca_analysis_results.R")
+
+for(c in countries){
+  for(h in hhmembership){
+    pca_analysis(cty = c, hhmbr = h, prctl = prctl, name = "daily_5") #could also be daily_5
+  }
+}
+
+
 
