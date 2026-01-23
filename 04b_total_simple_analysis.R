@@ -54,6 +54,9 @@ total_simple_contacts_regression <- function(cty = "moz", hhmbr = "", equation =
   full_names <- c("Mozambique", "India", "Pakistan", "Guatemala")
   names(full_names) <- c("moz", "ind", "pak", "gt")
   country = full_names[cty][1]
+  indices <- c("A) Mozambique", "B) India", "C) Pakistan", "D) Guatemala")
+  names(indices) <- c("moz", "ind", "pak", "gt")
+  index <- indices[cty][1]
   
   contacts_daily <- read.csv(paste0(here(),"/data/",cty,"/", cty, hhmbr, "_outlier_simple.csv")) %>%
     mutate(avg_daily_nonhh_contacts = as.numeric(avg_daily_nonhh_contacts),
@@ -83,11 +86,11 @@ total_simple_contacts_regression <- function(cty = "moz", hhmbr = "", equation =
                          bins = length(unique((contacts_daily$avg_daily_nonhh_contacts))),
                          fill = "gray80", color = "black") +
           # geom_line(data = df_long, aes(x = y, y = Density, color = Dist)) +
-          geom_vline(aes(xintercept=quantile(contacts_daily$avg_daily_nonhh_contacts, probs = 0.75, na.rm=T)), lty = 2, size=1.5)+
-          geom_vline(aes(xintercept=quantile(contacts_daily$avg_daily_nonhh_contacts, probs = 0.80, na.rm=T)), lty = 3, size=1.5)+
-          geom_vline(aes(xintercept=quantile(contacts_daily$avg_daily_nonhh_contacts, probs = 0.90, na.rm=T)), lty = 4, size=1.5)+
+          # geom_vline(aes(xintercept=quantile(contacts_daily$avg_daily_nonhh_contacts, probs = 0.75, na.rm=T)), lty = 2, size=1.5)+
+          geom_vline(aes(xintercept=quantile(contacts_daily$avg_daily_nonhh_contacts, probs = 0.80, na.rm=T)), lty = 2, size=1.5)+
+          # geom_vline(aes(xintercept=quantile(contacts_daily$avg_daily_nonhh_contacts, probs = 0.90, na.rm=T)), lty = 4, size=1.5)+
           theme_bw() +
-          ggtitle("")+
+          ggtitle(paste0(index))+
           xlab("")+
           theme(text = element_text(size = 20)))
   dev.off()
@@ -116,11 +119,11 @@ total_simple_contacts_regression <- function(cty = "moz", hhmbr = "", equation =
                          bins = length(unique((contacts_daily$avg_daily_indtime_contacts))),
                          fill = "gray80", color = "black") +
           # geom_line(data = df_long, aes(x = y, y = Density, color = Dist)) +
-          geom_vline(aes(xintercept=quantile(contacts_daily$avg_daily_indtime_contacts, probs = 0.75, na.rm=T)), lty = 2, size=1.5)+
-          geom_vline(aes(xintercept=quantile(contacts_daily$avg_daily_indtime_contacts, probs = 0.80, na.rm=T)), lty = 3, size=1.5)+
-          geom_vline(aes(xintercept=quantile(contacts_daily$avg_daily_indtime_contacts, probs = 0.90, na.rm=T)), lty = 4, size=1.5)+
+          # geom_vline(aes(xintercept=quantile(contacts_daily$avg_daily_indtime_contacts, probs = 0.75, na.rm=T)), lty = 2, size=1.5)+
+          geom_vline(aes(xintercept=quantile(contacts_daily$avg_daily_indtime_contacts, probs = 0.80, na.rm=T)), lty = 2, size=1.5)+
+          # geom_vline(aes(xintercept=quantile(contacts_daily$avg_daily_indtime_contacts, probs = 0.90, na.rm=T)), lty = 4, size=1.5)+
           theme_bw() +
-          ggtitle("")+
+          ggtitle(index)+
           xlab("")+
           theme(text = element_text(size = 20)))
   dev.off()
@@ -149,11 +152,11 @@ total_simple_contacts_regression <- function(cty = "moz", hhmbr = "", equation =
                          bins = length(unique((contacts_daily$avg_daily_touch_contacts))),
                          fill = "gray80", color = "black") +
           # geom_line(data = df_long, aes(x = y, y = Density, color = Dist)) +
-          geom_vline(aes(xintercept=quantile(contacts_daily$avg_daily_touch_contacts, probs = 0.75, na.rm=T)), lty = 2, size=1.5)+
-          geom_vline(aes(xintercept=quantile(contacts_daily$avg_daily_touch_contacts, probs = 0.80, na.rm=T)), lty = 3, size=1.5)+
-          geom_vline(aes(xintercept=quantile(contacts_daily$avg_daily_touch_contacts, probs = 0.90, na.rm=T)), lty = 4, size=1.5)+
+          # geom_vline(aes(xintercept=quantile(contacts_daily$avg_daily_touch_contacts, probs = 0.75, na.rm=T)), lty = 2, size=1.5)+
+          geom_vline(aes(xintercept=quantile(contacts_daily$avg_daily_touch_contacts, probs = 0.80, na.rm=T)), lty = 2, size=1.5)+
+          # geom_vline(aes(xintercept=quantile(contacts_daily$avg_daily_touch_contacts, probs = 0.90, na.rm=T)), lty = 4, size=1.5)+
           theme_bw() +
-          ggtitle("")+
+          ggtitle(index)+
           xlab("")+
           theme(text = element_text(size = 20)))
   dev.off()

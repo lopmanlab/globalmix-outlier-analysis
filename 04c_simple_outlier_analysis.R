@@ -16,6 +16,7 @@ outlier_simple_contacts_regression <- function(cty = "moz", hhmbr = "", prctl = 
   full_names <- c("Mozambique", "India", "Pakistan", "Guatemala")
   names(full_names) <- c("moz", "ind", "pak", "gt")
   country = full_names[cty][1]
+  
   contacts_daily <- read.csv(paste0(here(),"/data/",cty,"/", cty, hhmbr, "_outlier_simple.csv")) 
   
   # Specify comparison groups --------------------------------------------------

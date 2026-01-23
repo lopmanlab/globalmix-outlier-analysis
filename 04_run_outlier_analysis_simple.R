@@ -1,7 +1,10 @@
 rm(list = ls())
 pacman::p_load(here,
                tidyverse,
-               plotly)
+               plotly, 
+               png,
+               grid,
+               gridExtra)
 
 # Create data for outlier indoor, non-household member, and touch contacts ----
 
@@ -47,6 +50,41 @@ for(c in countries){
     write.csv(dat[[3]], paste0("results/", c, h,"_negbin_daily_5_touch.csv"))
     # }
 }
+
+moz = rasterGrob(readPNG(paste0("figs/histograms/", "moz_nonhh_hist.png")), interpolate = TRUE)
+ind = rasterGrob(readPNG(paste0("figs/histograms/", "ind_nonhh_hist.png")), interpolate = TRUE)
+pak = rasterGrob(readPNG(paste0("figs/histograms/", "pak_nonhh_hist.png")), interpolate = TRUE)
+gt = rasterGrob(readPNG(paste0("figs/histograms/", "gt_nonhh_hist.png")), interpolate = TRUE)
+
+png(paste0("figs/histograms/all_countries_nonhh.png"), width=4000, height=3000, res=300)
+grid.arrange(moz, ind, pak, gt, ncol = 2, nrow = 2,
+             top = textGrob("Supplementary Figure 1. Distribution of Daily Non-Household Contacts, with 80th percentile",
+                            gp=gpar(fontsize=16)))
+dev.off()
+
+moz = rasterGrob(readPNG(paste0("figs/histograms/", "moz_indtime_hist.png")), interpolate = TRUE)
+ind = rasterGrob(readPNG(paste0("figs/histograms/", "ind_indtime_hist.png")), interpolate = TRUE)
+pak = rasterGrob(readPNG(paste0("figs/histograms/", "pak_indtime_hist.png")), interpolate = TRUE)
+gt = rasterGrob(readPNG(paste0("figs/histograms/", "gt_indtime_hist.png")), interpolate = TRUE)
+
+png(paste0("figs/histograms/all_countries_indtime.png"), width=4000, height=3000, res=300)
+grid.arrange(moz, ind, pak, gt, ncol = 2, nrow = 2,
+             top = textGrob("Supplementary Figure 2. Distribution of Daily Indoor Hours spent with Non-Household Contacts, with 80th percentile",
+                            gp=gpar(fontsize=16)))
+dev.off()
+
+moz = rasterGrob(readPNG(paste0("figs/histograms/", "moz_touch_hist.png")), interpolate = TRUE)
+ind = rasterGrob(readPNG(paste0("figs/histograms/", "ind_touch_hist.png")), interpolate = TRUE)
+pak = rasterGrob(readPNG(paste0("figs/histograms/", "pak_touch_hist.png")), interpolate = TRUE)
+gt = rasterGrob(readPNG(paste0("figs/histograms/", "gt_touch_hist.png")), interpolate = TRUE)
+
+png(paste0("figs/histograms/all_countries_touch.png"), width=4000, height=3000, res=300)
+grid.arrange(moz, ind, pak, gt, ncol = 2, nrow = 2,
+             top = textGrob("Supplementary Figure 3. Distribution of Daily Indoor Non-Household Contacts Involving Touch, with 80th percentile",
+                            gp=gpar(fontsize=16)))
+dev.off()
+
+
 
 # Run logistic outcome regressions for non-hh and indoor-time contacts --------------
 
