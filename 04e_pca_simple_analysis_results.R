@@ -35,8 +35,9 @@ pca_simple_analysis <- function(cty = "moz", hhmbr = "", prctl = 80, name = "dai
     rename(sex = participant_sex,
            site = study_site) %>%
     mutate(age = factor(participant_age, levels = c("30-39y",
-                                                    "<6mo",
-                                                    "6-11mo",
+                                                    # "<6mo",
+                                                    # "6-11mo",
+                                                    "<1y",
                                                     "1-4y",
                                                     "5-9y", 
                                                     "10-19y",

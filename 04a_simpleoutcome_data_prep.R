@@ -18,6 +18,9 @@ prepare_simple_outlier_datasets <- function(cty = "moz", hhmbr = ""){
       hh_size_cat == "(10,50]" ~ "(5,50]",
       hh_size_cat == "(5,10]" ~ "(5,50]",
       .default = hh_size_cat)) %>%
+    mutate(participant_age = case_when(participant_age == "<6mo" ~ "<1y",
+                                       participant_age == "6-11mo" ~ "<1y",
+                                       .default = participant_age)) %>%
     mutate(hh_size_cat = factor(hh_size_cat, levels = c("[0,2]", "(2,5]", "(5,50]")))#"(5,7]", "(7,50]")))
   if(hhmbr == "Non-member"){
     contacts <- readRDS(paste0(here(),"/../","Globalmix/",country,"/", cty,"_contact_data_aim1.RDS")) %>%

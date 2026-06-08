@@ -24,8 +24,9 @@ outlier_simple_contacts_regression <- function(cty = "moz", hhmbr = "", prctl = 
   contacts_daily <- contacts_daily %>%
     rename(sex = participant_sex) %>%
     mutate(age = factor(participant_age, levels = c("30-39y",
-                                                    "<6mo",
-                                                    "6-11mo",
+                                                    # "<6mo",
+                                                    # "6-11mo",
+                                                    "<1y",
                                                     "1-4y",
                                                     "5-9y", 
                                                     "10-19y",

@@ -28,13 +28,13 @@ for(c in countries){
 # The following line loads this function: total_resp_ent_contacts_regression()
 source("04b_total_simple_analysis.R")
 
-ref =  c(rep("Age\nRef: 30-39y", 8),
+ref =  c(rep("Age\nRef: 30-39y", 7),
          "Sex\nRef: Female",
          "Site\nRef: Rural",
          rep("Household Size\nRef: 0-2 members", 2),
          rep("Occupation\nRef: Unemployed, Child, Other", 3))
 
-term <- c("<6mo", "6-11mo", "1-4y", "5-9y", "10-19y", "20-29y", "40-59y", "60+y",
+term <- c("<1y", "1-4y", "5-9y", "10-19y", "20-29y", "40-59y", "60+y",
           "Male",
           "Urban",
           "3-5", "6+", #"8+",
