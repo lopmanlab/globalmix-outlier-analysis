@@ -41,14 +41,14 @@ if(hhmbr == ""){
 
 r_lm_model <- lm(data = contacts_daily %>% filter(study_site == "Rural"), avg_daily_contacts ~ 1) # Linear model (mean only)
 u_lm_model <- lm(data = contacts_daily %>% filter(study_site != "Rural"), avg_daily_contacts ~ 1) # Linear model (mean only)
-r_pois_model <- glm(data = contacts_daily %>% filter(study_site == "Rural"), avg_daily_contacts ~ 1, family = poisson())  # Poisson model
-u_pois_model <- glm(data = contacts_daily %>% filter(study_site != "Rural"), avg_daily_contacts ~ 1, family = poisson())  # Poisson model
-r_nb_model <- glm.nb(data = contacts_daily %>% filter(study_site == "Rural"), avg_daily_contacts ~ 1) # Negative binomial model
-u_nb_model <- glm.nb(data = contacts_daily %>% filter(study_site != "Rural"), avg_daily_contacts ~ 1) # Negative binomial model
 r_mu_lm <- coef(r_lm_model)[1]
 u_mu_lm <- coef(u_lm_model)[1]
+r_pois_model <- glm(data = contacts_daily %>% filter(study_site == "Rural"), avg_daily_contacts ~ 1, family = poisson())  # Poisson model
+u_pois_model <- glm(data = contacts_daily %>% filter(study_site != "Rural"), avg_daily_contacts ~ 1, family = poisson())  # Poisson model
 r_mu_pois <- exp(coef(r_pois_model)[1])
 u_mu_pois <- exp(coef(u_pois_model)[1])
+r_nb_model <- glm.nb(data = contacts_daily %>% filter(study_site == "Rural"), avg_daily_contacts ~ 1) # Negative binomial model
+u_nb_model <- glm.nb(data = contacts_daily %>% filter(study_site != "Rural"), avg_daily_contacts ~ 1) # Negative binomial model
 r_mu_nb <- exp(coef(r_nb_model)[1])
 u_mu_nb <- exp(coef(u_nb_model)[1])
 r_theta_nb <- r_nb_model$theta
