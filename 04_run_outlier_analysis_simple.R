@@ -4,7 +4,8 @@ pacman::p_load(here,
                plotly, 
                png,
                grid,
-               gridExtra)
+               gridExtra,
+               tiff)
 
 # Create data for outlier indoor, non-household member, and touch contacts ----
 
@@ -51,39 +52,86 @@ for(c in countries){
     # }
 }
 
-moz = rasterGrob(readPNG(paste0("figs/histograms/", "moz_nonhh_hist.png")), interpolate = TRUE)
-ind = rasterGrob(readPNG(paste0("figs/histograms/", "ind_nonhh_hist.png")), interpolate = TRUE)
-pak = rasterGrob(readPNG(paste0("figs/histograms/", "pak_nonhh_hist.png")), interpolate = TRUE)
-gt = rasterGrob(readPNG(paste0("figs/histograms/", "gt_nonhh_hist.png")), interpolate = TRUE)
+# Read in each panel (now TIFF inputs)
+moz = rasterGrob(readTIFF("figs/histograms/moz_nonhh_hist.tiff"), interpolate = TRUE)
+ind = rasterGrob(readTIFF("figs/histograms/ind_nonhh_hist.tiff"), interpolate = TRUE)
+pak = rasterGrob(readTIFF("figs/histograms/pak_nonhh_hist.tiff"), interpolate = TRUE)
+gt  = rasterGrob(readTIFF("figs/histograms/gt_nonhh_hist.tiff"),  interpolate = TRUE)
 
-png(paste0("figs/histograms/all_countries_nonhh.png"), width=4000, height=3000, res=300)
-grid.arrange(moz, ind, pak, gt, ncol = 2, nrow = 2,
-             top = textGrob("Supplementary Figure 1. Distribution of Daily Non-Household Contacts, with 80th percentile",
-                            gp=gpar(fontsize=16)))
+# Panel labels (A/B/C/D) — journals expect these for multi-panel figures
+panel_label <- function(grob, label) {
+  arrangeGrob(grob, top = textGrob(label, x = unit(0.02, "npc"), just = "left",
+                                   gp = gpar(fontsize = 14, fontface = "bold")))
+}
+
+moz_labeled = panel_label(moz, "A. Mozambique")
+ind_labeled = panel_label(ind, "B. India")
+pak_labeled = panel_label(pak, "C. Pakistan")
+gt_labeled  = panel_label(gt,  "D. Guatemala")
+
+# Export as TIFF at journal-required resolution
+tiff("figs/histograms/all_countries_nonhh.tiff",
+     width = 2244, height = 1683,   # full-page width per Elsevier px spec at 300 dpi
+     res = 300, compression = "lzw")
+
+grid.arrange(moz_labeled, ind_labeled, pak_labeled, gt_labeled,
+             ncol = 2, nrow = 2)
+
 dev.off()
 
-moz = rasterGrob(readPNG(paste0("figs/histograms/", "moz_indtime_hist.png")), interpolate = TRUE)
-ind = rasterGrob(readPNG(paste0("figs/histograms/", "ind_indtime_hist.png")), interpolate = TRUE)
-pak = rasterGrob(readPNG(paste0("figs/histograms/", "pak_indtime_hist.png")), interpolate = TRUE)
-gt = rasterGrob(readPNG(paste0("figs/histograms/", "gt_indtime_hist.png")), interpolate = TRUE)
+# Read in each panel (now TIFF inputs)
+moz = rasterGrob(readTIFF("figs/histograms/moz_indtime_hist.tiff"), interpolate = TRUE)
+ind = rasterGrob(readTIFF("figs/histograms/ind_indtime_hist.tiff"), interpolate = TRUE)
+pak = rasterGrob(readTIFF("figs/histograms/pak_indtime_hist.tiff"), interpolate = TRUE)
+gt  = rasterGrob(readTIFF("figs/histograms/gt_indtime_hist.tiff"),  interpolate = TRUE)
 
-png(paste0("figs/histograms/all_countries_indtime.png"), width=4000, height=3000, res=300)
-grid.arrange(moz, ind, pak, gt, ncol = 2, nrow = 2,
-             top = textGrob("Supplementary Figure 2. Distribution of Daily Indoor Hours spent with Non-Household Contacts, with 80th percentile",
-                            gp=gpar(fontsize=16)))
+# Panel labels (A/B/C/D) — journals expect these for multi-panel figures
+panel_label <- function(grob, label) {
+  arrangeGrob(grob, top = textGrob(label, x = unit(0.02, "npc"), just = "left",
+                                   gp = gpar(fontsize = 14, fontface = "bold")))
+}
+
+moz_labeled = panel_label(moz, "A. Mozambique")
+ind_labeled = panel_label(ind, "B. India")
+pak_labeled = panel_label(pak, "C. Pakistan")
+gt_labeled  = panel_label(gt,  "D. Guatemala")
+
+# Export as TIFF at journal-required resolution
+tiff("figs/histograms/all_countries_indtime.tiff",
+     width = 2244, height = 1683,   # full-page width per Elsevier px spec at 300 dpi
+     res = 300, compression = "lzw")
+
+grid.arrange(moz_labeled, ind_labeled, pak_labeled, gt_labeled,
+             ncol = 2, nrow = 2)
+
 dev.off()
 
-moz = rasterGrob(readPNG(paste0("figs/histograms/", "moz_touch_hist.png")), interpolate = TRUE)
-ind = rasterGrob(readPNG(paste0("figs/histograms/", "ind_touch_hist.png")), interpolate = TRUE)
-pak = rasterGrob(readPNG(paste0("figs/histograms/", "pak_touch_hist.png")), interpolate = TRUE)
-gt = rasterGrob(readPNG(paste0("figs/histograms/", "gt_touch_hist.png")), interpolate = TRUE)
+# Read in each panel (now TIFF inputs)
+moz = rasterGrob(readTIFF("figs/histograms/moz_touch_hist.tiff"), interpolate = TRUE)
+ind = rasterGrob(readTIFF("figs/histograms/ind_touch_hist.tiff"), interpolate = TRUE)
+pak = rasterGrob(readTIFF("figs/histograms/pak_touch_hist.tiff"), interpolate = TRUE)
+gt  = rasterGrob(readTIFF("figs/histograms/gt_touch_hist.tiff"),  interpolate = TRUE)
 
-png(paste0("figs/histograms/all_countries_touch.png"), width=4000, height=3000, res=300)
-grid.arrange(moz, ind, pak, gt, ncol = 2, nrow = 2,
-             top = textGrob("Supplementary Figure 3. Distribution of Daily Indoor Non-Household Contacts Involving Touch, with 80th percentile",
-                            gp=gpar(fontsize=16)))
+# Panel labels (A/B/C/D) — journals expect these for multi-panel figures
+panel_label <- function(grob, label) {
+  arrangeGrob(grob, top = textGrob(label, x = unit(0.02, "npc"), just = "left",
+                                   gp = gpar(fontsize = 14, fontface = "bold")))
+}
+
+moz_labeled = panel_label(moz, "A. Mozambique")
+ind_labeled = panel_label(ind, "B. India")
+pak_labeled = panel_label(pak, "C. Pakistan")
+gt_labeled  = panel_label(gt,  "D. Guatemala")
+
+# Export as TIFF at journal-required resolution
+tiff("figs/histograms/all_countries_touch.tiff",
+     width = 2244, height = 1683,   # full-page width per Elsevier px spec at 300 dpi
+     res = 300, compression = "lzw")
+
+grid.arrange(moz_labeled, ind_labeled, pak_labeled, gt_labeled,
+             ncol = 2, nrow = 2)
+
 dev.off()
-
 
 
 # Run logistic outcome regressions for non-hh and indoor-time contacts --------------
@@ -91,7 +139,7 @@ dev.off()
 # The following line loads this function: outlier_simple_contacts_regression()
 source("04c_simple_outlier_analysis.R")
 
-prctl = 80
+prctl = 75
 
 for(c in countries){
   # for(h in hhmembership){
@@ -122,6 +170,20 @@ for(c in countries){
   # }
 }
 
+# Run logistic outcome regressions for non-hh and indoor-time contacts --------------
 
+# The following line loads this function: outlier_simple_contacts_regression()
+source("04f_quantile_analysis.R")
 
+for(c in countries){
+    dat <- outlier_simple_quantile_regression(cty = c, hhmbr = h, equation = equation, ref = ref, term = term)
+    write.csv(dat[[1]], paste0("results/", c, "_quantile_nonhh.csv"))
+    write.csv(dat[[2]], paste0("results/", c, "_quantile_indtime.csv"))
+    write.csv(dat[[3]], paste0("results/", c, "_quantile_touch.csv"))
+}
+
+# The following line loads this function: plot_simple_quantile_results()
+# source("04g_quantile_plots.R")
+# 
+#   plot_simple_quantile_results(name = "daily_5") 
 

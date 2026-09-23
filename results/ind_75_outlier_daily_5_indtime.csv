@@ -1,0 +1,43 @@
+"","Term","RR","Lower_95_CI","Upper_95_CI","Characteristic","Significance","predictor"
+"age<1y","<1y",0.490311956801249,0.118852396389461,2.02272585396172,"Age
+Ref: 30-39y",0,"<1y&Age
+Ref: 30-39y"
+"age1-4y","1-4y",4.0464557098891,1.42025295507106,11.5287940458993,"Age
+Ref: 30-39y",1,"1-4y&Age
+Ref: 30-39y"
+"age5-9y","5-9y",10.3211042255426,3.99741182039753,26.6485409111337,"Age
+Ref: 30-39y",1,"5-9y&Age
+Ref: 30-39y"
+"age10-19y","10-19y",2.38745118496991,0.712650801080441,7.99819933124698,"Age
+Ref: 30-39y",0,"10-19y&Age
+Ref: 30-39y"
+"age20-29y","20-29y",2.49316550615536,1.00472055183824,6.18666974584154,"Age
+Ref: 30-39y",1,"20-29y&Age
+Ref: 30-39y"
+"age40-59y","40-59y",0.926263124920188,0.378142357529881,2.26888990218219,"Age
+Ref: 30-39y",0,"40-59y&Age
+Ref: 30-39y"
+"age60+y","60+y",0.903596382402314,0.301791998974072,2.70546079772213,"Age
+Ref: 30-39y",0,"60+y&Age
+Ref: 30-39y"
+"sexMale","Male",1.66073193353705,1.08834633919212,2.53414786796361,"Sex
+Ref: Female",1,"Male&Sex
+Ref: Female"
+"study_siteUrban","Urban",1.03914205751269,0.690929602405051,1.56284549385781,"Site
+Ref: Rural",0,"Urban&Site
+Ref: Rural"
+"hh_size_cat(2,5]","3-5",0.790009777547363,0.343913079413851,1.81474763822344,"Household Size
+Ref: 0-2 members",0,"3-5&Household Size
+Ref: 0-2 members"
+"hh_size_cat(5,50]","6+",0.576790854244484,0.235101557648973,1.41508075432156,"Household Size
+Ref: 0-2 members",0,"6+&Household Size
+Ref: 0-2 members"
+"occupationStudent","Student",4.52833382475857,1.63834526963814,12.5161695818743,"Occupation
+Ref: Unemployed, Child, Other",1,"Student&Occupation
+Ref: Unemployed, Child, Other"
+"occupationSemiskilled / skilled labor","Laborer",2.11498179736489,1.0159059433573,4.40311234758826,"Occupation
+Ref: Unemployed, Child, Other",1,"Laborer&Occupation
+Ref: Unemployed, Child, Other"
+"occupationSemiprofessional / professional","Professional",3.23645580513017,1.02594684156216,10.2097357818379,"Occupation
+Ref: Unemployed, Child, Other",1,"Professional&Occupation
+Ref: Unemployed, Child, Other"

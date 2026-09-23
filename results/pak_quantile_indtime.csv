@@ -1,0 +1,43 @@
+"","Term","RR","Lower_95_CI","Upper_95_CI","Characteristic","Significance","predictor"
+"age<1y","<1y",0.0405596604977397,0.00620277009675634,0.265217964559445,"Age
+Ref: 30-39y",-1,"<1y&Age
+Ref: 30-39y"
+"age1-4y","1-4y",0.248983016419227,0.039339679921945,1.57582732213933,"Age
+Ref: 30-39y",0,"1-4y&Age
+Ref: 30-39y"
+"age5-9y","5-9y",0.963435455126394,0.177867150101395,5.21854583977688,"Age
+Ref: 30-39y",0,"5-9y&Age
+Ref: 30-39y"
+"age10-19y","10-19y",0.208689173982443,0.035837251387027,1.21524864915392,"Age
+Ref: 30-39y",0,"10-19y&Age
+Ref: 30-39y"
+"age20-29y","20-29y",0.75818533883668,0.146375763553916,3.92718708391334,"Age
+Ref: 30-39y",0,"20-29y&Age
+Ref: 30-39y"
+"age40-59y","40-59y",0.100310015642586,0.0118302670861963,0.850538636609176,"Age
+Ref: 30-39y",-1,"40-59y&Age
+Ref: 30-39y"
+"age60+y","60+y",0.751591347725825,0.148888144583313,3.79405328447914,"Age
+Ref: 30-39y",0,"60+y&Age
+Ref: 30-39y"
+"sexMale","Male",10.6675003441066,3.86151842910342,29.4691235276418,"Sex
+Ref: Female",1,"Male&Sex
+Ref: Female"
+"study_siteUrban","Urban",2.34940840192747,0.829003755263258,6.65825673768457,"Site
+Ref: Rural",0,"Urban&Site
+Ref: Rural"
+"hh_size_cat(2,5]","3-5",0.303777372556335,0.0502602209053398,1.83605822686358,"Household Size
+Ref: 0-2 members",0,"3-5&Household Size
+Ref: 0-2 members"
+"hh_size_cat(5,50]","6+",0.874798202452653,0.12592148380565,6.07737354965996,"Household Size
+Ref: 0-2 members",0,"6+&Household Size
+Ref: 0-2 members"
+"occupationStudent","Student",23.3490752126624,3.11987016010521,174.744231429228,"Occupation
+Ref: Unemployed, Child, Other",1,"Student&Occupation
+Ref: Unemployed, Child, Other"
+"occupationSemiskilled / skilled labor","Laborer",39.7601805342413,5.71065316516706,276.82857116209,"Occupation
+Ref: Unemployed, Child, Other",1,"Laborer&Occupation
+Ref: Unemployed, Child, Other"
+"occupationSemiprofessional / professional","Professional",46104144.4849068,0,Inf,"Occupation
+Ref: Unemployed, Child, Other",0,"Professional&Occupation
+Ref: Unemployed, Child, Other"

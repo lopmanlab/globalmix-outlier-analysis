@@ -89,13 +89,15 @@ prepare_simple_outlier_datasets <- function(cty = "moz", hhmbr = ""){
   contact_summaries <- combined %>%
     distinct() %>%
     ungroup() %>%
-    dplyr::summarize(daily_nonhh_q50 = quantile(avg_daily_nonhh_contacts, probs = 0.50, na.rm=T),
+    dplyr::summarize(daily_nonhh_q25 = quantile(avg_daily_nonhh_contacts, probs = 0.25, na.rm=T),
+                     daily_nonhh_q50 = quantile(avg_daily_nonhh_contacts, probs = 0.50, na.rm=T),
                      daily_nonhh_q75 = quantile(avg_daily_nonhh_contacts, probs = 0.75, na.rm=T),
                      daily_nonhh_q80 = quantile(avg_daily_nonhh_contacts, probs = 0.80, na.rm=T),
                      daily_nonhh_q90 = quantile(avg_daily_nonhh_contacts, probs = 0.90, na.rm=T),
                      daily_nonhh_mean = mean(avg_daily_nonhh_contacts, na.rm=T),
                      daily_nonhh_min = min(avg_daily_nonhh_contacts, na.rm=T),
                      daily_nonhh_max = max(avg_daily_nonhh_contacts, na.rm=T),
+                     daily_indtime_q25 = quantile(avg_daily_indtime_contacts, probs = 0.25, na.rm=T),
                      daily_indtime_q50 = quantile(avg_daily_indtime_contacts, probs = 0.50, na.rm=T),
                      daily_indtime_q75 = quantile(avg_daily_indtime_contacts, probs = 0.75, na.rm=T),
                      daily_indtime_q80 = quantile(avg_daily_indtime_contacts, probs = 0.80, na.rm=T),
@@ -103,6 +105,7 @@ prepare_simple_outlier_datasets <- function(cty = "moz", hhmbr = ""){
                      daily_indtime_mean = mean(avg_daily_indtime_contacts, na.rm=T),
                      daily_indtime_min = min(avg_daily_indtime_contacts, na.rm=T),
                      daily_indtime_max = max(avg_daily_indtime_contacts, na.rm=T),
+                     daily_touch_q25 = quantile(avg_daily_touch_contacts, probs = 0.25, na.rm=T),
                      daily_touch_q50 = quantile(avg_daily_touch_contacts, probs = 0.50, na.rm=T),
                      daily_touch_q75 = quantile(avg_daily_touch_contacts, probs = 0.75, na.rm=T),
                      daily_touch_q80 = quantile(avg_daily_touch_contacts, probs = 0.80, na.rm=T),
@@ -112,28 +115,46 @@ prepare_simple_outlier_datasets <- function(cty = "moz", hhmbr = ""){
                      daily_touch_max = max(avg_daily_touch_contacts, na.rm=T))
   
   contacts_simple <- combined %>%
-    mutate(daily_nonhh_mean_outlier = ifelse(avg_daily_nonhh_contacts > contact_summaries$daily_nonhh_mean, 1, 0),
+    mutate(daily_nonhh_quantile = case_when(avg_daily_nonhh_contacts >= contact_summaries$daily_nonhh_q75 ~ 1,
+                                            avg_daily_nonhh_contacts <= contact_summaries$daily_nonhh_q25 ~ 0,
+                                            .default = NA),
+           daily_nonhh_mean_outlier = ifelse(avg_daily_nonhh_contacts > contact_summaries$daily_nonhh_mean, 1, 0),
            daily_nonhh_q50_outlier = ifelse(avg_daily_nonhh_contacts > contact_summaries$daily_nonhh_q50, 1, 0),
            daily_nonhh_q75_outlier = ifelse(avg_daily_nonhh_contacts > contact_summaries$daily_nonhh_q75, 1, 0),
            daily_nonhh_q80_outlier = ifelse(avg_daily_nonhh_contacts > contact_summaries$daily_nonhh_q80, 1, 0),
            daily_nonhh_q90_outlier = ifelse(avg_daily_nonhh_contacts > contact_summaries$daily_nonhh_q90, 1, 0),
+           daily_indtime_quantile = case_when(avg_daily_indtime_contacts >= contact_summaries$daily_indtime_q75 ~ 1,
+                                              avg_daily_indtime_contacts <= contact_summaries$daily_indtime_q25 ~ 0,
+                                              .default = NA),
            daily_indtime_mean_outlier = ifelse(avg_daily_indtime_contacts > contact_summaries$daily_indtime_mean, 1, 0),
            daily_indtime_q50_outlier = ifelse(avg_daily_indtime_contacts > contact_summaries$daily_indtime_q50, 1, 0),
            daily_indtime_q75_outlier = ifelse(avg_daily_indtime_contacts > contact_summaries$daily_indtime_q75, 1, 0),
            daily_indtime_q80_outlier = ifelse(avg_daily_indtime_contacts > contact_summaries$daily_indtime_q80, 1, 0),
            daily_indtime_q90_outlier = ifelse(avg_daily_indtime_contacts > contact_summaries$daily_indtime_q90, 1, 0),
+           daily_touch_quantile = case_when(avg_daily_touch_contacts >= contact_summaries$daily_touch_q75 ~ 1,
+                                            avg_daily_touch_contacts <= contact_summaries$daily_touch_q25 ~ 0,
+                                            .default = NA),
            daily_touch_mean_outlier = ifelse(avg_daily_touch_contacts > contact_summaries$daily_touch_mean, 1, 0),
            daily_touch_q50_outlier = ifelse(avg_daily_touch_contacts > contact_summaries$daily_touch_q50, 1, 0),
            daily_touch_q75_outlier = ifelse(avg_daily_touch_contacts > contact_summaries$daily_touch_q75, 1, 0),
            daily_touch_q80_outlier = ifelse(avg_daily_touch_contacts > contact_summaries$daily_touch_q80, 1, 0),
-           daily_touch_q90_outlier = ifelse(avg_daily_touch_contacts > contact_summaries$daily_touch_q90, 1, 0))
+           daily_touch_q90_outlier = ifelse(avg_daily_touch_contacts > contact_summaries$daily_touch_q90, 1, 0)) %>%
+    mutate(participant_age = factor(participant_age, levels = c("<1y", "1-4y", "5-9y", "10-19y", "20-29y", "30-39y", "40-59y", "60+y"))) %>%
+    mutate(occupation = factor(occupation, levels = c("Unemployed outside home", "Semiskilled / skilled labor", "Student", "Semiprofessional / professional")))
   
   print(cty)
   print(hhmbr)
-  table(contacts_simple$daily_nonhh_q80_outlier, useNA = "always")  
-  prop.table(  table(contacts_simple$daily_nonhh_q80_outlier, useNA = "always")  )
+  # table(contacts_simple$daily_nonhh_q80_outlier, useNA = "always")  
+  # prop.table(  table(contacts_simple$daily_nonhh_q80_outlier, useNA = "always")  )
+  # summary(contacts_simple$avg_daily_indtime_contacts)
+  # prop.table(  table(contacts_simple$daily_nonhh_q80_outlier, contacts_simple$daily_indtime_q80_outlier, useNA = "always")  )
+ 
+  r <- as.data.frame(table1::table1(~ participant_age + participant_sex + study_site + hh_size_cat + occupation, data=contacts_simple))  
+  summary(contacts_simple$avg_daily_nonhh_contacts)
   summary(contacts_simple$avg_daily_indtime_contacts)
-  prop.table(  table(contacts_simple$daily_nonhh_q80_outlier, contacts_simple$daily_indtime_q80_outlier, useNA = "always")  )
+  summary(contacts_simple$avg_daily_touch_contacts)
+  
+  write.csv(r, paste0(here(),"/data/", cty, "_table1.csv"))
   write.csv(contact_summaries, paste0(here(),"/data/", c, "_simple_summaries.csv"))
   return(contacts_simple)
   

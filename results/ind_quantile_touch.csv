@@ -1,0 +1,43 @@
+"","Term","RR","Lower_95_CI","Upper_95_CI","Characteristic","Significance","predictor"
+"age<1y","<1y",72.9150575218755,11.6299817094774,457.146515465786,"Age
+Ref: 30-39y",1,"<1y&Age
+Ref: 30-39y"
+"age1-4y","1-4y",148.272088329996,23.2894945081934,943.971204269972,"Age
+Ref: 30-39y",1,"1-4y&Age
+Ref: 30-39y"
+"age5-9y","5-9y",122.979577196668,26.2894124673729,575.287729470606,"Age
+Ref: 30-39y",1,"5-9y&Age
+Ref: 30-39y"
+"age10-19y","10-19y",13.3919952878259,3.01202865177745,59.5431048384335,"Age
+Ref: 30-39y",1,"10-19y&Age
+Ref: 30-39y"
+"age20-29y","20-29y",6.09549021323994,1.82795392547061,20.3260051700363,"Age
+Ref: 30-39y",1,"20-29y&Age
+Ref: 30-39y"
+"age40-59y","40-59y",0.83507357468179,0.220002317677342,3.16972967600532,"Age
+Ref: 30-39y",0,"40-59y&Age
+Ref: 30-39y"
+"age60+y","60+y",2.20203702212462,0.613494752362773,7.90384437378226,"Age
+Ref: 30-39y",0,"60+y&Age
+Ref: 30-39y"
+"sexMale","Male",1.40067122399822,0.734188415019216,2.67217493166971,"Sex
+Ref: Female",0,"Male&Sex
+Ref: Female"
+"study_siteUrban","Urban",0.613931045241948,0.329623121421222,1.14346143767694,"Site
+Ref: Rural",0,"Urban&Site
+Ref: Rural"
+"hh_size_cat(2,5]","3-5",0.775157704722773,0.268381876539982,2.23886007109561,"Household Size
+Ref: 0-2 members",0,"3-5&Household Size
+Ref: 0-2 members"
+"hh_size_cat(5,50]","6+",0.238037537862213,0.0715093537274996,0.79237003941366,"Household Size
+Ref: 0-2 members",-1,"6+&Household Size
+Ref: 0-2 members"
+"occupationStudent","Student",3.76730986708684,1.09135932564111,13.0045378283752,"Occupation
+Ref: Unemployed, Child, Other",1,"Student&Occupation
+Ref: Unemployed, Child, Other"
+"occupationSemiskilled / skilled labor","Laborer",1.41404782993222,0.534862731151639,3.73840080618579,"Occupation
+Ref: Unemployed, Child, Other",0,"Laborer&Occupation
+Ref: Unemployed, Child, Other"
+"occupationSemiprofessional / professional","Professional",1.95225740256214,0.437997154812429,8.70167516839427,"Occupation
+Ref: Unemployed, Child, Other",0,"Professional&Occupation
+Ref: Unemployed, Child, Other"

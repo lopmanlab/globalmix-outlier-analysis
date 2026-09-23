@@ -1,0 +1,43 @@
+"","Term","RR","Lower_95_CI","Upper_95_CI","Characteristic","Significance","predictor"
+"age<1y","<1y",0.121805269276061,0.0284493143479203,0.521507247660553,"Age
+Ref: 30-39y",-1,"<1y&Age
+Ref: 30-39y"
+"age1-4y","1-4y",0.427159938374409,0.108951334159268,1.67474418151957,"Age
+Ref: 30-39y",0,"1-4y&Age
+Ref: 30-39y"
+"age5-9y","5-9y",1.38906842062943,0.465914172559269,4.1413444596268,"Age
+Ref: 30-39y",0,"5-9y&Age
+Ref: 30-39y"
+"age10-19y","10-19y",0.60397063599355,0.231599790028856,1.57504689057362,"Age
+Ref: 30-39y",0,"10-19y&Age
+Ref: 30-39y"
+"age20-29y","20-29y",0.637408454457718,0.243254646311048,1.67022313438016,"Age
+Ref: 30-39y",0,"20-29y&Age
+Ref: 30-39y"
+"age40-59y","40-59y",0.484909760313489,0.203085210039289,1.15782668566458,"Age
+Ref: 30-39y",0,"40-59y&Age
+Ref: 30-39y"
+"age60+y","60+y",0.913558495468298,0.332936446579043,2.50675206399837,"Age
+Ref: 30-39y",0,"60+y&Age
+Ref: 30-39y"
+"sexMale","Male",4.46625852075659,2.33021012781208,8.56037184636232,"Sex
+Ref: Female",1,"Male&Sex
+Ref: Female"
+"study_siteUrban","Urban",3.56867959611725,1.93358620597463,6.58645268589109,"Site
+Ref: Rural",1,"Urban&Site
+Ref: Rural"
+"hh_size_cat(2,5]","3-5",0.341614228670907,0.0910066002304344,1.28232766563004,"Household Size
+Ref: 0-2 members",0,"3-5&Household Size
+Ref: 0-2 members"
+"hh_size_cat(5,50]","6+",0.461580503508307,0.119207076041689,1.78728116059547,"Household Size
+Ref: 0-2 members",0,"6+&Household Size
+Ref: 0-2 members"
+"occupationStudent","Student",3.46839711709653,1.20551235844537,9.9789757256385,"Occupation
+Ref: Unemployed, Child, Other",1,"Student&Occupation
+Ref: Unemployed, Child, Other"
+"occupationSemiskilled / skilled labor","Laborer",4.03106494601208,1.74370013530455,9.31896733272275,"Occupation
+Ref: Unemployed, Child, Other",1,"Laborer&Occupation
+Ref: Unemployed, Child, Other"
+"occupationSemiprofessional / professional","Professional",2.88555373841504,0.92373261047325,9.01388592637774,"Occupation
+Ref: Unemployed, Child, Other",0,"Professional&Occupation
+Ref: Unemployed, Child, Other"

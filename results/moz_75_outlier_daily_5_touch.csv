@@ -1,0 +1,43 @@
+"","Term","RR","Lower_95_CI","Upper_95_CI","Characteristic","Significance","predictor"
+"age<1y","<1y",1.09276605260842,0.5422982226176,2.20199439336061,"Age
+Ref: 30-39y",0,"<1y&Age
+Ref: 30-39y"
+"age1-4y","1-4y",1.66512044495533,0.779379094183224,3.55748071368774,"Age
+Ref: 30-39y",0,"1-4y&Age
+Ref: 30-39y"
+"age5-9y","5-9y",3.21639127123337,1.59294309056057,6.49437689957,"Age
+Ref: 30-39y",1,"5-9y&Age
+Ref: 30-39y"
+"age10-19y","10-19y",3.31680547941496,1.44289846087044,7.62437474750684,"Age
+Ref: 30-39y",1,"10-19y&Age
+Ref: 30-39y"
+"age20-29y","20-29y",1.23682942033631,0.603084456338641,2.53653862063801,"Age
+Ref: 30-39y",0,"20-29y&Age
+Ref: 30-39y"
+"age40-59y","40-59y",0.567896242427112,0.272681897883219,1.18271929551023,"Age
+Ref: 30-39y",0,"40-59y&Age
+Ref: 30-39y"
+"age60+y","60+y",0.179620831182391,0.0570164337661028,0.565865678779688,"Age
+Ref: 30-39y",-1,"60+y&Age
+Ref: 30-39y"
+"sexMale","Male",1.09818668315201,0.81436240420419,1.48093033866287,"Sex
+Ref: Female",0,"Male&Sex
+Ref: Female"
+"study_siteUrban","Urban",0.452840655300362,0.333461913756903,0.614956763075364,"Site
+Ref: Rural",-1,"Urban&Site
+Ref: Rural"
+"hh_size_cat(2,5]","3-5",0.800390464903373,0.430535100616363,1.48797367599322,"Household Size
+Ref: 0-2 members",0,"3-5&Household Size
+Ref: 0-2 members"
+"hh_size_cat(5,50]","6+",0.62683593552091,0.335373670699199,1.17159850157943,"Household Size
+Ref: 0-2 members",0,"6+&Household Size
+Ref: 0-2 members"
+"occupationStudent","Student",1.09468165226204,0.546594963845195,2.19235082476637,"Occupation
+Ref: Unemployed, Child, Other",0,"Student&Occupation
+Ref: Unemployed, Child, Other"
+"occupationSemiskilled / skilled labor","Laborer",0.741514372276392,0.40591696599325,1.35457152658555,"Occupation
+Ref: Unemployed, Child, Other",0,"Laborer&Occupation
+Ref: Unemployed, Child, Other"
+"occupationSemiprofessional / professional","Professional",0.432192103858107,0.157914697244748,1.1828538945162,"Occupation
+Ref: Unemployed, Child, Other",0,"Professional&Occupation
+Ref: Unemployed, Child, Other"

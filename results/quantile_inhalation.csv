@@ -1,0 +1,169 @@
+"","X","Term","RR","Lower_95_CI","Upper_95_CI","Characteristic","Significance","predictor","Country"
+"1","age<1y","<1y",0.270320399733739,0.118843737117737,0.614867222155893,"Age
+Ref: 30-39y",-1,"<1y&Age
+Ref: 30-39y","Mozambique"
+"2","age1-4y","1-4y",0.283359251983349,0.114250680405038,0.702774507774593,"Age
+Ref: 30-39y",-1,"1-4y&Age
+Ref: 30-39y","Mozambique"
+"3","age5-9y","5-9y",0.543063984973352,0.22860439442295,1.29008233861637,"Age
+Ref: 30-39y",0,"5-9y&Age
+Ref: 30-39y","Mozambique"
+"4","age10-19y","10-19y",11.3818821109171,2.73155259099615,47.4262296152869,"Age
+Ref: 30-39y",1,"10-19y&Age
+Ref: 30-39y","Mozambique"
+"5","age20-29y","20-29y",1.54049292135331,0.628988647057371,3.77291140601968,"Age
+Ref: 30-39y",0,"20-29y&Age
+Ref: 30-39y","Mozambique"
+"6","age40-59y","40-59y",0.394455245381085,0.183330557704331,0.848712525380467,"Age
+Ref: 30-39y",-1,"40-59y&Age
+Ref: 30-39y","Mozambique"
+"7","age60+y","60+y",0.19100297466688,0.079865577938119,0.456794244447387,"Age
+Ref: 30-39y",-1,"60+y&Age
+Ref: 30-39y","Mozambique"
+"8","sexMale","Male",1.4144215752178,0.959451093550478,2.08513847750004,"Sex
+Ref: Female",0,"Male&Sex
+Ref: Female","Mozambique"
+"9","study_siteUrban","Urban",0.191350310905569,0.126967343338506,0.288380779820205,"Site
+Ref: Rural",-1,"Urban&Site
+Ref: Rural","Mozambique"
+"10","hh_size_cat(2,5]","3-5",0.715373555573891,0.337498974625915,1.51632852983232,"Household Size
+Ref: 0-2 members",0,"3-5&Household Size
+Ref: 0-2 members","Mozambique"
+"11","hh_size_cat(5,50]","6+",0.742429708965524,0.351346088705377,1.56882882853677,"Household Size
+Ref: 0-2 members",0,"6+&Household Size
+Ref: 0-2 members","Mozambique"
+"12","occupationStudent","Student",0.548960530908928,0.150104626676087,2.00765073781581,"Occupation
+Ref: Unemployed, Child, Other",0,"Student&Occupation
+Ref: Unemployed, Child, Other","Mozambique"
+"13","occupationSemiskilled / skilled labor","Laborer",1.92838410548094,1.04022601494906,3.57486277484958,"Occupation
+Ref: Unemployed, Child, Other",1,"Laborer&Occupation
+Ref: Unemployed, Child, Other","Mozambique"
+"14","occupationSemiprofessional / professional","Professional",10.7643650574306,3.89777570433998,29.7276097648755,"Occupation
+Ref: Unemployed, Child, Other",1,"Professional&Occupation
+Ref: Unemployed, Child, Other","Mozambique"
+"15","age<1y","<1y",0.333251303047667,0.0716764769771966,1.54941252230212,"Age
+Ref: 30-39y",0,"<1y&Age
+Ref: 30-39y","India"
+"16","age1-4y","1-4y",8.06312919656725,2.13227096124462,30.4905209620199,"Age
+Ref: 30-39y",1,"1-4y&Age
+Ref: 30-39y","India"
+"17","age5-9y","5-9y",63.6087874221655,13.320666217057,303.744405226314,"Age
+Ref: 30-39y",1,"5-9y&Age
+Ref: 30-39y","India"
+"18","age10-19y","10-19y",3.0549961681005,0.658612363864332,14.1707051054257,"Age
+Ref: 30-39y",0,"10-19y&Age
+Ref: 30-39y","India"
+"19","age20-29y","20-29y",4.99736189866217,1.49133321794291,16.7458389887192,"Age
+Ref: 30-39y",1,"20-29y&Age
+Ref: 30-39y","India"
+"20","age40-59y","40-59y",1.15558628905702,0.363423842142061,3.67444156548922,"Age
+Ref: 30-39y",0,"40-59y&Age
+Ref: 30-39y","India"
+"21","age60+y","60+y",1.23310614536326,0.348106116857669,4.36806678221729,"Age
+Ref: 30-39y",0,"60+y&Age
+Ref: 30-39y","India"
+"22","sexMale","Male",1.90088736678314,0.932734049977197,3.87395826418482,"Sex
+Ref: Female",0,"Male&Sex
+Ref: Female","India"
+"23","study_siteUrban","Urban",1.12939229385107,0.58265480145821,2.18916406458493,"Site
+Ref: Rural",0,"Urban&Site
+Ref: Rural","India"
+"24","hh_size_cat(2,5]","3-5",0.790587382156915,0.274172469247169,2.27969062882917,"Household Size
+Ref: 0-2 members",0,"3-5&Household Size
+Ref: 0-2 members","India"
+"25","hh_size_cat(5,50]","6+",0.326522971298994,0.103772022683066,1.02741806538307,"Household Size
+Ref: 0-2 members",0,"6+&Household Size
+Ref: 0-2 members","India"
+"26","occupationStudent","Student",56.1973077409499,8.66580008103685,364.436909206098,"Occupation
+Ref: Unemployed, Child, Other",1,"Student&Occupation
+Ref: Unemployed, Child, Other","India"
+"27","occupationSemiskilled / skilled labor","Laborer",3.56698758360176,1.34635437005631,9.4502611678952,"Occupation
+Ref: Unemployed, Child, Other",1,"Laborer&Occupation
+Ref: Unemployed, Child, Other","India"
+"28","occupationSemiprofessional / professional","Professional",15.7773588919236,1.41592957863794,175.80327253564,"Occupation
+Ref: Unemployed, Child, Other",1,"Professional&Occupation
+Ref: Unemployed, Child, Other","India"
+"29","age<1y","<1y",0.472988820854623,0.201139342492705,1.11225592109888,"Age
+Ref: 30-39y",0,"<1y&Age
+Ref: 30-39y","Guatemala"
+"30","age1-4y","1-4y",1.27155419113764,0.513073242920434,3.15130458138201,"Age
+Ref: 30-39y",0,"1-4y&Age
+Ref: 30-39y","Guatemala"
+"31","age5-9y","5-9y",5.58207737087844,2.0320525614533,15.33404615882,"Age
+Ref: 30-39y",1,"5-9y&Age
+Ref: 30-39y","Guatemala"
+"32","age10-19y","10-19y",1.45188990647419,0.463322222513916,4.54971550702669,"Age
+Ref: 30-39y",0,"10-19y&Age
+Ref: 30-39y","Guatemala"
+"33","age20-29y","20-29y",0.708639558673511,0.283149535638326,1.77351526635884,"Age
+Ref: 30-39y",0,"20-29y&Age
+Ref: 30-39y","Guatemala"
+"34","age40-59y","40-59y",0.543894326981633,0.228352225319167,1.29545940929341,"Age
+Ref: 30-39y",0,"40-59y&Age
+Ref: 30-39y","Guatemala"
+"35","age60+y","60+y",0.389469415001381,0.166355930583195,0.91181856089981,"Age
+Ref: 30-39y",-1,"60+y&Age
+Ref: 30-39y","Guatemala"
+"36","sexMale","Male",1.21872135610134,0.778106235717955,1.90884184657256,"Sex
+Ref: Female",0,"Male&Sex
+Ref: Female","Guatemala"
+"37","study_siteUrban","Urban",0.656079956623832,0.438700517785894,0.981172558573555,"Site
+Ref: Rural",-1,"Urban&Site
+Ref: Rural","Guatemala"
+"38","hh_size_cat(2,5]","3-5",0.659555200977799,0.411791044154229,1.05639272468961,"Household Size
+Ref: 0-2 members",0,"3-5&Household Size
+Ref: 0-2 members","Guatemala"
+"39","hh_size_cat(5,50]","6+",0.426434184960052,0.209395842012845,0.868432306747467,"Household Size
+Ref: 0-2 members",-1,"6+&Household Size
+Ref: 0-2 members","Guatemala"
+"40","occupationStudent","Student",3.45528265194102,1.22702807826888,9.72999592776097,"Occupation
+Ref: Unemployed, Child, Other",1,"Student&Occupation
+Ref: Unemployed, Child, Other","Guatemala"
+"41","occupationSemiskilled / skilled labor","Laborer",1.49536775631581,0.75152791724388,2.97543800479115,"Occupation
+Ref: Unemployed, Child, Other",0,"Laborer&Occupation
+Ref: Unemployed, Child, Other","Guatemala"
+"42","occupationSemiprofessional / professional","Professional",6.23449282280992,1.11187328240297,34.9580310749668,"Occupation
+Ref: Unemployed, Child, Other",1,"Professional&Occupation
+Ref: Unemployed, Child, Other","Guatemala"
+"43","age<1y","<1y",0.0405596604977397,0.00620277009675634,0.265217964559445,"Age
+Ref: 30-39y",-1,"<1y&Age
+Ref: 30-39y","Pakistan"
+"44","age1-4y","1-4y",0.248983016419227,0.039339679921945,1.57582732213933,"Age
+Ref: 30-39y",0,"1-4y&Age
+Ref: 30-39y","Pakistan"
+"45","age5-9y","5-9y",0.963435455126394,0.177867150101395,5.21854583977688,"Age
+Ref: 30-39y",0,"5-9y&Age
+Ref: 30-39y","Pakistan"
+"46","age10-19y","10-19y",0.208689173982443,0.035837251387027,1.21524864915392,"Age
+Ref: 30-39y",0,"10-19y&Age
+Ref: 30-39y","Pakistan"
+"47","age20-29y","20-29y",0.75818533883668,0.146375763553916,3.92718708391334,"Age
+Ref: 30-39y",0,"20-29y&Age
+Ref: 30-39y","Pakistan"
+"48","age40-59y","40-59y",0.100310015642586,0.0118302670861963,0.850538636609176,"Age
+Ref: 30-39y",-1,"40-59y&Age
+Ref: 30-39y","Pakistan"
+"49","age60+y","60+y",0.751591347725825,0.148888144583313,3.79405328447914,"Age
+Ref: 30-39y",0,"60+y&Age
+Ref: 30-39y","Pakistan"
+"50","sexMale","Male",10.6675003441066,3.86151842910342,29.4691235276418,"Sex
+Ref: Female",1,"Male&Sex
+Ref: Female","Pakistan"
+"51","study_siteUrban","Urban",2.34940840192747,0.829003755263258,6.65825673768457,"Site
+Ref: Rural",0,"Urban&Site
+Ref: Rural","Pakistan"
+"52","hh_size_cat(2,5]","3-5",0.303777372556335,0.0502602209053398,1.83605822686358,"Household Size
+Ref: 0-2 members",0,"3-5&Household Size
+Ref: 0-2 members","Pakistan"
+"53","hh_size_cat(5,50]","6+",0.874798202452653,0.12592148380565,6.07737354965996,"Household Size
+Ref: 0-2 members",0,"6+&Household Size
+Ref: 0-2 members","Pakistan"
+"54","occupationStudent","Student",23.3490752126624,3.11987016010521,174.744231429228,"Occupation
+Ref: Unemployed, Child, Other",1,"Student&Occupation
+Ref: Unemployed, Child, Other","Pakistan"
+"55","occupationSemiskilled / skilled labor","Laborer",39.7601805342413,5.71065316516706,276.82857116209,"Occupation
+Ref: Unemployed, Child, Other",1,"Laborer&Occupation
+Ref: Unemployed, Child, Other","Pakistan"
+"56","occupationSemiprofessional / professional","Professional",46104144.4849068,0,Inf,"Occupation
+Ref: Unemployed, Child, Other",0,"Professional&Occupation
+Ref: Unemployed, Child, Other","Pakistan"

@@ -80,20 +80,36 @@ total_simple_contacts_regression <- function(cty = "moz", hhmbr = "", equation =
   )
   df_long <- pivot_longer(df, cols = -y, names_to = "Dist", values_to = "Density")
   
-  png(filename = paste0(here(), "/figs/histograms/", cty, hhmbr, "_nonhh_hist.png" ), height = 800, width = 1200)
-  print(ggplot() +
+  # png(filename = paste0(here(), "/figs/histograms/", cty, hhmbr, "_nonhh_hist.png" ), height = 800, width = 1200)
+  #print(
+  p <- ggplot() +
           geom_histogram(data = contacts_daily, aes(x = avg_daily_nonhh_contacts, y = ..density..),
                          bins = length(unique((contacts_daily$avg_daily_nonhh_contacts))),
                          fill = "gray80", color = "black") +
           # geom_line(data = df_long, aes(x = y, y = Density, color = Dist)) +
-          # geom_vline(aes(xintercept=quantile(contacts_daily$avg_daily_nonhh_contacts, probs = 0.75, na.rm=T)), lty = 2, size=1.5)+
-          geom_vline(aes(xintercept=quantile(contacts_daily$avg_daily_nonhh_contacts, probs = 0.80, na.rm=T)), lty = 2, size=1.5)+
+          geom_vline(aes(xintercept=quantile(contacts_daily$avg_daily_nonhh_contacts, probs = 0.75, na.rm=T)), lty = 2, size=1.5)+
+          # geom_vline(aes(xintercept=quantile(contacts_daily$avg_daily_nonhh_contacts, probs = 0.80, na.rm=T)), lty = 2, size=1.5)+
           # geom_vline(aes(xintercept=quantile(contacts_daily$avg_daily_nonhh_contacts, probs = 0.90, na.rm=T)), lty = 4, size=1.5)+
           theme_bw() +
-          ggtitle(paste0(index))+
-          xlab("")+
-          theme(text = element_text(size = 20)))
-  dev.off()
+          # ggtitle(paste0(index))+
+          xlab("Number of Non-Household Contacts")+
+          theme(
+            text = element_text(size = 11),
+            axis.title = element_text(size = 11),
+            axis.text = element_text(size = 10),
+            plot.title = element_blank()
+          )#)
+  # dev.off()
+  
+  ggsave(
+    filename = paste0(here(), "/figs/histograms/", cty, hhmbr, "_nonhh_hist.tiff" ),
+    plot = p,
+    device = "tiff",
+    width = 150, height = 89,        # mm; ~single-column width per many journal templates
+    units = "mm",
+    dpi = 300,
+    compression = "lzw"
+  )
   
   # Determine if negative binomial distribution is the best for indtime -----------
   lm_model <- lm(data = contacts_daily, avg_daily_indtime_contacts ~ 1) # Linear model (mean only)
@@ -113,20 +129,36 @@ total_simple_contacts_regression <- function(cty = "moz", hhmbr = "", equation =
   )
   df_long <- pivot_longer(df, cols = -y, names_to = "Dist", values_to = "Density")
   
-  png(filename = paste0(here(), "/figs/histograms/", cty, hhmbr, "_indtime_hist.png" ), height = 800, width = 1200)
-  print(ggplot() +
+  # png(filename = paste0(here(), "/figs/histograms/", cty, hhmbr, "_indtime_hist.png" ), height = 800, width = 1200)
+  #print(
+  p <- ggplot() +
           geom_histogram(data = contacts_daily, aes(x = avg_daily_indtime_contacts, y = ..density..),
                          bins = length(unique((contacts_daily$avg_daily_indtime_contacts))),
                          fill = "gray80", color = "black") +
           # geom_line(data = df_long, aes(x = y, y = Density, color = Dist)) +
-          # geom_vline(aes(xintercept=quantile(contacts_daily$avg_daily_indtime_contacts, probs = 0.75, na.rm=T)), lty = 2, size=1.5)+
-          geom_vline(aes(xintercept=quantile(contacts_daily$avg_daily_indtime_contacts, probs = 0.80, na.rm=T)), lty = 2, size=1.5)+
+          geom_vline(aes(xintercept=quantile(contacts_daily$avg_daily_indtime_contacts, probs = 0.75, na.rm=T)), lty = 2, size=1.5)+
+          # geom_vline(aes(xintercept=quantile(contacts_daily$avg_daily_indtime_contacts, probs = 0.80, na.rm=T)), lty = 2, size=1.5)+
           # geom_vline(aes(xintercept=quantile(contacts_daily$avg_daily_indtime_contacts, probs = 0.90, na.rm=T)), lty = 4, size=1.5)+
           theme_bw() +
-          ggtitle(index)+
-          xlab("")+
-          theme(text = element_text(size = 20)))
-  dev.off()
+          # ggtitle(index)+
+          xlab("Indoor-Hours Spent with Non-Household Contacts")+
+          theme(
+            text = element_text(size = 11),
+            axis.title = element_text(size = 11),
+            axis.text = element_text(size = 10),
+            plot.title = element_blank()
+          )#)
+  # dev.off()
+  
+  ggsave(
+    filename = paste0(here(), "/figs/histograms/", cty, hhmbr, "_indtime_hist.tiff" ),
+    plot = p,
+    device = "tiff",
+    width = 150, height = 89,        # mm; ~single-column width per many journal templates
+    units = "mm",
+    dpi = 300,
+    compression = "lzw"
+  )
   
   # Determine if negative binomial distribution is the best for touch -----------
   lm_model <- lm(data = contacts_daily, avg_daily_touch_contacts ~ 1) # Linear model (mean only)
@@ -146,20 +178,36 @@ total_simple_contacts_regression <- function(cty = "moz", hhmbr = "", equation =
   )
   df_long <- pivot_longer(df, cols = -y, names_to = "Dist", values_to = "Density")
   
-  png(filename = paste0(here(), "/figs/histograms/", cty, hhmbr, "_touch_hist.png" ), height = 800, width = 1200)
-  print(ggplot() +
+  # png(filename = paste0(here(), "/figs/histograms/", cty, hhmbr, "_touch_hist.png" ), height = 800, width = 1200)
+  #print(
+  p <- ggplot() +
           geom_histogram(data = contacts_daily, aes(x = avg_daily_touch_contacts, y = ..density..),
                          bins = length(unique((contacts_daily$avg_daily_touch_contacts))),
                          fill = "gray80", color = "black") +
           # geom_line(data = df_long, aes(x = y, y = Density, color = Dist)) +
-          # geom_vline(aes(xintercept=quantile(contacts_daily$avg_daily_touch_contacts, probs = 0.75, na.rm=T)), lty = 2, size=1.5)+
-          geom_vline(aes(xintercept=quantile(contacts_daily$avg_daily_touch_contacts, probs = 0.80, na.rm=T)), lty = 2, size=1.5)+
+          geom_vline(aes(xintercept=quantile(contacts_daily$avg_daily_touch_contacts, probs = 0.75, na.rm=T)), lty = 2, size=1.5)+
+          # geom_vline(aes(xintercept=quantile(contacts_daily$avg_daily_touch_contacts, probs = 0.80, na.rm=T)), lty = 2, size=1.5)+
           # geom_vline(aes(xintercept=quantile(contacts_daily$avg_daily_touch_contacts, probs = 0.90, na.rm=T)), lty = 4, size=1.5)+
           theme_bw() +
-          ggtitle(index)+
-          xlab("")+
-          theme(text = element_text(size = 20)))
-  dev.off()
+          # ggtitle(index)+
+          xlab("Number of Non-Household Contacts Involving Touch")+
+          theme(
+            text = element_text(size = 11),
+            axis.title = element_text(size = 11),
+            axis.text = element_text(size = 10),
+            plot.title = element_blank()
+          )#)
+  # dev.off()
+  
+  ggsave(
+    filename = paste0(here(), "/figs/histograms/", cty, hhmbr, "_touch_hist.tiff" ),
+    plot = p,
+    device = "tiff",
+    width = 150, height = 89,        # mm; ~single-column width per many journal templates
+    units = "mm",
+    dpi = 300,
+    compression = "lzw"
+  )
   
   # Specify comparison groups --------------------------------------------------
   
