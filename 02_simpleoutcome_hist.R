@@ -7,49 +7,7 @@ pacman::p_load(here,
                ggpubr,
                legendry)
 
-get_rr_ci_by_group <- function(model, digits = 2) {
-  # Get the actual data used in the model
-  model_data <- model.frame(model)
-  
-  # Remove response variable
-  predictors <- model_data[, -1, drop = FALSE]
-  
-  # Drop duplicate rows so each tested combo appears once
-  combos <- unique(predictors)[!grepl(paste0("Child",collapse="|" ),names(unique(predictors)))]
-  
-  # Build model matrix (same coding as model)
-  mm <- model.matrix(delete.response(terms(model)), data = combos)
-  
-  # Match coefficient names
-  beta <- coef(model)
-  vcov_mat <- vcov(model)
-  mm <- mm[, names(beta), drop = FALSE]
-  mm <- mm[,!grepl(paste0("Child",collapse="|" ),names(beta))]
-  
-  # Log RR, SE, CI
-  log_rr <- mm %*% beta[!is.na(beta)]
-  se <- sqrt(diag(mm %*% vcov_mat %*% t(mm)))
-  
-  RR <- exp(log_rr)
-  conf_int <- confint(model)
-  lower_CI <- exp(log_rr - 1.96 * se)
-  upper_CI <- exp(log_rr + 1.96 * se)
-  
-  # Combine results
-  results <- cbind(combos, 
-                   RR = round(RR, digits),
-                   Lower_95_CI = round(lower_CI, digits),
-                   Upper_95_CI = round(upper_CI, digits))
-  
-  # Force the first row to be RR=1 for reference
-  results$RR[1] <- 1
-  results$Lower_95_CI[1] <- 1
-  results$Upper_95_CI[1] <- 1
-  
-  return(results)
-}
-
-total_simple_contacts_regression <- function(cty = "moz", hhmbr = "", equation = "age + sex + study_site + hh_size_cat + occupation", ref, term){
+simple_outcome_hist <- function(cty = "moz", hhmbr = "", equation = "age + sex + study_site + hh_size_cat + occupation", ref, term){
   
   full_names <- c("Mozambique", "India", "Pakistan", "Guatemala")
   names(full_names) <- c("moz", "ind", "pak", "gt")
@@ -209,84 +167,7 @@ total_simple_contacts_regression <- function(cty = "moz", hhmbr = "", equation =
     compression = "lzw"
   )
   
-  # Specify comparison groups --------------------------------------------------
-  
-  contacts_daily <- contacts_daily %>%
-    rename(sex = participant_sex) %>%
-    mutate(age = factor(participant_age, levels = c("30-39y",
-                                                    # "<6mo",
-                                                    # "6-11mo",
-                                                    "<1y",
-                                                    "1-4y",
-                                                    "5-9y", 
-                                                    "10-19y",
-                                                    "20-29y",
-                                                    "40-59y",
-                                                    "60+y"))) %>%
-    mutate(occupation = factor(occupation, levels = c("Unemployed outside home",
-                                                      "Student",
-                                                      "Semiskilled / skilled labor",
-                                                      "Semiprofessional / professional"))) %>%
-    mutate(hh_size_cat = factor(hh_size_cat, levels = c("[0,2]",
-                                                        "(2,5]",
-                                                        "(5,50]")))
-  
-  # Regressions ------------------------------------------------------------
-  negbin_daily_nonhh_mod <- glm.nb(as.formula(paste0("avg_daily_nonhh_contacts ~ ", equation)),
-                                  data = contacts_daily)
-  
-  negbin_daily_indtime_mod <- glm.nb(as.formula(paste0("avg_daily_indtime_contacts ~ ", equation)),
-                                 data = contacts_daily)
-  
-  negbin_daily_touch_mod <- glm.nb(as.formula(paste0("avg_daily_touch_contacts ~ ", equation)),
-                                     data = contacts_daily)
-  
-  coef_exp <- coef(negbin_daily_nonhh_mod)[!is.na(coef(negbin_daily_nonhh_mod))]
-  negbin_daily_nonhh <- data.frame(
-    Term = names(coef_exp),
-    RR =  exp(coef_exp),
-    Lower_95_CI = exp(coef_exp - 1.96 * sqrt(diag(vcov(negbin_daily_nonhh_mod)))),
-    Upper_95_CI = exp(coef_exp + 1.96 * sqrt(diag(vcov(negbin_daily_nonhh_mod))))
-  )%>%
-    filter(Term != "(Intercept)") %>%
-    mutate(Characteristic = ref) %>%
-    mutate(Term = term) %>%
-    mutate(Significance = ifelse((Lower_95_CI) < 1 & (Upper_95_CI) > 1, 0,
-                                 ifelse((Lower_95_CI) < 1 & (Upper_95_CI) < 1, -1, 1))) %>%
-    mutate(predictor = factor(paste(Term, Characteristic, sep = "&"),
-                              levels = paste(Term, Characteristic, sep = "&")))
-  
-  coef_exp <- coef(negbin_daily_indtime_mod)[!is.na(coef(negbin_daily_indtime_mod))]
-  negbin_daily_indtime <- data.frame(
-    Term = names(coef_exp),
-    RR =  exp(coef_exp),
-    Lower_95_CI = exp(coef_exp - 1.96 * sqrt(diag(vcov(negbin_daily_indtime_mod)))),
-    Upper_95_CI = exp(coef_exp + 1.96 * sqrt(diag(vcov(negbin_daily_indtime_mod))))
-  )%>%
-    filter(Term != "(Intercept)") %>%
-    mutate(Characteristic = ref) %>%
-    mutate(Term = term) %>%
-    mutate(Significance = ifelse((Lower_95_CI) < 1 & (Upper_95_CI) > 1, 0,
-                                 ifelse((Lower_95_CI) < 1 & (Upper_95_CI) < 1, -1, 1))) %>%
-    mutate(predictor = factor(paste(Term, Characteristic, sep = "&"),
-                              levels = paste(Term, Characteristic, sep = "&")))
-  
-  coef_exp <- coef(negbin_daily_touch_mod)[!is.na(coef(negbin_daily_touch_mod))]
-  negbin_daily_touch <- data.frame(
-    Term = names(coef_exp),
-    RR =  exp(coef_exp),
-    Lower_95_CI = exp(coef_exp - 1.96 * sqrt(diag(vcov(negbin_daily_touch_mod)))),
-    Upper_95_CI = exp(coef_exp + 1.96 * sqrt(diag(vcov(negbin_daily_touch_mod))))
-  )%>%
-    filter(Term != "(Intercept)") %>%
-    mutate(Characteristic = ref) %>%
-    mutate(Term = term) %>%
-    mutate(Significance = ifelse((Lower_95_CI) < 1 & (Upper_95_CI) > 1, 0,
-                                 ifelse((Lower_95_CI) < 1 & (Upper_95_CI) < 1, -1, 1))) %>%
-    mutate(predictor = factor(paste(Term, Characteristic, sep = "&"),
-                              levels = paste(Term, Characteristic, sep = "&")))
-  
   # Save data --------------------------------------------------------------------
   
-  return(list(negbin_daily_nonhh, negbin_daily_indtime, negbin_daily_touch))
+  return()
 }

@@ -10,24 +10,20 @@ pacman::p_load(here,
 # Create data for outlier indoor, non-household member, and touch contacts ----
 
 # The following line loads this function: prepare_simple_outlier_datasets()
-source("04a_simpleoutcome_data_prep.R")
+source("01_simpleoutcome_data_prep.R")
 
 countries = c("moz", "ind", "gt", "pak")
-hhmembership = ""
-h = hhmembership
 
 # Already created the datasets
 for(c in countries){
-  # for(h in hhmembership){
-    dat <- prepare_simple_outlier_datasets(cty = c, hhmbr = h)
-    write.csv(dat, paste0(here(),"/data/",c,"/", c, h, "_outlier_simple.csv"))
-  # }
+    dat <- prepare_simple_outlier_datasets(cty = c)
+    write.csv(dat, paste0(here(),"/data/",c,"/", c, "_outlier_simple.csv"))
 }
 
 # Run continuous outcome regressions for non-hh and indoor-time contacts --------------
 
-# The following line loads this function: total_resp_ent_contacts_regression()
-source("04b_total_simple_analysis.R")
+# The following line loads this function: simple_outcome_hist()
+source("02_simpleoutcome_hist.R")
 
 ref =  c(rep("Age\nRef: 30-39y", 7),
          "Sex\nRef: Female",
@@ -44,12 +40,10 @@ term <- c("<1y", "1-4y", "5-9y", "10-19y", "20-29y", "40-59y", "60+y",
 equation = "age + sex + study_site + hh_size_cat + occupation"
 
 for(c in countries){
-  # for(h in hhmembership){
-    dat <- total_simple_contacts_regression(cty = c, hhmbr = h, ref = ref, term = term)
-    write.csv(dat[[1]], paste0("results/", c, h,"_negbin_daily_5_nonhh.csv"))
-    write.csv(dat[[2]], paste0("results/", c, h,"_negbin_daily_5_indtime.csv"))
-    write.csv(dat[[3]], paste0("results/", c, h,"_negbin_daily_5_touch.csv"))
-    # }
+    dat <- simple_outcome_hist(cty = c, ref = ref, term = term)
+    write.csv(dat[[1]], paste0("results/", c, "_negbin_daily_5_nonhh.csv"))
+    write.csv(dat[[2]], paste0("results/", c, "_negbin_daily_5_indtime.csv"))
+    write.csv(dat[[3]], paste0("results/", c, "_negbin_daily_5_touch.csv"))
 }
 
 # Read in each panel (now TIFF inputs)
@@ -137,53 +131,31 @@ dev.off()
 # Run logistic outcome regressions for non-hh and indoor-time contacts --------------
 
 # The following line loads this function: outlier_simple_contacts_regression()
-source("04c_simple_outlier_analysis.R")
+source("03_simple_outlier_analysis.R")
 
 prctl = 75
 
 for(c in countries){
-  # for(h in hhmembership){
-    dat <- outlier_simple_contacts_regression(cty = c, hhmbr = h, prctl = prctl, ref = ref, term = term)
-    write.csv(dat[[1]], paste0("results/", c, h,"_", prctl, "_outlier_daily_5_nonhh.csv"))
-    write.csv(dat[[2]], paste0("results/", c, h,"_", prctl,"_outlier_daily_5_indtime.csv"))
-    write.csv(dat[[3]], paste0("results/", c, h,"_", prctl,"_outlier_daily_5_touch.csv"))
-  # }
+    dat <- outlier_simple_contacts_regression(cty = c, prctl = prctl, ref = ref, term = term)
+    write.csv(dat[[1]], paste0("results/", c, "_", prctl, "_outlier_daily_5_nonhh.csv"))
+    write.csv(dat[[2]], paste0("results/", c, "_", prctl,"_outlier_daily_5_indtime.csv"))
+    write.csv(dat[[3]], paste0("results/", c, "_", prctl,"_outlier_daily_5_touch.csv"))
 }
 
 # Create plots for non-hh and indoor-time, continuous & dichotomous, outcomes --------------
 
 # The following line loads this function: plot_simple_regression_results()
-source("04d_plot_simple_analysis_results.R")
+source("04_plot_simple_analysis_results.R")
 
-# for(h in hhmembership){
-  plot_simple_regression_results(hhmbr = h, prctl = prctl, name = "daily_5") #could also be daily_5
-# }
+plot_simple_regression_results(prctl = prctl, name = "daily_5")
+
 
 # PCA --------------
 
-# The following line loads this function: pca_analysis()
-source("04e_pca_simple_analysis_results.R")
+# The following line loads this function: pca_simple_analysis()
+source("05_pca_simple_analysis_results.R")
 
 for(c in countries){
-  # for(h in hhmembership){
-    pca_simple_analysis(cty = c, hhmbr = h, prctl = prctl, name = "daily_5") #could also be daily_5
-  # }
+    pca_simple_analysis(cty = c, prctl = prctl, name = "daily_5")
 }
-
-# Run logistic outcome regressions for non-hh and indoor-time contacts --------------
-
-# The following line loads this function: outlier_simple_contacts_regression()
-source("04f_quantile_analysis.R")
-
-for(c in countries){
-    dat <- outlier_simple_quantile_regression(cty = c, hhmbr = h, equation = equation, ref = ref, term = term)
-    write.csv(dat[[1]], paste0("results/", c, "_quantile_nonhh.csv"))
-    write.csv(dat[[2]], paste0("results/", c, "_quantile_indtime.csv"))
-    write.csv(dat[[3]], paste0("results/", c, "_quantile_touch.csv"))
-}
-
-# The following line loads this function: plot_simple_quantile_results()
-# source("04g_quantile_plots.R")
-# 
-#   plot_simple_quantile_results(name = "daily_5") 
 
